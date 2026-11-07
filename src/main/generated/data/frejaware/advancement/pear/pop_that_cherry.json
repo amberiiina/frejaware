@@ -1,0 +1,30 @@
+{
+  "parent": "frejaware:pear/oh_my_meadows",
+  "criteria": {
+    "eat_cherry": {
+      "conditions": {
+        "item": {
+          "items": "frejaware:cherry"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.pop_that_cherry.description"
+    },
+    "icon": {
+      "id": "frejaware:cherry"
+    },
+    "title": {
+      "translate": "advancements.frejaware.pop_that_cherry.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_cherry"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

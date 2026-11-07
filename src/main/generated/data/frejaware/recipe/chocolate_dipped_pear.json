@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:pear",
+    "frejaware:chocolate"
+  ],
+  "result": {
+    "id": "frejaware:chocolate_dipped_pear"
+  }
+}

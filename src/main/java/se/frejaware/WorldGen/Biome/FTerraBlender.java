@@ -1,0 +1,16 @@
+package se.frejaware.WorldGen.Biome;
+
+import se.frejaware.F;
+import terrablender.api.Regions;
+import terrablender.api.TerraBlenderApi;
+
+public class FTerraBlender implements TerraBlenderApi {
+	@Override
+	public void onTerraBlenderInitialized() {
+		F.LOGGER.info("TerraBlender Initializing");
+
+		Regions.register(new FPearMeadowRegion());
+
+		F.LOGGER.info("TerraBlender Initialized");
+	}
+}

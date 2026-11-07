@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "frejaware:rose_quartz",
+  "base": "minecraft:shield",
+  "result": {
+    "id": "frejaware:rose_quartz_shield"
+  },
+  "template": "frejaware:rose_quartz_upgrade_smithing_template"
+}

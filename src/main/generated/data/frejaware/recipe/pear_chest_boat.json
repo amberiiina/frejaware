@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chest_boat",
+  "ingredients": [
+    "minecraft:chest",
+    "frejaware:pear_boat"
+  ],
+  "result": {
+    "id": "frejaware:pear_chest_boat"
+  }
+}

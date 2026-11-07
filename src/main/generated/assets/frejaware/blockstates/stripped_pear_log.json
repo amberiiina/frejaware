@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "frejaware:block/stripped_pear_log_x"
+    },
+    "axis=y": {
+      "model": "frejaware:block/stripped_pear_log_y"
+    },
+    "axis=z": {
+      "model": "frejaware:block/stripped_pear_log_z"
+    }
+  }
+}

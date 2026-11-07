@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lilac_crocus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:lilac_crocus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:magenta_dye_from_lilac_crocus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lilac_crocus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:magenta_dye_from_lilac_crocus"
+    ]
+  }
+}

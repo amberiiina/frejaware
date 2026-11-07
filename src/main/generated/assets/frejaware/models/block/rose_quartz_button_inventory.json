@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "frejaware:block/rose_quartz_bricks"
+  }
+}

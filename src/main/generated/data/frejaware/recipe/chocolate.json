@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans",
+    "frejaware:cocoa_butter",
+    "frejaware:cocoa_butter",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "count": 4,
+    "id": "frejaware:chocolate"
+  }
+}

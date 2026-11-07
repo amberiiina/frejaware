@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:noise",
+    "noise": {
+      "base_amplitude": 0.955388882960065,
+      "base_octave": 0
+    },
+    "scale": 0.020833334,
+    "seed": 2345,
+    "states": [
+      "frejaware:white_orchid",
+      "frejaware:white_orchid",
+      "frejaware:yellow_tulip",
+      "frejaware:yellow_tulip",
+      "frejaware:white_hibiscus",
+      "frejaware:yellow_hibiscus",
+      "minecraft:white_tulip"
+    ]
+  }
+}

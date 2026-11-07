@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:transium",
+    "frejaware:transium",
+    "frejaware:transium",
+    "frejaware:transium",
+    "frejaware:transium",
+    "frejaware:transium",
+    "frejaware:transium",
+    "frejaware:transium",
+    "frejaware:transium"
+  ],
+  "result": {
+    "id": "frejaware:transium_block"
+  }
+}

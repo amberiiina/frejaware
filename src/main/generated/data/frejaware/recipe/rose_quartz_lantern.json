@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "frejaware:rose_quartz_fragment",
+    "T": "minecraft:torch"
+  },
+  "pattern": [
+    "###",
+    "#T#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "frejaware:rose_quartz_lantern"
+  }
+}

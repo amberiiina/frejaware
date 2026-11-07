@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:milk_bottle",
+    "frejaware:ice_cream",
+    "frejaware:pinkberry_crop"
+  ],
+  "result": {
+    "count": 2,
+    "id": "frejaware:milkshake_bottle"
+  }
+}

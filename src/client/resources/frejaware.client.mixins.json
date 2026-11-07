@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "se.frejaware.client.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "SkullBlockRendererAccessor",
+    "SkullBlockRendererMixin",
+    "FSplashMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "R": "frejaware:rose_quartz_shard",
+    "S": "minecraft:shulker_shell"
+  },
+  "pattern": [
+    " R ",
+    "RSR",
+    " R "
+  ],
+  "result": {
+    "id": "frejaware:rose_quartz"
+  }
+}

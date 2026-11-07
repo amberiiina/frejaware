@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:white_petals"
+  ],
+  "result": {
+    "id": "minecraft:white_dye"
+  }
+}

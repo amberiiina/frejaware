@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_bars_cap",
+  "textures": {
+    "bars": "frejaware:block/rose_quartz_bars",
+    "edge": "frejaware:block/rose_quartz_bars"
+  }
+}

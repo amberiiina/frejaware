@@ -1,0 +1,13 @@
+{
+  "asset_id": "frejaware:plant",
+  "author": {
+    "color": "gray",
+    "translate": "painting.frejaware.plant.author"
+  },
+  "height": 1,
+  "title": {
+    "color": "light_purple",
+    "translate": "painting.frejaware.plant.title"
+  },
+  "width": 1
+}

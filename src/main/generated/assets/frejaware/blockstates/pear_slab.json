@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "frejaware:block/pear_slab"
+    },
+    "type=double": {
+      "model": "frejaware:block/pear_planks"
+    },
+    "type=top": {
+      "model": "frejaware:block/pear_slab_top"
+    }
+  }
+}

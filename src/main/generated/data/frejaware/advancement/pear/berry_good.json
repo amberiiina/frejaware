@@ -1,0 +1,88 @@
+{
+  "parent": "frejaware:pear/good_blowjob",
+  "criteria": {
+    "obtain_berry_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:berry_juice_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_blackberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:blackberry_crop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_blowberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:blowberry_crop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_blueberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:blueberry_crop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_pinkberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:pinkberry_crop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.berry_good.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "frejaware:berry_juice_bottle"
+    },
+    "title": {
+      "translate": "advancements.frejaware.berry_good.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_blueberry"
+    ],
+    [
+      "obtain_blackberry"
+    ],
+    [
+      "obtain_pinkberry"
+    ],
+    [
+      "obtain_blowberry"
+    ],
+    [
+      "obtain_berry_juice"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

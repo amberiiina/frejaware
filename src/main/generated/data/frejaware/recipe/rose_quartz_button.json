@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "frejaware:rose_quartz_fragment"
+  ],
+  "result": {
+    "count": 4,
+    "id": "frejaware:rose_quartz_button"
+  }
+}

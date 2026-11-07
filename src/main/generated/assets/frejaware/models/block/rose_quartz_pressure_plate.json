@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_up",
+  "textures": {
+    "texture": "frejaware:block/rose_quartz_bricks"
+  }
+}

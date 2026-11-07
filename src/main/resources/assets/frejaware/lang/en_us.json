@@ -1,0 +1,223 @@
+{
+  "creativetab.frejaware": "Frejaware",
+
+  "biome.frejaware.pear_meadow": "Pear Meadow",
+
+  "block.frejaware.white_orchid": "White Orchid",
+  "block.frejaware.yellow_tulip": "Yellow Tulip",
+  "block.frejaware.white_cactus_flower": "White Cactus Flower",
+  "block.frejaware.yellow_cactus_flower": "Yellow Cactus Flower",
+  "block.frejaware.white_hibiscus": "White Hibiscus",
+  "block.frejaware.yellow_hibiscus": "Yellow Hibiscus",
+  "block.frejaware.round_bush": "Round Bush",
+  "block.frejaware.white_crocus": "White Crocus",
+  "block.frejaware.lilac_crocus": "Lilac Crocus",
+  "block.frejaware.purple_crocus": "Purple Crocus",
+  "block.frejaware.lily_of_the_glade": "Lily of the Glade",
+
+  "painting.frejaware.plant.title": "Plant",
+  "painting.frejaware.plant.author": "Molly",
+  "painting.frejaware.the_wanderer.title": "Wanderer",
+  "painting.frejaware.the_wanderer.author": "Molly",
+  "painting.frejaware.ribbon.title": "Ribbon",
+  "painting.frejaware.ribbon.author": "Molly",
+
+  "advancements.frejaware.oh_my_meadows.title": "Oh My Meadows!",
+  "advancements.frejaware.oh_my_meadows.description": "Visit a Pear Meadow",
+
+  "advancements.frejaware.milk_jugs.title": "Milk Jugs",
+  "advancements.frejaware.milk_jugs.description": "Shake em'!",
+  "advancements.frejaware.milk_enthusiast.title": "Milk Enthusiast",
+  "advancements.frejaware.milk_enthusiast.description": "Obtain every milk item",
+
+  "advancements.frejaware.good_blowjob.title": "Good (Blow)job!",
+  "advancements.frejaware.good_blowjob.description": "Obtain a blowberry",
+  "advancements.frejaware.berry_good.title": "Berry Good!",
+  "advancements.frejaware.berry_good.description": "Obtain one of every berry and craft a bottle of Berry Juice",
+
+  "advancements.frejaware.chocolatier.title": "Chocolatier",
+  "advancements.frejaware.chocolatier.description": "Obtain every chocolate item",
+
+  "advancements.frejaware.pop_that_cherry.title": "Pop That Cherry!",
+  "advancements.frejaware.pop_that_cherry.description": "Eat a cherry",
+  "advancements.frejaware.kinda_fruity.title": "Kinda Fruity",
+  "advancements.frejaware.kinda_fruity.description": "Eat one of every fruit",
+
+
+
+  "item.frejaware.cherry": "Cherry",
+  "item.frejaware.banana": "Banana",
+  "item.frejaware.orange": "Orange",
+  "item.frejaware.pear": "Pear",
+  "item.frejaware.chocolate_dipped_pear": "Chocolate Dipped Pear",
+  "item.frejaware.golden_pear": "Golden Pear",
+  "item.frejaware.enchanted_golden_pear": "Enchanted Golden Pear",
+
+  "item.frejaware.chocolate_bottle": "Bottle of Chocolate",
+  "item.frejaware.milk_bottle": "Bottle of Milk",
+  "item.frejaware.berry_juice_bottle": "Bottle of Berry Juice",
+  "item.frejaware.milkshake_bottle": "Bottle of Milkshake",
+
+  "item.frejaware.cocoa_butter": "Cocoa Butter",
+  "item.frejaware.chocolate": "Chocolate",
+  "item.frejaware.chocolate_bar": "Chocolate Bar",
+
+  "item.frejaware.blueberry_crop": "Blueberries",
+  "item.frejaware.blackberry_crop": "Blackberries",
+  "item.frejaware.pinkberry_crop": "Pinkberries",
+  "item.frejaware.blowberry_crop": "Blowberries",
+
+  "item.frejaware.fruit_salad": "Fruit Salad",
+  "item.frejaware.ice_cream": "Ice Cream",
+  "item.frejaware.chocolate_ice_cream": "Chocolate Ice Cream",
+
+
+
+  "block.frejaware.pear_log": "Pear Log",
+  "block.frejaware.stripped_pear_log": "Stripped Pear Log",
+  "block.frejaware.pear_wood": "Pear Wood",
+  "block.frejaware.stripped_pear_wood": "Stripped Pear Wood",
+  "block.frejaware.pear_leaves": "Pear Leaves",
+  "block.frejaware.pear_sapling": "Pear Sapling",
+  "block.frejaware.potted_pear_sapling": "Potted Pear Sapling",
+  "block.frejaware.pear_planks": "Pear Planks",
+  "block.frejaware.pear_stairs": "Pear Stairs",
+  "block.frejaware.pear_slab": "Pear Slab",
+  "block.frejaware.pear_fence": "Pear Fence",
+  "block.frejaware.pear_fence_gate": "Pear Fence Gate",
+  "block.frejaware.pear_door": "Pear Door",
+  "block.frejaware.pear_trapdoor": "Pear Trapdoor",
+  "block.frejaware.pear_button": "Pear Button",
+  "block.frejaware.pear_pressure_plate": "Pear Pressure Plate",
+  "block.frejaware.pear_sign": "Pear Sign",
+  "block.frejaware.pear_wall_sign": "Pear Wall Sign",
+  "block.frejaware.pear_hanging_sign": "Pear Hanging Sign",
+  "block.frejaware.pear_wall_hanging_sign": "Pear Wall Hanging Sign",
+  "block.frejaware.pear_shelf": "Pear Shelf",
+
+  "block.frejaware.white_petals": "White Petals",
+
+  "item.frejaware.pear_boat": "Pear Boat",
+  "item.frejaware.pear_chest_boat": "Pear Boat with Chest",
+
+  "entity.frejaware.pear_boat": "Pear Boat",
+  "entity.frejaware.pear_chest_boat": "Pear Chest Boat",
+
+
+
+  "block.frejaware.transium_block": "Block of Transium",
+
+  "item.frejaware.transium": "Transium",
+  "item.frejaware.transium_dye": "Transium Dye",
+
+  "item.frejaware.transium_pickaxe": "Transium Pickaxe",
+  "item.frejaware.transium_shovel": "Transium Shovel",
+  "item.frejaware.transium_axe": "Transium Axe",
+  "item.frejaware.transium_hoe": "Transium Hoe",
+  "item.frejaware.transium_sword": "Transium Sword",
+  "item.frejaware.transium_spear": "Transium Spear",
+
+  "item.frejaware.transium_helmet": "Transium Helmet",
+  "item.frejaware.transium_chestplate": "Transium Chestplate",
+  "item.frejaware.transium_leggings": "Transium Leggings",
+  "item.frejaware.transium_boots": "Transium Boots",
+
+
+
+  "block.frejaware.rose_quartz_ore": "Rose Quartz Ore",
+  "block.frejaware.rose_quartz_block": "Block of Rose Quartz",
+
+  "block.frejaware.rose_quartz_bricks": "Rose Quartz Bricks",
+  "block.frejaware.rose_quartz_brick_stairs": "Rose Quartz Brick Stairs",
+  "block.frejaware.rose_quartz_brick_slab": "Rose Quartz Brick Slab",
+  "block.frejaware.rose_quartz_brick_wall": "Rose Quartz Brick Wall",
+  "block.frejaware.chiseled_rose_quartz_bricks": "Chiseled Rose Quartz Bricks",
+
+  "block.frejaware.rose_quartz_door": "Rose Quartz Door",
+  "block.frejaware.rose_quartz_trapdoor": "Rose Quartz Trapdoor",
+  "block.frejaware.rose_quartz_ladder": "Rose Quartz Ladder",
+  "block.frejaware.rose_quartz_bars": "Rose Quartz Bars",
+  "block.frejaware.rose_quartz_chain": "Rose Quartz Chain",
+  "block.frejaware.rose_quartz_lantern": "Rose Quartz Lantern",
+  "block.frejaware.rose_quartz_pressure_plate": "Rose Quartz Pressure Plate",
+  "block.frejaware.rose_quartz_button": "Rose Quartz Button",
+
+  "item.frejaware.rose_quartz": "Rose Quartz",
+  "item.frejaware.rose_quartz_shard": "Rose Quartz Shard",
+  "item.frejaware.rose_quartz_fragment": "Rose Quartz Fragment",
+  "item.frejaware.rose_quartz_upgrade_smithing_template": "Rose Quartz Upgrade",
+
+  "item.frejaware.rose_quartz_pickaxe": "Rose Quartz Pickaxe",
+  "item.frejaware.rose_quartz_shovel": "Rose Quartz Shovel",
+  "item.frejaware.rose_quartz_axe": "Rose Quartz Axe",
+  "item.frejaware.rose_quartz_hoe": "Rose Quartz Hoe",
+  "item.frejaware.rose_quartz_sword": "Rose Quartz Sword",
+  "item.frejaware.rose_quartz_spear": "Rose Quartz Spear",
+
+  "item.frejaware.rose_quartz_shield": "Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.black": "Black Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.blue": "Blue Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.brown": "Brown Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.cyan": "Cyan Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.gray": "Gray Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.green": "Green Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.light_blue": "Light Blue Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.light_gray": "Light Gray Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.lime": "Lime Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.magenta": "Magenta Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.orange": "Orange Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.pink": "Pink Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.purple": "Purple Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.red": "Red Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.white": "White Rose Quartz Shield",
+  "item.frejaware.rose_quartz_shield.yellow": "Yellow Rose Quartz Shield",
+
+  "item.frejaware.rose_quartz_helmet": "Rose Quartz Helmet",
+  "item.frejaware.rose_quartz_chestplate": "Rose Quartz Chestplate",
+  "item.frejaware.rose_quartz_leggings": "Rose Quartz Leggings",
+  "item.frejaware.rose_quartz_boots": "Rose Quartz Boots",
+
+  "item.frejaware.smithing_template.rose_quartz_upgrade.additions_slot_description": "Add Rose Quartz",
+  "item.frejaware.smithing_template.rose_quartz_upgrade.applies_to": "Netherite Equipment",
+  "item.frejaware.smithing_template.rose_quartz_upgrade.base_slot_description": "Add netherite armor, weapon, or tool",
+  "item.frejaware.smithing_template.rose_quartz_upgrade.ingredients": "Rose Quartz",
+
+  "tag.item.frejaware.repairs_rose_quartz_armor": "Repairs Rose Quartz Equipment",
+  "tag.item.frejaware.incorrect_for_rose_quartz_tool": "Incorrect for Rose Quartz Tools",
+  "trim_material.frejaware.rose_quartz": "Rose Quartz",
+
+  "advancements.frejaware.obtain_rose_quartz_ore.title": "Hidden in the Skies",
+  "advancements.frejaware.obtain_rose_quartz_ore.description": "Obtain Rose Quartz Ore",
+  "advancements.frejaware.rose_quartz_armor.title": "Cover Me in Pink",
+  "advancements.frejaware.rose_quartz_armor.description": "Get a full suit of Rose Quartz armor",
+
+
+
+  "block.frejaware.golem_head_amethyst": "Amethyst Golem Head",
+  "block.frejaware.golem_head_coal": "Coal Golem Head",
+  "block.frejaware.golem_head_diamond": "Diamond Golem Head",
+  "block.frejaware.golem_head_emerald": "Emerald Golem Head",
+  "block.frejaware.golem_head_gold": "Gold Golem Head",
+  "block.frejaware.golem_head_iron": "Iron Golem Head",
+  "block.frejaware.golem_head_lapis": "Lapis Golem Head",
+  "block.frejaware.golem_head_netherite": "Netherite Golem Head",
+  "block.frejaware.golem_head_redstone": "Redstone Golem Head",
+
+  "item.frejaware.golem_spawn_egg_amethyst": "Amethyst Golem Spawn Egg",
+  "item.frejaware.golem_spawn_egg_coal": "Coal Golem Spawn Egg",
+  "item.frejaware.golem_spawn_egg_diamond": "Diamond Golem Spawn Egg",
+  "item.frejaware.golem_spawn_egg_emerald": "Emerald Golem Spawn Egg",
+  "item.frejaware.golem_spawn_egg_gold": "Gold Golem Spawn Egg",
+  "item.frejaware.golem_spawn_egg_lapis": "Lapis Golem Spawn Egg",
+  "item.frejaware.golem_spawn_egg_netherite": "Netherite Golem Spawn Egg",
+  "item.frejaware.golem_spawn_egg_redstone": "Redstone Golem Spawn Egg",
+
+  "entity.frejaware.golem_amethyst": "Amethyst Golem",
+  "entity.frejaware.golem_coal": "Coal Golem",
+  "entity.frejaware.golem_diamond": "Diamond Golem",
+  "entity.frejaware.golem_emerald": "Emerald Golem",
+  "entity.frejaware.golem_gold": "Gold Golem",
+  "entity.frejaware.golem_lapis": "Lapis Golem",
+  "entity.frejaware.golem_netherite": "Netherite Golem",
+  "entity.frejaware.golem_redstone": "Redstone Golem"
+}

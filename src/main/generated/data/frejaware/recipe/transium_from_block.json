@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:transium_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "frejaware:transium"
+  }
+}

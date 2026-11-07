@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "frejaware:block/rose_quartz_brick_slab"
+    },
+    "type=double": {
+      "model": "frejaware:block/rose_quartz_bricks"
+    },
+    "type=top": {
+      "model": "frejaware:block/rose_quartz_brick_slab_top"
+    }
+  }
+}

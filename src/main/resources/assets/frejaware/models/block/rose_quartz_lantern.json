@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "frejaware:block/rose_quartz_lantern"
+  }
+}

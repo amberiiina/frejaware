@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "frejaware:block/rose_quartz_lantern"
+    },
+    "hanging=true": {
+      "model": "frejaware:block/rose_quartz_lantern_hanging"
+    }
+  }
+}

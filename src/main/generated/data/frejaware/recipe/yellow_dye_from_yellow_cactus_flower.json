@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:yellow_cactus_flower"
+  ],
+  "result": {
+    "id": "minecraft:yellow_dye"
+  }
+}

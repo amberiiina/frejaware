@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:bowl",
+    "#c:foods/fruit",
+    "#c:foods/fruit",
+    "#c:foods/fruit"
+  ],
+  "result": {
+    "id": "frejaware:fruit_salad"
+  }
+}

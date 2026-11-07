@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "frejaware:transium"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "frejaware:transium"
+      }
+    ]
+  }
+}

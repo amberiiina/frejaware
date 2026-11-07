@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:rose_quartz",
+    "frejaware:rose_quartz",
+    "frejaware:rose_quartz",
+    "frejaware:rose_quartz",
+    "frejaware:rose_quartz",
+    "frejaware:rose_quartz",
+    "frejaware:rose_quartz",
+    "frejaware:rose_quartz",
+    "frejaware:rose_quartz"
+  ],
+  "result": {
+    "id": "frejaware:rose_quartz_block"
+  }
+}

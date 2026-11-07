@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "frejaware",
+	"version": "${version}",
+	"name": "Frejaware",
+	"description": "Uhh innehåller saker jag kände för att göra ig?",
+	"authors": [
+		"Freja",
+		"Molly"
+	],
+	"contact": {
+		"homepage": "https://frejaware.se/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/frejaware/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "se.frejaware.F"
+		],
+		"client": [
+			"se.frejaware.client.FClient"
+		],
+		"fabric-datagen": [
+          "se.frejaware.client.Datagen.DataGenerator"
+		],
+		"terrablender": [
+			"se.frejaware.WorldGen.Biome.FTerraBlender"
+		]
+	},
+	"mixins": [
+		"frejaware.mixins.json",
+		"frejaware.client.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

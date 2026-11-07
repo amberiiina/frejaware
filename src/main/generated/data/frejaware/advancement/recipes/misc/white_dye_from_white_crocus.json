@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:white_dye_from_white_crocus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_crocus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:white_crocus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_crocus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:white_dye_from_white_crocus"
+    ]
+  }
+}

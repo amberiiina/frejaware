@@ -1,0 +1,45 @@
+{
+  "parent": "frejaware:obtain_rose_quartz_ore",
+  "criteria": {
+    "rose_quartz_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:rose_quartz_helmet"
+          },
+          {
+            "items": "frejaware:rose_quartz_chestplate"
+          },
+          {
+            "items": "frejaware:rose_quartz_leggings"
+          },
+          {
+            "items": "frejaware:rose_quartz_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.rose_quartz_armor.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "frejaware:rose_quartz_chestplate"
+    },
+    "title": {
+      "translate": "advancements.frejaware.rose_quartz_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "rose_quartz_armor"
+    ]
+  ],
+  "rewards": {
+    "experience": 200
+  },
+  "sends_telemetry_event": true
+}

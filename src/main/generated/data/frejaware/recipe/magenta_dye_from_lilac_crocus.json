@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:lilac_crocus"
+  ],
+  "result": {
+    "id": "minecraft:magenta_dye"
+  }
+}

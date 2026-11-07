@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:end/kill_dragon",
+  "criteria": {
+    "obtain_rose_quartz_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:rose_quartz_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.obtain_rose_quartz_ore.description"
+    },
+    "icon": {
+      "id": "frejaware:rose_quartz_ore"
+    },
+    "title": {
+      "translate": "advancements.frejaware.obtain_rose_quartz_ore.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_rose_quartz_ore"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

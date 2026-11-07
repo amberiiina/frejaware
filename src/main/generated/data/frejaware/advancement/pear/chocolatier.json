@@ -1,0 +1,127 @@
+{
+  "parent": "frejaware:pear/oh_my_meadows",
+  "criteria": {
+    "obtain_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:chocolate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_chocolate_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:chocolate_bar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_chocolate_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:chocolate_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_chocolate_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:chocolate_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_chocolate_pear": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:chocolate_dipped_pear"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_cocoa_bean": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cocoa_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_cocoa_butter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:cocoa_butter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.chocolatier.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "frejaware:chocolate_bar"
+    },
+    "title": {
+      "translate": "advancements.frejaware.chocolatier.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_cocoa_butter"
+    ],
+    [
+      "obtain_chocolate"
+    ],
+    [
+      "obtain_chocolate_bar"
+    ],
+    [
+      "obtain_chocolate_bottle"
+    ],
+    [
+      "obtain_chocolate_pear"
+    ],
+    [
+      "obtain_cocoa_bean"
+    ],
+    [
+      "obtain_cookie"
+    ],
+    [
+      "obtain_chocolate_ice_cream"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

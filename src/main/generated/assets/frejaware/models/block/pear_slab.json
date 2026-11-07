@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "frejaware:block/pear_planks",
+    "side": "frejaware:block/pear_planks",
+    "top": "frejaware:block/pear_planks"
+  }
+}

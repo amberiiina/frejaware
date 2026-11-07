@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cocoa_butter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:cocoa_butter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:chocolate_bar"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cocoa_butter"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:chocolate_bar"
+    ]
+  }
+}

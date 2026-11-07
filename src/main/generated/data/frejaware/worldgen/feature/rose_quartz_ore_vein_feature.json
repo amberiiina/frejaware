@@ -1,0 +1,14 @@
+{
+  "type": "frejaware:rose_quartz_ore_vein",
+  "discard_chance_on_air_exposure": 0.0,
+  "size": 4,
+  "targets": [
+    {
+      "state": "frejaware:rose_quartz_ore",
+      "target": {
+        "block": "minecraft:end_stone",
+        "predicate_type": "minecraft:block_match"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "#c:foods/berry",
+    "#c:foods/berry"
+  ],
+  "result": {
+    "id": "frejaware:berry_juice_bottle"
+  }
+}

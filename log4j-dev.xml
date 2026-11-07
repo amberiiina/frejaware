@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Loggers>
+        <!-- Hide everything by default -->
+        <Root level="OFF"/>
+
+        <!-- Keep Minecraft logs -->
+        <Logger name="Minecraft" level="info" />
+
+        <!-- Keep Frejaware logs -->
+        <Logger name="frejaware" level="debug" />
+
+        <Logger name="FabricLoader" level="warn"/>
+    </Loggers>
+</Configuration>

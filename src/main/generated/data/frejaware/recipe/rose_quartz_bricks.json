@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "frejaware:rose_quartz_fragment",
+    "minecraft:end_stone",
+    "minecraft:end_stone",
+    "minecraft:end_stone",
+    "minecraft:end_stone",
+    "minecraft:end_stone",
+    "minecraft:end_stone",
+    "minecraft:end_stone",
+    "minecraft:end_stone"
+  ],
+  "result": {
+    "count": 8,
+    "id": "frejaware:rose_quartz_bricks"
+  }
+}

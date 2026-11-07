@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "frejaware:rose_quartz"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "frejaware:rose_quartz"
+      }
+    ]
+  }
+}

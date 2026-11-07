@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "frejaware:block/rose_quartz_chain",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "frejaware:block/rose_quartz_chain"
+    },
+    "axis=z": {
+      "model": "frejaware:block/rose_quartz_chain",
+      "x": 90
+    }
+  }
+}

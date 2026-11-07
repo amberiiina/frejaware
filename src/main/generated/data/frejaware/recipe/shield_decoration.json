@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_special_shielddecoration",
+  "banner": "#minecraft:banners",
+  "result": {
+    "id": "frejaware:rose_quartz_shield"
+  },
+  "target": "frejaware:rose_quartz_shield"
+}

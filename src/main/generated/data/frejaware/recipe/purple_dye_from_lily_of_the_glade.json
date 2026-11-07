@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:lily_of_the_glade"
+  ],
+  "result": {
+    "id": "minecraft:purple_dye"
+  }
+}

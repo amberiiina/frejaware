@@ -1,0 +1,22 @@
+{
+  "values": [
+    "frejaware:pear_log",
+    "frejaware:stripped_pear_log",
+    "frejaware:pear_wood",
+    "frejaware:stripped_pear_wood",
+    "frejaware:pear_planks",
+    "frejaware:pear_stairs",
+    "frejaware:pear_slab",
+    "frejaware:pear_fence",
+    "frejaware:pear_fence_gate",
+    "frejaware:pear_door",
+    "frejaware:pear_trapdoor",
+    "frejaware:pear_button",
+    "frejaware:pear_pressure_plate",
+    "frejaware:pear_sign",
+    "frejaware:pear_wall_sign",
+    "frejaware:pear_hanging_sign",
+    "frejaware:pear_wall_hanging_sign",
+    "frejaware:pear_shelf"
+  ]
+}

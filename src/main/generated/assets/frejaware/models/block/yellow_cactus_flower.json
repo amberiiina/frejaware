@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "frejaware:block/yellow_cactus_flower"
+  }
+}

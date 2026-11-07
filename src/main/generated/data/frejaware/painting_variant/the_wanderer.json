@@ -1,0 +1,13 @@
+{
+  "asset_id": "frejaware:the_wanderer",
+  "author": {
+    "color": "gray",
+    "translate": "painting.frejaware.the_wanderer.author"
+  },
+  "height": 2,
+  "title": {
+    "color": "light_purple",
+    "translate": "painting.frejaware.the_wanderer.title"
+  },
+  "width": 1
+}

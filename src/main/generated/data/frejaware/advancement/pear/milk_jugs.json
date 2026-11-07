@@ -1,0 +1,32 @@
+{
+  "parent": "frejaware:pear/oh_my_meadows",
+  "criteria": {
+    "obtain_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:milkshake_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.milk_jugs.description"
+    },
+    "icon": {
+      "id": "frejaware:milkshake_bottle"
+    },
+    "title": {
+      "translate": "advancements.frejaware.milk_jugs.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_milkshake"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

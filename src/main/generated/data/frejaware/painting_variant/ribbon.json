@@ -1,0 +1,13 @@
+{
+  "asset_id": "frejaware:ribbon",
+  "author": {
+    "color": "gray",
+    "translate": "painting.frejaware.ribbon.author"
+  },
+  "height": 1,
+  "title": {
+    "color": "light_purple",
+    "translate": "painting.frejaware.ribbon.title"
+  },
+  "width": 1
+}

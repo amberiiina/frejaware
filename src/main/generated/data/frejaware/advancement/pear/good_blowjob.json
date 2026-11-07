@@ -1,0 +1,32 @@
+{
+  "parent": "frejaware:pear/oh_my_meadows",
+  "criteria": {
+    "obtain_blowberries": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:blowberry_crop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.good_blowjob.description"
+    },
+    "icon": {
+      "id": "frejaware:blowberry_crop"
+    },
+    "title": {
+      "translate": "advancements.frejaware.good_blowjob.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_blowberries"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

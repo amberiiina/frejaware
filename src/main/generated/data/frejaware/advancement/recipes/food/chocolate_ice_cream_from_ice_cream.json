@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:chocolate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:chocolate_ice_cream_from_ice_cream"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ice_cream",
+      "has_chocolate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:chocolate_ice_cream_from_ice_cream"
+    ]
+  }
+}

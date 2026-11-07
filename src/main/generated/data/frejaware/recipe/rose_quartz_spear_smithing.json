@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "frejaware:rose_quartz",
+  "base": "minecraft:netherite_spear",
+  "result": {
+    "id": "frejaware:rose_quartz_spear"
+  },
+  "template": "frejaware:rose_quartz_upgrade_smithing_template"
+}

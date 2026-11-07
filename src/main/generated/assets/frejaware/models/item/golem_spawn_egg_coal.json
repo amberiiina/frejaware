@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "frejaware:item/golem_spawn_egg_coal"
+  }
+}

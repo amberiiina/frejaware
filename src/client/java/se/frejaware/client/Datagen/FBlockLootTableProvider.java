@@ -1,0 +1,161 @@
+package se.frejaware.client.Datagen;
+
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+import se.frejaware.Blocks.FBlocks;
+import se.frejaware.Items.FItems;
+
+import java.util.concurrent.CompletableFuture;
+
+public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
+	protected FBlockLootTableProvider(
+			FabricPackOutput packOutput,
+			CompletableFuture<HolderLookup.Provider> registryLookup) {
+		super(packOutput, registryLookup);
+	}
+
+	@Override
+	public void generate() {
+		// MOLLY
+		dropSelf(FBlocks.WHITE_CACTUS_FLOWER);
+		dropSelf(FBlocks.YELLOW_CACTUS_FLOWER);
+		dropSelf(FBlocks.WHITE_ORCHID);
+		dropSelf(FBlocks.YELLOW_TULIP);
+		dropSelf(FBlocks.ROUND_BUSH);
+		dropSelf(FBlocks.WHITE_HIBISCUS);
+		dropSelf(FBlocks.YELLOW_HIBISCUS);
+		dropSelf(FBlocks.WHITE_CROCUS);
+		dropSelf(FBlocks.LILAC_CROCUS);
+		dropSelf(FBlocks.PURPLE_CROCUS);
+		dropSelf(FBlocks.LILY_OF_THE_GLADE);
+
+		// FOOD
+		add(
+				Blocks.CHERRY_LEAVES,
+				block -> createCherryLeavesDrops(
+						block,
+						Blocks.CHERRY_SAPLING,
+						NORMAL_LEAVES_SAPLING_CHANCES
+				)
+		);
+
+		// PEAR
+		dropSelf(FBlocks.PEAR_LOG);
+		dropSelf(FBlocks.STRIPPED_PEAR_LOG);
+		dropSelf(FBlocks.PEAR_WOOD);
+		dropSelf(FBlocks.STRIPPED_PEAR_WOOD);
+
+		add(
+				FBlocks.PEAR_LEAVES,
+				block -> createPearLeavesDrops(
+						block,
+						FBlocks.PEAR_SAPLING,
+						NORMAL_LEAVES_SAPLING_CHANCES
+				)
+		);
+		dropSelf(FBlocks.PEAR_SAPLING);
+		dropPottedContents(FBlocks.POTTED_PEAR_SAPLING);
+
+		dropSelf(FBlocks.PEAR_PLANKS);
+		dropSelf(FBlocks.PEAR_STAIRS);
+		add(FBlocks.PEAR_SLAB, this::createSlabItemTable);
+		dropSelf(FBlocks.PEAR_FENCE);
+		dropSelf(FBlocks.PEAR_FENCE_GATE);
+		add(FBlocks.PEAR_DOOR, this::createDoorTable);
+		dropSelf(FBlocks.PEAR_TRAPDOOR);
+		dropSelf(FBlocks.PEAR_BUTTON);
+		dropSelf(FBlocks.PEAR_PRESSURE_PLATE);
+		dropSelf(FBlocks.PEAR_SIGN);
+		dropOther(FBlocks.PEAR_WALL_SIGN, FBlocks.PEAR_SIGN);
+		dropSelf(FBlocks.PEAR_HANGING_SIGN);
+		dropOther(FBlocks.PEAR_WALL_HANGING_SIGN, FBlocks.PEAR_HANGING_SIGN);
+		dropSelf(FBlocks.PEAR_SHELF);
+
+		add(FBlocks.WHITE_PETALS,
+				createSegmentedBlockDrops(FBlocks.WHITE_PETALS)
+		);
+
+		// TRANSIUM
+		dropSelf(FBlocks.TRANSIUM_BLOCK);
+
+		// ROSE QUARTZ
+		add(FBlocks.ROSE_QUARTZ_ORE,
+				createOreDrop(
+						FBlocks.ROSE_QUARTZ_ORE,
+						FItems.ROSE_QUARTZ_SHARD
+				)
+		);
+		dropSelf(FBlocks.ROSE_QUARTZ_BLOCK);
+
+		dropSelf(FBlocks.ROSE_QUARTZ_BRICKS);
+		dropSelf(FBlocks.ROSE_QUARTZ_BRICK_STAIRS);
+		dropSelf(FBlocks.ROSE_QUARTZ_BRICK_SLAB);
+		dropSelf(FBlocks.ROSE_QUARTZ_BRICK_WALL);
+		dropSelf(FBlocks.CHISELED_ROSE_QUARTZ_BRICKS);
+
+		add(FBlocks.ROSE_QUARTZ_DOOR, this::createDoorTable);
+		dropSelf(FBlocks.ROSE_QUARTZ_TRAPDOOR);
+		dropSelf(FBlocks.ROSE_QUARTZ_LADDER);
+		dropSelf(FBlocks.ROSE_QUARTZ_BARS);
+		dropSelf(FBlocks.ROSE_QUARTZ_CHAIN);
+		dropSelf(FBlocks.ROSE_QUARTZ_LANTERN);
+		dropSelf(FBlocks.ROSE_QUARTZ_PRESSURE_PLATE);
+		dropSelf(FBlocks.ROSE_QUARTZ_BUTTON);
+
+		// GOLEM HEADS
+		dropSelf(FBlocks.GOLEM_HEAD_COAL);
+		dropSelf(FBlocks.GOLEM_HEAD_DIAMOND);
+		dropSelf(FBlocks.GOLEM_HEAD_EMERALD);
+		dropSelf(FBlocks.GOLEM_HEAD_GOLD);
+		dropSelf(FBlocks.GOLEM_HEAD_IRON);
+		dropSelf(FBlocks.GOLEM_HEAD_LAPIS);
+		dropSelf(FBlocks.GOLEM_HEAD_AMETHYST);
+		dropSelf(FBlocks.GOLEM_HEAD_NETHERITE);
+		dropSelf(FBlocks.GOLEM_HEAD_REDSTONE);
+	}
+
+	public LootTable.Builder createPearLeavesDrops(
+			final Block original, final Block sapling, final float... saplingChances) {
+		return createLeavesDrops(original, sapling, saplingChances)
+				.withPool(
+						LootPool.lootPool()
+								.setRolls(ContextIntProviders.exactly(1))
+								.when(doesNotHaveShearsOrSilkTouch())
+								.add(
+										applyExplosionCondition(original, LootItem.lootTableItem(FItems.PEAR))
+												.when(
+														BonusLevelTableCondition.bonusLevelFlatChance(enchantments.getOrThrow(Enchantments.FORTUNE), 0.05F, 0.055555557F, 0.0625F, 0.08333334F, 0.025F)
+												)
+								)
+				);
+	}
+	public LootTable.Builder createCherryLeavesDrops(
+			final Block original, final Block sapling, final float... saplingChances) {
+		return createLeavesDrops(original, sapling, saplingChances)
+				.withPool(
+						LootPool.lootPool()
+								.setRolls(ContextIntProviders.exactly(1))
+								.when(doesNotHaveShearsOrSilkTouch())
+								.add(
+										applyExplosionCondition(original, LootItem.lootTableItem(FItems.CHERRY))
+												.when(
+														BonusLevelTableCondition.bonusLevelFlatChance(enchantments.getOrThrow(Enchantments.FORTUNE), 0.05F, 0.055555557F, 0.0625F, 0.08333334F, 0.025F)
+												)
+								)
+				);
+	}
+
+	@Override
+	public String getName() {
+		return "FBlockLootTableProvider";
+	}
+}

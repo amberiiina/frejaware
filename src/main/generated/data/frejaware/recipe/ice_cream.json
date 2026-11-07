@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:bowl",
+    "frejaware:milk_bottle",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "frejaware:ice_cream"
+  }
+}
