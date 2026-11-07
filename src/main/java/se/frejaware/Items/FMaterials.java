@@ -21,20 +21,20 @@ public class FMaterials {
 	// TRANSIUM
 	public static final ToolMaterial TRANSIUM_TOOL_MATERIAL = new ToolMaterial(
 			FBlockTags.INCORRECT_FOR_TRANSIUM_TOOL,
-			1091,
-			12.0F,
-			5.0F,
-			25,
+			1561,
+			8.0F,
+			3.0F,
+			10,
 			FItemTags.REPAIRS_TRANSIUM
 	);
 
 	// ROSE QUARTZ
 	public static final ToolMaterial ROSE_QUARTZ_TOOL_MATERIAL = new ToolMaterial(
 			FBlockTags.INCORRECT_FOR_ROSE_QUARTZ_TOOL,
-			1561,
-			8.0F,
-			3.0F,
-			10,
+			1091,
+			12.0F,
+			5.0F,
+			25,
 			FItemTags.REPAIRS_ROSE_QUARTZ
 	);
 

@@ -3,14 +3,14 @@
 	"id": "frejaware",
 	"version": "${version}",
 	"name": "Frejaware",
-	"description": "Uhh innehåller saker jag kände för att göra ig?",
+	"description": "Includes various stuff we felt like adding to the game i guess?",
 	"authors": [
 		"Freja",
 		"Molly"
 	],
 	"contact": {
 		"homepage": "https://frejaware.se/",
-		"sources": "https://https://github.com/amberiiina/frejaware/"
+		"sources": "https://github.com/amberiiina/frejaware/"
 	},
 	"license": "MIT",
 	"icon": "assets/frejaware/icon.png",
