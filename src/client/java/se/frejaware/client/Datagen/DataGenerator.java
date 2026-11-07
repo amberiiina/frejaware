@@ -21,6 +21,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(FDynamicRegistryProvider::new);
 		pack.addProvider(FEntityLootTableProvider::new);
 		pack.addProvider(FItemTagProvider::new);
+		pack.addProvider(FLanguageProvider::new);
 		pack.addProvider(FModelProvider::new);
 		pack.addProvider(FPaintingTagsProvider::new);
 		pack.addProvider(FRecipeProvider::new);

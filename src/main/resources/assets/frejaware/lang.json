@@ -1,0 +1,70 @@
+{
+  "creativetab.frejaware": "Frejaware",
+  "creativetab.equipment": "Equipment",
+  "creativetab.food": "Food",
+  "creativetab.flowers": "Flowers",
+  "creativetab.pear_meadow": "Pear Meadow",
+
+
+  "biome.frejaware.pear_meadow": "Pear Meadow",
+
+
+  "painting.frejaware.plant.title": "Plant",
+  "painting.frejaware.plant.author": "Molly",
+  "painting.frejaware.the_wanderer.title": "Wanderer",
+  "painting.frejaware.the_wanderer.author": "Molly",
+  "painting.frejaware.ribbon.title": "Ribbon",
+  "painting.frejaware.ribbon.author": "Molly",
+
+
+  "item.frejaware.blackberry_crop": "Blackberries",
+  "item.frejaware.blowberry_crop": "Blowberries",
+  "item.frejaware.blueberry_crop": "Blueberries",
+  "item.frejaware.pinkberry_crop": "Pinkberries",
+
+
+  "entity.frejaware.golem_amethyst": "Amethyst Golem",
+  "entity.frejaware.golem_coal": "Coal Golem",
+  "entity.frejaware.golem_diamond": "Diamond Golem",
+  "entity.frejaware.golem_emerald": "Emerald Golem",
+  "entity.frejaware.golem_gold": "Gold Golem",
+  "entity.frejaware.golem_lapis": "Lapis Golem",
+  "entity.frejaware.golem_netherite": "Netherite Golem",
+  "entity.frejaware.golem_redstone": "Redstone Golem",
+
+  "entity.frejaware.pear_boat": "Pear Boat",
+  "entity.frejaware.pear_chest_boat": "Pear Chest Boat",
+
+
+  "advancements.frejaware.oh_my_meadows.title": "Oh My Meadows!",
+  "advancements.frejaware.oh_my_meadows.description": "Visit a Pear Meadow",
+
+  "advancements.frejaware.milk_jugs.title": "Milk Jugs",
+  "advancements.frejaware.milk_jugs.description": "Shake em'!",
+  "advancements.frejaware.milk_enthusiast.title": "Milk Enthusiast",
+  "advancements.frejaware.milk_enthusiast.description": "Obtain every milk item",
+
+  "advancements.frejaware.good_blowjob.title": "Good (Blow)job!",
+  "advancements.frejaware.good_blowjob.description": "Obtain a blowberry",
+  "advancements.frejaware.berry_good.title": "Berry Good!",
+  "advancements.frejaware.berry_good.description": "Obtain one of every berry and craft a bottle of Berry Juice",
+
+  "advancements.frejaware.chocolatier.title": "Chocolatier",
+  "advancements.frejaware.chocolatier.description": "Obtain every chocolate item",
+
+  "advancements.frejaware.pop_that_cherry.title": "Pop That Cherry!",
+  "advancements.frejaware.pop_that_cherry.description": "Eat a cherry",
+  "advancements.frejaware.kinda_fruity.title": "Kinda Fruity",
+  "advancements.frejaware.kinda_fruity.description": "Eat one of every fruit",
+
+
+  "advancements.frejaware.obtain_rose_quartz_ore.title": "Hidden in the Skies",
+  "advancements.frejaware.obtain_rose_quartz_ore.description": "Obtain Rose Quartz Ore",
+  "advancements.frejaware.rose_quartz_armor.title": "Cover Me in Pink",
+  "advancements.frejaware.rose_quartz_armor.description": "Get a full suit of Rose Quartz armor",
+
+  "item.frejaware.smithing_template.rose_quartz_upgrade.additions_slot_description": "Add Rose Quartz",
+  "item.frejaware.smithing_template.rose_quartz_upgrade.applies_to": "Netherite Equipment",
+  "item.frejaware.smithing_template.rose_quartz_upgrade.base_slot_description": "Add netherite armor, weapon, or tool",
+  "item.frejaware.smithing_template.rose_quartz_upgrade.ingredients": "Rose Quartz"
+}
