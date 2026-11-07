@@ -1,10 +1,8 @@
 # Frejaware
-___
 
 Adds various stuff we felt like adding
 
 ## Features
-___
 + **Golems** - Variants of the Iron Golem with all vanilla metals with varying stats
 + **Rose Quartz** - Pink metal found on the sides and bottom of outer end islands, can also be used to trim other armor
   - **Rose Quartz Upgrade Template** - Found in End City chests
@@ -26,7 +24,6 @@ ___
   - **Flowers** - Many new flowers
 
 ## Credits
-___
 Freja - Programming, textures & models\
 Molly - Textures & ideas
 
