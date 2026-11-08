@@ -9,10 +9,12 @@ import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.resources.model.sprite.Material;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BellAttachType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.F;
@@ -22,6 +24,8 @@ import se.frejaware.client.Model.FRoseQuartzShieldSpecialRenderer;
 import java.util.Map;
 import java.util.Optional;
 
+import static net.minecraft.client.data.models.BlockModelGenerators.*;
+
 public class FModelProvider extends FabricModelProvider {
 	public FModelProvider(FabricPackOutput output) {
 		super(output);
@@ -29,343 +33,406 @@ public class FModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateBlockStateModels(BlockModelGenerators blockGen) {
-		// MOLLY
-		blockGen.createCrossBlockWithDefaultItem(
-				FBlocks.WHITE_CACTUS_FLOWER,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createCrossBlockWithDefaultItem(
-				FBlocks.YELLOW_CACTUS_FLOWER,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
+		try {
+			// MOLLY
+			MultiVariant floor = BlockModelGenerators.plainVariant(
+					ModelLocationUtils.getModelLocation(FBlocks.IRON_BELL, "_floor")
+			);
+			MultiVariant ceiling = BlockModelGenerators.plainVariant(
+					ModelLocationUtils.getModelLocation(FBlocks.IRON_BELL, "_ceiling")
+			);
+			MultiVariant wall = BlockModelGenerators.plainVariant(
+					ModelLocationUtils.getModelLocation(FBlocks.IRON_BELL, "_wall")
+			);
+			MultiVariant betweenWalls = BlockModelGenerators.plainVariant(
+					ModelLocationUtils.getModelLocation(FBlocks.IRON_BELL, "_between_walls")
+			);
+			blockGen.registerSimpleFlatItemModel(FBlocks.IRON_BELL);
 
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.WHITE_ORCHID,
-				FBlocks.POTTED_WHITE_ORCHID,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.YELLOW_TULIP,
-				FBlocks.POTTED_YELLOW_TULIP,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.ROUND_BUSH,
-				FBlocks.POTTED_ROUND_BUSH,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.WHITE_HIBISCUS,
-				FBlocks.POTTED_WHITE_HIBISCUS,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.YELLOW_HIBISCUS,
-				FBlocks.POTTED_YELLOW_HIBISCUS,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.WHITE_CROCUS,
-				FBlocks.POTTED_WHITE_CROCUS,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.LILAC_CROCUS,
-				FBlocks.POTTED_LILAC_CROCUS,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.PURPLE_CROCUS,
-				FBlocks.POTTED_PURPLE_CROCUS,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.LILY_OF_THE_GLADE,
-				FBlocks.POTTED_LILY_OF_THE_GLADE,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
+			blockGen.createCrossBlockWithDefaultItem(
+					FBlocks.WHITE_CACTUS_FLOWER,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createCrossBlockWithDefaultItem(
+					FBlocks.YELLOW_CACTUS_FLOWER,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
 
-		// FOOD
-		blockGen.registerSimpleFlatItemModel(FItems.BLUEBERRIES);
-		blockGen.blockStateOutput.accept(
-				MultiVariantGenerator.dispatch(FBlocks.BLUEBERRY_BUSH)
-						.with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
-								.generate((age) -> BlockModelGenerators.plainVariant(
-										blockGen.createSuffixedVariant(
-												FBlocks.BLUEBERRY_BUSH,
-												"_stage" + age,
-												ModelTemplates.CROSS,
-												TextureMapping::cross
-										)
-								))
-						)
-		);
-		blockGen.registerSimpleFlatItemModel(FItems.BLACKBERRIES);
-		blockGen.blockStateOutput.accept(
-				MultiVariantGenerator.dispatch(FBlocks.BLACKBERRY_BUSH)
-						.with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
-								.generate((age) -> BlockModelGenerators.plainVariant(
-										blockGen.createSuffixedVariant(
-												FBlocks.BLACKBERRY_BUSH,
-												"_stage" + age,
-												ModelTemplates.CROSS,
-												TextureMapping::cross
-										)
-								))
-						)
-		);
-		blockGen.registerSimpleFlatItemModel(FItems.PINKBERRIES);
-		blockGen.blockStateOutput.accept(
-				MultiVariantGenerator.dispatch(FBlocks.PINKBERRY_BUSH)
-						.with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
-								.generate((age) -> BlockModelGenerators.plainVariant(
-										blockGen.createSuffixedVariant(
-												FBlocks.PINKBERRY_BUSH,
-												"_stage" + age,
-												ModelTemplates.CROSS,
-												TextureMapping::cross
-										)
-								))
-						)
-		);
-		blockGen.registerSimpleFlatItemModel(FItems.BLOWBERRIES);
-		blockGen.blockStateOutput.accept(
-				MultiVariantGenerator.dispatch(FBlocks.BLOWBERRY_BUSH)
-						.with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
-								.generate((age) -> BlockModelGenerators.plainVariant(
-										blockGen.createSuffixedVariant(
-												FBlocks.BLOWBERRY_BUSH,
-												"_stage" + age,
-												ModelTemplates.CROSS,
-												TextureMapping::cross
-										)
-								))
-						)
-		);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.WHITE_ORCHID,
+					FBlocks.POTTED_WHITE_ORCHID,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.YELLOW_TULIP,
+					FBlocks.POTTED_YELLOW_TULIP,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.ROUND_BUSH,
+					FBlocks.POTTED_ROUND_BUSH,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.WHITE_HIBISCUS,
+					FBlocks.POTTED_WHITE_HIBISCUS,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.YELLOW_HIBISCUS,
+					FBlocks.POTTED_YELLOW_HIBISCUS,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.WHITE_CROCUS,
+					FBlocks.POTTED_WHITE_CROCUS,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.LILAC_CROCUS,
+					FBlocks.POTTED_LILAC_CROCUS,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.PURPLE_CROCUS,
+					FBlocks.POTTED_PURPLE_CROCUS,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.LILY_OF_THE_GLADE,
+					FBlocks.POTTED_LILY_OF_THE_GLADE,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
 
-		// PEAR
-		blockGen.woodProvider(FBlocks.PEAR_LOG).logUVLocked(FBlocks.PEAR_LOG).wood(FBlocks.PEAR_WOOD);
-		blockGen.woodProvider(FBlocks.STRIPPED_PEAR_LOG).logUVLocked(FBlocks.STRIPPED_PEAR_LOG).wood(FBlocks.STRIPPED_PEAR_WOOD);
-		blockGen.createTrivialBlock(
-				FBlocks.PEAR_LEAVES, TexturedModel.LEAVES
-		);
-		blockGen.createPlantWithDefaultItem(
-				FBlocks.PEAR_SAPLING,
-				FBlocks.POTTED_PEAR_SAPLING,
-				BlockModelGenerators.PlantType.NOT_TINTED
-		);
-		blockGen.family(FBlocks.PEAR_PLANKS)
-				.stairs(FBlocks.PEAR_STAIRS)
-				.slab(FBlocks.PEAR_SLAB)
-				.fence(FBlocks.PEAR_FENCE)
-				.fenceGate(FBlocks.PEAR_FENCE_GATE)
-				.button(FBlocks.PEAR_BUTTON)
-				.pressurePlate(FBlocks.PEAR_PRESSURE_PLATE);
-		blockGen.createDoor(FBlocks.PEAR_DOOR);
-		blockGen.createOrientableTrapdoor(FBlocks.PEAR_TRAPDOOR);
-		blockGen.createShelf(FBlocks.PEAR_SHELF, FBlocks.STRIPPED_PEAR_LOG);
-		blockGen.createFlowerBed(FBlocks.WHITE_PETALS);
-		pearSign(
-				blockGen,
-				FBlocks.PEAR_SIGN,
-				FBlocks.PEAR_WALL_SIGN,
-				FBlocks.PEAR_PLANKS
-		);
-		pearHangingSign(
-				blockGen,
-				FBlocks.PEAR_HANGING_SIGN,
-				FBlocks.PEAR_WALL_HANGING_SIGN,
-				FBlocks.STRIPPED_PEAR_LOG
-		);
+			// FOOD
+			blockGen.registerSimpleFlatItemModel(FItems.BLUEBERRIES);
+			blockGen.blockStateOutput.accept(
+					MultiVariantGenerator.dispatch(FBlocks.BLUEBERRY_BUSH)
+							.with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
+									.generate((age) -> BlockModelGenerators.plainVariant(
+											blockGen.createSuffixedVariant(
+													FBlocks.BLUEBERRY_BUSH,
+													"_stage" + age,
+													ModelTemplates.CROSS,
+													TextureMapping::cross
+											)
+									))
+							)
+			);
+			blockGen.registerSimpleFlatItemModel(FItems.BLACKBERRIES);
+			blockGen.blockStateOutput.accept(
+					MultiVariantGenerator.dispatch(FBlocks.BLACKBERRY_BUSH)
+							.with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
+									.generate((age) -> BlockModelGenerators.plainVariant(
+											blockGen.createSuffixedVariant(
+													FBlocks.BLACKBERRY_BUSH,
+													"_stage" + age,
+													ModelTemplates.CROSS,
+													TextureMapping::cross
+											)
+									))
+							)
+			);
+			blockGen.registerSimpleFlatItemModel(FItems.PINKBERRIES);
+			blockGen.blockStateOutput.accept(
+					MultiVariantGenerator.dispatch(FBlocks.PINKBERRY_BUSH)
+							.with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
+									.generate((age) -> BlockModelGenerators.plainVariant(
+											blockGen.createSuffixedVariant(
+													FBlocks.PINKBERRY_BUSH,
+													"_stage" + age,
+													ModelTemplates.CROSS,
+													TextureMapping::cross
+											)
+									))
+							)
+			);
+			blockGen.registerSimpleFlatItemModel(FItems.BLOWBERRIES);
+			blockGen.blockStateOutput.accept(
+					MultiVariantGenerator.dispatch(FBlocks.BLOWBERRY_BUSH)
+							.with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
+									.generate((age) -> BlockModelGenerators.plainVariant(
+											blockGen.createSuffixedVariant(
+													FBlocks.BLOWBERRY_BUSH,
+													"_stage" + age,
+													ModelTemplates.CROSS,
+													TextureMapping::cross
+											)
+									))
+							)
+			);
 
-		// TRANSIUM
-		blockGen.createTrivialCube(FBlocks.TRANSIUM_BLOCK);
+			// JACARANDA
+			blockGen.woodProvider(FBlocks.JACARANDA_LOG).logUVLocked(FBlocks.JACARANDA_LOG).wood(FBlocks.JACARANDA_WOOD);
+			blockGen.woodProvider(FBlocks.STRIPPED_JACARANDA_LOG).logUVLocked(FBlocks.STRIPPED_JACARANDA_LOG).wood(FBlocks.STRIPPED_JACARANDA_WOOD);
+			blockGen.createTrivialBlock(
+					FBlocks.JACARANDA_LEAVES, TexturedModel.LEAVES
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.JACARANDA_SAPLING,
+					FBlocks.POTTED_JACARANDA_SAPLING,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.family(FBlocks.JACARANDA_PLANKS)
+					.stairs(FBlocks.JACARANDA_STAIRS)
+					.slab(FBlocks.JACARANDA_SLAB)
+					.fence(FBlocks.JACARANDA_FENCE)
+					.fenceGate(FBlocks.JACARANDA_FENCE_GATE)
+					.button(FBlocks.JACARANDA_BUTTON)
+					.pressurePlate(FBlocks.JACARANDA_PRESSURE_PLATE);
+			blockGen.createDoor(FBlocks.JACARANDA_DOOR);
+			blockGen.createOrientableTrapdoor(FBlocks.JACARANDA_TRAPDOOR);
+			blockGen.createShelf(FBlocks.JACARANDA_SHELF, FBlocks.STRIPPED_JACARANDA_LOG);
+			blockGen.createFlowerBed(FBlocks.PURPLE_PETALS);
+			sign(
+					blockGen,
+					FBlocks.JACARANDA_SIGN,
+					FBlocks.JACARANDA_WALL_SIGN,
+					FBlocks.JACARANDA_PLANKS
+			);
+			hangingSign(
+					blockGen,
+					FBlocks.JACARANDA_HANGING_SIGN,
+					FBlocks.JACARANDA_WALL_HANGING_SIGN,
+					FBlocks.STRIPPED_JACARANDA_LOG
+			);
 
-		// ROSE QUARTZ
-		blockGen.createTrivialCube(FBlocks.ROSE_QUARTZ_ORE);
-		blockGen.createTrivialCube(FBlocks.ROSE_QUARTZ_BLOCK);
+			// PEAR
+			blockGen.woodProvider(FBlocks.PEAR_LOG).logUVLocked(FBlocks.PEAR_LOG).wood(FBlocks.PEAR_WOOD);
+			blockGen.woodProvider(FBlocks.STRIPPED_PEAR_LOG).logUVLocked(FBlocks.STRIPPED_PEAR_LOG).wood(FBlocks.STRIPPED_PEAR_WOOD);
+			blockGen.createTrivialBlock(
+					FBlocks.PEAR_LEAVES, TexturedModel.LEAVES
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.PEAR_SAPLING,
+					FBlocks.POTTED_PEAR_SAPLING,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.family(FBlocks.PEAR_PLANKS)
+					.stairs(FBlocks.PEAR_STAIRS)
+					.slab(FBlocks.PEAR_SLAB)
+					.fence(FBlocks.PEAR_FENCE)
+					.fenceGate(FBlocks.PEAR_FENCE_GATE)
+					.button(FBlocks.PEAR_BUTTON)
+					.pressurePlate(FBlocks.PEAR_PRESSURE_PLATE);
+			blockGen.createDoor(FBlocks.PEAR_DOOR);
+			blockGen.createOrientableTrapdoor(FBlocks.PEAR_TRAPDOOR);
+			blockGen.createShelf(FBlocks.PEAR_SHELF, FBlocks.STRIPPED_PEAR_LOG);
+			blockGen.createFlowerBed(FBlocks.WHITE_PETALS);
+			sign(
+					blockGen,
+					FBlocks.PEAR_SIGN,
+					FBlocks.PEAR_WALL_SIGN,
+					FBlocks.PEAR_PLANKS
+			);
+			hangingSign(
+					blockGen,
+					FBlocks.PEAR_HANGING_SIGN,
+					FBlocks.PEAR_WALL_HANGING_SIGN,
+					FBlocks.STRIPPED_PEAR_LOG
+			);
 
-		blockGen.family(FBlocks.ROSE_QUARTZ_BRICKS)
-				.stairs(FBlocks.ROSE_QUARTZ_BRICK_STAIRS)
-				.slab(FBlocks.ROSE_QUARTZ_BRICK_SLAB)
-				.wall(FBlocks.ROSE_QUARTZ_BRICK_WALL)
-				.pressurePlate(FBlocks.ROSE_QUARTZ_PRESSURE_PLATE)
-				.button(FBlocks.ROSE_QUARTZ_BUTTON);
-		blockGen.createTrivialCube(FBlocks.CHISELED_ROSE_QUARTZ_BRICKS);
-		blockGen.createDoor(FBlocks.ROSE_QUARTZ_DOOR);
-		blockGen.createOrientableTrapdoor(FBlocks.ROSE_QUARTZ_TRAPDOOR);
-		blockGen.createBarsAndItem(FBlocks.ROSE_QUARTZ_BARS);
+			// TRANSIUM
+			blockGen.createTrivialCube(FBlocks.TRANSIUM_BLOCK);
+
+			// ROSE QUARTZ
+			blockGen.createTrivialCube(FBlocks.ROSE_QUARTZ_ORE);
+			blockGen.createTrivialCube(FBlocks.ROSE_QUARTZ_BLOCK);
+
+			blockGen.family(FBlocks.ROSE_QUARTZ_BRICKS)
+					.stairs(FBlocks.ROSE_QUARTZ_BRICK_STAIRS)
+					.slab(FBlocks.ROSE_QUARTZ_BRICK_SLAB)
+					.wall(FBlocks.ROSE_QUARTZ_BRICK_WALL)
+					.pressurePlate(FBlocks.ROSE_QUARTZ_PRESSURE_PLATE)
+					.button(FBlocks.ROSE_QUARTZ_BUTTON);
+			blockGen.createTrivialCube(FBlocks.CHISELED_ROSE_QUARTZ_BRICKS);
+			blockGen.createDoor(FBlocks.ROSE_QUARTZ_DOOR);
+			blockGen.createOrientableTrapdoor(FBlocks.ROSE_QUARTZ_TRAPDOOR);
+			blockGen.createBarsAndItem(FBlocks.ROSE_QUARTZ_BARS);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void generateItemModels(ItemModelGenerators itemGen) {
-		// FOOD
-		itemGen.generateFlatItem(
-				FItems.CHERRY, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.BANANA, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ORANGE, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.PEAR, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.CHOCOLATE_DIPPED_PEAR, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ENCHANTED_GOLDEN_PEAR, FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
+		try {
+			// FOOD
+			itemGen.generateFlatItem(
+					FItems.CHERRY, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.BANANA, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ORANGE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.CHOCOLATE_DIPPED_PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ENCHANTED_GOLDEN_PEAR, FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
 
-		itemGen.generateFlatItem(
-				FItems.CHOCOLATE_BOTTLE, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.BERRY_JUICE_BOTTLE, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.MILKSHAKE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.CHOCOLATE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.BERRY_JUICE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.MILKSHAKE_BOTTLE, ModelTemplates.FLAT_ITEM);
 
-		itemGen.generateFlatItem(
-				FItems.COCOA_BUTTER, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.CHOCOLATE, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.CHOCOLATE_BAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.COCOA_BUTTER, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.CHOCOLATE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.CHOCOLATE_BAR, ModelTemplates.FLAT_ITEM);
 
-		itemGen.generateFlatItem(
-				FItems.FRUIT_SALAD, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ICE_CREAM, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.CHOCOLATE_ICE_CREAM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.FRUIT_SALAD, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ICE_CREAM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.CHOCOLATE_ICE_CREAM, ModelTemplates.FLAT_ITEM);
 
-		// PEAR
-		itemGen.generateFlatItem(
-				FItems.PEAR_BOAT, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.PEAR_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+			// JACARANDA
+			itemGen.generateFlatItem(
+					FItems.JACARANDA_BOAT, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.JACARANDA_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
-		// TRANSIUM
-		itemGen.generateFlatItem(
-				FItems.TRANSIUM, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.TRANSIUM_DYE, ModelTemplates.FLAT_ITEM);
+			// PEAR
+			itemGen.generateFlatItem(
+					FItems.PEAR_BOAT, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.PEAR_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
-		itemGen.generateFlatItem(
-				FItems.TRANSIUM_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.TRANSIUM_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.TRANSIUM_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.TRANSIUM_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.TRANSIUM_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.TRANSIUM_SPEAR, ModelTemplates.FLAT_HANDHELD_ITEM);
+			// TRANSIUM
+			itemGen.generateFlatItem(
+					FItems.TRANSIUM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.TRANSIUM_DYE, ModelTemplates.FLAT_ITEM);
 
-		itemGen.generateTrimmableArmorSet(
-				FItems.TRANSIUM_HELMET,
-				FItems.TRANSIUM_CHESTPLATE,
-				FItems.TRANSIUM_LEGGINGS,
-				FItems.TRANSIUM_BOOTS,
-				false,
-				Map.of()
-		);
+			itemGen.generateFlatItem(
+					FItems.TRANSIUM_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.TRANSIUM_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.TRANSIUM_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.TRANSIUM_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.TRANSIUM_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.TRANSIUM_SPEAR, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-		// ROSE QUARTZ
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_SHARD, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_FRAGMENT, ModelTemplates.FLAT_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateTrimmableArmorSet(
+					FItems.TRANSIUM_HELMET,
+					FItems.TRANSIUM_CHESTPLATE,
+					FItems.TRANSIUM_LEGGINGS,
+					FItems.TRANSIUM_BOOTS,
+					false,
+					Map.of()
+			);
 
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.ROSE_QUARTZ_SPEAR, ModelTemplates.FLAT_HANDHELD_ITEM);
+			// ROSE QUARTZ
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_SHARD, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_FRAGMENT, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
 
-		Identifier vanillaShieldModelLocation =
-				ModelLocationUtils.getModelLocation(Items.SHIELD);
-		Identifier modelLocation =
-				ModelLocationUtils.getModelLocation(FItems.ROSE_QUARTZ_SHIELD);
-		ModelTemplate shieldTemplate =
-				new ModelTemplate(
-						Optional.of(vanillaShieldModelLocation),
-						Optional.empty(),
-						TextureSlot.PARTICLE);
-		shieldTemplate.create(modelLocation, TextureMapping.singleSlot(
-				TextureSlot.PARTICLE,
-				new Material(ModelLocationUtils.getModelLocation(
-						Blocks.CHERRY_PLANKS))), itemGen.modelOutput
-		);
-		ModelTemplate blockingShieldTemplate =
-				new ModelTemplate(Optional.of(
-						vanillaShieldModelLocation.withSuffix("_blocking")),
-						Optional.empty(), TextureSlot.PARTICLE);
-		blockingShieldTemplate.create(
-				modelLocation.withSuffix("_blocking"),
-				TextureMapping.singleSlot(
-						TextureSlot.PARTICLE,
-						new Material(ModelLocationUtils.getModelLocation(
-								Blocks.CHERRY_PLANKS))), itemGen.modelOutput
-		);
-		FRoseQuartzShieldSpecialRenderer.Unbaked specialRenderer =
-				new FRoseQuartzShieldSpecialRenderer.Unbaked(
-						F.id("rose_quartz_shield_base"),
-						F.id("rose_quartz_shield_base_nopattern")
-				);
-		itemGen.itemModelOutput.accept(
-				FItems.ROSE_QUARTZ_SHIELD,
-				ItemModelUtils.conditional(
-						FRoseQuartzShieldSpecialRenderer.DEFAULT_TRANSFORMATION,
-						ItemModelUtils.isUsingItem(),
-						ItemModelUtils.specialModel(
-								modelLocation.withSuffix("_blocking"), specialRenderer
-						),
-						ItemModelUtils.specialModel(modelLocation, specialRenderer)
-				)
-		);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.ROSE_QUARTZ_SPEAR, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-		itemGen.generateTrimmableArmorSet(
-				FItems.ROSE_QUARTZ_HELMET,
-				FItems.ROSE_QUARTZ_CHESTPLATE,
-				FItems.ROSE_QUARTZ_LEGGINGS,
-				FItems.ROSE_QUARTZ_BOOTS,
-				false,
-				Map.of()
-		);
+			Identifier vanillaShieldModelLocation =
+					ModelLocationUtils.getModelLocation(Items.SHIELD);
+			Identifier modelLocation =
+					ModelLocationUtils.getModelLocation(FItems.ROSE_QUARTZ_SHIELD);
+			ModelTemplate shieldTemplate =
+					new ModelTemplate(
+							Optional.of(vanillaShieldModelLocation),
+							Optional.empty(),
+							TextureSlot.PARTICLE);
+			shieldTemplate.create(modelLocation, TextureMapping.singleSlot(
+					TextureSlot.PARTICLE,
+					new Material(ModelLocationUtils.getModelLocation(
+							Blocks.CHERRY_PLANKS))), itemGen.modelOutput
+			);
+			ModelTemplate blockingShieldTemplate =
+					new ModelTemplate(Optional.of(
+							vanillaShieldModelLocation.withSuffix("_blocking")),
+							Optional.empty(), TextureSlot.PARTICLE);
+			blockingShieldTemplate.create(
+					modelLocation.withSuffix("_blocking"),
+					TextureMapping.singleSlot(
+							TextureSlot.PARTICLE,
+							new Material(ModelLocationUtils.getModelLocation(
+									Blocks.CHERRY_PLANKS))), itemGen.modelOutput
+			);
+			FRoseQuartzShieldSpecialRenderer.Unbaked specialRenderer =
+					new FRoseQuartzShieldSpecialRenderer.Unbaked(
+							F.id("rose_quartz_shield_base"),
+							F.id("rose_quartz_shield_base_nopattern")
+					);
+			itemGen.itemModelOutput.accept(
+					FItems.ROSE_QUARTZ_SHIELD,
+					ItemModelUtils.conditional(
+							FRoseQuartzShieldSpecialRenderer.DEFAULT_TRANSFORMATION,
+							ItemModelUtils.isUsingItem(),
+							ItemModelUtils.specialModel(
+									modelLocation.withSuffix("_blocking"), specialRenderer
+							),
+							ItemModelUtils.specialModel(modelLocation, specialRenderer)
+					)
+			);
 
-		// GOLEM HEADS
-		itemGen.generateFlatItem(
-				FItems.GOLEM_SPAWN_EGG_AMETHYST, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.GOLEM_SPAWN_EGG_COAL, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.GOLEM_SPAWN_EGG_DIAMOND, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.GOLEM_SPAWN_EGG_EMERALD, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.GOLEM_SPAWN_EGG_GOLD, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.GOLEM_SPAWN_EGG_LAPIS, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.GOLEM_SPAWN_EGG_NETHERITE, ModelTemplates.FLAT_HANDHELD_ITEM);
-		itemGen.generateFlatItem(
-				FItems.GOLEM_SPAWN_EGG_REDSTONE, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateTrimmableArmorSet(
+					FItems.ROSE_QUARTZ_HELMET,
+					FItems.ROSE_QUARTZ_CHESTPLATE,
+					FItems.ROSE_QUARTZ_LEGGINGS,
+					FItems.ROSE_QUARTZ_BOOTS,
+					false,
+					Map.of()
+			);
+
+			// GOLEM HEADS
+			itemGen.generateFlatItem(
+					FItems.GOLEM_SPAWN_EGG_AMETHYST, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.GOLEM_SPAWN_EGG_COAL, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.GOLEM_SPAWN_EGG_DIAMOND, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.GOLEM_SPAWN_EGG_EMERALD, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.GOLEM_SPAWN_EGG_GOLD, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.GOLEM_SPAWN_EGG_LAPIS, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.GOLEM_SPAWN_EGG_NETHERITE, ModelTemplates.FLAT_HANDHELD_ITEM);
+			itemGen.generateFlatItem(
+					FItems.GOLEM_SPAWN_EGG_REDSTONE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	private void pearSign(BlockModelGenerators gen, Block sign, Block wallSign, Block particle) {
+	private void sign(BlockModelGenerators gen, Block sign, Block wallSign, Block particle) {
 		TextureMapping mapping = new TextureMapping()
 				.put(TextureSlot.ALL, TextureMapping.getBlockTexture(sign))
 				.put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(particle));
@@ -382,7 +449,7 @@ public class FModelProvider extends FabricModelProvider {
 		gen.registerSimpleFlatItemModel(sign.asItem());
 	}
 
-	private void pearHangingSign(BlockModelGenerators gen, Block hanging, Block wallHanging, Block particle) {
+	private void hangingSign(BlockModelGenerators gen, Block hanging, Block wallHanging, Block particle) {
 		TextureMapping mapping = new TextureMapping()
 				.put(TextureSlot.ALL, TextureMapping.getBlockTexture(hanging))
 				.put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(particle));

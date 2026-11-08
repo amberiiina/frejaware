@@ -37,10 +37,15 @@ public class FCreativeTabs {
 					Registries.CREATIVE_MODE_TAB,
 					F.id("flowers")
 			);
-	public static final ResourceKey<CreativeModeTab> PEAR_MEADOW_TAB_KEY =
+	public static final ResourceKey<CreativeModeTab> WOOD_TAB_KEY =
 			ResourceKey.create(
 					Registries.CREATIVE_MODE_TAB,
-					F.id("pear_meadow")
+					F.id("wood")
+			);
+	public static final ResourceKey<CreativeModeTab> JACARANDA_GLADE_TAB_KEY =
+			ResourceKey.create(
+					Registries.CREATIVE_MODE_TAB,
+					F.id("jacaranda_glade")
 			);
 
 	// ----------------------
@@ -52,6 +57,9 @@ public class FCreativeTabs {
 					.icon(() -> new ItemStack(FBlocks.GOLEM_HEAD_DIAMOND))
 					.title(Component.translatable("creativetab.frejaware"))
 					.displayItems((params, output) -> {
+						// DIVERSE
+						output.accept(FBlocks.IRON_BELL);
+
 						// METAL BLOCKS
 						output.accept(FBlocks.TRANSIUM_BLOCK);
 
@@ -152,28 +160,33 @@ public class FCreativeTabs {
 					.icon(() -> new ItemStack(FItems.PEAR))
 					.title(Component.translatable("creativetab.food"))
 					.displayItems((params, output) -> {
-						output.accept(FItems.PEAR);
-						output.accept(FItems.GOLDEN_PEAR);
-						output.accept(FItems.ENCHANTED_GOLDEN_PEAR);
+						//  FRUITS
 						output.accept(FItems.CHERRY);
 						output.accept(FItems.BANANA);
 						output.accept(FItems.ORANGE);
+						output.accept(FItems.PEAR);
+						output.accept(FItems.GOLDEN_PEAR);
+						output.accept(FItems.ENCHANTED_GOLDEN_PEAR);
 
-						output.accept(FItems.CHOCOLATE_BOTTLE);
-						output.accept(FItems.MILK_BOTTLE);
-						output.accept(FItems.BERRY_JUICE_BOTTLE);
-						output.accept(FItems.MILKSHAKE_BOTTLE);
-
-						output.accept(FItems.COCOA_BUTTER);
-						output.accept(FItems.CHOCOLATE);
-						output.accept(FItems.CHOCOLATE_BAR);
-						output.accept(FItems.CHOCOLATE_DIPPED_PEAR);
-
+						// BERRIES
 						output.accept(FItems.BLACKBERRIES);
 						output.accept(FItems.BLOWBERRIES);
 						output.accept(FItems.BLUEBERRIES);
 						output.accept(FItems.PINKBERRIES);
 
+						// CHOCOLATE
+						output.accept(FItems.COCOA_BUTTER);
+						output.accept(FItems.CHOCOLATE);
+						output.accept(FItems.CHOCOLATE_BAR);
+						output.accept(FItems.CHOCOLATE_DIPPED_PEAR);
+
+						// BOTTLES
+						output.accept(FItems.CHOCOLATE_BOTTLE);
+						output.accept(FItems.MILK_BOTTLE);
+						output.accept(FItems.BERRY_JUICE_BOTTLE);
+						output.accept(FItems.MILKSHAKE_BOTTLE);
+
+						// BOWLS
 						output.accept(FItems.FRUIT_SALAD);
 						output.accept(FItems.ICE_CREAM);
 						output.accept(FItems.CHOCOLATE_ICE_CREAM);
@@ -189,13 +202,18 @@ public class FCreativeTabs {
 					.icon(() -> new ItemStack(FBlocks.WHITE_ORCHID))
 					.title(Component.translatable("creativetab.flowers"))
 					.displayItems((params, output) -> {
+						output.accept(FBlocks.ROUND_BUSH);
+
 						output.accept(FBlocks.WHITE_CACTUS_FLOWER);
 						output.accept(FBlocks.YELLOW_CACTUS_FLOWER);
+
+						// PEAR MEADOW
 						output.accept(FBlocks.WHITE_ORCHID);
 						output.accept(FBlocks.YELLOW_TULIP);
-						output.accept(FBlocks.ROUND_BUSH);
 						output.accept(FBlocks.WHITE_HIBISCUS);
 						output.accept(FBlocks.YELLOW_HIBISCUS);
+
+						// JACARANDA GLADE
 						output.accept(FBlocks.WHITE_CROCUS);
 						output.accept(FBlocks.LILAC_CROCUS);
 						output.accept(FBlocks.PURPLE_CROCUS);
@@ -204,14 +222,15 @@ public class FCreativeTabs {
 					.build();
 
 	// ----------------------
-	// PEAR MEADOW
+	// WOOD
 	// ----------------------
 
-	public static final CreativeModeTab PEAR_MEADOW_TAB =
+	public static final CreativeModeTab WOOD_TAB =
 			FabricCreativeModeTab.builder()
 					.icon(() -> new ItemStack(FBlocks.PEAR_SAPLING))
-					.title(Component.translatable("creativetab.pear_meadow"))
+					.title(Component.translatable("creativetab.wood"))
 					.displayItems((params, output) -> {
+						// PEAR
 						output.accept(FBlocks.PEAR_LOG);
 						output.accept(FBlocks.STRIPPED_PEAR_LOG);
 						output.accept(FBlocks.PEAR_WOOD);
@@ -236,6 +255,32 @@ public class FCreativeTabs {
 						output.accept(FItems.PEAR_HANGING_SIGN);
 						output.accept(FItems.PEAR_BOAT);
 						output.accept(FItems.PEAR_CHEST_BOAT);
+
+						// JACARANDA
+						output.accept(FBlocks.JACARANDA_LOG);
+						output.accept(FBlocks.STRIPPED_JACARANDA_LOG);
+						output.accept(FBlocks.JACARANDA_WOOD);
+						output.accept(FBlocks.STRIPPED_JACARANDA_WOOD);
+
+						output.accept(FBlocks.JACARANDA_LEAVES);
+						output.accept(FBlocks.PURPLE_PETALS);
+						output.accept(FBlocks.JACARANDA_SAPLING);
+
+						output.accept(FBlocks.JACARANDA_PLANKS);
+						output.accept(FBlocks.JACARANDA_STAIRS);
+						output.accept(FBlocks.JACARANDA_SLAB);
+						output.accept(FBlocks.JACARANDA_FENCE);
+						output.accept(FBlocks.JACARANDA_FENCE_GATE);
+						output.accept(FBlocks.JACARANDA_DOOR);
+						output.accept(FBlocks.JACARANDA_TRAPDOOR);
+						output.accept(FBlocks.JACARANDA_BUTTON);
+						output.accept(FBlocks.JACARANDA_PRESSURE_PLATE);
+						output.accept(FBlocks.JACARANDA_SHELF);
+
+						output.accept(FItems.JACARANDA_SIGN);
+						output.accept(FItems.JACARANDA_HANGING_SIGN);
+						output.accept(FItems.JACARANDA_BOAT);
+						output.accept(FItems.JACARANDA_CHEST_BOAT);
 					})
 					.build();
 
@@ -266,8 +311,8 @@ public class FCreativeTabs {
 		);
 		Registry.register(
 				BuiltInRegistries.CREATIVE_MODE_TAB,
-				PEAR_MEADOW_TAB_KEY,
-				PEAR_MEADOW_TAB
+				WOOD_TAB_KEY,
+				WOOD_TAB
 		);
 	}
 }

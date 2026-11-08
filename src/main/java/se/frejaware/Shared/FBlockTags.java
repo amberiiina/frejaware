@@ -18,16 +18,16 @@ public class FBlockTags {
 			F.id("other_flowers")
 	);
 
+	// JACARANDA
+	public static final TagKey<Block> JACARANDA_LOGS = TagKey.create(
+			Registries.BLOCK,
+			F.id("jacaranda_logs")
+	);
+
 	// PEAR
 	public static final TagKey<Block> PEAR_LOGS = TagKey.create(
 			Registries.BLOCK,
 			F.id("pear_logs")
-	);
-
-	// TRANSIUM
-	public static final TagKey<Block> INCORRECT_FOR_TRANSIUM_TOOL = TagKey.create(
-			Registries.BLOCK,
-			F.id("incorrect_for_transium_tool")
 	);
 
 	// ROSE QUARTZ

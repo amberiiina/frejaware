@@ -2,6 +2,8 @@ package se.frejaware.Items;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -20,7 +22,7 @@ public class FMaterials {
 
 	// TRANSIUM
 	public static final ToolMaterial TRANSIUM_TOOL_MATERIAL = new ToolMaterial(
-			FBlockTags.INCORRECT_FOR_TRANSIUM_TOOL,
+			BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
 			1561,
 			8.0F,
 			3.0F,

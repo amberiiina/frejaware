@@ -38,6 +38,24 @@ public class FEntityTypes {
 	// ENTITY TYPES
 	// ----------------------
 
+	// JACARANDA
+	public static final EntityType<Boat> JACARANDA_BOAT = register(
+			FEntityTypeIds.JACARANDA_BOAT,
+			EntityType.Builder.of(boatFactory(() -> FItems.JACARANDA_BOAT), MobCategory.MISC)
+					.noLootTable()
+					.sized(1.375F, 0.5625F)
+					.eyeHeight(0.5625F)
+					.clientTrackingRange(10)
+	);
+	public static final EntityType<ChestBoat> JACARANDA_CHEST_BOAT = register(
+			FEntityTypeIds.JACARANDA_CHEST_BOAT,
+			EntityType.Builder.of(chestBoatFactory(() -> FItems.JACARANDA_CHEST_BOAT), MobCategory.MISC)
+					.noLootTable()
+					.sized(1.375F, 0.5625F)
+					.eyeHeight(0.5625F)
+					.clientTrackingRange(10)
+	);
+
 	// PEAR
 	public static final EntityType<Boat> PEAR_BOAT = register(
 			FEntityTypeIds.PEAR_BOAT,

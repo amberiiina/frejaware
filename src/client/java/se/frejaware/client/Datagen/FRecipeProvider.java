@@ -41,6 +41,14 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				// MOLLY
 				// ----------------------
 
+				shaped(RecipeCategory.MISC, FBlocks.IRON_BELL)
+						.pattern("LLL")
+						.pattern(" I ")
+						.define('L', ItemTags.LOGS)
+						.define('I', Items.IRON_BLOCK)
+						.unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
+						.save(output);
+
 				combineTwoDecorations(FBlocks.WHITE_CACTUS_FLOWER,
 						Items.CACTUS_FLOWER, Items.DYE.white());
 				combineTwoDecorations(FBlocks.YELLOW_CACTUS_FLOWER,
@@ -153,6 +161,43 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				combineTwoFood(FItems.CHOCOLATE_ICE_CREAM,
 						FItems.ICE_CREAM, FItems.CHOCOLATE,
 						"chocolate_ice_cream_from_ice_cream");
+
+				// ----------------------
+				// JACARANDA
+				// ----------------------
+
+				woodFromLogs(FBlocks.JACARANDA_WOOD, FBlocks.JACARANDA_LOG);
+				woodFromLogs(FBlocks.STRIPPED_JACARANDA_WOOD, FBlocks.STRIPPED_JACARANDA_LOG);
+				woodenBoat(FItems.JACARANDA_BOAT, FBlocks.JACARANDA_PLANKS);
+				chestBoat(FItems.JACARANDA_CHEST_BOAT, FItems.JACARANDA_BOAT);
+				buttonBuilder(FBlocks.JACARANDA_BUTTON, Ingredient.of(FBlocks.JACARANDA_PLANKS))
+						.unlockedBy(getHasName(FBlocks.JACARANDA_PLANKS), has(FBlocks.JACARANDA_PLANKS))
+						.save(output);
+				doorBuilder(FBlocks.JACARANDA_DOOR, Ingredient.of(FBlocks.JACARANDA_PLANKS))
+						.unlockedBy(getHasName(FBlocks.JACARANDA_PLANKS), has(FBlocks.JACARANDA_PLANKS))
+						.save(output);
+				fenceBuilder(FBlocks.JACARANDA_FENCE, Ingredient.of(FBlocks.JACARANDA_PLANKS))
+						.unlockedBy(getHasName(FBlocks.JACARANDA_PLANKS), has(FBlocks.JACARANDA_PLANKS))
+						.save(output);
+				fenceGateBuilder(FBlocks.JACARANDA_FENCE_GATE, Ingredient.of(FBlocks.JACARANDA_PLANKS))
+						.unlockedBy(getHasName(FBlocks.JACARANDA_PLANKS), has(FBlocks.JACARANDA_PLANKS))
+						.save(output);
+				signBuilder(FBlocks.JACARANDA_SIGN, Ingredient.of(FBlocks.JACARANDA_PLANKS))
+						.unlockedBy(getHasName(FBlocks.JACARANDA_PLANKS), has(FBlocks.JACARANDA_PLANKS))
+						.save(output);
+				hangingSignBuilder(FBlocks.JACARANDA_HANGING_SIGN, Ingredient.of(FBlocks.STRIPPED_JACARANDA_LOG))
+						.unlockedBy(getHasName(FBlocks.JACARANDA_PLANKS), has(FBlocks.STRIPPED_JACARANDA_LOG))
+						.save(output);
+				shelf(FBlocks.JACARANDA_SHELF, FBlocks.STRIPPED_JACARANDA_LOG);
+				planksFromLog(FBlocks.JACARANDA_PLANKS, FItemTags.JACARANDA_LOGS, 4);
+				pressurePlate(FBlocks.JACARANDA_PRESSURE_PLATE, FBlocks.JACARANDA_PLANKS);
+				slab(RecipeCategory.BUILDING_BLOCKS, FBlocks.JACARANDA_SLAB, FBlocks.JACARANDA_PLANKS);
+				stairBuilder(FBlocks.JACARANDA_STAIRS, Ingredient.of(FBlocks.JACARANDA_PLANKS))
+						.unlockedBy(getHasName(FBlocks.JACARANDA_PLANKS), has(FBlocks.JACARANDA_PLANKS))
+						.save(output);
+				trapdoorBuilder(FBlocks.JACARANDA_TRAPDOOR,  Ingredient.of(FBlocks.JACARANDA_PLANKS))
+						.unlockedBy(getHasName(FBlocks.JACARANDA_PLANKS), has(FBlocks.JACARANDA_PLANKS))
+						.save(output);
 
 				// ----------------------
 				// PEAR

@@ -20,15 +20,20 @@ public class FBiomeTagsProvider extends FabricTagsProvider<Biome> {
 	@Override
 	protected void addTags(HolderLookup.Provider registries) {
 		builder(ConventionalBiomeTags.IS_OVERWORLD)
-				.add(FBiomes.PEAR_MEADOW);
+				.add(FBiomes.PEAR_MEADOW)
+				.add(FBiomes.JACARANDA_GLADE);
 		builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD)
-				.add(FBiomes.PEAR_MEADOW);
+				.add(FBiomes.PEAR_MEADOW)
+				.add(FBiomes.JACARANDA_GLADE);
 		builder(ConventionalBiomeTags.PRIMARY_WOOD_TYPE)
-				.add(FBiomes.PEAR_MEADOW);
+				.add(FBiomes.PEAR_MEADOW)
+				.add(FBiomes.JACARANDA_GLADE);
 		builder(ConventionalBiomeTags.IS_DECIDUOUS_TREE)
-				.add(FBiomes.PEAR_MEADOW);
+				.add(FBiomes.PEAR_MEADOW)
+				.add(FBiomes.JACARANDA_GLADE);
 		builder(ConventionalBiomeTags.IS_FLORAL)
-				.add(FBiomes.PEAR_MEADOW);
+				.add(FBiomes.PEAR_MEADOW)
+				.add(FBiomes.JACARANDA_GLADE);
 	}
 
 	@Override

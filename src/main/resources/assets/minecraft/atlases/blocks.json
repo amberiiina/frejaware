@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "frejaware:entity/iron_bell/iron_bell_body"
+    }
+  ]
+}

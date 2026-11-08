@@ -36,6 +36,13 @@ public class FPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> PEAR_MEADOW_BUSHES_PLACED_KEY =
 			create("pear_meadow_bushes_placed");
 
+	public static final ResourceKey<PlacedFeature> JACARANDA_TREE_PLACED_KEY =
+			create("jacaranda_tree_placed");
+	public static final ResourceKey<PlacedFeature> JACARANDA_GLADE_PETALS_PLACED_KEY =
+			create("jacaranda_glade_petals_placed");
+	public static final ResourceKey<PlacedFeature> JACARANDA_GLADE_FLOWERS_PLACED_KEY =
+			create("jacaranda_glade_flowers_placed");
+
 	public static void configure(BootstrapContext<PlacedFeature> context) {
 		HolderGetter<Feature> features = context.lookup(Registries.FEATURE);
 
@@ -51,8 +58,8 @@ public class FPlacedFeatures {
 		);
 
 		// PEAR TREE
-		List<PlacementModifier> pearTreeModifiers = List.of(
-				CountPlacement.of(2),
+		List<PlacementModifier> pearTreeCherryModifiers = List.of(
+				RarityFilter.onAverageOnceEvery(2),
 				InSquarePlacement.spread(),
 				SurfaceWaterDepthFilter.forMaxDepth(0),
 				PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
@@ -61,8 +68,9 @@ public class FPlacedFeatures {
 						BlockPredicate.wouldSurvive(FBlocks.PEAR_SAPLING)
 				)
 		);
-		List<PlacementModifier> pearTreeCherryModifiers = List.of(
-				RarityFilter.onAverageOnceEvery(2),
+
+		List<PlacementModifier> pearTreeModifiers = List.of(
+				CountPlacement.of(2),
 				InSquarePlacement.spread(),
 				SurfaceWaterDepthFilter.forMaxDepth(0),
 				PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
@@ -108,7 +116,6 @@ public class FPlacedFeatures {
 				BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)
 		);
 		List<PlacementModifier> pearMeadowBushesModifiers = List.of(
-				RarityFilter.onAverageOnceEvery(4),
 				InSquarePlacement.spread(),
 				PlacementUtils.HEIGHTMAP,
 				BiomeFilter.biome(),
@@ -117,7 +124,38 @@ public class FPlacedFeatures {
 				BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)
 		);
 
-		// REGISTER
+		// JACARANDA
+		List<PlacementModifier> jacarandaTreeModifiers = List.of(
+				CountPlacement.of(2),
+				InSquarePlacement.spread(),
+				SurfaceWaterDepthFilter.forMaxDepth(0),
+				PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+				BiomeFilter.biome(),
+				BlockPredicateFilter.forPredicate(
+						BlockPredicate.wouldSurvive(FBlocks.JACARANDA_SAPLING)
+				)
+		);
+		List<PlacementModifier> jacarandaMeadowPetalsModifiers = List.of(
+				NoiseThresholdCountPlacement.of(-0.8, 5, 10),
+				InSquarePlacement.spread(),
+				PlacementUtils.HEIGHTMAP,
+				BiomeFilter.biome(),
+				CountPlacement.of(72),
+				OffsetPlacement.ofTriangle(6, 2),
+				BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)
+		);
+		List<PlacementModifier> jacarandaGladeFlowersModifiers = List.of(
+				CountPlacement.of(3),
+				RarityFilter.onAverageOnceEvery(2),
+				InSquarePlacement.spread(),
+				PlacementUtils.HEIGHTMAP,
+				BiomeFilter.biome(),
+				CountPlacement.of(96),
+				OffsetPlacement.ofTriangle(6, 2),
+				BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)
+		);
+
+		// ROSE QUARTZ
 		context.register(
 				ROSE_QUARTZ_ORE_VEIN_PLACED_KEY,
 				new PlacedFeature(
@@ -126,54 +164,67 @@ public class FPlacedFeatures {
 				)
 		);
 
-		context.register(
-				PEAR_TREE_CHERRY_PLACED_KEY,
+		// PEAR
+		context.register(PEAR_TREE_CHERRY_PLACED_KEY,
 				new PlacedFeature(
 						features.getOrThrow(FFeatures.PEAR_TREE_FEATURE_KEY),
 						pearTreeCherryModifiers
 				)
 		);
-
-		context.register(
-				PEAR_TREE_PLACED_KEY,
+		context.register(PEAR_TREE_PLACED_KEY,
 				new PlacedFeature(
 						features.getOrThrow(FFeatures.PEAR_TREE_FEATURE_KEY),
 						pearTreeModifiers
 				)
 		);
-		context.register(
-				PEAR_MEADOW_PETALS_PLACED_KEY,
+		context.register(PEAR_MEADOW_PETALS_PLACED_KEY,
 				new PlacedFeature(
 						features.getOrThrow(FFeatures.PEAR_MEADOW_PETALS_FEATURE_KEY),
 						pearMeadowPetalsModifiers
 				)
 		);
-		context.register(
-				PEAR_MEADOW_WILDFLOWERS_PLACED_KEY,
+		context.register(PEAR_MEADOW_WILDFLOWERS_PLACED_KEY,
 				new PlacedFeature(
 						features.getOrThrow(FFeatures.PEAR_MEADOW_WILDFLOWERS_FEATURE_KEY),
 						pearMeadowWildflowersModifiers
 				)
 		);
-		context.register(
-				PEAR_MEADOW_FLOWERS_PLACED_KEY,
+		context.register(PEAR_MEADOW_FLOWERS_PLACED_KEY,
 				new PlacedFeature(
 						features.getOrThrow(FFeatures.PEAR_MEADOW_FLOWERS_FEATURE_KEY),
 						pearMeadowFlowersModifiers
 				)
 		);
-		context.register(
-				PEAR_MEADOW_BUSH_PLACED_KEY,
+		context.register(PEAR_MEADOW_BUSH_PLACED_KEY,
 				new PlacedFeature(
 						features.getOrThrow(VegetationFeatures.BUSH),
 						pearMeadowBushModifiers
 				)
 		);
-		context.register(
-				PEAR_MEADOW_BUSHES_PLACED_KEY,
+		context.register(PEAR_MEADOW_BUSHES_PLACED_KEY,
 				new PlacedFeature(
 						features.getOrThrow(FFeatures.PEAR_MEADOW_BUSHES_FEATURE_KEY),
 						pearMeadowBushesModifiers
+				)
+		);
+
+		// JACARANDA
+		context.register(JACARANDA_TREE_PLACED_KEY,
+				new PlacedFeature(
+						features.getOrThrow(FFeatures.JACARANDA_TREE_FEATURE_KEY),
+						jacarandaTreeModifiers
+				)
+		);
+		context.register(JACARANDA_GLADE_PETALS_PLACED_KEY,
+				new PlacedFeature(
+						features.getOrThrow(FFeatures.JACARANDA_GLADE_PETALS_FEATURE_KEY),
+						jacarandaMeadowPetalsModifiers
+				)
+		);
+		context.register(JACARANDA_GLADE_FLOWERS_PLACED_KEY,
+				new PlacedFeature(
+						features.getOrThrow(FFeatures.JACARANDA_GLADE_FLOWERS_FEATURE_KEY),
+						jacarandaGladeFlowersModifiers
 				)
 		);
 	}

@@ -30,7 +30,7 @@ public abstract class FSplashMixin {
 	) {
 		List<Component> customSplashes = new ArrayList<>(this.splashes);
 
-		customSplashes.add(Component.literal("Trans rights! 🏳️‍⚧️"));
+		customSplashes.add(Component.literal("Trans rights! ️"));
 
 		this.splashes = List.copyOf(customSplashes);
 	}

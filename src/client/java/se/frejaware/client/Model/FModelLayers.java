@@ -12,6 +12,14 @@ public class FModelLayers {
 	// MODEL LAYERS
 	// ----------------------
 
+	public static final ModelLayerLocation IRON_BELL =
+			create("iron_bell/iron_bell_body");
+
+	public static final ModelLayerLocation JACARANDA_BOAT =
+			create("boat/jacaranda");
+	public static final ModelLayerLocation JACARANDA_CHEST_BOAT =
+			create("chest_boat/jacaranda");
+
 	public static final ModelLayerLocation PEAR_BOAT =
 			create("boat/pear");
 	public static final ModelLayerLocation PEAR_CHEST_BOAT =
@@ -34,6 +42,21 @@ public class FModelLayers {
 	}
 
 	public static void registerModelLayers() {
+		SpecialModelRenderers.ID_MAPPER.put(
+				F.id("iron_bell"),
+				FIronBellSpecialRenderer.Unbaked.MAP_CODEC
+		);
+		ModelLayerRegistry.registerModelLayer(
+				IRON_BELL, FIronBellModel::createBodyLayer
+		);
+
+		ModelLayerRegistry.registerModelLayer(
+				JACARANDA_BOAT, BoatModel::createBoatModel
+		);
+		ModelLayerRegistry.registerModelLayer(
+				JACARANDA_CHEST_BOAT, BoatModel::createChestBoatModel
+		);
+
 		ModelLayerRegistry.registerModelLayer(
 				PEAR_BOAT, BoatModel::createBoatModel
 		);

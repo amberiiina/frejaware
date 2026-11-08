@@ -32,6 +32,12 @@ public class FItemIds {
 	public static final ResourceKey<Item> ICE_CREAM = create("ice_cream");
 	public static final ResourceKey<Item> CHOCOLATE_ICE_CREAM = create("chocolate_ice_cream");
 
+	// JACARANDA
+	public static final ResourceKey<Item> JACARANDA_BOAT = create(
+			"jacaranda_boat");
+	public static final ResourceKey<Item> JACARANDA_CHEST_BOAT = create(
+			"jacaranda_chest_boat");
+
 	// PEAR
 	public static final ResourceKey<Item> PEAR_BOAT = create(
 			"pear_boat");

@@ -12,6 +12,8 @@ public class FBlockItemIds {
 	// ----------------------
 
 	// MOLLY
+	public static final BlockItemId IRON_BELL = create("iron_bell");
+
 	public static final BlockItemId WHITE_CACTUS_FLOWER = create("white_cactus_flower");
 	public static final BlockItemId YELLOW_CACTUS_FLOWER = create("yellow_cactus_flower");
 	public static final BlockItemId WHITE_ORCHID = create("white_orchid");
@@ -24,10 +26,35 @@ public class FBlockItemIds {
 	public static final BlockItemId PURPLE_CROCUS = create("purple_crocus");
 	public static final BlockItemId LILY_OF_THE_GLADE = create("lily_of_the_glade");
 
+	// FOOD
 	public static final BlockItemId BLUEBERRY_CROP = create("blueberry_crop");
 	public static final BlockItemId BLACKBERRY_CROP = create("blackberry_crop");
 	public static final BlockItemId PINKBERRY_CROP = create("pinkberry_crop");
 	public static final BlockItemId BLOWBERRY_CROP = create("blowberry_crop");
+
+	// JACARANDA WOOD
+	public static final BlockItemId JACARANDA_LOG = create("jacaranda_log");
+	public static final BlockItemId STRIPPED_JACARANDA_LOG = create("stripped_jacaranda_log");
+	public static final BlockItemId JACARANDA_WOOD = create("jacaranda_wood");
+	public static final BlockItemId STRIPPED_JACARANDA_WOOD = create("stripped_jacaranda_wood");
+
+	public static final BlockItemId JACARANDA_LEAVES = create("jacaranda_leaves");
+	public static final BlockItemId JACARANDA_SAPLING = create("jacaranda_sapling");
+
+	public static final BlockItemId JACARANDA_PLANKS = create("jacaranda_planks");
+	public static final BlockItemId JACARANDA_STAIRS = create("jacaranda_stairs");
+	public static final BlockItemId JACARANDA_SLAB = create("jacaranda_slab");
+	public static final BlockItemId JACARANDA_FENCE = create("jacaranda_fence");
+	public static final BlockItemId JACARANDA_FENCE_GATE = create("jacaranda_fence_gate");
+	public static final BlockItemId JACARANDA_DOOR = create("jacaranda_door");
+	public static final BlockItemId JACARANDA_TRAPDOOR = create("jacaranda_trapdoor");
+	public static final BlockItemId JACARANDA_BUTTON = create("jacaranda_button");
+	public static final BlockItemId JACARANDA_PRESSURE_PLATE = create("jacaranda_pressure_plate");
+	public static final BlockItemId JACARANDA_SIGN = create("jacaranda_sign");
+	public static final BlockItemId JACARANDA_HANGING_SIGN = create("jacaranda_hanging_sign");
+	public static final BlockItemId JACARANDA_SHELF = create("jacaranda_shelf");
+
+	public static final BlockItemId PURPLE_PETALS = create("purple_petals");
 
 	// PEAR WOOD
 	public static final BlockItemId PEAR_LOG = create("pear_log");

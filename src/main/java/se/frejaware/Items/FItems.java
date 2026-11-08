@@ -195,6 +195,39 @@ public class FItems {
 					.usingConvertsTo(Items.BOWL)
 	);
 
+	// JACARANDA
+	public static final Item JACARANDA_SIGN = registerBlock(
+			FBlockItemIds.JACARANDA_SIGN,
+			FBlocks.JACARANDA_SIGN,
+			(b, p) -> new StandingAndWallBlockItem(b, FBlocks.JACARANDA_WALL_SIGN, Direction.DOWN, p),			new Item.Properties()
+					.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE)
+					.stacksTo(16)
+					.signText()
+	);
+	public static final Item JACARANDA_HANGING_SIGN = registerBlock(
+			FBlockItemIds.JACARANDA_HANGING_SIGN,
+			FBlocks.JACARANDA_HANGING_SIGN,
+			(b, p) -> new HangingSignItem(b, FBlocks.JACARANDA_WALL_HANGING_SIGN, p),
+			new Item.Properties()
+					.cookingFuel(ContextIntProviders.COOKING_TIME_HANGING_SIGNS)
+					.stacksTo(16)
+					.signText()
+	);
+	public static final Item JACARANDA_BOAT = registerItem(
+			FItemIds.JACARANDA_BOAT,
+			p -> new BoatItem(FEntityTypes.JACARANDA_BOAT, p),
+			new Item.Properties()
+					.cookingFuel(ContextIntProviders.COOKING_TIME_BOATS)
+					.stacksTo(1)
+	);
+	public static final Item JACARANDA_CHEST_BOAT = registerItem(
+			FItemIds.JACARANDA_CHEST_BOAT,
+			p -> new BoatItem(FEntityTypes.JACARANDA_CHEST_BOAT, p),
+			new Item.Properties()
+					.cookingFuel(ContextIntProviders.COOKING_TIME_BOATS)
+					.stacksTo(1)
+	);
+
 	// PEAR
 	public static final Item PEAR_SIGN = registerBlock(
 			FBlockItemIds.PEAR_SIGN,
@@ -473,7 +506,7 @@ public class FItems {
 		return registerItem(
 				itemKey, Item::new, settings.hoe(
 						toolMaterial,
-						-4.0F,
+						-3.0F,
 						0.0F
 				)
 		);
@@ -594,7 +627,7 @@ public class FItems {
 	}
 
 	// ----------------------
-	// ITEM REGISTER FUNCTION
+	// REGISTER
 	// ----------------------
 
 	public static Item registerItem(

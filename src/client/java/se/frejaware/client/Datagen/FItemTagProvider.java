@@ -98,6 +98,48 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(FItemIds.GOLDEN_PEAR)
 				.add(FItemIds.ENCHANTED_GOLDEN_PEAR);
 
+		// JACARANDA
+		builder(ItemTags.LOGS)
+				.add(FBlockItemIds.JACARANDA_LOG)
+				.add(FBlockItemIds.STRIPPED_JACARANDA_LOG)
+				.add(FBlockItemIds.JACARANDA_WOOD)
+				.add(FBlockItemIds.STRIPPED_JACARANDA_WOOD);
+		builder(FItemTags.JACARANDA_LOGS)
+				.add(FBlockItemIds.JACARANDA_LOG)
+				.add(FBlockItemIds.STRIPPED_JACARANDA_LOG)
+				.add(FBlockItemIds.JACARANDA_WOOD)
+				.add(FBlockItemIds.STRIPPED_JACARANDA_WOOD);
+		builder(ItemTags.PLANKS)
+				.add(FBlockItemIds.JACARANDA_PLANKS);
+		builder(ItemTags.LEAVES)
+				.add(FBlockItemIds.JACARANDA_LEAVES);
+		builder(ItemTags.SAPLINGS)
+				.add(FBlockItemIds.JACARANDA_SAPLING);
+		builder(BlockItemTags.STAIRS)
+				.add(FBlockItemIds.JACARANDA_STAIRS);
+		builder(BlockItemTags.SLABS)
+				.add(FBlockItemIds.JACARANDA_SLAB);
+		builder(BlockItemTags.FENCES)
+				.add(FBlockItemIds.JACARANDA_FENCE);
+		builder(ItemTags.FENCE_GATES)
+				.add(FBlockItemIds.JACARANDA_FENCE_GATE);
+		builder(ItemTags.WOODEN_DOORS)
+				.add(FBlockItemIds.JACARANDA_DOOR);
+		builder(ItemTags.WOODEN_TRAPDOORS)
+				.add(FBlockItemIds.JACARANDA_TRAPDOOR);
+		builder(ItemTags.WOODEN_BUTTONS)
+				.add(FBlockItemIds.JACARANDA_BUTTON);
+		builder(ItemTags.WOODEN_PRESSURE_PLATES)
+				.add(FBlockItemIds.JACARANDA_PRESSURE_PLATE);
+		builder(ItemTags.SIGNS)
+				.add(FBlockItemIds.JACARANDA_SIGN);
+		builder(ItemTags.HANGING_SIGNS)
+				.add(FBlockItemIds.JACARANDA_HANGING_SIGN);
+		builder(ItemTags.BOATS)
+				.add(FItemIds.JACARANDA_BOAT);
+		builder(ItemTags.CHEST_BOATS)
+				.add(FItemIds.JACARANDA_CHEST_BOAT);
+
 		// PEAR
 		builder(ItemTags.LOGS)
 				.add(FBlockItemIds.PEAR_LOG)

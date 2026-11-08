@@ -10,16 +10,20 @@ Adds various stuff we felt like adding
   - **Rose Quartz Armor** - Same defence netherite but with more enchantability and less durability, can be trimmed
   - **Rose Quartz Shield** - Like the regular shield but with more durability
   - **Rose Quartz Bricks** - Rose Quartz block set with most block variants, includes bars, ladders, lanterns and chains as well
-+ **Transium** - New metal made from diamond and some dyes
-  - **Transium Equipment** - Just like diamond, but using the trans flags' colors
-+ **Pear Meadow** - New biome with its own tree type
-  - **Pear Tree** - Melon ice cream colored wood set with white leaves
-+ **Food** - Various types of food
++ **Transium** - Metal made from diamond and some dyes
+  - **Transium Equipment** - Just like diamond, but using the trans flags colors
++ **Biomes** - New biomes
+  - **Pear Meadow**
+    - **Pear Tree** - Melon ice cream colored wood set with white leaves
+  - **Jacaranda Glade**
+    - **Jacaranda Tree** - Purple colored wood set with purple leaves
+    - **Jacaranda Well** - Reskinned desert well
++ **Food**
   - **Berries** - Four new berry types that can be found in the Pear Meadow, Blackberry, Blowberry, Blueberry and Pinkberry
   - **Fruits** - Cherries, bananas, oranges and pears
   - **Chocolate** - Various chocolate items
   - **Milk** - Various milk items
-+ **Other** - Stuff that doesn't fit into any of the categories
++ **Other**
   - **Paintings** - 3 paintings of varying sizes
   - **Flowers** - Many new flowers
 

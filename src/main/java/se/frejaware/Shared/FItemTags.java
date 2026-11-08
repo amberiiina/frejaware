@@ -13,6 +13,12 @@ public class FItemTags {
 	);
 
 	// PEAR
+	public static final TagKey<Item> JACARANDA_LOGS = TagKey.create(
+			BuiltInRegistries.ITEM.key(),
+			F.id("jacaranda_logs")
+	);
+
+	// PEAR
 	public static final TagKey<Item> PEAR_LOGS = TagKey.create(
 			BuiltInRegistries.ITEM.key(),
 			F.id("pear_logs")

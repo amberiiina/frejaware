@@ -32,6 +32,14 @@ public class FBlockIds {
 	public static final ResourceKey<Block> POTTED_LILY_OF_THE_GLADE =
 			create("potted_lily_of_the_glade");
 
+	// JACARANDA
+	public static final ResourceKey<Block> POTTED_JACARANDA_SAPLING =
+			create("potted_jacaranda_sapling");
+	public static final ResourceKey<Block> JACARANDA_WALL_SIGN =
+			create("jacaranda_wall_sign");
+	public static final ResourceKey<Block> JACARANDA_WALL_HANGING_SIGN =
+			create("jacaranda_wall_hanging_sign");
+
 	// PEAR
 	public static final ResourceKey<Block> POTTED_PEAR_SAPLING =
 			create("potted_pear_sapling");

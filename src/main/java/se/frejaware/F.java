@@ -39,6 +39,14 @@ public class F implements ModInitializer {
 		FLootTables.initialize();
 
 		// BLOCK ENTITIES
+		BlockEntityTypes.BELL.addValidBlock(FBlocks.IRON_BELL);
+
+		BlockEntityTypes.SHELF.addValidBlock(FBlocks.JACARANDA_SHELF);
+		BlockEntityTypes.SIGN.addValidBlock(FBlocks.JACARANDA_SIGN);
+		BlockEntityTypes.SIGN.addValidBlock(FBlocks.JACARANDA_WALL_SIGN);
+		BlockEntityTypes.HANGING_SIGN.addValidBlock(FBlocks.JACARANDA_HANGING_SIGN);
+		BlockEntityTypes.HANGING_SIGN.addValidBlock(FBlocks.JACARANDA_WALL_HANGING_SIGN);
+
 		BlockEntityTypes.SHELF.addValidBlock(FBlocks.PEAR_SHELF);
 		BlockEntityTypes.SIGN.addValidBlock(FBlocks.PEAR_SIGN);
 		BlockEntityTypes.SIGN.addValidBlock(FBlocks.PEAR_WALL_SIGN);
@@ -50,6 +58,11 @@ public class F implements ModInitializer {
 				BuiltInRegistries.PARTICLE_TYPE,
 				id("pear_leaves"),
 				FParticles.PEAR_LEAVES
+		);
+		Registry.register(
+				BuiltInRegistries.PARTICLE_TYPE,
+				id("jacaranda_leaves"),
+				FParticles.JACARANDA_LEAVES
 		);
 
 		// WORLD GEN

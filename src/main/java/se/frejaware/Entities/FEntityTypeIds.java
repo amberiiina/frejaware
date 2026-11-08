@@ -11,6 +11,10 @@ public class FEntityTypeIds {
 	// ----------------------
 
 	// PEAR
+	public static ResourceKey<EntityType<?>> JACARANDA_BOAT = create("jacaranda_boat");
+	public static ResourceKey<EntityType<?>> JACARANDA_CHEST_BOAT = create("jacaranda_chest_boat");
+
+	// PEAR
 	public static ResourceKey<EntityType<?>> PEAR_BOAT = create("pear_boat");
 	public static ResourceKey<EntityType<?>> PEAR_CHEST_BOAT = create("pear_chest_boat");
 

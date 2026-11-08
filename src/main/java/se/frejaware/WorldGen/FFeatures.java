@@ -51,8 +51,6 @@ public class FFeatures {
 
 	public static final ResourceKey<Feature> PEAR_TREE_FEATURE_KEY =
 			create("pear_tree_feature");
-	public static final ResourceKey<Feature> PEAR_TREE_UPWARDS_FEATURE_KEY =
-			create("pear_tree_upwards_feature");
 	public static final ResourceKey<Feature> PEAR_MEADOW_PETALS_FEATURE_KEY =
 			create("pear_meadow_petals_feature");
 	public static final ResourceKey<Feature> PEAR_MEADOW_WILDFLOWERS_FEATURE_KEY =
@@ -61,6 +59,13 @@ public class FFeatures {
 			create("pear_meadow_flowers_feature");
 	public static final ResourceKey<Feature> PEAR_MEADOW_BUSHES_FEATURE_KEY =
 			create("pear_meadow_bushes_feature");
+
+	public static final ResourceKey<Feature> JACARANDA_TREE_FEATURE_KEY =
+			create("jacaranda_tree_feature");
+	public static final ResourceKey<Feature> JACARANDA_GLADE_PETALS_FEATURE_KEY =
+			create("jacaranda_glade_petals_feature");
+	public static final ResourceKey<Feature> JACARANDA_GLADE_FLOWERS_FEATURE_KEY =
+			create("jacaranda_glade_flowers_feature");
 
 	public static void configure(BootstrapContext<Feature> context) {
 		// ROSE QUARTZ
@@ -71,7 +76,6 @@ public class FFeatures {
 		));
 
 		// PEAR TREE
-		HolderGetter<Block> blockGetter = context.lookup(Registries.BLOCK);
 		HolderGetter<BlockStateProvider> blockStateProviders = context.lookup(Registries.BLOCK_STATE_PROVIDER);
 		Holder<BlockStateProvider> belowTrunkProvider = blockStateProviders.getOrThrow(BlockStateProviders.SOIL_BENEATH_TREE);
 
@@ -80,36 +84,38 @@ public class FFeatures {
 						whitePetalsPatchBuilder(1, 4)
 				)
 		));
+		PlaceOnGroundDecorator purplePetals = new PlaceOnGroundDecorator(
+				150, 2, 2, Holder.direct(new WeightedStateProvider(
+						purplePetalsPatchBuilder(1, 4)
+				)
+		));
 
-		// REGISTER
-		context.register(
-				ROSE_QUARTZ_ORE_VEIN_FEATURE_KEY,
+		// ROSE QUARTZ
+		context.register(ROSE_QUARTZ_ORE_VEIN_FEATURE_KEY,
 				new FRoseQuartzOreFeature(
 						roseQuartzOre,
 						4,
 						0.0f
 				)
 		);
-		context.register(
-				PEAR_TREE_FEATURE_KEY,
+
+		// PEAR
+		context.register(PEAR_TREE_FEATURE_KEY,
 				pearTree(belowTrunkProvider)
 						.decorators(List.of(whitePetals))
 						.build()
 		);
-		context.register(
-				PEAR_MEADOW_PETALS_FEATURE_KEY,
+		context.register(PEAR_MEADOW_PETALS_FEATURE_KEY,
 				new SimpleBlockFeature(
 						new WeightedStateProvider(flowerBedPatchBuilder(FBlocks.WHITE_PETALS))
 				)
 		);
-		context.register(
-				PEAR_MEADOW_WILDFLOWERS_FEATURE_KEY,
+		context.register(PEAR_MEADOW_WILDFLOWERS_FEATURE_KEY,
 				new SimpleBlockFeature(
 						new WeightedStateProvider(flowerBedPatchBuilder(Blocks.WILDFLOWERS))
 				)
 		);
-		context.register(
-				PEAR_MEADOW_FLOWERS_FEATURE_KEY,
+		context.register(PEAR_MEADOW_FLOWERS_FEATURE_KEY,
 				new SimpleBlockFeature(
 						new NoiseProvider(
 								2345L,
@@ -127,8 +133,7 @@ public class FFeatures {
 						)
 				)
 		);
-		context.register(
-				PEAR_MEADOW_BUSHES_FEATURE_KEY,
+		context.register(PEAR_MEADOW_BUSHES_FEATURE_KEY,
 				new SimpleBlockFeature(
 						new NoiseProvider(
 								2345L,
@@ -140,7 +145,35 @@ public class FFeatures {
 										FBlocks.PINKBERRY_BUSH.defaultBlockState(),
 										FBlocks.BLOWBERRY_BUSH.defaultBlockState(),
 										FBlocks.ROUND_BUSH.defaultBlockState(),
+										Blocks.AZALEA.defaultBlockState(),
 										Blocks.AZALEA.defaultBlockState()
+								)
+						)
+				)
+		);
+
+		// JACARANDA
+		context.register(JACARANDA_TREE_FEATURE_KEY,
+				jacarandaTree(belowTrunkProvider)
+						.decorators(List.of(purplePetals))
+						.build()
+		);
+		context.register(JACARANDA_GLADE_PETALS_FEATURE_KEY,
+				new SimpleBlockFeature(
+						new WeightedStateProvider(flowerBedPatchBuilder(FBlocks.PURPLE_PETALS))
+				)
+		);
+		context.register(JACARANDA_GLADE_FLOWERS_FEATURE_KEY,
+				new SimpleBlockFeature(
+						new NoiseProvider(
+								2345L,
+								NormalNoise.createParity(0, 1.0F),
+								0.020833334F,
+								List.of(
+										FBlocks.WHITE_CROCUS.defaultBlockState(),
+										FBlocks.LILAC_CROCUS.defaultBlockState(),
+										FBlocks.PURPLE_CROCUS.defaultBlockState(),
+										FBlocks.LILY_OF_THE_GLADE.defaultBlockState()
 								)
 						)
 				)
@@ -162,6 +195,17 @@ public class FFeatures {
 			final int minState, final int maxState) {
 		return segmentedBlockPatchBuilder(
 				FBlocks.WHITE_PETALS,
+				minState,
+				maxState,
+				FlowerBedBlock.AMOUNT,
+				FlowerBedBlock.FACING
+		);
+	}
+
+	public static WeightedList.Builder<BlockState> purplePetalsPatchBuilder(
+			final int minState, final int maxState) {
+		return segmentedBlockPatchBuilder(
+				FBlocks.PURPLE_PETALS,
 				minState,
 				maxState,
 				FlowerBedBlock.AMOUNT,
@@ -201,6 +245,38 @@ public class FFeatures {
 						UniformInt.of(-1, 0)
 				),
 				BlockStateProvider.of(FBlocks.PEAR_LEAVES),
+				new CherryFoliagePlacer(
+						ConstantInt.of(4),
+						ConstantInt.of(0),
+						ConstantInt.of(5),
+						0.25F,
+						0.5F,
+						0.16666667F,
+						0.33333334F
+				),
+				new TwoLayersFeatureSize(1, 0, 2),
+				belowTrunkProvider
+		).ignoreVines();
+	}
+
+	private static TreeFeature.Builder jacarandaTree(
+			final Holder<BlockStateProvider> belowTrunkProvider) {
+		return new TreeFeature.Builder(
+				BlockStateProvider.of(FBlocks.JACARANDA_LOG),
+				new CherryTrunkPlacer(
+						7,
+						1,
+						0,
+						new WeightedListInt(WeightedList.<IntProvider>builder()
+								.add(ConstantInt.of(1), 1)
+								.add(ConstantInt.of(2), 1)
+								.add(ConstantInt.of(3), 1)
+								.build()),
+						UniformInt.of(2, 4),
+						UniformInt.of(-4, -3),
+						UniformInt.of(-1, 0)
+				),
+				BlockStateProvider.of(FBlocks.JACARANDA_LEAVES),
 				new CherryFoliagePlacer(
 						ConstantInt.of(4),
 						ConstantInt.of(0),

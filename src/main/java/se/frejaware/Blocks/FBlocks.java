@@ -28,6 +28,17 @@ public class FBlocks {
 	// ----------------------
 
 	// MOLLY
+	public static final Block IRON_BELL = registerBlockItem(
+			FBlockItemIds.IRON_BELL,
+			FIronBellBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.RAW_IRON)
+					.forceSolidOn()
+					.strength(5.0F)
+					.sound(SoundType.ANVIL)
+					.pushReaction(PushReaction.POPPED)
+	);
+
 	public static final Block WHITE_CACTUS_FLOWER = registerBlockItem(
 			FBlockItemIds.WHITE_CACTUS_FLOWER,
 			CactusFlowerBlock::new,
@@ -234,6 +245,221 @@ public class FBlocks {
 					.noCollision()
 					.sound(SoundType.SWEET_BERRY_BUSH)
 					.pushReaction(PushReaction.POPPED));
+
+	// JACARANDA WOOD
+	public static final Block JACARANDA_LOG = registerBlockItem(
+			FBlockItemIds.JACARANDA_LOG,
+			RotatedPillarBlock::new,
+			Blocks.logProperties(
+					MapColor.PLANT,
+					MapColor.COLOR_BROWN,
+					SoundType.CHERRY_WOOD
+			)
+	);
+	public static final Block STRIPPED_JACARANDA_LOG = registerBlockItem(
+			FBlockItemIds.STRIPPED_JACARANDA_LOG,
+			RotatedPillarBlock::new,
+			Blocks.logProperties(
+					MapColor.PLANT,
+					MapColor.PLANT,
+					SoundType.CHERRY_WOOD
+			)
+	);
+	public static final Block JACARANDA_WOOD = registerBlockItem(
+			FBlockItemIds.JACARANDA_WOOD,
+			RotatedPillarBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.COLOR_BROWN)
+					.instrument(NoteBlockInstrument.BASS)
+					.strength(2.0F)
+					.sound(SoundType.CHERRY_WOOD)
+					.ignitedByLava()
+	);
+	public static final Block STRIPPED_JACARANDA_WOOD = registerBlockItem(
+			FBlockItemIds.STRIPPED_JACARANDA_WOOD,
+			RotatedPillarBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.instrument(NoteBlockInstrument.BASS)
+					.strength(2.0F)
+					.sound(SoundType.CHERRY_WOOD)
+					.ignitedByLava()
+	);
+	public static final Block JACARANDA_LEAVES = registerBlockItem(
+			FBlockItemIds.JACARANDA_LEAVES,
+			p -> new UntintedParticleLeavesBlock(
+					0.1F,
+					FParticles.JACARANDA_LEAVES,
+					AmbientLeavesBlockSoundPlayer.noAmbientSound(), p
+			),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.QUARTZ)
+					.strength(0.2F)
+					.randomTicks()
+					.sound(SoundType.CHERRY_LEAVES)
+					.noOcclusion()
+					.isValidSpawn(Blocks::ocelotOrParrot)
+					.isSuffocating(Blocks::never)
+					.ignitedByLava()
+					.pushReaction(PushReaction.POPPED)
+					.isRedstoneConductor(Blocks::never)
+	);
+	public static final Block JACARANDA_SAPLING = registerBlockItem(
+			FBlockItemIds.JACARANDA_SAPLING,
+			p -> new SaplingBlock(FTrees.JACARANDA_GROWER, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.QUARTZ)
+					.noCollision()
+					.randomTicks()
+					.instabreak()
+					.sound(SoundType.CHERRY_SAPLING)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_JACARANDA_SAPLING = registerBlock(
+			FBlockIds.POTTED_JACARANDA_SAPLING,
+			p -> new FlowerPotBlock(JACARANDA_SAPLING, p),
+			Blocks.flowerPotProperties()
+	);
+	public static final Block JACARANDA_PLANKS = registerBlockItem(
+			FBlockItemIds.JACARANDA_PLANKS,
+			Block::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.instrument(NoteBlockInstrument.BASS)
+					.strength(2.0F, 3.0F)
+					.sound(SoundType.CHERRY_WOOD)
+					.ignitedByLava()
+	);
+	public static final Block JACARANDA_STAIRS = registerStair(
+			FBlockItemIds.JACARANDA_STAIRS,
+			JACARANDA_PLANKS
+	);
+	public static final Block JACARANDA_SLAB = registerSlab(
+			FBlockItemIds.JACARANDA_SLAB,
+			JACARANDA_PLANKS
+	);
+	public static final Block JACARANDA_FENCE = registerBlockItem(
+			FBlockItemIds.JACARANDA_FENCE,
+			FenceBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.instrument(NoteBlockInstrument.BASS)
+					.strength(2.0F, 3.0F)
+					.ignitedByLava()
+					.sound(SoundType.CHERRY_WOOD)
+	);
+	public static final Block JACARANDA_FENCE_GATE = registerBlockItem(
+			FBlockItemIds.JACARANDA_FENCE_GATE,
+			p -> new FenceGateBlock(FTrees.JACARANDA_WOOD, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.forceSolidOn()
+					.instrument(NoteBlockInstrument.BASS)
+					.strength(2.0F, 3.0F)
+					.ignitedByLava()
+	);
+	public static final Block JACARANDA_DOOR = registerBlockItem(
+			FBlockItemIds.JACARANDA_DOOR,
+			p -> new DoorBlock(FTrees.JACARANDA_SET, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.instrument(NoteBlockInstrument.BASS)
+					.strength(3.0F)
+					.noOcclusion()
+					.ignitedByLava()
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block JACARANDA_TRAPDOOR = registerBlockItem(
+			FBlockItemIds.JACARANDA_TRAPDOOR,
+			p -> new TrapDoorBlock(FTrees.JACARANDA_SET, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.instrument(NoteBlockInstrument.BASS)
+					.strength(3.0F)
+					.noOcclusion()
+					.isValidSpawn(Blocks::never)
+					.ignitedByLava()
+	);
+	public static final Block JACARANDA_BUTTON = registerBlockItem(
+			FBlockItemIds.JACARANDA_BUTTON,
+			p -> new ButtonBlock(FTrees.JACARANDA_SET, 30, p),
+			Blocks.buttonProperties()
+	);
+	public static final Block JACARANDA_PRESSURE_PLATE = registerBlockItem(
+			FBlockItemIds.JACARANDA_PRESSURE_PLATE,
+			p -> new PressurePlateBlock(FTrees.JACARANDA_SET, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.forceSolidOn()
+					.instrument(NoteBlockInstrument.BASS)
+					.noCollision()
+					.strength(0.5F)
+					.ignitedByLava()
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block JACARANDA_SIGN = registerBlock(
+			FBlockItemIds.JACARANDA_SIGN.block(),
+			p -> new StandingSignBlock(FTrees.JACARANDA_WOOD, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.forceSolidOn()
+					.instrument(NoteBlockInstrument.BASS)
+					.noCollision()
+					.strength(1.0F)
+					.ignitedByLava()
+	);
+	public static final Block JACARANDA_WALL_SIGN = registerBlock(
+			FBlockIds.JACARANDA_WALL_SIGN,
+			p -> new WallSignBlock(FTrees.JACARANDA_WOOD, p),
+			wallVariant(JACARANDA_SIGN, true)
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.forceSolidOn()
+					.instrument(NoteBlockInstrument.BASS)
+					.noCollision()
+					.strength(1.0F)
+					.ignitedByLava()
+	);
+	public static final Block JACARANDA_HANGING_SIGN = registerBlock(
+			FBlockItemIds.JACARANDA_HANGING_SIGN.block(),
+			p -> new CeilingHangingSignBlock(FTrees.JACARANDA_WOOD, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.forceSolidOn()
+					.instrument(NoteBlockInstrument.BASS)
+					.noCollision()
+					.strength(1.0F)
+					.ignitedByLava()
+	);
+	public static final Block JACARANDA_WALL_HANGING_SIGN = registerBlock(
+			FBlockIds.JACARANDA_WALL_HANGING_SIGN,
+			p -> new WallHangingSignBlock(FTrees.JACARANDA_WOOD, p),
+			wallVariant(JACARANDA_HANGING_SIGN, true)
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.forceSolidOn()
+					.instrument(NoteBlockInstrument.BASS)
+					.noCollision()
+					.strength(1.0F)
+					.ignitedByLava()
+	);
+	public static final Block JACARANDA_SHELF = registerBlockItem(
+			FBlockItemIds.JACARANDA_SHELF,
+			ShelfBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(JACARANDA_PLANKS.defaultMapColor())
+					.instrument(NoteBlockInstrument.BASS)
+					.sound(SoundType.SHELF)
+					.ignitedByLava()
+					.strength(2.0F, 3.0F)
+	);
+	public static final Block PURPLE_PETALS = registerBlockItem(
+			FBlockItemIds.PURPLE_PETALS,
+			p -> new FlowerBedBlock(p, 3),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.sound(SoundType.PINK_PETALS)
+					.pushReaction(PushReaction.POPPED)
+	);
 
 	// PEAR WOOD
 	public static final Block PEAR_LOG = registerBlockItem(

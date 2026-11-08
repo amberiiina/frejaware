@@ -3,10 +3,11 @@
   "creativetab.equipment": "Equipment",
   "creativetab.food": "Food",
   "creativetab.flowers": "Flowers",
-  "creativetab.pear_meadow": "Pear Meadow",
+  "creativetab.wood": "Wood",
 
 
   "biome.frejaware.pear_meadow": "Pear Meadow",
+  "biome.jacaranda_glade": "Jacaranda Glade",
 
 
   "painting.frejaware.plant.title": "Plant",
@@ -34,6 +35,17 @@
 
   "entity.frejaware.pear_boat": "Pear Boat",
   "entity.frejaware.pear_chest_boat": "Pear Chest Boat",
+
+
+  "advancements.frejaware.root.title": "Frejaware",
+  "advancements.frejaware.root.description": "Visit either a Pear Meadow or a Jacaranda Glade",
+
+
+  "advancements.frejaware.jack_that_randa.title": "Jack That Randa!",
+  "advancements.frejaware.jack_that_randa.description": "Visit a Jacaranda Glade",
+
+  "advancements.frejaware.well_well_well.title": "Well, well, well",
+  "advancements.frejaware.well_well_well.description": "Find a Jacaranda Well",
 
 
   "advancements.frejaware.oh_my_meadows.title": "Oh My Meadows!",

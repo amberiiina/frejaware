@@ -21,6 +21,11 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider registries) {
 		// MOLLY
+		builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
+				.add(FBlockItemIds.IRON_BELL);
+		builder(BlockTags.MINEABLE_WITH_PICKAXE)
+				.add(FBlockItemIds.IRON_BELL);
+
 		builder(FBlockTags.POT_FLOWERS)
 				.add(FBlockItemIds.WHITE_ORCHID)
 				.add(FBlockItemIds.YELLOW_TULIP)
@@ -52,6 +57,134 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 		builder(BlockTags.FLOWERS)
 				.addTag(FBlockTags.POT_FLOWERS)
 				.addTag(FBlockTags.OTHER_FLOWERS);
+
+
+		// LOGS
+		builder(FBlockTags.JACARANDA_LOGS)
+				.add(FBlockItemIds.JACARANDA_LOG)
+				.add(FBlockItemIds.STRIPPED_JACARANDA_LOG)
+				.add(FBlockItemIds.JACARANDA_WOOD)
+				.add(FBlockItemIds.STRIPPED_JACARANDA_WOOD);
+
+		builder(BlockItemTags.LOGS_THAT_BURN)
+				.addTag(FBlockTags.JACARANDA_LOGS);
+
+		builder(BlockTags.OVERWORLD_NATURAL_LOGS)
+				.add(FBlockItemIds.JACARANDA_LOG);
+
+		// LEAVES
+		builder(BlockTags.LEAVES)
+				.add(FBlockItemIds.JACARANDA_LEAVES);
+
+		builder(BlockTags.FLOWERS)
+				.add(FBlockItemIds.JACARANDA_LEAVES);
+
+		builder(BlockTags.MINEABLE_WITH_HOE)
+				.add(FBlockItemIds.JACARANDA_LEAVES);
+
+		// SAPLINGS
+		builder(BlockTags.SAPLINGS)
+				.add(FBlockItemIds.JACARANDA_SAPLING);
+
+		builder(BlockTags.FLOWER_POTS)
+				.add(FBlockIds.POTTED_JACARANDA_SAPLING);
+
+		// PLANKS
+		builder(BlockTags.PLANKS)
+				.add(FBlockItemIds.JACARANDA_PLANKS);
+
+		// STAIRS
+		builder(BlockTags.STAIRS)
+				.add(FBlockItemIds.JACARANDA_STAIRS);
+
+		builder(BlockTags.WOODEN_STAIRS)
+				.add(FBlockItemIds.JACARANDA_STAIRS);
+
+		// SLABS
+		builder(BlockTags.SLABS)
+				.add(FBlockItemIds.JACARANDA_SLAB);
+
+		builder(BlockTags.WOODEN_SLABS)
+				.add(FBlockItemIds.JACARANDA_SLAB);
+
+		// FENCES
+		builder(BlockTags.FENCES)
+				.add(FBlockItemIds.JACARANDA_FENCE);
+
+		builder(BlockTags.WOODEN_FENCES)
+				.add(FBlockItemIds.JACARANDA_FENCE);
+
+		// FENCE GATES
+		builder(BlockTags.FENCE_GATES)
+				.add(FBlockItemIds.JACARANDA_FENCE_GATE);
+
+		// DOORS
+		builder(BlockTags.DOORS)
+				.add(FBlockItemIds.JACARANDA_DOOR);
+
+		builder(BlockTags.WOODEN_DOORS)
+				.add(FBlockItemIds.JACARANDA_DOOR);
+
+		// TRAPDOORS
+		builder(BlockTags.TRAPDOORS)
+				.add(FBlockItemIds.JACARANDA_TRAPDOOR);
+
+		builder(BlockTags.WOODEN_TRAPDOORS)
+				.add(FBlockItemIds.JACARANDA_TRAPDOOR);
+
+		// BUTTONS
+		builder(BlockTags.BUTTONS)
+				.add(FBlockItemIds.JACARANDA_BUTTON);
+
+		builder(BlockTags.WOODEN_BUTTONS)
+				.add(FBlockItemIds.JACARANDA_BUTTON);
+
+		// PRESSURE PLATES
+		builder(BlockTags.WOODEN_PRESSURE_PLATES)
+				.add(FBlockItemIds.JACARANDA_PRESSURE_PLATE);
+
+		// SIGNS
+		builder(BlockTags.ALL_SIGNS)
+				.add(FBlockItemIds.JACARANDA_SIGN)
+				.add(FBlockIds.JACARANDA_WALL_SIGN);
+
+		builder(BlockTags.STANDING_SIGNS)
+				.add(FBlockItemIds.JACARANDA_SIGN);
+
+		builder(BlockTags.WALL_SIGNS)
+				.add(FBlockIds.JACARANDA_WALL_SIGN);
+
+		// HANGING SIGNS
+		builder(BlockTags.ALL_HANGING_SIGNS)
+				.add(FBlockItemIds.JACARANDA_HANGING_SIGN)
+				.add(FBlockIds.JACARANDA_WALL_HANGING_SIGN);
+
+		builder(BlockTags.CEILING_HANGING_SIGNS)
+				.add(FBlockItemIds.JACARANDA_HANGING_SIGN);
+
+		builder(BlockTags.WALL_HANGING_SIGNS)
+				.add(FBlockIds.JACARANDA_WALL_HANGING_SIGN);
+
+		// MINEABLE
+		builder(BlockTags.MINEABLE_WITH_AXE)
+				.add(FBlockItemIds.JACARANDA_LOG)
+				.add(FBlockItemIds.STRIPPED_JACARANDA_LOG)
+				.add(FBlockItemIds.JACARANDA_WOOD)
+				.add(FBlockItemIds.STRIPPED_JACARANDA_WOOD)
+				.add(FBlockItemIds.JACARANDA_PLANKS)
+				.add(FBlockItemIds.JACARANDA_STAIRS)
+				.add(FBlockItemIds.JACARANDA_SLAB)
+				.add(FBlockItemIds.JACARANDA_FENCE)
+				.add(FBlockItemIds.JACARANDA_FENCE_GATE)
+				.add(FBlockItemIds.JACARANDA_DOOR)
+				.add(FBlockItemIds.JACARANDA_TRAPDOOR)
+				.add(FBlockItemIds.JACARANDA_BUTTON)
+				.add(FBlockItemIds.JACARANDA_PRESSURE_PLATE)
+				.add(FBlockItemIds.JACARANDA_SIGN)
+				.add(FBlockIds.JACARANDA_WALL_SIGN)
+				.add(FBlockItemIds.JACARANDA_HANGING_SIGN)
+				.add(FBlockIds.JACARANDA_WALL_HANGING_SIGN)
+				.add(FBlockItemIds.JACARANDA_SHELF);
 
 		// LOGS
 		builder(FBlockTags.PEAR_LOGS)

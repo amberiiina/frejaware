@@ -26,6 +26,8 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 	@Override
 	public void generate() {
 		// MOLLY
+		dropSelf(FBlocks.IRON_BELL);
+
 		dropSelf(FBlocks.WHITE_CACTUS_FLOWER);
 		dropSelf(FBlocks.YELLOW_CACTUS_FLOWER);
 		dropSelf(FBlocks.WHITE_ORCHID);
@@ -46,6 +48,42 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 						Blocks.CHERRY_SAPLING,
 						NORMAL_LEAVES_SAPLING_CHANCES
 				)
+		);
+
+		// JACARANDA
+		dropSelf(FBlocks.JACARANDA_LOG);
+		dropSelf(FBlocks.STRIPPED_JACARANDA_LOG);
+		dropSelf(FBlocks.JACARANDA_WOOD);
+		dropSelf(FBlocks.STRIPPED_JACARANDA_WOOD);
+
+		add(
+				FBlocks.JACARANDA_LEAVES,
+				block -> createLeavesDrops(
+						block,
+						FBlocks.JACARANDA_SAPLING,
+						NORMAL_LEAVES_SAPLING_CHANCES
+				)
+		);
+		dropSelf(FBlocks.JACARANDA_SAPLING);
+		dropPottedContents(FBlocks.POTTED_JACARANDA_SAPLING);
+
+		dropSelf(FBlocks.JACARANDA_PLANKS);
+		dropSelf(FBlocks.JACARANDA_STAIRS);
+		add(FBlocks.JACARANDA_SLAB, this::createSlabItemTable);
+		dropSelf(FBlocks.JACARANDA_FENCE);
+		dropSelf(FBlocks.JACARANDA_FENCE_GATE);
+		add(FBlocks.JACARANDA_DOOR, this::createDoorTable);
+		dropSelf(FBlocks.JACARANDA_TRAPDOOR);
+		dropSelf(FBlocks.JACARANDA_BUTTON);
+		dropSelf(FBlocks.JACARANDA_PRESSURE_PLATE);
+		dropSelf(FBlocks.JACARANDA_SIGN);
+		dropOther(FBlocks.JACARANDA_WALL_SIGN, FBlocks.JACARANDA_SIGN);
+		dropSelf(FBlocks.JACARANDA_HANGING_SIGN);
+		dropOther(FBlocks.JACARANDA_WALL_HANGING_SIGN, FBlocks.JACARANDA_HANGING_SIGN);
+		dropSelf(FBlocks.JACARANDA_SHELF);
+
+		add(FBlocks.PURPLE_PETALS,
+				createSegmentedBlockDrops(FBlocks.PURPLE_PETALS)
 		);
 
 		// PEAR

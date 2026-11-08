@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.particle.FallingLeavesParticle;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.Identifier;
@@ -12,11 +13,13 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.SkullBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se.frejaware.Blocks.FBlockEntityTypes;
 import se.frejaware.Blocks.FParticles;
 import se.frejaware.Blocks.Custom.FSkullBlock;
 import se.frejaware.Entities.FEntityTypes;
 import se.frejaware.Entities.Custom.FGolem;
 import se.frejaware.F;
+import se.frejaware.client.Model.FIronBellRenderer;
 import se.frejaware.client.Model.FModelLayers;
 import se.frejaware.client.Model.FGolemRenderer;
 import se.frejaware.client.mixin.SkullBlockRendererAccessor;
@@ -29,6 +32,26 @@ public class FClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		// MOLLY
+		BlockEntityRenderers.register(
+				FBlockEntityTypes.IRON_BELL,
+				FIronBellRenderer::new
+		);
+
+		// JACARANDA
+		ParticleProviderRegistry.getInstance().register(
+				FParticles.JACARANDA_LEAVES,
+				FallingLeavesParticle.CherryProvider::new
+		);
+		EntityRenderers.register(
+				FEntityTypes.JACARANDA_BOAT,
+				context -> new BoatRenderer(context, FModelLayers.JACARANDA_BOAT)
+		);
+		EntityRenderers.register(
+				FEntityTypes.JACARANDA_CHEST_BOAT,
+				context -> new BoatRenderer(context, FModelLayers.JACARANDA_CHEST_BOAT)
+		);
+
 		// PEAR
 		ParticleProviderRegistry.getInstance().register(
 				FParticles.PEAR_LEAVES,
