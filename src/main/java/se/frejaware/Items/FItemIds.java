@@ -19,10 +19,14 @@ public class FItemIds {
 	public static final ResourceKey<Item> GOLDEN_PEAR = create("golden_pear");
 	public static final ResourceKey<Item> ENCHANTED_GOLDEN_PEAR = create("enchanted_golden_pear");
 
+	public static final ResourceKey<Item> POPPY_SEEDS = create("poppy_seeds");
+	public static final ResourceKey<Item> SAFFRON = create("saffron");
+
 	public static final ResourceKey<Item> CHOCOLATE_BOTTLE = create("chocolate_bottle");
 	public static final ResourceKey<Item> MILK_BOTTLE = create("milk_bottle");
 	public static final ResourceKey<Item> BERRY_JUICE_BOTTLE = create("berry_juice_bottle");
 	public static final ResourceKey<Item> MILKSHAKE_BOTTLE = create("milkshake_bottle");
+	public static final ResourceKey<Item> SAFFRON_MILK_BOTTLE = create("saffron_milk_bottle");
 
 	public static final ResourceKey<Item> COCOA_BUTTER = create("cocoa_butter");
 	public static final ResourceKey<Item> CHOCOLATE = create("chocolate");

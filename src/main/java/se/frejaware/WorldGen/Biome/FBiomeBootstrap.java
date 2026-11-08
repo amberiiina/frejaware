@@ -1,17 +1,27 @@
 package se.frejaware.WorldGen.Biome;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.Carvers;
 import net.minecraft.data.worldgen.placement.*;
 import net.minecraft.util.ARGB;
+import net.minecraft.util.random.WeightedList;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.IntProviders;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.attribute.BackgroundMusic;
 import net.minecraft.world.attribute.EnvironmentAttributes;
+import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import se.frejaware.WorldGen.FPlacedFeatures;
 
 // get decimal color from https://minecraft.wiki/w/Biome_definition_(Java_Edition)
@@ -43,6 +53,74 @@ public class FBiomeBootstrap {
 				.specialEffects(
 						new BiomeSpecialEffects.Builder()
 								.waterColor(4159204)
+								.build()
+				)
+				.mobSpawnSettings(
+						new MobSpawnSettings.Builder()
+								.addAllSpawns(MobCategory.AMBIENT,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.BAT,
+														ConstantInt.of(8)
+												), 10)
+												.build())
+								.addAllSpawns(MobCategory.CREATURE,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.PIG,
+														UniformInt.of(1, 2)
+												), 1)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.RABBIT,
+														UniformInt.of(2, 6)
+												), 2)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.SHEEP,
+														UniformInt.of(2, 4)
+												), 2)
+												.build())
+								.addAllSpawns(MobCategory.MONSTER,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.SPIDER,
+														ConstantInt.of(4)
+												), 100)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.ZOMBIE,
+														ConstantInt.of(4)
+												), 95)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.ZOMBIE_VILLAGER,
+														ConstantInt.of(1)
+												), 5)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.SKELETON,
+														ConstantInt.of(4)
+												), 100)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.CREEPER,
+														ConstantInt.of(4)
+												), 100)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.SLIME,
+														ConstantInt.of(4)
+												), 100)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.ENDERMAN,
+														UniformInt.of(1, 4)
+												), 10)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.WITCH,
+														ConstantInt.of(1)
+												), 5)
+												.build())
+								.addAllSpawns(MobCategory.UNDERGROUND_WATER_CREATURE,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.GLOW_SQUID,
+														UniformInt.of(4, 6)
+												), 10)
+												.build())
 								.build()
 				)
 				.generationSettings(
@@ -254,9 +332,8 @@ public class FBiomeBootstrap {
 
 		Biome jacarandaGlade = new Biome.BiomeBuilder()
 				.hasPrecipitation(true)
-				.downfall(0.8F)		//0.0f - 1.0f,
-				.temperature(0.7F)	//-0.7f - 2.0f
-
+				.downfall(0.9F)		//0.0f - 1.0f,
+				.temperature(1.4F)	//-0.7f - 2.0f
 				.setAttribute(
 						EnvironmentAttributes.SKY_COLOR,
 						ARGB.vector3fFromRGB24(0x79a6ff)
@@ -265,13 +342,109 @@ public class FBiomeBootstrap {
 						EnvironmentAttributes.BACKGROUND_MUSIC,
 						BackgroundMusic.OVERWORLD
 				)
-				.setAttribute(
-						EnvironmentAttributes.NATURAL_MOB_SPAWNS,
-						MobSpawnSettings.EMPTY
-				)
 				.specialEffects(
 						new BiomeSpecialEffects.Builder()
-								.waterColor(4159204)
+								.waterColor(3903923)
+								.grassColorOverride(5884220)
+								.build()
+				)
+				.mobSpawnSettings(
+						new MobSpawnSettings.Builder()
+								.addAllSpawns(MobCategory.AMBIENT,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.BAT,
+														ConstantInt.of(8)
+												), 10)
+												.build())
+								.addAllSpawns(MobCategory.CREATURE,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.PIG,
+														UniformInt.of(1, 2)
+												), 2)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.RABBIT,
+														UniformInt.of(2, 6)
+												), 2)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.SHEEP,
+														UniformInt.of(2, 4)
+												), 2)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.ALLAY,
+														ConstantInt.of(1)
+												), 1)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.FROG,
+														UniformInt.of(1, 3)
+												), 2)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.ARMADILLO,
+														UniformInt.of(1, 2)
+												), 2)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.PANDA,
+														UniformInt.of(1, 2)
+												), 1)
+												.build())
+								.addAllSpawns(MobCategory.MONSTER,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.SPIDER,
+														ConstantInt.of(4)
+												), 100)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.ZOMBIE,
+														ConstantInt.of(4)
+												), 95)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.ZOMBIE_VILLAGER,
+														ConstantInt.of(1)
+												), 5)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.SKELETON,
+														ConstantInt.of(4)
+												), 100)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.CREEPER,
+														ConstantInt.of(4)
+												), 100)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.SLIME,
+														ConstantInt.of(4)
+												), 100)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.ENDERMAN,
+														UniformInt.of(1, 4)
+												), 10)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.WITCH,
+														ConstantInt.of(1)
+												), 5)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.BREEZE,
+														UniformInt.of(1, 2)
+												), 20)
+												.build())
+								.addAllSpawns(MobCategory.UNDERGROUND_WATER_CREATURE,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.GLOW_SQUID,
+														UniformInt.of(4, 6)
+												), 10)
+												.build())
+								.addAllSpawns(MobCategory.WATER_AMBIENT,
+										WeightedList.<MobSpawnSettings.SpawnerData>builder()
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.COD,
+														UniformInt.of(1, 5)
+												), 5)
+												.add(new MobSpawnSettings.SpawnerData(
+														EntityTypes.TROPICAL_FISH,
+														UniformInt.of(1, 5)
+												), 3)
+												.build())
 								.build()
 				)
 				.generationSettings(
@@ -428,6 +601,10 @@ public class FBiomeBootstrap {
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
 										CavePlacements.GLOW_LICHEN
+								)
+								.addFeature(
+										GenerationStep.Decoration.VEGETAL_DECORATION,
+										VegetationPlacements.BAMBOO_LIGHT
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,

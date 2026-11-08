@@ -44,6 +44,12 @@ public class FFood {
 			.alwaysEdible()
 			.build();
 
+	public static final FoodProperties POPPY_SEEDS = new FoodProperties.Builder()
+			.nutrition(1)
+			.saturationModifier(0.1F)
+			.alwaysEdible()
+			.build();
+
 	public static final FoodProperties CHOCOLATE_BOTTLE = new FoodProperties.Builder()
 			.nutrition(4)
 			.saturationModifier(0.2F)
@@ -61,6 +67,11 @@ public class FFood {
 			.build();
 	public static final FoodProperties MILKSHAKE_BOTTLE = new FoodProperties.Builder()
 			.nutrition(4)
+			.saturationModifier(0.4F)
+			.alwaysEdible()
+			.build();
+	public static final FoodProperties SAFFRON_MILK_BOTTLE = new FoodProperties.Builder()
+			.nutrition(7)
 			.saturationModifier(0.4F)
 			.alwaysEdible()
 			.build();
@@ -124,6 +135,13 @@ public class FFood {
 			)))
 			.build();
 
+	public static final Consumable POPPY_SEEDS_CONSUMABLE = defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
+					new MobEffectInstance(MobEffects.LEVITATION, 80, 0),
+					new MobEffectInstance(MobEffects.POISON, 200, 0)
+			)))
+			.build();
+
 	public static final Consumable CHOCOLATE_BOTTLE_CONSUMABLE = defaultDrink()
 			.onConsume(new ApplyStatusEffectsConsumeEffect(
 					new MobEffectInstance(MobEffects.SPEED, 40, 2)
@@ -138,6 +156,12 @@ public class FFood {
 			))
 			.build();
 	public static final Consumable MILKSHAKE_BOTTLE_CONSUMABLE = defaultDrink()
+			.build();
+	public static final Consumable SAFFRON_MILK_BOTTLE_CONSUMABLE = defaultDrink()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
+					new MobEffectInstance(MobEffects.REGENERATION, 100, 0),
+					new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0)
+			)))
 			.build();
 
 	public static final Consumable COCOA_BUTTER_CONSUMABLE = defaultFood()

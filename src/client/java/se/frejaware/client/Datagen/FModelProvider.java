@@ -35,18 +35,6 @@ public class FModelProvider extends FabricModelProvider {
 	public void generateBlockStateModels(BlockModelGenerators blockGen) {
 		try {
 			// MOLLY
-			MultiVariant floor = BlockModelGenerators.plainVariant(
-					ModelLocationUtils.getModelLocation(FBlocks.IRON_BELL, "_floor")
-			);
-			MultiVariant ceiling = BlockModelGenerators.plainVariant(
-					ModelLocationUtils.getModelLocation(FBlocks.IRON_BELL, "_ceiling")
-			);
-			MultiVariant wall = BlockModelGenerators.plainVariant(
-					ModelLocationUtils.getModelLocation(FBlocks.IRON_BELL, "_wall")
-			);
-			MultiVariant betweenWalls = BlockModelGenerators.plainVariant(
-					ModelLocationUtils.getModelLocation(FBlocks.IRON_BELL, "_between_walls")
-			);
 			blockGen.registerSimpleFlatItemModel(FBlocks.IRON_BELL);
 
 			blockGen.createCrossBlockWithDefaultItem(
@@ -274,6 +262,11 @@ public class FModelProvider extends FabricModelProvider {
 					FItems.ENCHANTED_GOLDEN_PEAR, FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
 
 			itemGen.generateFlatItem(
+					FItems.SAFFRON, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.POPPY_SEEDS, ModelTemplates.FLAT_ITEM);
+
+			itemGen.generateFlatItem(
 					FItems.CHOCOLATE_BOTTLE, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(
 					FItems.MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
@@ -281,6 +274,8 @@ public class FModelProvider extends FabricModelProvider {
 					FItems.BERRY_JUICE_BOTTLE, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(
 					FItems.MILKSHAKE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(
+					FItems.SAFFRON_MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
 
 			itemGen.generateFlatItem(
 					FItems.COCOA_BUTTER, ModelTemplates.FLAT_ITEM);

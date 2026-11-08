@@ -22,6 +22,7 @@ import se.frejaware.Shared.FLootTables;
 import se.frejaware.Items.FItems;
 import se.frejaware.WorldGen.FPlacedFeatures;
 import se.frejaware.WorldGen.FFeatureTypes;
+import se.frejaware.WorldGen.Structures.FStructureTypes;
 
 public class F implements ModInitializer {
 	public static final String MOD_ID = "frejaware";
@@ -29,14 +30,13 @@ public class F implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Frejaware Initializing");
-
 		FBlocks.initialize();
 		FSkullBlockEntityTypes.register();
 		FItems.initialize();
 		FCreativeTabs.initialize();
 		FEntityTypes.initialize();
 		FLootTables.initialize();
+		FStructureTypes.init();
 
 		// BLOCK ENTITIES
 		BlockEntityTypes.BELL.addValidBlock(FBlocks.IRON_BELL);

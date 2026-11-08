@@ -43,14 +43,14 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 
 			AdvancementHolder root = Advancement.Builder.advancement()
 					.rootDisplay(
-							FBlocks.JACARANDA_SAPLING.asItem(),
+							FItems.PEAR,
 							Component.translatable(
 									"advancements.frejaware.root.title"
 							),
 							Component.translatable(
 									"advancements.frejaware.root.description"
 							),
-							F.id("block/stripped_jacaranda_log"),
+							F.id("gui/advancements/background/frejaware"),
 							AdvancementType.TASK,
 							true,
 							true,
@@ -74,6 +74,29 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							)
 					)
 					.save(consumer, F.id("frejaware/root"));
+
+			AdvancementHolder fourTwenty = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FItems.POPPY_SEEDS,
+							Component.translatable(
+									"advancements.frejaware.four_twenty.title"
+							),
+							Component.translatable(
+									"advancements.frejaware.four_twenty.description"
+							),
+							AdvancementType.TASK,
+							true,
+							true,
+							false
+					)
+					.addCriterion(
+							"eat_poppy_seeds",
+							ConsumeItemTrigger.TriggerInstance.usedItem(
+									itemRegistry, FItems.POPPY_SEEDS
+							)
+					)
+					.save(consumer, F.id("frejaware/four_twenty"));
 
 			// ------------------
 			// JACARANDA
@@ -213,6 +236,12 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							"obtain_ice_cream",
 							InventoryChangeTrigger.TriggerInstance.hasItems(
 									FItems.ICE_CREAM
+							)
+					)
+					.addCriterion(
+							"obtain_saffron_milk",
+							InventoryChangeTrigger.TriggerInstance.hasItems(
+									FItems.SAFFRON_MILK_BOTTLE
 							)
 					)
 					.save(consumer, F.id("frejaware/milk_enthusiast"));
@@ -380,7 +409,7 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 					.save(consumer, F.id("frejaware/pop_that_cherry"));
 
 			AdvancementHolder kindaFruity = Advancement.Builder.advancement()
-					.parent(ohMyMeadows)
+					.parent(popThatCherry)
 					.display(
 							FItems.PEAR,
 							Component.translatable(

@@ -160,13 +160,17 @@ public class FCreativeTabs {
 					.icon(() -> new ItemStack(FItems.PEAR))
 					.title(Component.translatable("creativetab.food"))
 					.displayItems((params, output) -> {
-						//  FRUITS
+						// FRUITS
 						output.accept(FItems.CHERRY);
 						output.accept(FItems.BANANA);
 						output.accept(FItems.ORANGE);
 						output.accept(FItems.PEAR);
 						output.accept(FItems.GOLDEN_PEAR);
 						output.accept(FItems.ENCHANTED_GOLDEN_PEAR);
+
+						// OTHER
+						output.accept(FItems.POPPY_SEEDS);
+						output.accept(FItems.SAFFRON);
 
 						// BERRIES
 						output.accept(FItems.BLACKBERRIES);

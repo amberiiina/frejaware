@@ -95,6 +95,25 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.unlockedBy(getHasName(FItems.PEAR), has(FItems.PEAR))
 						.save(output);
 
+				// 1x golden milk
+				shapeless(RecipeCategory.FOOD, FItems.SAFFRON_MILK_BOTTLE, 2)
+						.requires(FItems.MILK_BOTTLE)
+						.requires(FItems.SAFFRON)
+						.requires(Items.HONEY_BOTTLE)
+						.requires(Items.GOLD_INGOT)
+						.unlockedBy(getHasName(FItems.SAFFRON), has(FItems.SAFFRON))
+						.save(output);
+				// 1x poppy seed
+				shapeless(RecipeCategory.FOOD, FItems.POPPY_SEEDS)
+						.requires(Items.POPPY)
+						.unlockedBy(getHasName(Items.POPPY), has(Items.POPPY))
+						.save(output);
+				// 1x saffron
+				shapeless(RecipeCategory.FOOD, FItems.SAFFRON)
+						.requires(FItemTags.CROCUSES)
+						.unlockedBy("has_crocus", has(FItemTags.CROCUSES))
+						.save(output);
+
 				// 1x chocolate bottle
 				combineTwoFood(FItems.CHOCOLATE_BOTTLE, FItems.MILK_BOTTLE, FItems.CHOCOLATE);
 				// 8x milk bottle

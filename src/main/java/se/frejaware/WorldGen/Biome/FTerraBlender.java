@@ -7,8 +7,6 @@ import terrablender.api.TerraBlenderApi;
 public class FTerraBlender implements TerraBlenderApi {
 	@Override
 	public void onTerraBlenderInitialized() {
-		F.LOGGER.info("TerraBlender Initializing");
-
 		Regions.register(new FPearMeadowRegion());
 		Regions.register(new FJacarandaGladeRegion());
 

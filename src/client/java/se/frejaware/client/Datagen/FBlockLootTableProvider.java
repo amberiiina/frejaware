@@ -3,13 +3,19 @@ package se.frejaware.client.Datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.UniformContainerBase;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.Items.FItems;
@@ -41,14 +47,9 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 		dropSelf(FBlocks.LILY_OF_THE_GLADE);
 
 		// FOOD
-		add(
-				Blocks.CHERRY_LEAVES,
-				block -> createCherryLeavesDrops(
-						block,
-						Blocks.CHERRY_SAPLING,
-						NORMAL_LEAVES_SAPLING_CHANCES
-				)
-		);
+		add(Blocks.CHERRY_LEAVES, block -> createCherryLeavesDrops(
+				block, Blocks.CHERRY_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES
+		));
 
 		// JACARANDA
 		dropSelf(FBlocks.JACARANDA_LOG);
@@ -190,6 +191,31 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 												)
 								)
 				);
+	}
+	public LootTable.Builder createPoppyDrops(final Block block) {
+		return LootTable.lootTable()
+				.withPool(
+						LootPool.lootPool()
+								.setRolls(ContextIntProviders.exactly(1))
+								.add(applyExplosionCondition(block, LootItem.lootTableItem(
+										Items.POPPY))
+								)
+								.add(applyExplosionCondition(block, LootItem.lootTableItem(
+										FItems.POPPY_SEEDS))
+								)
+				);
+	}
+	public LootTable.Builder createDoubleDrop(final Block block, final Item drop1, final Item drop2) {
+		return this.applyExplosionDecay(
+				block,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool()
+								.add(LootItem.lootTableItem(drop1))
+						)
+						.withPool(LootPool.lootPool()
+								.add(LootItem.lootTableItem(drop2))
+						)
+		);
 	}
 
 	@Override

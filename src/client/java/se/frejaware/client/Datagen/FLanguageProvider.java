@@ -51,6 +51,7 @@ public class FLanguageProvider extends FabricLanguageProvider {
 			Map.entry("milk_bottle", "Bottle of Milk"),
 			Map.entry("berry_juice_bottle", "Bottle of Berry Juice"),
 			Map.entry("milkshake_bottle", "Bottle of Milkshake"),
+			Map.entry("saffron_milk_bottle", "Bottle of Saffron Milk"),
 
 			// ROSE QUARTZ
 			Map.entry("rose_quartz_upgrade_smithing_template", "Rose Quartz Upgrade"),

@@ -8,6 +8,7 @@ import net.minecraft.references.ItemIds;
 import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.ItemTags;
 import se.frejaware.Blocks.FBlockItemIds;
+import se.frejaware.Items.FItems;
 import se.frejaware.Shared.FBlockTags;
 import se.frejaware.Items.FItemIds;
 import se.frejaware.Shared.FItemTags;
@@ -30,6 +31,11 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(FBlockItemIds.WHITE_CACTUS_FLOWER)
 				.add(FBlockItemIds.YELLOW_CACTUS_FLOWER);
 
+		builder(FItemTags.CROCUSES)
+				.add(FBlockItemIds.WHITE_CROCUS)
+				.add(FBlockItemIds.LILAC_CROCUS)
+				.add(FBlockItemIds.PURPLE_CROCUS);
+
 		// FOOD
 		builder(ConventionalItemTags.FOODS)
 				.add(FItemIds.CHERRY)
@@ -37,11 +43,13 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(FItemIds.ORANGE)
 				.add(FItemIds.PEAR)
 				.add(FItemIds.GOLDEN_PEAR)
+				.add(FItemIds.SAFFRON)
 				.add(FItemIds.ENCHANTED_GOLDEN_PEAR)
 				.add(FItemIds.CHOCOLATE_BOTTLE)
 				.add(FItemIds.MILK_BOTTLE)
 				.add(FItemIds.BERRY_JUICE_BOTTLE)
 				.add(FItemIds.MILKSHAKE_BOTTLE)
+				.add(FItemIds.SAFFRON_MILK_BOTTLE)
 				.add(FItemIds.COCOA_BUTTER)
 				.add(FItemIds.CHOCOLATE)
 				.add(FItemIds.CHOCOLATE_BAR)
@@ -75,7 +83,8 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(FItemIds.FRUIT_SALAD);
 		builder(ConventionalItemTags.GOLDEN_FOODS)
 				.add(FItemIds.GOLDEN_PEAR)
-				.add(FItemIds.ENCHANTED_GOLDEN_PEAR);
+				.add(FItemIds.ENCHANTED_GOLDEN_PEAR)
+				.add(FItemIds.SAFFRON_MILK_BOTTLE);
 
 		builder(FItemTags.FRUIT_SALAD_INGREDIENTS)
 				.add(ItemIds.APPLE)

@@ -88,6 +88,20 @@ public class FItems {
 					.component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
 	);
 
+	public static final Item SAFFRON = registerItem(
+			FItemIds.SAFFRON,
+			Item::new,
+			new Item.Properties()
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
+	);
+	public static final Item POPPY_SEEDS = registerItem(
+			FItemIds.POPPY_SEEDS,
+			createBlockItemWithCustomItemName(Blocks.POPPY),
+			new Item.Properties()
+					.food(FFood.POPPY_SEEDS, FFood.POPPY_SEEDS_CONSUMABLE)
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
+	);
+
 	public static final Item CHOCOLATE_BOTTLE = registerItem(
 			FItemIds.CHOCOLATE_BOTTLE,
 			Item::new,
@@ -117,6 +131,14 @@ public class FItems {
 			Item::new,
 			new Item.Properties()
 					.food(FFood.MILKSHAKE_BOTTLE, FFood.MILKSHAKE_BOTTLE_CONSUMABLE)
+					.craftRemainder(Items.GLASS_BOTTLE)
+					.usingConvertsTo(Items.GLASS_BOTTLE)
+	);
+	public static final Item SAFFRON_MILK_BOTTLE = registerItem(
+			FItemIds.SAFFRON_MILK_BOTTLE,
+			Item::new,
+			new Item.Properties()
+					.food(FFood.SAFFRON_MILK_BOTTLE, FFood.SAFFRON_MILK_BOTTLE_CONSUMABLE)
 					.craftRemainder(Items.GLASS_BOTTLE)
 					.usingConvertsTo(Items.GLASS_BOTTLE)
 	);
