@@ -9,6 +9,7 @@ import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.random.Weighted;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -42,6 +43,7 @@ import se.frejaware.Blocks.FBlocks;
 import se.frejaware.F;
 import se.frejaware.WorldGen.Custom.FRoseQuartzOreFeature;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -121,33 +123,27 @@ public class FFeatures {
 								2345L,
 								NormalNoise.createParity(0, 1.0F),
 								0.020833334F,
-								List.of(
-										FBlocks.WHITE_ORCHID.defaultBlockState(),
-										FBlocks.WHITE_ORCHID.defaultBlockState(),
-										FBlocks.YELLOW_TULIP.defaultBlockState(),
-										FBlocks.YELLOW_TULIP.defaultBlockState(),
-										FBlocks.WHITE_HIBISCUS.defaultBlockState(),
-										FBlocks.YELLOW_HIBISCUS.defaultBlockState(),
-										Blocks.WHITE_TULIP.defaultBlockState()
+								weightedPatch(
+										FBlocks.WHITE_ORCHID.defaultBlockState(), 2,
+										FBlocks.YELLOW_TULIP.defaultBlockState(), 2,
+										FBlocks.WHITE_HIBISCUS.defaultBlockState(), 1,
+										FBlocks.YELLOW_HIBISCUS.defaultBlockState(), 1,
+										Blocks.WHITE_TULIP.defaultBlockState(), 1
 								)
 						)
 				)
 		);
 		context.register(PEAR_MEADOW_BUSHES_FEATURE_KEY,
 				new SimpleBlockFeature(
-						new NoiseProvider(
-								2345L,
-								NormalNoise.createParity(0, 1.0F),
-								0.020833334F,
-								List.of(
-										FBlocks.BLUEBERRY_BUSH.defaultBlockState(),
-										FBlocks.BLACKBERRY_BUSH.defaultBlockState(),
-										FBlocks.PINKBERRY_BUSH.defaultBlockState(),
-										FBlocks.BLOWBERRY_BUSH.defaultBlockState(),
-										FBlocks.ROUND_BUSH.defaultBlockState(),
-										Blocks.AZALEA.defaultBlockState(),
-										Blocks.AZALEA.defaultBlockState()
-								)
+						new WeightedStateProvider(
+								WeightedList.<BlockState>builder()
+										.add(FBlocks.BLACKBERRY_BUSH.defaultBlockState(), 1)
+										.add(FBlocks.BLOWBERRY_BUSH.defaultBlockState(), 1)
+										.add(FBlocks.BLUEBERRY_BUSH.defaultBlockState(), 1)
+										.add(FBlocks.PINKBERRY_BUSH.defaultBlockState(), 1)
+										.add(FBlocks.ROUND_BUSH.defaultBlockState(), 1)
+										.add(Blocks.AZALEA.defaultBlockState(), 1)
+										.build()
 						)
 				)
 		);
@@ -169,11 +165,14 @@ public class FFeatures {
 								2345L,
 								NormalNoise.createParity(0, 1.0F),
 								0.020833334F,
-								List.of(
-										FBlocks.WHITE_CROCUS.defaultBlockState(),
-										FBlocks.LILAC_CROCUS.defaultBlockState(),
-										FBlocks.PURPLE_CROCUS.defaultBlockState(),
-										FBlocks.LILY_OF_THE_GLADE.defaultBlockState()
+								weightedPatch(
+										FBlocks.WHITE_CROCUS.defaultBlockState(), 2,
+										FBlocks.LILAC_CROCUS.defaultBlockState(), 2,
+										FBlocks.PURPLE_CROCUS.defaultBlockState(), 2,
+										FBlocks.LILY_OF_THE_GLADE.defaultBlockState(), 2,
+										Blocks.ALLIUM.defaultBlockState(), 2,
+										Blocks.LILAC.defaultBlockState(), 1,
+										Blocks.PEONY.defaultBlockState(), 1
 								)
 						)
 				)
@@ -185,6 +184,20 @@ public class FFeatures {
 				Registries.FEATURE,
 				F.id(name)
 		);
+	}
+
+	private static Weighted w(BlockState state, int w) {
+		return new Weighted(state, w);
+	}
+
+	private static List<BlockState> weightedPatch(Object... pairs) {
+		List<BlockState> out = new ArrayList<>();
+		for (int i = 0; i < pairs.length; i += 2) {
+			BlockState state = (BlockState) pairs[i];
+			int weight = (Integer) pairs[i + 1];
+			for (int w = 0; w < weight; w++) out.add(state);
+		}
+		return out;
 	}
 
 	private static WeightedList.Builder<BlockState> flowerBedPatchBuilder(final Block flowerBedBlock) {

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:poppy"
+  ],
+  "result": {
+    "id": "frejaware:poppy_seeds"
+  }
+}

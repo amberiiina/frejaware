@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "frejaware:block/jacaranda_log_x"
+    },
+    "axis=y": {
+      "model": "frejaware:block/jacaranda_log_y"
+    },
+    "axis=z": {
+      "model": "frejaware:block/jacaranda_log_z"
+    }
+  }
+}

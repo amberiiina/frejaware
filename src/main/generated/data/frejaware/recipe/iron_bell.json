@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_block",
+    "L": "#minecraft:logs"
+  },
+  "pattern": [
+    "LLL",
+    " I "
+  ],
+  "result": {
+    "id": "frejaware:iron_bell"
+  }
+}

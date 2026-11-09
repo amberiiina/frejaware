@@ -1,0 +1,36 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "visit_jacaranda_glade": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "frejaware:jacaranda_glade"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.jack_that_randa.description"
+    },
+    "icon": {
+      "id": "frejaware:jacaranda_sapling"
+    },
+    "title": {
+      "translate": "advancements.frejaware.jack_that_randa.title"
+    }
+  },
+  "requirements": [
+    [
+      "visit_jacaranda_glade"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

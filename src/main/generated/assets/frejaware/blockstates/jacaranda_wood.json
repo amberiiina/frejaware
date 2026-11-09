@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "frejaware:block/jacaranda_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "frejaware:block/jacaranda_wood"
+    },
+    "axis=z": {
+      "model": "frejaware:block/jacaranda_wood",
+      "x": 90
+    }
+  }
+}

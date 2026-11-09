@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import se.frejaware.Blocks.Custom.FSkullBlock;
 import se.frejaware.client.Model.FModelLayers;
-import se.frejaware.client.Model.FGolemSkullModel;
+import se.frejaware.client.Model.Golem.FGolemSkullModel;
 
 @Mixin(SkullBlockRenderer.class)
 public class SkullBlockRendererMixin {

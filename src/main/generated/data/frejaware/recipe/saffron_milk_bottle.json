@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:milk_bottle",
+    "frejaware:saffron",
+    "minecraft:honey_bottle",
+    "minecraft:gold_ingot"
+  ],
+  "result": {
+    "count": 2,
+    "id": "frejaware:saffron_milk_bottle"
+  }
+}

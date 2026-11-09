@@ -19,9 +19,9 @@ import se.frejaware.Blocks.Custom.FSkullBlock;
 import se.frejaware.Entities.FEntityTypes;
 import se.frejaware.Entities.Custom.FGolem;
 import se.frejaware.F;
-import se.frejaware.client.Model.FIronBellRenderer;
+import se.frejaware.client.Model.IronBell.FIronBellRenderer;
 import se.frejaware.client.Model.FModelLayers;
-import se.frejaware.client.Model.FGolemRenderer;
+import se.frejaware.client.Model.Golem.FGolemRenderer;
 import se.frejaware.client.mixin.SkullBlockRendererAccessor;
 
 import java.util.Map;

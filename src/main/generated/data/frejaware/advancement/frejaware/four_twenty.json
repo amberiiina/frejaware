@@ -1,0 +1,30 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "eat_poppy_seeds": {
+      "conditions": {
+        "item": {
+          "items": "frejaware:poppy_seeds"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.four_twenty.description"
+    },
+    "icon": {
+      "id": "frejaware:poppy_seeds"
+    },
+    "title": {
+      "translate": "advancements.frejaware.four_twenty.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_poppy_seeds"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

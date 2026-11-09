@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:noise",
+    "noise": {
+      "base_amplitude": 0.955388882960065,
+      "base_octave": 0
+    },
+    "scale": 0.020833334,
+    "seed": 2345,
+    "states": [
+      "frejaware:white_crocus",
+      "frejaware:white_crocus",
+      "frejaware:lilac_crocus",
+      "frejaware:lilac_crocus",
+      "frejaware:purple_crocus",
+      "frejaware:purple_crocus",
+      "frejaware:lily_of_the_glade",
+      "frejaware:lily_of_the_glade",
+      "minecraft:allium",
+      "minecraft:allium",
+      "minecraft:lilac",
+      "minecraft:peony"
+    ]
+  }
+}

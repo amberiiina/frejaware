@@ -628,6 +628,10 @@ public class FBiomeBootstrap {
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
+										FPlacedFeatures.JACARANDA_GLADE_MOSS_PLACED_KEY
+								)
+								.addFeature(
+										GenerationStep.Decoration.VEGETAL_DECORATION,
 										FPlacedFeatures.JACARANDA_TREE_PLACED_KEY
 								)
 								.addFeature(

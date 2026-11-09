@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_1",
+  "textures": {
+    "flowerbed": "frejaware:block/purple_petals",
+    "stem": "frejaware:block/purple_petals_stem"
+  }
+}

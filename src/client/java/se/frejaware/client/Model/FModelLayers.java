@@ -6,6 +6,10 @@ import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.model.object.equipment.ShieldModel;
 import net.minecraft.client.renderer.special.SpecialModelRenderers;
 import se.frejaware.F;
+import se.frejaware.client.Model.IronBell.FIronBellModel;
+import se.frejaware.client.Model.IronBell.FIronBellSpecialRenderer;
+import se.frejaware.client.Model.Golem.FGolemModel;
+import se.frejaware.client.Model.Golem.FGolemSkullModel;
 
 public class FModelLayers {
 	// ----------------------

@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 423784,
+    "separation": 4,
+    "spacing": 12
+  },
+  "structures": [
+    {
+      "structure": "frejaware:jacaranda_amethyst",
+      "weight": 1
+    }
+  ]
+}

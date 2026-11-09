@@ -1,0 +1,75 @@
+{
+  "parent": "frejaware:frejaware/milk_jugs",
+  "criteria": {
+    "obtain_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:milk_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:milkshake_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_saffron_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:saffron_milk_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.milk_enthusiast.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "frejaware:milk_bottle"
+    },
+    "title": {
+      "translate": "advancements.frejaware.milk_enthusiast.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_milk"
+    ],
+    [
+      "obtain_milkshake"
+    ],
+    [
+      "obtain_ice_cream"
+    ],
+    [
+      "obtain_saffron_milk"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

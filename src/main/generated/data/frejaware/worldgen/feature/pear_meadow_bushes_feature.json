@@ -1,21 +1,32 @@
 {
   "type": "minecraft:simple_block",
   "to_place": {
-    "type": "minecraft:noise",
-    "noise": {
-      "base_amplitude": 0.955388882960065,
-      "base_octave": 0
-    },
-    "scale": 0.020833334,
-    "seed": 2345,
-    "states": [
-      "frejaware:blueberry_crop",
-      "frejaware:blackberry_crop",
-      "frejaware:pinkberry_crop",
-      "frejaware:blowberry_crop",
-      "frejaware:round_bush",
-      "minecraft:azalea",
-      "minecraft:azalea"
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "frejaware:blackberry_crop",
+        "weight": 1
+      },
+      {
+        "data": "frejaware:blowberry_crop",
+        "weight": 1
+      },
+      {
+        "data": "frejaware:blueberry_crop",
+        "weight": 1
+      },
+      {
+        "data": "frejaware:pinkberry_crop",
+        "weight": 1
+      },
+      {
+        "data": "frejaware:round_bush",
+        "weight": 1
+      },
+      {
+        "data": "minecraft:azalea",
+        "weight": 1
+      }
     ]
   }
 }

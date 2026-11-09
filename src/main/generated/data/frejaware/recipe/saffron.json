@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#frejaware:crocuses"
+  ],
+  "result": {
+    "id": "frejaware:saffron"
+  }
+}

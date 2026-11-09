@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#frejaware:jacaranda_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "frejaware:jacaranda_planks"
+  }
+}

@@ -10,7 +10,6 @@ import java.util.Set;
 
 @Mixin(BlockEntityType.class)
 public interface BlockEntityTypeAccessor {
-
 	@Accessor("validBlocks")
 	Set<Block> frejaware$getValidBlocks();
 

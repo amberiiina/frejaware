@@ -1,0 +1,36 @@
+{
+  "parent": "frejaware:frejaware/jack_that_randa",
+  "criteria": {
+    "find_jacaranda_well": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "structures": "frejaware:jacaranda_well"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.well_well_well.description"
+    },
+    "icon": {
+      "id": "frejaware:jacaranda_log"
+    },
+    "title": {
+      "translate": "advancements.frejaware.well_well_well.title"
+    }
+  },
+  "requirements": [
+    [
+      "find_jacaranda_well"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

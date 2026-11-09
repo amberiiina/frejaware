@@ -21,7 +21,7 @@ import se.frejaware.Shared.FCreativeTabs;
 import se.frejaware.Shared.FLootTables;
 import se.frejaware.Items.FItems;
 import se.frejaware.WorldGen.FPlacedFeatures;
-import se.frejaware.WorldGen.FFeatureTypes;
+import se.frejaware.WorldGen.Custom.FFeatureTypes;
 import se.frejaware.WorldGen.Structures.FStructureTypes;
 
 public class F implements ModInitializer {

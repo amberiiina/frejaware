@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "frejaware:block/jacaranda_pressure_plate"
+    },
+    "powered=true": {
+      "model": "frejaware:block/jacaranda_pressure_plate_down"
+    }
+  }
+}

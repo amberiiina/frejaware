@@ -5,7 +5,12 @@
   "client": [
     "SkullBlockRendererAccessor",
     "SkullBlockRendererMixin",
-    "FSplashMixin"
+
+    "SplashMixin",
+
+    "LivingEntityRenderStateMixin",
+    "LivingEntityRendererMixin",
+    "CodRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

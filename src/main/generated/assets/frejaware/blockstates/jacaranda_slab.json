@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "frejaware:block/jacaranda_slab"
+    },
+    "type=double": {
+      "model": "frejaware:block/jacaranda_planks"
+    },
+    "type=top": {
+      "model": "frejaware:block/jacaranda_slab_top"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "criteria": {
+    "visit_jacaranda_glade_root": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "frejaware:jacaranda_glade"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "visit_pear_meadow_root": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "frejaware:pear_meadow"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "background": "frejaware:gui/advancements/background/frejaware",
+    "description": {
+      "translate": "advancements.frejaware.root.description"
+    },
+    "icon": {
+      "id": "frejaware:pear"
+    },
+    "title": {
+      "translate": "advancements.frejaware.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "visit_pear_meadow_root",
+      "visit_jacaranda_glade_root"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
