@@ -49,11 +49,6 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
 						.save(output);
 
-				combineTwoDecorations(FBlocks.WHITE_CACTUS_FLOWER,
-						Items.CACTUS_FLOWER, Items.DYE.white());
-				combineTwoDecorations(FBlocks.YELLOW_CACTUS_FLOWER,
-						Items.CACTUS_FLOWER, Items.DYE.yellow());
-
 				flowerDye(FBlocks.WHITE_PETALS, Items.DYE.white());
 				flowerDye(FBlocks.WHITE_CACTUS_FLOWER, Items.DYE.white());
 				flowerDye(FBlocks.YELLOW_CACTUS_FLOWER, Items.DYE.yellow());
