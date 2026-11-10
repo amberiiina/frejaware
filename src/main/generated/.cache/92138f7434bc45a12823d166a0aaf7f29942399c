@@ -12,6 +12,7 @@ fcdc7963ec23581ccdcf506d50dc824d563c27a1 data/minecraft/tags/block/bee_attractiv
 ff4d8ae3f7dadf5c84acc211cc5cd2f05f53b258 data/minecraft/tags/block/ceiling_hanging_signs.json
 a19e4633e1fcc570f9506f88c3d68085fa8882c2 data/minecraft/tags/block/chains.json
 5060569f96a18a371e981b10b168610f86cc85e5 data/minecraft/tags/block/climbable.json
+446a036333b185af3e4d747f2c2e8005deb0752c data/minecraft/tags/block/crops.json
 cf3dd22d3049ab6ee1f20e6836486790b4121c3a data/minecraft/tags/block/doors.json
 e66f745649b07adc6b99d33b334b5ad8271386b3 data/minecraft/tags/block/enderman_holdable.json
 4593b37e533ca8c703d8f98dd2a6463d8e157b88 data/minecraft/tags/block/fence_gates.json
@@ -23,6 +24,7 @@ d7f1e9e7c1c6ae2da04e7aff959faa3877757e03 data/minecraft/tags/block/incorrect_for
 d586c8b7f0d69fb9c0f29d57eee842e6c654918f data/minecraft/tags/block/lanterns.json
 e6320d63537dda476996103c84ab3ebbb2a6594a data/minecraft/tags/block/leaves.json
 ba2da7c32dd875769d7a255633760d9cdbd74770 data/minecraft/tags/block/logs_that_burn.json
+446a036333b185af3e4d747f2c2e8005deb0752c data/minecraft/tags/block/maintains_farmland.json
 4802ee6a82abbfde8ad81057034e208f6c6969a1 data/minecraft/tags/block/mineable/axe.json
 e6320d63537dda476996103c84ab3ebbb2a6594a data/minecraft/tags/block/mineable/hoe.json
 dd90e8ef0c849a06f3cd91edea94fd1c72b2a9eb data/minecraft/tags/block/mineable/pickaxe.json
@@ -42,7 +44,7 @@ b199aaa0d0a768ee6b34e0ddeccd67c311819cf3 data/minecraft/tags/block/stairs.json
 5c47476ab838071bf650b9dcd20533a142dbec4d data/minecraft/tags/block/wall_post_override.json
 0ef51605e1298f2d99dfad56ca32750cfd60c51f data/minecraft/tags/block/wall_signs.json
 87b52e4765106ccefcd47d63ae959c7a639c9c54 data/minecraft/tags/block/walls.json
-9f84f74320c7feb22bd5b01f018eb9794369aa5d data/minecraft/tags/block/washed_away_by_fluids.json
+4540e9c3d63cc51e83edf8fe32515d2af161296a data/minecraft/tags/block/washed_away_by_fluids.json
 83fe380a60dfba905404b2f6b02de71195517da9 data/minecraft/tags/block/wooden_buttons.json
 acf8f4e805e494aa0535e6403544126b25c05a4d data/minecraft/tags/block/wooden_doors.json
 1153da77bd28b9762cbc8e4bf83003083e0b590e data/minecraft/tags/block/wooden_fences.json

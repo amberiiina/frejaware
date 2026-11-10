@@ -11,6 +11,7 @@ public class FItemIds {
 	// ----------------------
 
 	// FOOD
+	public static final ResourceKey<Item> PINEAPPLE = create("pineapple");
 	public static final ResourceKey<Item> CHERRY = create("cherry");
 	public static final ResourceKey<Item> BANANA = create("banana");
 	public static final ResourceKey<Item> ORANGE = create("orange");

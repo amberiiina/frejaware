@@ -1,5 +1,6 @@
 package se.frejaware.Blocks;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -27,6 +28,10 @@ public class FBlockItemIds {
 	public static final BlockItemId LILY_OF_THE_GLADE = create("lily_of_the_glade");
 
 	// FOOD
+	public static final BlockItemId PINEAPPLE_CROP = create(
+			"pineapple", "pineapple_seeds"
+	);
+
 	public static final BlockItemId BLUEBERRY_CROP = create("blueberry_crop");
 	public static final BlockItemId BLACKBERRY_CROP = create("blackberry_crop");
 	public static final BlockItemId PINKBERRY_CROP = create("pinkberry_crop");
@@ -162,5 +167,16 @@ public class FBlockItemIds {
 	private static BlockItemId create(String name) {
 		Identifier id = F.id(name);
 		return BlockItemId.create(id, id);
+	}
+
+	public static BlockItemId create(final String blockName, final String itemName) {
+		return create(F.id(blockName), F.id(itemName));
+	}
+
+	public static BlockItemId create(final Identifier blockId, final Identifier itemId) {
+		return new BlockItemId(
+				ResourceKey.create(Registries.BLOCK, blockId),
+				ResourceKey.create(Registries.ITEM, itemId)
+		);
 	}
 }

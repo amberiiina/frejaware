@@ -41,6 +41,12 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				// MOLLY
 				// ----------------------
 
+				// 1x pineapple seed
+				shapeless(RecipeCategory.MISC, FItems.PINEAPPLE_SEEDS)
+						.requires(FItems.PINEAPPLE)
+						.unlockedBy(getHasName(FItems.PINEAPPLE), has(FItems.PINEAPPLE))
+						.save(output);
+
 				shaped(RecipeCategory.MISC, FBlocks.IRON_BELL)
 						.pattern("LLL")
 						.pattern(" I ")

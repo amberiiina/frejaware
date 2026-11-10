@@ -18,6 +18,7 @@
   "painting.frejaware.ribbon.author": "Molly",
 
 
+  "item.frejaware.pineapple_seeds": "Pineapple Seeds",
   "item.frejaware.poppy_seeds": "Poppy Seeds",
   "item.frejaware.blackberry_crop": "Blackberries",
   "item.frejaware.blowberry_crop": "Blowberries",
@@ -43,6 +44,9 @@
 
   "advancements.frejaware.four_twenty.title": "420",
   "advancements.frejaware.four_twenty.description": "Get high from a poppy seed",
+
+  "advancements.frejaware.druglord.title": "Druglord",
+  "advancements.frejaware.druglord.description": "Consume 10 poppy seeds",
 
 
   "advancements.frejaware.jack_that_randa.title": "Jack That Randa!",

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "frejaware:block/pineapple_stage0"
+    },
+    "age=1": {
+      "model": "frejaware:block/pineapple_stage0"
+    },
+    "age=2": {
+      "model": "frejaware:block/pineapple_stage0"
+    },
+    "age=3": {
+      "model": "frejaware:block/pineapple_stage0"
+    },
+    "age=4": {
+      "model": "frejaware:block/pineapple_stage1"
+    },
+    "age=5": {
+      "model": "frejaware:block/pineapple_stage1"
+    },
+    "age=6": {
+      "model": "frejaware:block/pineapple_stage1"
+    },
+    "age=7": {
+      "model": "frejaware:block/pineapple_stage2"
+    }
+  }
+}

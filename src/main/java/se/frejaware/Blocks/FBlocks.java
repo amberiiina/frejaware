@@ -28,6 +28,18 @@ public class FBlocks {
 	// ----------------------
 
 	// MOLLY
+	public static final Block PINEAPPLE = register(
+			FBlockItemIds.PINEAPPLE_CROP,
+			FPineappleBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(state -> state.getValue(CropBlock.AGE) >= 2 ? MapColor.COLOR_YELLOW : MapColor.PLANT)
+					.noCollision()
+					.randomTicks()
+					.instabreak()
+					.sound(SoundType.CROP)
+					.pushReaction(PushReaction.POPPED)
+	);
+
 	public static final Block IRON_BELL = registerBlockItem(
 			FBlockItemIds.IRON_BELL,
 			FIronBellBlock::new,
@@ -1064,6 +1076,22 @@ public class FBlocks {
 		return wallProperties;
 	}
 
+	// block
+	private static Block register(
+			final BlockItemId id,
+			final Function<BlockBehaviour.Properties, Block> factory,
+			final BlockBehaviour.Properties properties) {
+		return register(id.block(), factory, properties);
+	}
+
+	public static Block register(
+			final ResourceKey<Block> id,
+			final Function<BlockBehaviour.Properties, Block> factory,
+			final BlockBehaviour.Properties properties) {
+		Block block = factory.apply(properties.setId(id));
+		return Registry.register(BuiltInRegistries.BLOCK, id, block);
+	}
+
 	// block without item
 	private static Block registerBlock(
 			ResourceKey<Block> id,
@@ -1098,24 +1126,6 @@ public class FBlocks {
 		Registry.register(BuiltInRegistries.ITEM, id.item(), blockItem);
 
 		return block;
-	}
-
-	// item for an already registered block, with a custom item factory
-	private static Item registerItemFor(
-			BlockItemId id,
-			Block block,
-			BiFunction<Block, Item.Properties, Item> itemFactory,
-			Item.Properties props
-	) {
-		Item item = itemFactory.apply(block,
-				props.useBlockDescriptionPrefix()
-						.requiredFeatures(block.requiredFeatures())
-						.setId(id.item()));
-
-		if (item instanceof BlockItem blockItem) {
-			blockItem.registerBlocks(Item.BY_BLOCK, item);
-		}
-		return Registry.register(BuiltInRegistries.ITEM, id.item(), item);
 	}
 
 	// register stair

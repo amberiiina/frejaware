@@ -38,6 +38,19 @@ public class FItems {
 	// ----------------------
 
 	// FOOD
+	public static final Item PINEAPPLE_SEEDS = registerItem(
+			FBlockItemIds.PINEAPPLE_CROP,
+			createBlockItemWithCustomItemName(FBlocks.PINEAPPLE),
+			new Item.Properties()
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
+	);
+	public static final Item PINEAPPLE = registerItem(
+			FItemIds.PINEAPPLE,
+			Item::new,
+			new Item.Properties()
+					.food(FFood.PINEAPPLE)
+					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)
+	);
 	public static final Item CHERRY = registerItem(
 			FItemIds.CHERRY,
 			Item::new,

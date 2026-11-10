@@ -1,0 +1,9 @@
+{
+  "asset_id": "frejaware:entity/cat/cat_cream",
+  "baby_asset_id": "frejaware:entity/cat/cat_cream_baby",
+  "spawn_conditions": [
+    {
+      "priority": 0
+    }
+  ]
+}

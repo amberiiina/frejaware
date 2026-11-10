@@ -1,0 +1,44 @@
+{
+  "parent": "frejaware:frejaware/four_twenty",
+  "criteria": {
+    "eat_10_poppy_seeds": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:type_specific/player": {
+              "stats": [
+                {
+                  "type": "minecraft:used",
+                  "stat": "frejaware:poppy_seeds",
+                  "value": {
+                    "min": 10
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.druglord.description"
+    },
+    "icon": {
+      "id": "minecraft:poppy"
+    },
+    "title": {
+      "translate": "advancements.frejaware.druglord.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_10_poppy_seeds"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

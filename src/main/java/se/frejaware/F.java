@@ -4,8 +4,11 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.event.registry.DynamicRegistrySetupCallback;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 
 import net.minecraft.world.level.biome.Biomes;
@@ -16,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import se.frejaware.Blocks.FParticles;
 import se.frejaware.Blocks.Custom.FSkullBlockEntityTypes;
 import se.frejaware.Blocks.FBlocks;
+import se.frejaware.Entities.FCatVariants;
 import se.frejaware.Entities.FEntityTypes;
 import se.frejaware.Shared.FCreativeTabs;
 import se.frejaware.Shared.FLootTables;

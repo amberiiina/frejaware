@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:pineapple"
+  ],
+  "result": {
+    "id": "frejaware:pineapple_seeds"
+  }
+}

@@ -13,12 +13,16 @@ import java.util.List;
 
 public class FFood {
 	// FOOD
+	public static final FoodProperties PINEAPPLE = new FoodProperties.Builder()
+			.nutrition(5)
+			.saturationModifier(0.4F)
+			.build();
 	public static final FoodProperties CHERRY = new FoodProperties.Builder()
 			.nutrition(2)
 			.saturationModifier(0.3F)
 			.build();
 	public static final FoodProperties BANANA = new FoodProperties.Builder()
-			.nutrition(6)
+			.nutrition(4)
 			.saturationModifier(0.3F)
 			.build();
 	public static final FoodProperties ORANGE = new FoodProperties.Builder()

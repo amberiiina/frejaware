@@ -35,6 +35,10 @@ public class FModelProvider extends FabricModelProvider {
 	public void generateBlockStateModels(BlockModelGenerators blockGen) {
 		try {
 			// MOLLY
+			blockGen.createCropBlock(
+					FBlocks.PINEAPPLE, BlockStateProperties.AGE_7, 0, 0, 0, 0, 1, 1, 1, 2
+			);
+
 			blockGen.registerSimpleFlatItemModel(FBlocks.IRON_BELL);
 
 			blockGen.createCrossBlockWithDefaultItem(
@@ -246,62 +250,39 @@ public class FModelProvider extends FabricModelProvider {
 	public void generateItemModels(ItemModelGenerators itemGen) {
 		try {
 			// FOOD
-			itemGen.generateFlatItem(
-					FItems.CHERRY, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.BANANA, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.ORANGE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.PEAR, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.CHOCOLATE_DIPPED_PEAR, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.ENCHANTED_GOLDEN_PEAR, FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.PINEAPPLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHERRY, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.BANANA, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.ORANGE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHOCOLATE_DIPPED_PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.ENCHANTED_GOLDEN_PEAR, FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
 
-			itemGen.generateFlatItem(
-					FItems.SAFFRON, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.POPPY_SEEDS, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.SAFFRON, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.POPPY_SEEDS, ModelTemplates.FLAT_ITEM);
 
-			itemGen.generateFlatItem(
-					FItems.CHOCOLATE_BOTTLE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.BERRY_JUICE_BOTTLE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.MILKSHAKE_BOTTLE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.SAFFRON_MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHOCOLATE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.BERRY_JUICE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.MILKSHAKE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.SAFFRON_MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
 
-			itemGen.generateFlatItem(
-					FItems.COCOA_BUTTER, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.CHOCOLATE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.CHOCOLATE_BAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.COCOA_BUTTER, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHOCOLATE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHOCOLATE_BAR, ModelTemplates.FLAT_ITEM);
 
-			itemGen.generateFlatItem(
-					FItems.FRUIT_SALAD, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.ICE_CREAM, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.CHOCOLATE_ICE_CREAM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.FRUIT_SALAD, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.ICE_CREAM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHOCOLATE_ICE_CREAM, ModelTemplates.FLAT_ITEM);
 
 			// JACARANDA
-			itemGen.generateFlatItem(
-					FItems.JACARANDA_BOAT, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.JACARANDA_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.JACARANDA_BOAT, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.JACARANDA_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
 			// PEAR
-			itemGen.generateFlatItem(
-					FItems.PEAR_BOAT, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(
-					FItems.PEAR_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.PEAR_BOAT, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.PEAR_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
 			// TRANSIUM
 			itemGen.generateFlatItem(

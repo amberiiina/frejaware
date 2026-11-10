@@ -2,12 +2,14 @@ package se.frejaware.client.Datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -16,6 +18,7 @@ import net.minecraft.world.level.storage.loot.entries.UniformContainerBase;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.Items.FItems;
@@ -32,6 +35,19 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 	@Override
 	public void generate() {
 		// MOLLY
+		LootItemCondition.Builder isPineappleMaxAge = MatchBlock.blockMatches(
+				blocks,
+				FBlocks.PINEAPPLE,
+				StatePropertiesPredicate.Builder.properties()
+						.hasProperty(CropBlock.AGE, 7)
+		);
+		add(FBlocks.PINEAPPLE, createCropDrops(
+				FBlocks.PINEAPPLE,
+				FItems.PINEAPPLE, FItems.PINEAPPLE_SEEDS,
+				isPineappleMaxAge
+		));
+//		dropOther(FBlocks.PINEAPPLE, FItems.PINEAPPLE);
+
 		dropSelf(FBlocks.IRON_BELL);
 
 		dropSelf(FBlocks.WHITE_CACTUS_FLOWER);

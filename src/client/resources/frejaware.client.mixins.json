@@ -10,7 +10,10 @@
 
     "LivingEntityRenderStateMixin",
     "LivingEntityRendererMixin",
-    "CodRendererMixin"
+    "CodRendererMixin",
+
+    "ParrotVariantMixin",
+    "ParrotRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -7,6 +7,7 @@ import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.BlockTags;
 import se.frejaware.Blocks.FBlockIds;
 import se.frejaware.Blocks.FBlockItemIds;
+import se.frejaware.Items.FItems;
 import se.frejaware.Shared.FBlockTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -21,6 +22,13 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider registries) {
 		// MOLLY
+		builder(BlockTags.CROPS)
+				.add(FBlockItemIds.PINEAPPLE_CROP);
+		builder(BlockTags.MAINTAINS_FARMLAND)
+				.add(FBlockItemIds.PINEAPPLE_CROP);
+		builder(BlockTags.WASHED_AWAY_BY_FLUIDS)
+				.add(FBlockItemIds.PINEAPPLE_CROP);
+
 		builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
 				.add(FBlockItemIds.IRON_BELL);
 		builder(BlockTags.MINEABLE_WITH_PICKAXE)

@@ -161,6 +161,8 @@ public class FCreativeTabs {
 					.title(Component.translatable("creativetab.food"))
 					.displayItems((params, output) -> {
 						// FRUITS
+						output.accept(FItems.PINEAPPLE);
+						output.accept(FItems.PINEAPPLE_SEEDS);
 						output.accept(FItems.CHERRY);
 						output.accept(FItems.BANANA);
 						output.accept(FItems.ORANGE);

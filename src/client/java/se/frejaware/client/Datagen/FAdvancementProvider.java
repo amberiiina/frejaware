@@ -4,13 +4,22 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.predicates.LocationPredicate;
+import net.minecraft.advancements.predicates.MinMaxBounds;
+import net.minecraft.advancements.predicates.entity.EntityPredicate;
+import net.minecraft.advancements.predicates.entity.EntityTypePredicate;
+import net.minecraft.advancements.predicates.entity.PlayerPredicate;
 import net.minecraft.advancements.triggers.ConsumeItemTrigger;
+import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.advancements.triggers.InventoryChangeTrigger;
 import net.minecraft.advancements.triggers.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.F;
@@ -18,6 +27,7 @@ import se.frejaware.Items.FItems;
 import se.frejaware.WorldGen.Biome.FBiomes;
 import se.frejaware.WorldGen.Structures.FStructures;
 
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
@@ -97,6 +107,39 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							)
 					)
 					.save(consumer, F.id("frejaware/four_twenty"));
+			AdvancementHolder druglord = Advancement.Builder.advancement()
+					.parent(fourTwenty)
+					.display(
+							Items.POPPY,
+							Component.translatable(
+									"advancements.frejaware.druglord.title"
+							),
+							Component.translatable(
+									"advancements.frejaware.druglord.description"
+							),
+							AdvancementType.TASK,
+							true,
+							true,
+							false
+					)
+					.addCriterion(
+							"eat_10_poppy_seeds",
+							CriteriaTriggers.TICK.createCriterion(
+									new PlayerTrigger.TriggerInstance(Optional.of(EntityPredicate.wrap(
+											EntityPredicate.Builder.entity()
+													.player(PlayerPredicate.Builder.player()
+															.addStat(Stats.ITEM_USED,
+																	FItems.POPPY_SEEDS.builtInRegistryHolder(),
+																	MinMaxBounds.Ints.atLeast(
+																			10
+																	)
+															)
+															.build()
+													)
+									)))
+							)
+					)
+					.save(consumer, F.id("frejaware/druglord"));
 
 			// ------------------
 			// JACARANDA
@@ -407,7 +450,6 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							)
 					)
 					.save(consumer, F.id("frejaware/pop_that_cherry"));
-
 			AdvancementHolder kindaFruity = Advancement.Builder.advancement()
 					.parent(popThatCherry)
 					.display(
@@ -473,7 +515,6 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 			// ROSE QUARTZ
 			// ------------------
 
-			// ore
 			AdvancementHolder obtainRoseQuartzOre = Advancement.Builder.advancement()
 					.parent(createPlaceholder(
 							Identifier.withDefaultNamespace("end/kill_dragon")
@@ -498,7 +539,6 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							)
 					)
 					.save(consumer, F.id("obtain_rose_quartz_ore"));
-			// armor
 			AdvancementHolder roseQuartzArmor = Advancement.Builder.advancement()
 					.parent(obtainRoseQuartzOre)
 					.display(

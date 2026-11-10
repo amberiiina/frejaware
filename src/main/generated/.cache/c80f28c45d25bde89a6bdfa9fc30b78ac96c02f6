@@ -17,6 +17,7 @@ de421a29a5cf64dd68457061a571995261d827ec data/minecraft/tags/item/beacon_payment
 9bd5f2a42591e81658fd67e3c662debff6113e42 data/minecraft/tags/item/boats.json
 e37109f58ceeda3c60d45455f0fe4f75a09bbebf data/minecraft/tags/item/chest_armor.json
 0aa2cd91d4b8a2f1e62cfaed7c2d23b54c55944c data/minecraft/tags/item/chest_boats.json
+7d8e7a3ad968e3d7ab2cfe72a28fd45bec1f665a data/minecraft/tags/item/chicken_food.json
 d004767a0f058e57024fcc700d7c7c78e00dcc3e data/minecraft/tags/item/cluster_max_harvestables.json
 6862bd19011779ce9da14c7b17e5ace01e9dfab8 data/minecraft/tags/item/enchantable/durability.json
 4593b37e533ca8c703d8f98dd2a6463d8e157b88 data/minecraft/tags/item/fence_gates.json
@@ -30,6 +31,7 @@ ff4d8ae3f7dadf5c84acc211cc5cd2f05f53b258 data/minecraft/tags/item/hanging_signs.
 e6320d63537dda476996103c84ab3ebbb2a6594a data/minecraft/tags/item/leaves.json
 797a9f6ced25a5fba4626954fd0fff5931d9c626 data/minecraft/tags/item/leg_armor.json
 0690feeb6899afeb77e14eb3f6f25d864a66cdb3 data/minecraft/tags/item/logs.json
+7d8e7a3ad968e3d7ab2cfe72a28fd45bec1f665a data/minecraft/tags/item/parrot_food.json
 d004767a0f058e57024fcc700d7c7c78e00dcc3e data/minecraft/tags/item/pickaxes.json
 96f288b518c95af847910a04e69ed101f2e6a0bb data/minecraft/tags/item/piglin_loved.json
 42839551e21acc3e1fa69bd1178de17746ad04f0 data/minecraft/tags/item/planks.json
@@ -42,6 +44,8 @@ d004767a0f058e57024fcc700d7c7c78e00dcc3e data/minecraft/tags/item/pickaxes.json
 8214419f580339ec544ac86c948d6bc3c54dd558 data/minecraft/tags/item/swords.json
 773bfb716ac908355d0fea5ecac055041c113ebf data/minecraft/tags/item/trim_materials.json
 edbf458736b704d04b8240eea370e10c4f3671dd data/minecraft/tags/item/trimmable_armor.json
+446a036333b185af3e4d747f2c2e8005deb0752c data/minecraft/tags/item/villager_picks_up.json
+7d8e7a3ad968e3d7ab2cfe72a28fd45bec1f665a data/minecraft/tags/item/villager_plantable_seeds.json
 83fe380a60dfba905404b2f6b02de71195517da9 data/minecraft/tags/item/wooden_buttons.json
 acf8f4e805e494aa0535e6403544126b25c05a4d data/minecraft/tags/item/wooden_doors.json
 d27dff17fdb24e84278332dd40bba207bf0c7682 data/minecraft/tags/item/wooden_pressure_plates.json

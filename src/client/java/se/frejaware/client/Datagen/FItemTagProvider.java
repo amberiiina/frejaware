@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.references.ItemIds;
 import net.minecraft.tags.BlockItemTags;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import se.frejaware.Blocks.FBlockItemIds;
 import se.frejaware.Items.FItems;
@@ -25,6 +26,16 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider registries) {
 		// MOLLY
+		builder(ItemTags.CHICKEN_FOOD)
+				.add(FBlockItemIds.PINEAPPLE_CROP);
+		builder(ItemTags.PARROT_FOOD)
+				.add(FBlockItemIds.PINEAPPLE_CROP);
+		builder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+				.add(FBlockItemIds.PINEAPPLE_CROP);
+
+		builder(ItemTags.VILLAGER_PICKS_UP)
+				.add(FItemIds.PINEAPPLE);
+
 		builder(ItemTags.BEE_FOOD)
 				.add(FBlockItemIds.WHITE_ORCHID)
 				.add(FBlockItemIds.YELLOW_TULIP)
