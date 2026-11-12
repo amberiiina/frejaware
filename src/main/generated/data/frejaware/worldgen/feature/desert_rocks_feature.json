@@ -1,0 +1,74 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": {
+          "id": "minecraft:stone_button",
+          "properties": {
+            "face": "floor",
+            "facing": "north",
+            "powered": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:stone_button",
+          "properties": {
+            "face": "floor",
+            "facing": "east",
+            "powered": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:birch_button",
+          "properties": {
+            "face": "floor",
+            "facing": "north",
+            "powered": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:birch_button",
+          "properties": {
+            "face": "floor",
+            "facing": "east",
+            "powered": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:acacia_button",
+          "properties": {
+            "face": "floor",
+            "facing": "north",
+            "powered": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "minecraft:acacia_button",
+          "properties": {
+            "face": "floor",
+            "facing": "east",
+            "powered": "false"
+          }
+        },
+        "weight": 1
+      }
+    ]
+  }
+}

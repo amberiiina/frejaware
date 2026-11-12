@@ -1,18 +1,18 @@
 package se.frejaware.Items;
 
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.references.BlockItemId;
-import net.minecraft.references.BlockItemIds;
-import net.minecraft.references.ItemIds;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.item.equipment.*;
@@ -23,7 +23,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 import se.frejaware.Blocks.FBlockItemIds;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.Entities.FEntityTypes;
-import se.frejaware.Shared.FBlockTags;
+import se.frejaware.F;
 import se.frejaware.Items.Custom.*;
 import se.frejaware.Shared.FItemTags;
 
@@ -36,6 +36,24 @@ public class FItems {
 	// ----------------------
 	// ITEMS
 	// ----------------------
+
+	// MOLLY
+	public static final Item MOOBLOOM_SPAWN_EGG = registerSpawnEgg(
+			FItemIds.MOOBLOOM_SPAWN_EGG, FEntityTypes.MOOBLOOM
+	);
+	public static final ResourceKey<JukeboxSong> RYM =
+			ResourceKey.create(
+					Registries.JUKEBOX_SONG,
+					F.id("read_your_mind")
+			);
+	public static final Item MUSIC_DISC_RYM = registerItem(
+			FItemIds.MUSIC_DISC_RYM,
+			Item::new,
+			new Item.Properties()
+					.stacksTo(1)
+					.rarity(Rarity.EPIC)
+					.jukeboxPlayable(RYM)
+	);
 
 	// FOOD
 	public static final Item PINEAPPLE_SEEDS = registerItem(
@@ -704,5 +722,27 @@ public class FItems {
 		return (p) -> new BlockItem(block, p.useItemDescriptionPrefix());
 	}
 
-	public static void initialize() {}
+	private static Item registerSpawnEgg(final ResourceKey<Item> id, final EntityType<?> type) {
+		return registerItem(id, SpawnEggItem::new, (new Item.Properties()).spawnEgg(type));
+	}
+
+	public static void init() {
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+				.register(creativeTab ->
+						creativeTab.accept(MUSIC_DISC_RYM)
+				);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.SPAWN_EGGS)
+				.register(creativeTab -> {
+					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_AMETHYST);
+					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_COAL);
+					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_DIAMOND);
+					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_EMERALD);
+					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_GOLD);
+					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_LAPIS);
+					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_NETHERITE);
+					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_REDSTONE);
+
+					creativeTab.accept(MOOBLOOM_SPAWN_EGG);
+				});
+	}
 }

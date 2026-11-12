@@ -249,6 +249,10 @@ public class FModelProvider extends FabricModelProvider {
 	@Override
 	public void generateItemModels(ItemModelGenerators itemGen) {
 		try {
+			// MOLLY
+			itemGen.generateFlatItem(FItems.MOOBLOOM_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.MUSIC_DISC_RYM, ModelTemplates.FLAT_ITEM);
+
 			// FOOD
 			itemGen.generateFlatItem(FItems.PINEAPPLE, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.CHERRY, ModelTemplates.FLAT_ITEM);

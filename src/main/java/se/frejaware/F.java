@@ -4,11 +4,8 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.event.registry.DynamicRegistrySetupCallback;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 
 import net.minecraft.world.level.biome.Biomes;
@@ -16,14 +13,16 @@ import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se.frejaware.Blocks.FBlockEntityTypes;
 import se.frejaware.Blocks.FParticles;
 import se.frejaware.Blocks.Custom.FSkullBlockEntityTypes;
 import se.frejaware.Blocks.FBlocks;
-import se.frejaware.Entities.FCatVariants;
 import se.frejaware.Entities.FEntityTypes;
 import se.frejaware.Shared.FCreativeTabs;
+import se.frejaware.Shared.FDataComponents;
 import se.frejaware.Shared.FLootTables;
 import se.frejaware.Items.FItems;
+import se.frejaware.Shared.FSounds;
 import se.frejaware.WorldGen.FPlacedFeatures;
 import se.frejaware.WorldGen.Custom.FFeatureTypes;
 import se.frejaware.WorldGen.Structures.FStructureTypes;
@@ -34,13 +33,16 @@ public class F implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		FBlocks.initialize();
+		FBlocks.init();
 		FSkullBlockEntityTypes.register();
-		FItems.initialize();
-		FCreativeTabs.initialize();
-		FEntityTypes.initialize();
-		FLootTables.initialize();
+		FItems.init();
+		FCreativeTabs.init();
+		FEntityTypes.init();
+		FLootTables.init();
 		FStructureTypes.init();
+		FBlockEntityTypes.init();
+		FDataComponents.init();
+		FSounds.init();
 
 		// BLOCK ENTITIES
 		BlockEntityTypes.BELL.addValidBlock(FBlocks.IRON_BELL);
@@ -79,14 +81,30 @@ public class F implements ModInitializer {
 						Biomes.END_BARRENS
 				),
 				GenerationStep.Decoration.UNDERGROUND_ORES,
-				FPlacedFeatures.ROSE_QUARTZ_ORE_VEIN_PLACED_KEY
+				FPlacedFeatures.ROSE_QUARTZ_ORE_VEIN
 		);
+
 		BiomeModifications.addFeature(
 				BiomeSelectors.includeByKey(
 						Biomes.CHERRY_GROVE
 				),
 				GenerationStep.Decoration.VEGETAL_DECORATION,
-				FPlacedFeatures.PEAR_TREE_CHERRY_PLACED_KEY
+				FPlacedFeatures.PEAR_TREE_CHERRY
+		);
+
+		BiomeModifications.addFeature(
+				BiomeSelectors.includeByKey(
+						Biomes.DESERT
+				),
+				GenerationStep.Decoration.VEGETAL_DECORATION,
+				FPlacedFeatures.DESERT_CACTUS_FLOWERS
+		);
+		BiomeModifications.addFeature(
+				BiomeSelectors.includeByKey(
+						Biomes.DESERT
+				),
+				GenerationStep.Decoration.VEGETAL_DECORATION,
+				FPlacedFeatures.DESERT_ROCKS
 		);
 
 		LOGGER.info("Frejaware Initialized");

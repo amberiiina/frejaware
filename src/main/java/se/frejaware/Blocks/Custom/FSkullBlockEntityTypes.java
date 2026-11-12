@@ -19,7 +19,7 @@ public class FSkullBlockEntityTypes {
 						.orElseThrow()
 						.value();
 
-		BlockEntityTypeAccessor accessor = (BlockEntityTypeAccessor) (Object) skullType;
+		BlockEntityTypeAccessor accessor = (BlockEntityTypeAccessor) skullType;
 		Set<Block> blocks = new HashSet<>(accessor.frejaware$getValidBlocks());
 
 		blocks.add(FBlocks.GOLEM_HEAD_AMETHYST);

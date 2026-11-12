@@ -15,10 +15,10 @@ import se.frejaware.WorldGen.FFeatures;
 public class FTrees {
 	public static final TreeGrower PEAR_GROWER = new TreeGrower(
 			"frejaware:pear",
-			WeightedList.of(FFeatures.PEAR_TREE_FEATURE_KEY),
+			WeightedList.of(FFeatures.PEAR_TREE),
 			WeightedList.of(),
 			WeightedList.of(),
-			FFeatures.PEAR_TREE_FEATURE_KEY
+			FFeatures.PEAR_TREE
 	);
 	public static final BlockSetType PEAR_SET = new BlockSetType(
 			"pear",
@@ -42,10 +42,10 @@ public class FTrees {
 
 	public static final TreeGrower JACARANDA_GROWER = new TreeGrower(
 			"frejaware:jacaranda",
-			WeightedList.of(FFeatures.JACARANDA_TREE_FEATURE_KEY),
+			WeightedList.of(FFeatures.JACARANDA_TREE),
 			WeightedList.of(),
 			WeightedList.of(),
-			FFeatures.JACARANDA_TREE_FEATURE_KEY
+			FFeatures.JACARANDA_TREE
 	);
 	public static final BlockSetType JACARANDA_SET = new BlockSetType(
 			"jacaranda",

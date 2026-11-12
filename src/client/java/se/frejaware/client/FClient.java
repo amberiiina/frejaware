@@ -22,6 +22,7 @@ import se.frejaware.F;
 import se.frejaware.client.Model.IronBell.FIronBellRenderer;
 import se.frejaware.client.Model.FModelLayers;
 import se.frejaware.client.Model.Golem.FGolemRenderer;
+import se.frejaware.client.Model.Moobloom.FMoobloomRenderer;
 import se.frejaware.client.mixin.SkullBlockRendererAccessor;
 
 import java.util.Map;
@@ -32,7 +33,14 @@ public class FClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		FModelLayers.init();
+
 		// MOLLY
+		EntityRenderers.register(
+				FEntityTypes.MOOBLOOM,
+				FMoobloomRenderer::new
+		);
+
 		BlockEntityRenderers.register(
 				FBlockEntityTypes.IRON_BELL,
 				FIronBellRenderer::new
@@ -67,8 +75,6 @@ public class FClient implements ClientModInitializer {
 		);
 
 		// GOLEMS
-		FModelLayers.registerModelLayers();
-
 		registerGolem(FEntityTypes.GOLEM_AMETHYST, "amethyst");
 		registerGolem(FEntityTypes.GOLEM_COAL, "coal");
 		registerGolem(FEntityTypes.GOLEM_DIAMOND, "diamond");

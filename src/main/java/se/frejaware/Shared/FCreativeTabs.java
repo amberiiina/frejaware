@@ -91,16 +91,6 @@ public class FCreativeTabs {
 						output.accept(FBlocks.GOLEM_HEAD_EMERALD);
 						output.accept(FBlocks.GOLEM_HEAD_NETHERITE);
 						output.accept(FBlocks.GOLEM_HEAD_REDSTONE);
-
-						// GOLEM SPAWN EGGS
-						output.accept(FItems.GOLEM_SPAWN_EGG_AMETHYST);
-						output.accept(FItems.GOLEM_SPAWN_EGG_COAL);
-						output.accept(FItems.GOLEM_SPAWN_EGG_DIAMOND);
-						output.accept(FItems.GOLEM_SPAWN_EGG_EMERALD);
-						output.accept(FItems.GOLEM_SPAWN_EGG_GOLD);
-						output.accept(FItems.GOLEM_SPAWN_EGG_LAPIS);
-						output.accept(FItems.GOLEM_SPAWN_EGG_NETHERITE);
-						output.accept(FItems.GOLEM_SPAWN_EGG_REDSTONE);
 					})
 					.build();
 
@@ -294,7 +284,7 @@ public class FCreativeTabs {
 	// FUNCTIONS
 	// ----------------------
 
-	public static void initialize() {
+	public static void init() {
 		Registry.register(
 				BuiltInRegistries.CREATIVE_MODE_TAB,
 				FREJAWARE_TAB_KEY,

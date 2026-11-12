@@ -3,7 +3,6 @@ package se.frejaware.Blocks;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.references.BlockItemId;
-import net.minecraft.references.BlockItemIds;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -19,7 +18,6 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.AABB;
 import se.frejaware.Blocks.Custom.*;
 
-import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class FBlocks {
@@ -1191,5 +1189,5 @@ public class FBlocks {
 		return false;
 	};
 
-	public static void initialize() {}
+	public static void init() {}
 }

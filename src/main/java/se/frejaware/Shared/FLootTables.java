@@ -13,7 +13,7 @@ import se.frejaware.Items.FItems;
 public class FLootTables {
 	private static final ResourceKey<LootTable> END_CITY_CHEST = BuiltInLootTables.END_CITY_TREASURE;
 
-	public static void initialize() {
+	public static void init() {
 		LootTableEvents.MODIFY.register((
 				key, builder,
 				lootTableSource, provider) -> {

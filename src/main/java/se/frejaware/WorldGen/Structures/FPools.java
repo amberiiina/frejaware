@@ -18,6 +18,13 @@ import se.frejaware.F;
 import java.util.List;
 
 public class FPools {
+	public static final ResourceKey<StructureTemplatePool> PEAR_BERRY_FARM =
+			create("pear_berry_farm");
+	public static final ResourceKey<StructureTemplatePool> PEAR_ARCH =
+			create("pear_arch");
+	public static final ResourceKey<StructureTemplatePool> PEAR_STONE =
+			create("pear_stone");
+
 	public static final ResourceKey<StructureTemplatePool> JACARANDA_WELL =
 			create("jacaranda_well");
 	public static final ResourceKey<StructureTemplatePool> JACARANDA_POT =
@@ -26,9 +33,13 @@ public class FPools {
 			create("jacaranda_arch");
 	public static final ResourceKey<StructureTemplatePool> JACARANDA_AMETHYST =
 			create("jacaranda_amethyst");
+	public static final ResourceKey<StructureTemplatePool> JACARANDA_STONE =
+			create("jacaranda_stone");
 
-	public static final ResourceKey<StructureTemplatePool> PEAR_BERRY_FARM =
-			create("pear_berry_farm");
+	public static final ResourceKey<StructureTemplatePool> DESERT_PALM =
+			create("desert_palm");
+	public static final ResourceKey<StructureTemplatePool> DESERT_STONE =
+			create("desert_stone");
 
 	public static void bootstrap(BootstrapContext<StructureTemplatePool> context) {
 		HolderGetter<StructureProcessorList> processors = context.lookup(Registries.PROCESSOR_LIST);
@@ -37,6 +48,31 @@ public class FPools {
 		Holder<StructureProcessorList> noProcessors = processors.getOrThrow(ProcessorLists.EMPTY);
 		Holder<StructureTemplatePool> fallback = pools.getOrThrow(Pools.EMPTY);
 
+		// PEAR
+		context.register(PEAR_BERRY_FARM, new StructureTemplatePool(
+				fallback,
+				List.of(Pair.of(StructurePoolElement.single(
+						"frejaware:pear_berry_farm", noProcessors), 1
+				)),
+				StructureTemplatePool.Projection.RIGID
+		));
+		context.register(PEAR_ARCH, new StructureTemplatePool(
+				fallback,
+				List.of(Pair.of(StructurePoolElement.single(
+						"frejaware:pear_arch", noProcessors), 1
+				)),
+				StructureTemplatePool.Projection.RIGID
+		));
+		context.register(PEAR_STONE, new StructureTemplatePool(
+				fallback,
+				List.of(Pair.of(
+						StructurePoolElement.single(
+								"frejaware:pear_stone_sulfur", noProcessors), 1
+				)),
+				StructureTemplatePool.Projection.RIGID
+		));
+
+		// JACARANDA
 		context.register(JACARANDA_WELL, new StructureTemplatePool(
 				fallback,
 				List.of(Pair.of(StructurePoolElement.single(
@@ -71,12 +107,35 @@ public class FPools {
 				)),
 				StructureTemplatePool.Projection.RIGID
 		));
-
-		context.register(PEAR_BERRY_FARM, new StructureTemplatePool(
+		context.register(JACARANDA_STONE, new StructureTemplatePool(
 				fallback,
 				List.of(Pair.of(StructurePoolElement.single(
-						"frejaware:pear_berry_farm", noProcessors), 1
+						"frejaware:jacaranda_stone_andesite", noProcessors
+						), 1),
+						Pair.of(StructurePoolElement.single(
+								"frejaware:jacaranda_stone_diorite", noProcessors
+						), 1)
+				),
+				StructureTemplatePool.Projection.RIGID
+		));
+
+		// VANILLA
+		context.register(DESERT_PALM, new StructureTemplatePool(
+				fallback,
+				List.of(Pair.of(StructurePoolElement.single(
+						"frejaware:desert_palm", noProcessors), 1
 				)),
+				StructureTemplatePool.Projection.RIGID
+		));
+		context.register(DESERT_STONE, new StructureTemplatePool(
+				fallback,
+				List.of(Pair.of(StructurePoolElement.single(
+								"frejaware:desert_stone_granite", noProcessors
+						), 1),
+						Pair.of(StructurePoolElement.single(
+								"frejaware:desert_stone_red_sandstone", noProcessors
+						), 1)
+				),
 				StructureTemplatePool.Projection.RIGID
 		));
 	}

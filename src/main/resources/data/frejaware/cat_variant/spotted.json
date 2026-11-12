@@ -1,0 +1,9 @@
+{
+  "asset_id": "frejaware:entity/cat/cat_spotted",
+  "baby_asset_id": "frejaware:entity/cat/cat_spotted_baby",
+  "spawn_conditions": [
+    {
+      "priority": 0
+    }
+  ]
+}

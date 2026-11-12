@@ -6,10 +6,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.entity.vehicle.boat.ChestBoat;
 import net.minecraft.world.item.Item;
 import se.frejaware.Entities.Custom.FGolem;
+import se.frejaware.Entities.Custom.FMoobloom;
 import se.frejaware.Items.FItems;
 
 import java.util.function.Supplier;
@@ -37,6 +39,17 @@ public class FEntityTypes {
 	// ----------------------
 	// ENTITY TYPES
 	// ----------------------
+
+	// MOLLY
+	public static final EntityType<FMoobloom> MOOBLOOM = register(
+			FEntityTypeIds.MOOBLOOM,
+			EntityType.Builder.of(FMoobloom::new, MobCategory.CREATURE)
+					.sized(0.9F, 1.4F)
+					.eyeHeight(1.3F)
+					.passengerAttachments(1.36875F)
+					.clientTrackingRange(10),
+			FMoobloom.createAttributes()
+	);
 
 	// JACARANDA
 	public static final EntityType<Boat> JACARANDA_BOAT = register(
@@ -159,6 +172,6 @@ public class FEntityTypes {
 		return (entityType, level) -> new ChestBoat(entityType, level, dropItem);
 	}
 
-	public static void initialize() {
+	public static void init() {
 	}
 }

@@ -1,6 +1,7 @@
 package se.frejaware.client.Model;
 
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
+import net.minecraft.client.model.animal.cow.CowModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.model.object.equipment.ShieldModel;
@@ -15,6 +16,11 @@ public class FModelLayers {
 	// ----------------------
 	// MODEL LAYERS
 	// ----------------------
+
+	public static final ModelLayerLocation MOOBLOOM =
+			create("moobloom");
+	public static final ModelLayerLocation MOOBLOOM_BABY =
+			create("moobloom_baby");
 
 	public static final ModelLayerLocation IRON_BELL =
 			create("iron_bell/iron_bell_body");
@@ -45,7 +51,14 @@ public class FModelLayers {
 		return new ModelLayerLocation(F.id(name), "main");
 	}
 
-	public static void registerModelLayers() {
+	public static void init() {
+		ModelLayerRegistry.registerModelLayer(
+				MOOBLOOM, CowModel::createBodyLayer
+		);
+		ModelLayerRegistry.registerModelLayer(
+				MOOBLOOM_BABY, CowModel::createBodyLayer
+		);
+
 		SpecialModelRenderers.ID_MAPPER.put(
 				F.id("iron_bell"),
 				FIronBellSpecialRenderer.Unbaked.MAP_CODEC

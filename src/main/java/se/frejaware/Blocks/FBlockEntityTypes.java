@@ -24,4 +24,6 @@ public class FBlockEntityTypes {
 				FabricBlockEntityTypeBuilder.<T>create(entityFactory, blocks).build()
 		);
 	}
+
+	public static void init() {};
 }

@@ -13,13 +13,18 @@ import java.util.Optional;
 public class FJigsawStructure extends Structure {
 	public static final MapCodec<FJigsawStructure> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
 			JigsawStructure.CODEC.forGetter(s -> s.jigsaw),
-			Codec.INT.fieldOf("min_surface_y").forGetter(s -> s.minSurfaceY)
+			Codec.INT.fieldOf("min_surface_y").forGetter(s -> s.minSurfaceY),
+			Codec.INT.fieldOf("max_surface_y").forGetter(s -> s.maxSurfaceY)
 	).apply(i, FJigsawStructure::new));
 
 	private final JigsawStructure jigsaw;
 	private final int minSurfaceY;
+	private final int maxSurfaceY;
 
-	public FJigsawStructure(JigsawStructure jigsaw, int minSurfaceY) {
+	public FJigsawStructure(
+			JigsawStructure jigsaw,
+			int minSurfaceY,
+			int maxSurfaceY) {
 		super(new StructureSettings(
 				jigsaw.biomes(),
 				jigsaw.spawnOverrides(),
@@ -28,6 +33,7 @@ public class FJigsawStructure extends Structure {
 		));
 		this.jigsaw = jigsaw;
 		this.minSurfaceY = minSurfaceY;
+		this.maxSurfaceY = maxSurfaceY;
 	}
 
 	@Override
@@ -39,8 +45,9 @@ public class FJigsawStructure extends Structure {
 		int floor = ctx.chunkGenerator().getFirstOccupiedHeight(
 				x, z, Heightmap.Types.OCEAN_FLOOR_WG, ctx.heightAccessor(), ctx.randomState());
 
-		if (surface > floor) return Optional.empty();       // water on top
-		if (surface < minSurfaceY) return Optional.empty(); // below your y limit
+		if (surface > floor) return Optional.empty();
+		if (surface < minSurfaceY) return Optional.empty();
+		if (surface > maxSurfaceY) return Optional.empty();
 
 		return jigsaw.findGenerationPoint(ctx);
 	}

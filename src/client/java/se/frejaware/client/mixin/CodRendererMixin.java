@@ -14,7 +14,8 @@ import se.frejaware.client.Model.Cod.CodVariants;
 public abstract class CodRendererMixin {
 	@Inject(method = "getTextureLocation(Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;)Lnet/minecraft/resources/Identifier;",
 			at = @At("HEAD"), cancellable = true)
-	private void frejaware$texture(LivingEntityRenderState state, CallbackInfoReturnable<Identifier> cir) {
+	private void frejaware$texture(
+			LivingEntityRenderState state, CallbackInfoReturnable<Identifier> cir) {
 		Identifier tex = CodVariants.texture(((CodVariantHolder) state).frejaware$getVariant());
 		if (tex != null) {
 			cir.setReturnValue(tex);

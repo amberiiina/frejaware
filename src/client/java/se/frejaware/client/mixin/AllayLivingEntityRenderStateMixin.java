@@ -3,10 +3,10 @@ package se.frejaware.client.mixin;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
-import se.frejaware.client.Model.Cod.CodVariantHolder;
+import se.frejaware.client.Model.Allay.AllayVariantHolder;
 
 @Mixin(LivingEntityRenderState.class)
-public class LivingEntityRenderStateMixin implements CodVariantHolder {
+public class AllayLivingEntityRenderStateMixin implements AllayVariantHolder {
 	@Unique
 	private int frejaware$variant;
 

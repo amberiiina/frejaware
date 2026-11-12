@@ -1,0 +1,9 @@
+{
+  "music_disc.read_your_mind": {
+    "sounds": [{
+      "name": "frejaware:records/read_your_mind",
+      "stream": true,
+      "volume": 0.7
+    }]
+  }
+}

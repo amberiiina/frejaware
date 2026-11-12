@@ -1,0 +1,127 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "collect_lilac_crocus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:lilac_crocus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_lily_of_the_glade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:lily_of_the_glade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_purple_crocus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:purple_crocus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_white_crocus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:white_crocus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_white_hibiscus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:white_hibiscus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_white_orchid": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:white_orchid"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_yellow_hibiscus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:yellow_hibiscus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_yellow_tulip": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:yellow_tulip"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.florist.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "frejaware:poppy_seeds"
+    },
+    "title": {
+      "translate": "advancements.frejaware.florist.title"
+    }
+  },
+  "requirements": [
+    [
+      "collect_white_orchid"
+    ],
+    [
+      "collect_yellow_tulip"
+    ],
+    [
+      "collect_white_hibiscus"
+    ],
+    [
+      "collect_yellow_hibiscus"
+    ],
+    [
+      "collect_white_crocus"
+    ],
+    [
+      "collect_lilac_crocus"
+    ],
+    [
+      "collect_purple_crocus"
+    ],
+    [
+      "collect_lily_of_the_glade"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

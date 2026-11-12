@@ -26,6 +26,11 @@
   "item.frejaware.pinkberry_crop": "Pinkberries",
 
 
+  "entity.frejaware.moobloom": "Moobloom",
+
+  "entity.frejaware.pear_boat": "Pear Boat",
+  "entity.frejaware.pear_chest_boat": "Pear Chest Boat",
+
   "entity.frejaware.golem_amethyst": "Amethyst Golem",
   "entity.frejaware.golem_coal": "Coal Golem",
   "entity.frejaware.golem_diamond": "Diamond Golem",
@@ -35,18 +40,17 @@
   "entity.frejaware.golem_netherite": "Netherite Golem",
   "entity.frejaware.golem_redstone": "Redstone Golem",
 
-  "entity.frejaware.pear_boat": "Pear Boat",
-  "entity.frejaware.pear_chest_boat": "Pear Chest Boat",
-
 
   "advancements.frejaware.root.title": "Frejaware",
   "advancements.frejaware.root.description": "Penis",
 
   "advancements.frejaware.four_twenty.title": "420",
   "advancements.frejaware.four_twenty.description": "Get high from a poppy seed",
-
   "advancements.frejaware.druglord.title": "Druglord",
   "advancements.frejaware.druglord.description": "Consume 10 poppy seeds",
+
+  "advancements.frejaware.florist.title": "Florist",
+  "advancements.frejaware.florist.description": "Collect every flower added by Frejaware",
 
 
   "advancements.frejaware.jack_that_randa.title": "Jack That Randa!",

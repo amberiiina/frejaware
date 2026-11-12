@@ -10,6 +10,9 @@ public class FEntityTypeIds {
 	// ENTITY IDS
 	// ----------------------
 
+	// MOLLY
+	public static final ResourceKey<EntityType<?>> MOOBLOOM = create("moobloom");
+
 	// PEAR
 	public static ResourceKey<EntityType<?>> JACARANDA_BOAT = create("jacaranda_boat");
 	public static ResourceKey<EntityType<?>> JACARANDA_CHEST_BOAT = create("jacaranda_chest_boat");

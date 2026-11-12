@@ -8,9 +8,11 @@
 
     "SplashMixin",
 
-    "LivingEntityRenderStateMixin",
     "LivingEntityRendererMixin",
+    "CodLivingEntityRenderStateMixin",
     "CodRendererMixin",
+    "AllayLivingEntityRenderStateMixin",
+    "AllayRendererMixin",
 
     "ParrotVariantMixin",
     "ParrotRendererMixin"

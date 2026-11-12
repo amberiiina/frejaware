@@ -300,27 +300,27 @@ public class FBiomeBootstrap {
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.PEAR_TREE_PLACED_KEY
+										FPlacedFeatures.PEAR_TREE
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.PEAR_MEADOW_PETALS_PLACED_KEY
+										FPlacedFeatures.PEAR_MEADOW_PETALS
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.PEAR_MEADOW_WILDFLOWERS_PLACED_KEY
+										FPlacedFeatures.PEAR_MEADOW_WILDFLOWERS
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.PEAR_MEADOW_FLOWERS_PLACED_KEY
+										FPlacedFeatures.PEAR_MEADOW_FLOWERS
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.PEAR_MEADOW_BUSH_PLACED_KEY
+										FPlacedFeatures.PEAR_MEADOW_BUSH
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.PEAR_MEADOW_BUSHES_PLACED_KEY
+										FPlacedFeatures.PEAR_MEADOW_BUSHES
 								)
 								.build()
 				)
@@ -628,19 +628,19 @@ public class FBiomeBootstrap {
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.JACARANDA_GLADE_MOSS_PLACED_KEY
+										FPlacedFeatures.JACARANDA_GLADE_MOSS
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.JACARANDA_TREE_PLACED_KEY
+										FPlacedFeatures.JACARANDA_TREE
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.JACARANDA_GLADE_PETALS_PLACED_KEY
+										FPlacedFeatures.JACARANDA_GLADE_PETALS
 								)
 								.addFeature(
 										GenerationStep.Decoration.VEGETAL_DECORATION,
-										FPlacedFeatures.JACARANDA_GLADE_FLOWERS_PLACED_KEY
+										FPlacedFeatures.JACARANDA_GLADE_FLOWERS
 								)
 								.build()
 				)

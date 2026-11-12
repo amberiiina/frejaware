@@ -1,0 +1,9 @@
+{
+  "asset_id": "frejaware:entity/cat/cat_gray_tabby",
+  "baby_asset_id": "frejaware:entity/cat/cat_gray_tabby_baby",
+  "spawn_conditions": [
+    {
+      "priority": 0
+    }
+  ]
+}

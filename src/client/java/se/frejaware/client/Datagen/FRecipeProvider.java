@@ -47,14 +47,24 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.unlockedBy(getHasName(FItems.PINEAPPLE), has(FItems.PINEAPPLE))
 						.save(output);
 
-				shaped(RecipeCategory.MISC, FBlocks.IRON_BELL)
+				// 1x iron bell
+				shaped(RecipeCategory.DECORATIONS, FBlocks.IRON_BELL)
 						.pattern("LLL")
 						.pattern(" I ")
 						.define('L', ItemTags.LOGS)
 						.define('I', Items.IRON_BLOCK)
 						.unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
 						.save(output);
+				// 1x bell
+				shaped(RecipeCategory.DECORATIONS, Items.BELL)
+						.pattern("LLL")
+						.pattern(" G ")
+						.define('L', ItemTags.LOGS)
+						.define('G', Items.GOLD_BLOCK)
+						.unlockedBy(getHasName(Items.GOLD_BLOCK), has(Items.GOLD_BLOCK))
+						.save(output);
 
+				// flowers
 				flowerDye(FBlocks.WHITE_PETALS, Items.DYE.white());
 				flowerDye(FBlocks.WHITE_CACTUS_FLOWER, Items.DYE.white());
 				flowerDye(FBlocks.YELLOW_CACTUS_FLOWER, Items.DYE.yellow());

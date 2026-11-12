@@ -10,6 +10,10 @@ public class FItemIds {
 	// ITEMS
 	// ----------------------
 
+	// MOLLY
+	public static final ResourceKey<Item> MOOBLOOM_SPAWN_EGG = create("moobloom_spawn_egg");
+	public static final ResourceKey<Item> MUSIC_DISC_RYM = create("music_disc_rym");
+
 	// FOOD
 	public static final ResourceKey<Item> PINEAPPLE = create("pineapple");
 	public static final ResourceKey<Item> CHERRY = create("cherry");

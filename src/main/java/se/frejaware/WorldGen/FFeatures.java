@@ -17,8 +17,11 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.FlowerBedBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.AttachFace;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.levelgen.feature.BlockReplacement;
@@ -48,26 +51,31 @@ import java.util.List;
 import java.util.Set;
 
 public class FFeatures {
-	public static final ResourceKey<Feature> ROSE_QUARTZ_ORE_VEIN_FEATURE_KEY =
+	public static final ResourceKey<Feature> ROSE_QUARTZ_ORE_VEIN =
 			create("rose_quartz_ore_vein_feature");
 
-	public static final ResourceKey<Feature> PEAR_TREE_FEATURE_KEY =
+	public static final ResourceKey<Feature> PEAR_TREE =
 			create("pear_tree_feature");
-	public static final ResourceKey<Feature> PEAR_MEADOW_PETALS_FEATURE_KEY =
+	public static final ResourceKey<Feature> PEAR_MEADOW_PETALS =
 			create("pear_meadow_petals_feature");
-	public static final ResourceKey<Feature> PEAR_MEADOW_WILDFLOWERS_FEATURE_KEY =
+	public static final ResourceKey<Feature> PEAR_MEADOW_WILDFLOWERS =
 			create("pear_meadow_wildflowers_feature");
-	public static final ResourceKey<Feature> PEAR_MEADOW_FLOWERS_FEATURE_KEY =
+	public static final ResourceKey<Feature> PEAR_MEADOW_FLOWERS =
 			create("pear_meadow_flowers_feature");
-	public static final ResourceKey<Feature> PEAR_MEADOW_BUSHES_FEATURE_KEY =
+	public static final ResourceKey<Feature> PEAR_MEADOW_BUSHES =
 			create("pear_meadow_bushes_feature");
 
-	public static final ResourceKey<Feature> JACARANDA_TREE_FEATURE_KEY =
+	public static final ResourceKey<Feature> JACARANDA_TREE =
 			create("jacaranda_tree_feature");
-	public static final ResourceKey<Feature> JACARANDA_GLADE_PETALS_FEATURE_KEY =
+	public static final ResourceKey<Feature> JACARANDA_GLADE_PETALS =
 			create("jacaranda_glade_petals_feature");
-	public static final ResourceKey<Feature> JACARANDA_GLADE_FLOWERS_FEATURE_KEY =
+	public static final ResourceKey<Feature> JACARANDA_GLADE_FLOWERS =
 			create("jacaranda_glade_flowers_feature");
+
+	public static final ResourceKey<Feature> DESERT_CACTUS_FLOWERS =
+			create("desert_cactus_flowers_feature");
+	public static final ResourceKey<Feature> DESERT_ROCKS =
+			create("desert_rocks_feature");
 
 	public static void configure(BootstrapContext<Feature> context) {
 		// ROSE QUARTZ
@@ -93,7 +101,7 @@ public class FFeatures {
 		));
 
 		// ROSE QUARTZ
-		context.register(ROSE_QUARTZ_ORE_VEIN_FEATURE_KEY,
+		context.register(ROSE_QUARTZ_ORE_VEIN,
 				new FRoseQuartzOreFeature(
 						roseQuartzOre,
 						4,
@@ -102,22 +110,22 @@ public class FFeatures {
 		);
 
 		// PEAR
-		context.register(PEAR_TREE_FEATURE_KEY,
+		context.register(PEAR_TREE,
 				pearTree(belowTrunkProvider)
 						.decorators(List.of(whitePetals))
 						.build()
 		);
-		context.register(PEAR_MEADOW_PETALS_FEATURE_KEY,
+		context.register(PEAR_MEADOW_PETALS,
 				new SimpleBlockFeature(
 						new WeightedStateProvider(flowerBedPatchBuilder(FBlocks.WHITE_PETALS))
 				)
 		);
-		context.register(PEAR_MEADOW_WILDFLOWERS_FEATURE_KEY,
+		context.register(PEAR_MEADOW_WILDFLOWERS,
 				new SimpleBlockFeature(
 						new WeightedStateProvider(flowerBedPatchBuilder(Blocks.WILDFLOWERS))
 				)
 		);
-		context.register(PEAR_MEADOW_FLOWERS_FEATURE_KEY,
+		context.register(PEAR_MEADOW_FLOWERS,
 				new SimpleBlockFeature(
 						new NoiseProvider(
 								2345L,
@@ -133,7 +141,7 @@ public class FFeatures {
 						)
 				)
 		);
-		context.register(PEAR_MEADOW_BUSHES_FEATURE_KEY,
+		context.register(PEAR_MEADOW_BUSHES,
 				new SimpleBlockFeature(
 						new WeightedStateProvider(
 								WeightedList.<BlockState>builder()
@@ -149,17 +157,17 @@ public class FFeatures {
 		);
 
 		// JACARANDA
-		context.register(JACARANDA_TREE_FEATURE_KEY,
+		context.register(JACARANDA_TREE,
 				jacarandaTree(belowTrunkProvider)
 						.decorators(List.of(purplePetals))
 						.build()
 		);
-		context.register(JACARANDA_GLADE_PETALS_FEATURE_KEY,
+		context.register(JACARANDA_GLADE_PETALS,
 				new SimpleBlockFeature(
 						new WeightedStateProvider(flowerBedPatchBuilder(FBlocks.PURPLE_PETALS))
 				)
 		);
-		context.register(JACARANDA_GLADE_FLOWERS_FEATURE_KEY,
+		context.register(JACARANDA_GLADE_FLOWERS,
 				new SimpleBlockFeature(
 						new NoiseProvider(
 								2345L,
@@ -174,6 +182,51 @@ public class FFeatures {
 										Blocks.LILAC.defaultBlockState(), 1,
 										Blocks.PEONY.defaultBlockState(), 1
 								)
+						)
+				)
+		);
+
+		// VANILLA
+		context.register(DESERT_CACTUS_FLOWERS,
+				new SimpleBlockFeature(
+						new NoiseProvider(
+								2345L,
+								NormalNoise.createParity(0, 1.0F),
+								0.020833334F,
+								weightedPatch(
+										Blocks.CACTUS_FLOWER.defaultBlockState(), 1,
+										FBlocks.WHITE_CACTUS_FLOWER.defaultBlockState(), 1,
+										FBlocks.YELLOW_CACTUS_FLOWER.defaultBlockState(), 1
+								)
+						)
+				)
+		);
+		context.register(DESERT_ROCKS,
+				new SimpleBlockFeature(
+						new WeightedStateProvider(
+								WeightedList.<BlockState>builder()
+										.add(Blocks.STONE_BUTTON.defaultBlockState()
+														.setValue(ButtonBlock.FACE, AttachFace.FLOOR),
+												1)
+										.add(Blocks.STONE_BUTTON.defaultBlockState()
+														.setValue(ButtonBlock.FACE, AttachFace.FLOOR)
+														.setValue(ButtonBlock.FACING, Direction.EAST),
+												1)
+										.add(Blocks.BIRCH_BUTTON.defaultBlockState()
+														.setValue(ButtonBlock.FACE, AttachFace.FLOOR),
+												1)
+										.add(Blocks.BIRCH_BUTTON.defaultBlockState()
+														.setValue(ButtonBlock.FACE, AttachFace.FLOOR)
+														.setValue(ButtonBlock.FACING, Direction.EAST),
+												1)
+										.add(Blocks.ACACIA_BUTTON.defaultBlockState()
+														.setValue(ButtonBlock.FACE, AttachFace.FLOOR),
+												1)
+										.add(Blocks.ACACIA_BUTTON.defaultBlockState()
+														.setValue(ButtonBlock.FACE, AttachFace.FLOOR)
+														.setValue(ButtonBlock.FACING, Direction.EAST),
+												1)
+										.build()
 						)
 				)
 		);
