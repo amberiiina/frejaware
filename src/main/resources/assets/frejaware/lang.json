@@ -8,6 +8,7 @@
 
   "biome.frejaware.pear_meadow": "Pear Meadow",
   "biome.jacaranda_glade": "Jacaranda Glade",
+  "biome.orchard": "Orchard",
 
 
   "painting.frejaware.plant.title": "Plant",
@@ -51,6 +52,15 @@
 
   "advancements.frejaware.florist.title": "Florist",
   "advancements.frejaware.florist.description": "Collect every flower added by Frejaware",
+
+  "advancements.frejaware.jingle_bells.title": "Jingle Bells, Jingle Bells",
+  "advancements.frejaware.jingle_bells.description": "Jingle all the way (obtain every bell)",
+
+  "advancements.frejaware.make_me_juice.title": "Make Me Juice!",
+  "advancements.frejaware.make_me_juice.description": "Visit an Orchard",
+
+  "advancements.frejaware.under_the_sea.title": "Who lives in a pineapple under the sea?",
+  "advancements.frejaware.under_the_sea.description": "Obtain a pineapple",
 
 
   "advancements.frejaware.jack_that_randa.title": "Jack That Randa!",

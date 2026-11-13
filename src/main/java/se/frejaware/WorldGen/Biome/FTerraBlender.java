@@ -9,6 +9,7 @@ public class FTerraBlender implements TerraBlenderApi {
 	public void onTerraBlenderInitialized() {
 		Regions.register(new FPearMeadowRegion());
 		Regions.register(new FJacarandaGladeRegion());
+		Regions.register(new FOrchardRegion());
 
 		F.LOGGER.info("TerraBlender Initialized");
 	}

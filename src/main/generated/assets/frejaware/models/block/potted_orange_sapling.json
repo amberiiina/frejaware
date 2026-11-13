@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_potted_azalea_bush",
+  "textures": {
+    "plant": "frejaware:block/potted_orange_sapling_plant",
+    "side": "frejaware:block/potted_orange_sapling_side",
+    "top": "frejaware:block/potted_orange_sapling_top"
+  }
+}

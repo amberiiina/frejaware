@@ -6,11 +6,8 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.references.ItemIds;
 import net.minecraft.tags.BlockItemTags;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import se.frejaware.Blocks.FBlockItemIds;
-import se.frejaware.Items.FItems;
-import se.frejaware.Shared.FBlockTags;
 import se.frejaware.Items.FItemIds;
 import se.frejaware.Shared.FItemTags;
 
@@ -26,6 +23,14 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider registries) {
 		// MOLLY
+		builder(ItemTags.DECORATED_POT_INGREDIENTS)
+				.add(FItemIds.BUTTERFLY_POTTERY_SHERD);
+		builder(ItemTags.DECORATED_POT_SHERDS)
+				.add(FItemIds.BUTTERFLY_POTTERY_SHERD);
+
+		builder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
+				.add(FItemIds.MUSIC_DISC_RYM);
+
 		builder(ItemTags.CHICKEN_FOOD)
 				.add(FBlockItemIds.PINEAPPLE_CROP);
 		builder(ItemTags.PARROT_FOOD)
@@ -36,16 +41,33 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 		builder(ItemTags.VILLAGER_PICKS_UP)
 				.add(FItemIds.PINEAPPLE);
 
-		builder(ItemTags.BEE_FOOD)
+		builder(FItemTags.POT_FLOWERS)
 				.add(FBlockItemIds.WHITE_ORCHID)
 				.add(FBlockItemIds.YELLOW_TULIP)
+				.add(FBlockItemIds.WHITE_HIBISCUS)
+				.add(FBlockItemIds.YELLOW_HIBISCUS)
+
+				.add(FBlockItemIds.WHITE_CROCUS)
+				.add(FBlockItemIds.LILAC_CROCUS)
+				.add(FBlockItemIds.PURPLE_CROCUS)
+				.add(FBlockItemIds.LILY_OF_THE_GLADE)
+
+				.add(FBlockItemIds.WHITE_ALLIUM);
+		builder(FItemTags.NON_POT_FLOWERS)
 				.add(FBlockItemIds.WHITE_CACTUS_FLOWER)
 				.add(FBlockItemIds.YELLOW_CACTUS_FLOWER);
-
 		builder(FItemTags.CROCUSES)
 				.add(FBlockItemIds.WHITE_CROCUS)
 				.add(FBlockItemIds.LILAC_CROCUS)
 				.add(FBlockItemIds.PURPLE_CROCUS);
+
+		builder(ConventionalItemTags.FLOWERS)
+				.addTag(FItemTags.POT_FLOWERS)
+				.addTag(FItemTags.NON_POT_FLOWERS);
+		builder(ConventionalItemTags.SMALL_FLOWERS)
+				.addTag(FItemTags.POT_FLOWERS);
+		builder(ItemTags.BEE_FOOD)
+				.addTag(FItemTags.POT_FLOWERS);
 
 		// FOOD
 		builder(ConventionalItemTags.FOODS)
@@ -70,7 +92,11 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(FBlockItemIds.BLOWBERRY_CROP)
 				.add(FItemIds.FRUIT_SALAD)
 				.add(FItemIds.ICE_CREAM)
-				.add(FItemIds.CHOCOLATE_ICE_CREAM);
+				.add(FItemIds.CHOCOLATE_ICE_CREAM)
+				.add(FItemIds.JAM)
+				.add(FItemIds.JAM_BLEND)
+				.add(FItemIds.PANCAKE)
+				.add(FItemIds.SWEDISH_PANCAKE);
 
 		builder(ConventionalItemTags.BERRY_FOODS)
 				.add(FBlockItemIds.BLUEBERRY_CROP)
@@ -117,6 +143,12 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 		builder(ItemTags.PIGLIN_LOVED)
 				.add(FItemIds.GOLDEN_PEAR)
 				.add(FItemIds.ENCHANTED_GOLDEN_PEAR);
+
+		// ORANGE
+		builder(ItemTags.LEAVES)
+				.add(FBlockItemIds.ORANGE_LEAVES);
+		builder(ItemTags.SAPLINGS)
+				.add(FBlockItemIds.ORANGE_SAPLING);
 
 		// JACARANDA
 		builder(ItemTags.LOGS)

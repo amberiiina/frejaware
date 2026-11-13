@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "#c:foods/berry",
+    "#c:foods/berry",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "frejaware:jam_blend"
+  }
+}

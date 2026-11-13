@@ -1,0 +1,32 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "obtain_pineapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:pineapple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.pineapple_under_the_sea.description"
+    },
+    "icon": {
+      "id": "frejaware:pineapple"
+    },
+    "title": {
+      "translate": "advancements.frejaware.pineapple_under_the_sea.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_pineapple"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

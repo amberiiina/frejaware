@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:noise",
+    "noise": {
+      "base_amplitude": 0.955388882960065,
+      "base_octave": 0
+    },
+    "scale": 0.020833334,
+    "seed": 2345,
+    "states": [
+      "frejaware:white_allium",
+      "frejaware:white_allium",
+      "minecraft:orange_tulip",
+      "minecraft:orange_tulip",
+      "frejaware:yellow_tulip",
+      "minecraft:white_tulip",
+      "minecraft:azure_bluet",
+      "minecraft:dandelion",
+      "minecraft:dandelion",
+      "frejaware:blowberry_crop",
+      "minecraft:sunflower"
+    ]
+  }
+}

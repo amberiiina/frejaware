@@ -1,7 +1,8 @@
 {
   "values": [
     "#frejaware:pot_flowers",
-    "#frejaware:other_flowers",
+    "#frejaware:non_pot_flowers",
+    "frejaware:orange_leaves",
     "frejaware:jacaranda_leaves",
     "frejaware:pear_leaves"
   ]

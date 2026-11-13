@@ -144,7 +144,7 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 			AdvancementHolder florist = Advancement.Builder.advancement()
 					.parent(root)
 					.display(
-							FItems.POPPY_SEEDS,
+							FBlocks.WHITE_ORCHID.asItem(),
 							Component.translatable(
 									"advancements.frejaware.florist.title"
 							),
@@ -207,6 +207,88 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							)
 					)
 					.save(consumer, F.id("frejaware/florist"));
+
+			AdvancementHolder jingle_bells = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FBlocks.IRON_BELL.asItem(),
+							Component.translatable(
+									"advancements.frejaware.jingle_bells.title"
+							),
+							Component.translatable(
+									"advancements.frejaware.jingle_bells.description"
+							),
+							AdvancementType.TASK,
+							true,
+							true,
+							false
+					)
+					.requirements(AdvancementRequirements.Strategy.AND)
+					.addCriterion(
+							"obtain_bell",
+							InventoryChangeTrigger.TriggerInstance.hasItems(
+									Items.BELL
+							)
+					)
+					.addCriterion(
+							"obtain_iron_bell",
+							InventoryChangeTrigger.TriggerInstance.hasItems(
+									FBlocks.IRON_BELL
+							)
+					)
+					.save(consumer, F.id("frejaware/jingle_bells"));
+
+			// ------------------
+			// ORCHARD
+			// ------------------
+
+			AdvancementHolder makeMeJuice = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FBlocks.ORANGE_SAPLING.asItem(),
+							Component.translatable(
+									"advancements.frejaware.make_me_juice.title"
+							),
+							Component.translatable(
+									"advancements.frejaware.make_me_juice.description"
+							),
+							AdvancementType.TASK,
+							true,
+							true,
+							false
+					)
+					.addCriterion(
+							"visit_orchard",
+							PlayerTrigger.TriggerInstance.located(
+									LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(
+											FBiomes.ORCHARD
+									))
+							)
+					)
+					.save(consumer, F.id("frejaware/make_me_juice"));
+
+			AdvancementHolder underTheSea = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FItems.PINEAPPLE.asItem(),
+							Component.translatable(
+									"advancements.frejaware.pineapple_under_the_sea.title"
+							),
+							Component.translatable(
+									"advancements.frejaware.pineapple_under_the_sea.description"
+							),
+							AdvancementType.TASK,
+							true,
+							true,
+							false
+					)
+					.addCriterion(
+							"obtain_pineapple",
+							InventoryChangeTrigger.TriggerInstance.hasItems(
+									FItems.PINEAPPLE
+							)
+					)
+					.save(consumer, F.id("frejaware/pineapple_under_the_sea"));
 
 			// ------------------
 			// JACARANDA
@@ -574,6 +656,13 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							ConsumeItemTrigger.TriggerInstance.usedItem(
 									itemRegistry,
 									Items.MELON_SLICE
+							)
+					)
+					.addCriterion(
+							"eat_pineapple",
+							ConsumeItemTrigger.TriggerInstance.usedItem(
+									itemRegistry,
+									FItems.PINEAPPLE
 							)
 					)
 					.save(consumer, F.id("frejaware/kinda_fruity"));

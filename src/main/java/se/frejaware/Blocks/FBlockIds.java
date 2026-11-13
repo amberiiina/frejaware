@@ -31,6 +31,12 @@ public class FBlockIds {
 			create("potted_purple_crocus");
 	public static final ResourceKey<Block> POTTED_LILY_OF_THE_GLADE =
 			create("potted_lily_of_the_glade");
+	public static final ResourceKey<Block> POTTED_WHITE_ALLIUM =
+			create("potted_white_allium");
+
+	// ORANGE
+	public static final ResourceKey<Block> POTTED_ORANGE_SAPLING =
+			create("potted_orange_sapling");
 
 	// JACARANDA
 	public static final ResourceKey<Block> POTTED_JACARANDA_SAPLING =

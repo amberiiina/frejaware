@@ -19,7 +19,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.world.item.crafting.ShieldDecorationRecipe;
 import net.minecraft.world.level.ItemLike;
 import se.frejaware.Blocks.FBlocks;
-import se.frejaware.F;
 import se.frejaware.Items.FItems;
 import se.frejaware.Shared.FItemTags;
 
@@ -41,20 +40,6 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				// MOLLY
 				// ----------------------
 
-				// 1x pineapple seed
-				shapeless(RecipeCategory.MISC, FItems.PINEAPPLE_SEEDS)
-						.requires(FItems.PINEAPPLE)
-						.unlockedBy(getHasName(FItems.PINEAPPLE), has(FItems.PINEAPPLE))
-						.save(output);
-
-				// 1x iron bell
-				shaped(RecipeCategory.DECORATIONS, FBlocks.IRON_BELL)
-						.pattern("LLL")
-						.pattern(" I ")
-						.define('L', ItemTags.LOGS)
-						.define('I', Items.IRON_BLOCK)
-						.unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
-						.save(output);
 				// 1x bell
 				shaped(RecipeCategory.DECORATIONS, Items.BELL)
 						.pattern("LLL")
@@ -63,30 +48,63 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.define('G', Items.GOLD_BLOCK)
 						.unlockedBy(getHasName(Items.GOLD_BLOCK), has(Items.GOLD_BLOCK))
 						.save(output);
+				// 1x iron bell
+				shaped(RecipeCategory.DECORATIONS, FBlocks.IRON_BELL)
+						.pattern("LLL")
+						.pattern(" I ")
+						.define('L', ItemTags.LOGS)
+						.define('I', Items.IRON_BLOCK)
+						.unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
+						.save(output);
+				// 1x butterfly pottery sherd
+				shapeless(RecipeCategory.DECORATIONS, FItems.BUTTERFLY_POTTERY_SHERD)
+						.requires(Items.HEART_POTTERY_SHERD)
+						.requires(FItemTags.POT_FLOWERS)
+						.unlockedBy(getHasName(Items.HEART_POTTERY_SHERD), has(Items.HEART_POTTERY_SHERD))
+						.save(output);
 
 				// flowers
-				flowerDye(FBlocks.WHITE_PETALS, Items.DYE.white());
-				flowerDye(FBlocks.WHITE_CACTUS_FLOWER, Items.DYE.white());
-				flowerDye(FBlocks.YELLOW_CACTUS_FLOWER, Items.DYE.yellow());
 				flowerDye(FBlocks.WHITE_ORCHID, Items.DYE.white());
 				flowerDye(FBlocks.YELLOW_TULIP, Items.DYE.yellow());
 				flowerDye(FBlocks.WHITE_HIBISCUS, Items.DYE.white());
 				flowerDye(FBlocks.YELLOW_HIBISCUS, Items.DYE.yellow());
+
 				flowerDye(FBlocks.WHITE_CROCUS, Items.DYE.white());
 				flowerDye(FBlocks.LILAC_CROCUS, Items.DYE.magenta());
 				flowerDye(FBlocks.PURPLE_CROCUS, Items.DYE.purple());
 				flowerDye(FBlocks.LILY_OF_THE_GLADE, Items.DYE.purple());
 
+				flowerDye(FBlocks.WHITE_CACTUS_FLOWER, Items.DYE.white());
+				flowerDye(FBlocks.YELLOW_CACTUS_FLOWER, Items.DYE.yellow());
+				flowerDye(FBlocks.WHITE_ALLIUM, Items.DYE.white());
+
+				flowerDye(FBlocks.WHITE_PETALS, Items.DYE.white());
+				flowerDye(FBlocks.PURPLE_PETALS, Items.DYE.purple());
+				flowerDye(FBlocks.LIGHT_BLUE_PETALS, Items.DYE.lightBlue());
+
 				// ----------------------
 				// FOOD
 				// ----------------------
 
-				// 1x chocolate dipped pear
-				shapeless(RecipeCategory.FOOD, FItems.CHOCOLATE_DIPPED_PEAR)
-						.requires(FItems.PEAR)
-						.requires(FItems.CHOCOLATE)
-						.unlockedBy(getHasName(FItems.PEAR), has(FItems.PEAR))
+				// 1x berry juice bottle
+				shapeless(RecipeCategory.FOOD, FItems.BERRY_JUICE_BOTTLE)
+						.requires(Items.GLASS_BOTTLE)
+						.requires(ConventionalItemTags.BERRY_FOODS)
+						.requires(ConventionalItemTags.BERRY_FOODS)
+						.requires(ConventionalItemTags.BERRY_FOODS)
+						.unlockedBy("has_berry", has(ConventionalItemTags.BERRY_FOODS))
 						.save(output);
+				// 1x jam
+				foodSmelting(FItems.JAM, FItems.JAM_BLEND);
+				// 1x jam blend
+				shapeless(RecipeCategory.FOOD, FItems.JAM_BLEND)
+						.requires(Items.GLASS_BOTTLE)
+						.requires(ConventionalItemTags.BERRY_FOODS)
+						.requires(ConventionalItemTags.BERRY_FOODS)
+						.requires(Items.SUGAR)
+						.unlockedBy("has_berry", has(ConventionalItemTags.BERRY_FOODS))
+						.save(output);
+
 				// 1x golden pear
 				shaped(RecipeCategory.FOOD, FItems.GOLDEN_PEAR)
 						.pattern("GGG")
@@ -105,8 +123,12 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.define('P', FItems.GOLDEN_PEAR)
 						.unlockedBy(getHasName(FItems.PEAR), has(FItems.PEAR))
 						.save(output);
-
-				// 1x golden milk
+				// 1x saffron
+				shapeless(RecipeCategory.FOOD, FItems.SAFFRON)
+						.requires(FItemTags.CROCUSES)
+						.unlockedBy("has_crocus", has(FItemTags.CROCUSES))
+						.save(output);
+				// 1x saffron milk
 				shapeless(RecipeCategory.FOOD, FItems.SAFFRON_MILK_BOTTLE, 2)
 						.requires(FItems.MILK_BOTTLE)
 						.requires(FItems.SAFFRON)
@@ -119,31 +141,29 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.requires(Items.POPPY)
 						.unlockedBy(getHasName(Items.POPPY), has(Items.POPPY))
 						.save(output);
-				// 1x saffron
-				shapeless(RecipeCategory.FOOD, FItems.SAFFRON)
-						.requires(FItemTags.CROCUSES)
-						.unlockedBy("has_crocus", has(FItemTags.CROCUSES))
+				// 1x pineapple seed
+				shapeless(RecipeCategory.MISC, FItems.PINEAPPLE_SEEDS)
+						.requires(FItems.PINEAPPLE)
+						.unlockedBy(getHasName(FItems.PINEAPPLE), has(FItems.PINEAPPLE))
 						.save(output);
 
-				// 1x chocolate bottle
-				combineTwoFood(FItems.CHOCOLATE_BOTTLE, FItems.MILK_BOTTLE, FItems.CHOCOLATE);
 				// 8x milk bottle
 				shapeless(RecipeCategory.FOOD, FItems.MILK_BOTTLE, 8)
 						.requires(Items.MILK_BUCKET)
 						.unlockedBy(getHasName(Items.MILK_BUCKET), has(Items.MILK_BUCKET))
-						.save(output);
-				// 1x berry juice bottle
-				shapeless(RecipeCategory.FOOD, FItems.BERRY_JUICE_BOTTLE)
-						.requires(Items.GLASS_BOTTLE)
-						.requires(ConventionalItemTags.BERRY_FOODS)
-						.requires(ConventionalItemTags.BERRY_FOODS)
-						.unlockedBy("has_berry", has(ConventionalItemTags.BERRY_FOODS))
 						.save(output);
 				// 2x milkshake bottle
 				shapeless(RecipeCategory.FOOD, FItems.MILKSHAKE_BOTTLE, 2)
 						.requires(FItems.MILK_BOTTLE)
 						.requires(FItems.ICE_CREAM)
 						.requires(FItems.PINKBERRIES)
+						.unlockedBy(getHasName(FItems.MILK_BOTTLE), has(FItems.MILK_BOTTLE))
+						.save(output);
+				// 1x ice cream
+				shapeless(RecipeCategory.FOOD, FItems.ICE_CREAM)
+						.requires(Items.BOWL)
+						.requires(FItems.MILK_BOTTLE)
+						.requires(Items.SUGAR)
 						.unlockedBy(getHasName(FItems.MILK_BOTTLE), has(FItems.MILK_BOTTLE))
 						.save(output);
 
@@ -163,22 +183,14 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				// 1x chocolate bar
 				combineTwoFood(FItems.CHOCOLATE_BAR,
 						FItems.CHOCOLATE, Items.SUGAR, FItems.COCOA_BUTTER);
-
-				// 1x fruit salad
-				shapeless(RecipeCategory.FOOD, FItems.FRUIT_SALAD)
-						.requires(Items.BOWL)
-						.requires(ConventionalItemTags.FRUIT_FOODS)
-						.requires(ConventionalItemTags.FRUIT_FOODS)
-						.requires(ConventionalItemTags.FRUIT_FOODS)
-						.unlockedBy("has_fruit", has(ConventionalItemTags.FRUIT_FOODS))
+				// 1x chocolate dipped pear
+				shapeless(RecipeCategory.FOOD, FItems.CHOCOLATE_DIPPED_PEAR)
+						.requires(FItems.PEAR)
+						.requires(FItems.CHOCOLATE)
+						.unlockedBy(getHasName(FItems.PEAR), has(FItems.PEAR))
 						.save(output);
-				// 1x ice cream
-				shapeless(RecipeCategory.FOOD, FItems.ICE_CREAM)
-						.requires(Items.BOWL)
-						.requires(FItems.MILK_BOTTLE)
-						.requires(Items.SUGAR)
-						.unlockedBy(getHasName(FItems.MILK_BOTTLE), has(FItems.MILK_BOTTLE))
-						.save(output);
+				// 1x chocolate bottle
+				combineTwoFood(FItems.CHOCOLATE_BOTTLE, FItems.MILK_BOTTLE, FItems.CHOCOLATE);
 				// 1x chocolate ice cream
 				shapeless(RecipeCategory.FOOD, FItems.CHOCOLATE_ICE_CREAM)
 						.requires(Items.BOWL)
@@ -191,6 +203,36 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				combineTwoFood(FItems.CHOCOLATE_ICE_CREAM,
 						FItems.ICE_CREAM, FItems.CHOCOLATE,
 						"chocolate_ice_cream_from_ice_cream");
+
+				// 1x fruit salad
+				shapeless(RecipeCategory.FOOD, FItems.FRUIT_SALAD)
+						.requires(Items.BOWL)
+						.requires(ConventionalItemTags.FRUIT_FOODS)
+						.requires(ConventionalItemTags.FRUIT_FOODS)
+						.requires(ConventionalItemTags.FRUIT_FOODS)
+						.unlockedBy("has_fruit", has(ConventionalItemTags.FRUIT_FOODS))
+						.save(output);
+				// 1x pancake
+				shapeless(RecipeCategory.FOOD, FItems.PANCAKE)
+						.requires(Items.WHEAT)
+						.requires(FItems.MILK_BOTTLE)
+						.requires(Items.EGG)
+						.unlockedBy(getHasName(Items.EGG), has(Items.EGG))
+						.save(output);
+				// 1x swedish pancake from raw
+				shapeless(RecipeCategory.FOOD, FItems.SWEDISH_PANCAKE)
+						.requires(Items.WHEAT)
+						.requires(FItems.MILK_BOTTLE)
+						.requires(Items.EGG)
+						.requires(FItems.JAM)
+						.unlockedBy(getHasName(Items.EGG), has(Items.EGG))
+						.save(output);
+				// 1x swedish pancake
+				shapeless(RecipeCategory.FOOD, FItems.SWEDISH_PANCAKE)
+						.requires(FItems.PANCAKE)
+						.requires(FItems.JAM)
+						.unlockedBy(getHasName(Items.EGG), has(Items.EGG))
+						.save(output, "swedish_pancake_from_pancake");
 
 				// ----------------------
 				// JACARANDA
@@ -796,6 +838,38 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.unlockedBy(getHasName(item), has(item))
 						.unlockedBy(getHasName(item2), has(item2))
 						.save(output, outputName);
+			}
+			private void foodSmelting(
+					ItemLike result, ItemLike input
+			) {
+				SimpleCookingRecipeBuilder.smelting(
+								Ingredient.of(input),
+								RecipeCategory.FOOD,
+								CookingBookCategory.FOOD,
+								result,
+								0.35F,
+								200
+						)
+						.unlockedBy(getHasName(input), has(input))
+						.save(output);
+				SimpleCookingRecipeBuilder.smoking(
+								Ingredient.of(input),
+								RecipeCategory.FOOD,
+								result,
+								0.35F,
+								200
+						)
+						.unlockedBy(getHasName(input), has(input))
+						.save(output, getItemName(input) + "_from_smoking");
+				SimpleCookingRecipeBuilder.campfireCooking(
+								Ingredient.of(input),
+								RecipeCategory.FOOD,
+								result,
+								0.35F,
+								600
+						)
+						.unlockedBy(getHasName(input), has(input))
+						.save(output, getItemName(input) + "_from_campfire_cooking");
 			}
 		};
 	}

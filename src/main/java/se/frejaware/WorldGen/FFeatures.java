@@ -3,10 +3,11 @@ package se.frejaware.WorldGen;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.VegetationFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.Weighted;
@@ -21,27 +22,24 @@ import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.FlowerBedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.levelgen.feature.BlockReplacement;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
-import net.minecraft.world.level.levelgen.feature.TreeFeature;
+import net.minecraft.world.level.levelgen.feature.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.*;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.UpwardsBranchingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.placement.CaveSurface;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
+import se.frejaware.Blocks.Custom.FSeashellBlock;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.F;
 import se.frejaware.WorldGen.Custom.FRoseQuartzOreFeature;
@@ -72,23 +70,45 @@ public class FFeatures {
 	public static final ResourceKey<Feature> JACARANDA_GLADE_FLOWERS =
 			create("jacaranda_glade_flowers_feature");
 
+	public static final ResourceKey<Feature> ORANGE_TREE =
+			create("orange_tree_feature");
+	public static final ResourceKey<Feature> ORANGE_FLOWERS =
+			create("orange_flowers_feature");
+	public static final ResourceKey<Feature> ORANGE_DIRT_VEGETATION =
+			create("orange_dirt_vegetation_feature");
+	public static final ResourceKey<Feature> ORANGE_DIRT =
+			create("orange_dirt_feature");
+
 	public static final ResourceKey<Feature> DESERT_CACTUS_FLOWERS =
 			create("desert_cactus_flowers_feature");
 	public static final ResourceKey<Feature> DESERT_ROCKS =
 			create("desert_rocks_feature");
+	public static final ResourceKey<Feature> BEACH_SEASHELLS =
+			create("beach_seashells");
 
 	public static void configure(BootstrapContext<Feature> context) {
+		HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
+		HolderGetter<Feature> features = context.lookup(Registries.FEATURE);
+
+		HolderGetter<BlockStateProvider> blockStateProviders =
+				context.lookup(Registries.BLOCK_STATE_PROVIDER);
+		Holder<BlockStateProvider> belowTrunkProvider =
+				blockStateProviders.getOrThrow(BlockStateProviders.SOIL_BENEATH_TREE);
+
 		// ROSE QUARTZ
 		RuleTest onlyEndStoneRule = new BlockMatchTest(Blocks.END_STONE);
-
 		List<BlockReplacement> roseQuartzOre = List.of(BlockReplacement.replace(
 				onlyEndStoneRule, FBlocks.ROSE_QUARTZ_ORE.defaultBlockState()
 		));
+		context.register(ROSE_QUARTZ_ORE_VEIN,
+				new FRoseQuartzOreFeature(
+						roseQuartzOre,
+						4,
+						0.0f
+				)
+		);
 
-		// PEAR TREE
-		HolderGetter<BlockStateProvider> blockStateProviders = context.lookup(Registries.BLOCK_STATE_PROVIDER);
-		Holder<BlockStateProvider> belowTrunkProvider = blockStateProviders.getOrThrow(BlockStateProviders.SOIL_BENEATH_TREE);
-
+		// PETALS
 		PlaceOnGroundDecorator whitePetals = new PlaceOnGroundDecorator(
 				150, 2, 2, Holder.direct(new WeightedStateProvider(
 						whitePetalsPatchBuilder(1, 4)
@@ -99,20 +119,24 @@ public class FFeatures {
 						purplePetalsPatchBuilder(1, 4)
 				)
 		));
-
-		// ROSE QUARTZ
-		context.register(ROSE_QUARTZ_ORE_VEIN,
-				new FRoseQuartzOreFeature(
-						roseQuartzOre,
-						4,
-						0.0f
+		PlaceOnGroundDecorator sparseLeafLitter = new PlaceOnGroundDecorator(
+				96, 4, 2, Holder.direct(new WeightedStateProvider(
+						VegetationFeatures.leafLitterPatchBuilder(1, 3)
 				)
-		);
+		));
+		PlaceOnGroundDecorator thickLeafLitter = new PlaceOnGroundDecorator(
+				150, 2, 2, Holder.direct(new WeightedStateProvider(
+						VegetationFeatures.leafLitterPatchBuilder(1, 4)
+				)
+		));
 
 		// PEAR
 		context.register(PEAR_TREE,
 				pearTree(belowTrunkProvider)
-						.decorators(List.of(whitePetals))
+						.decorators(List.of(
+								new BeehiveDecorator(0.02F),
+								whitePetals
+						))
 						.build()
 		);
 		context.register(PEAR_MEADOW_PETALS,
@@ -159,7 +183,10 @@ public class FFeatures {
 		// JACARANDA
 		context.register(JACARANDA_TREE,
 				jacarandaTree(belowTrunkProvider)
-						.decorators(List.of(purplePetals))
+						.decorators(List.of(
+								new BeehiveDecorator(0.02F),
+								purplePetals
+						))
 						.build()
 		);
 		context.register(JACARANDA_GLADE_PETALS,
@@ -183,6 +210,66 @@ public class FFeatures {
 										Blocks.PEONY.defaultBlockState(), 1
 								)
 						)
+				)
+		);
+
+		// ORCHARD
+		context.register(ORANGE_TREE,
+				orangeTree(belowTrunkProvider)
+						.decorators(List.of(
+								new BeehiveDecorator(0.02F),
+								sparseLeafLitter,
+								thickLeafLitter
+						))
+						.build()
+		);
+		context.register(ORANGE_FLOWERS,
+				new SimpleBlockFeature(
+						new NoiseProvider(
+								2345L,
+								NormalNoise.createParity(0, 1.0F),
+								0.020833334F,
+								weightedPatch(
+										FBlocks.WHITE_ALLIUM.defaultBlockState(), 2,
+										Blocks.ORANGE_TULIP.defaultBlockState(), 2,
+										FBlocks.YELLOW_TULIP.defaultBlockState(), 1,
+										Blocks.WHITE_TULIP.defaultBlockState(), 1,
+										Blocks.AZURE_BLUET.defaultBlockState(), 1,
+										Blocks.DANDELION.defaultBlockState(), 2,
+										FBlocks.BLOWBERRY_BUSH.defaultBlockState(), 1,
+										Blocks.SUNFLOWER.defaultBlockState(), 1
+								)
+						)
+				)
+		);
+		context.register(ORANGE_DIRT_VEGETATION,
+				new SimpleBlockFeature(
+						new WeightedStateProvider(
+								WeightedList.<BlockState>builder()
+										.add(FBlocks.ORANGE_SAPLING.defaultBlockState(), 11)
+										.add(Blocks.MOSS_CARPET.defaultBlockState(), 25)
+										.add(Blocks.SHORT_GRASS.defaultBlockState(), 50)
+										.add(Blocks.DEAD_BUSH.defaultBlockState(), 10)
+										.add(Blocks.AZURE_BLUET.defaultBlockState(), 10)
+										.add(Blocks.OAK_LOG.defaultBlockState(), 10)
+										.build()
+						)
+				)
+		);
+		context.register(ORANGE_DIRT,
+				new VegetationPatchFeature(
+						blocks.getOrThrow(BlockTags.MOSS_REPLACEABLE),
+						BlockStateProvider.holderOf(Blocks.MOSS_BLOCK),
+						PlacementUtils.inlinePlaced(
+								features.getOrThrow(ORANGE_DIRT_VEGETATION)
+						),
+						CaveSurface.FLOOR,
+						ConstantInt.of(1),
+						0.0F,
+						5,
+						0.2F,
+						UniformInt.of(4, 7),
+						0.3F
 				)
 		);
 
@@ -225,6 +312,38 @@ public class FFeatures {
 										.add(Blocks.ACACIA_BUTTON.defaultBlockState()
 														.setValue(ButtonBlock.FACE, AttachFace.FLOOR)
 														.setValue(ButtonBlock.FACING, Direction.EAST),
+												1)
+										.build()
+						)
+				)
+		);
+		context.register(BEACH_SEASHELLS,
+				new SimpleBlockFeature(
+						new WeightedStateProvider(
+								WeightedList.<BlockState>builder()
+										.add(FBlocks.PEACH_SEASHELL.defaultBlockState()
+														.setValue(FSeashellBlock.FACING, Direction.NORTH),
+												1)
+										.add(FBlocks.PEACH_SEASHELL.defaultBlockState()
+														.setValue(FSeashellBlock.FACING, Direction.EAST),
+												1)
+										.add(FBlocks.PEACH_SEASHELL.defaultBlockState()
+														.setValue(FSeashellBlock.FACING, Direction.SOUTH),
+												1)
+										.add(FBlocks.PEACH_SEASHELL.defaultBlockState()
+														.setValue(FSeashellBlock.FACING, Direction.WEST),
+												1)
+										.add(FBlocks.PEARL_SEASHELL.defaultBlockState()
+														.setValue(FSeashellBlock.FACING, Direction.NORTH),
+												1)
+										.add(FBlocks.PEARL_SEASHELL.defaultBlockState()
+														.setValue(FSeashellBlock.FACING, Direction.EAST),
+												1)
+										.add(FBlocks.PEARL_SEASHELL.defaultBlockState()
+														.setValue(FSeashellBlock.FACING, Direction.SOUTH),
+												1)
+										.add(FBlocks.PEARL_SEASHELL.defaultBlockState()
+														.setValue(FSeashellBlock.FACING, Direction.WEST),
 												1)
 										.build()
 						)
@@ -353,6 +472,31 @@ public class FFeatures {
 						0.33333334F
 				),
 				new TwoLayersFeatureSize(1, 0, 2),
+				belowTrunkProvider
+		).ignoreVines();
+	}
+
+	private static TreeFeature.Builder orangeTree(
+			final Holder<BlockStateProvider> belowTrunkProvider) {
+		return new TreeFeature.Builder(
+				BlockStateProvider.of(Blocks.OAK_LOG),
+				new StraightTrunkPlacer(
+						4,
+						2,
+						0
+				),
+				new WeightedStateProvider(
+						WeightedList.<BlockState>builder()
+								.add(FBlocks.ORANGE_LEAVES.defaultBlockState(), 2)
+								.add(Blocks.AZALEA_LEAVES.defaultBlockState(), 1)
+								.build()
+				),
+				new BlobFoliagePlacer(
+						ConstantInt.of(2),
+						ConstantInt.of(0),
+						3
+				),
+				new TwoLayersFeatureSize(1, 0, 1),
 				belowTrunkProvider
 		).ignoreVines();
 	}

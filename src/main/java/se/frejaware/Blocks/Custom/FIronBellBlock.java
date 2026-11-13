@@ -42,7 +42,6 @@ public class FIronBellBlock extends BaseEntityBlock {
 	private static final Map<Direction.Axis, VoxelShape> SHAPE_FLOOR;
 	private static final Map<Direction.Axis, VoxelShape> SHAPE_DOUBLE_WALL;
 	private static final Map<Direction, VoxelShape> SHAPE_SINGLE_WALL;
-	public static final int EVENT_BELL_RING = 1;
 
 	public FIronBellBlock(final BlockBehaviour.Properties properties) {
 		super(properties);

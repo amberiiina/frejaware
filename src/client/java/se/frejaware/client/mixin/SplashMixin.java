@@ -33,7 +33,7 @@ public abstract class SplashMixin {
 		splash(list, "FUCK TRUMP");
 		splash(list, "Alexian <333");
 		splash(list, "Penis!!");
-		splash(list, "Alexian + Freja + Molly");
+		splash(list, "Freja + Molly + Alexian");
 		splash(list, "Hit me harder, Daddy~~");
 		splash(list, "Whip it out!");
 		splash(list, "Send bobs and vegana");
@@ -53,6 +53,13 @@ public abstract class SplashMixin {
 		splash(list, "Alexians kuk <3");
 		splash(list, "Ride that dick!");
 		splash(list, "BDSM");
+		splash(list, "How big is it? ;)");
+		splash(list, "The earth isn't flat; it's a cube!");
+		splash(list, ":3");
+		splash(list, "UwU");
+		splash(list, "I have autism");
+		splash(list, "Eat a dick <3");
+		splash(list, "If you’re reading this you're gay");
 
 		splash(list, "Also try Ark!");
 		splash(list, "Also try Dressmaker!");

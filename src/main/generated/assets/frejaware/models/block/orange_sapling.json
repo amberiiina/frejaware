@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_azalea",
+  "textures": {
+    "side": "frejaware:block/orange_sapling_side",
+    "top": "frejaware:block/orange_sapling_top"
+  }
+}

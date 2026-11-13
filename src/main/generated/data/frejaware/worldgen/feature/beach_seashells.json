@@ -1,0 +1,70 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "frejaware:peach_seashell",
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:peach_seashell",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:peach_seashell",
+          "properties": {
+            "facing": "south"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:peach_seashell",
+          "properties": {
+            "facing": "west"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": "frejaware:pearl_seashell",
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:pearl_seashell",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:pearl_seashell",
+          "properties": {
+            "facing": "south"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:pearl_seashell",
+          "properties": {
+            "facing": "west"
+          }
+        },
+        "weight": 1
+      }
+    ]
+  }
+}

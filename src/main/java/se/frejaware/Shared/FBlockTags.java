@@ -1,9 +1,7 @@
 package se.frejaware.Shared;
 
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import se.frejaware.F;
 
@@ -13,9 +11,9 @@ public class FBlockTags {
 			Registries.BLOCK,
 			F.id("pot_flowers")
 	);
-	public static final TagKey<Block> OTHER_FLOWERS = TagKey.create(
+	public static final TagKey<Block> NON_POT_FLOWERS = TagKey.create(
 			Registries.BLOCK,
-			F.id("other_flowers")
+			F.id("non_pot_flowers")
 	);
 
 	// JACARANDA

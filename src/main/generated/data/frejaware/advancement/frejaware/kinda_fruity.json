@@ -48,6 +48,14 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "eat_pineapple": {
+      "conditions": {
+        "item": {
+          "items": "frejaware:pineapple"
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -80,6 +88,9 @@
     ],
     [
       "eat_melon"
+    ],
+    [
+      "eat_pineapple"
     ]
   ],
   "rewards": {

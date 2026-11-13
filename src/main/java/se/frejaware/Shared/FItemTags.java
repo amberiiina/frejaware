@@ -11,6 +11,14 @@ public class FItemTags {
 			BuiltInRegistries.ITEM.key(),
 			F.id("fruit_salad_ingredients")
 	);
+	public static final TagKey<Item> POT_FLOWERS = TagKey.create(
+			BuiltInRegistries.ITEM.key(),
+			F.id("pot_flowers")
+	);
+	public static final TagKey<Item> NON_POT_FLOWERS = TagKey.create(
+			BuiltInRegistries.ITEM.key(),
+			F.id("non_pot_flowers")
+	);
 	public static final TagKey<Item> CROCUSES = TagKey.create(
 			BuiltInRegistries.ITEM.key(),
 			F.id("crocuses")

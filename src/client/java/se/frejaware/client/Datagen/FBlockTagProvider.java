@@ -7,7 +7,6 @@ import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.BlockTags;
 import se.frejaware.Blocks.FBlockIds;
 import se.frejaware.Blocks.FBlockItemIds;
-import se.frejaware.Items.FItems;
 import se.frejaware.Shared.FBlockTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -39,11 +38,14 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.add(FBlockItemIds.YELLOW_TULIP)
 				.add(FBlockItemIds.WHITE_HIBISCUS)
 				.add(FBlockItemIds.YELLOW_HIBISCUS)
+
 				.add(FBlockItemIds.WHITE_CROCUS)
 				.add(FBlockItemIds.LILAC_CROCUS)
 				.add(FBlockItemIds.PURPLE_CROCUS)
-				.add(FBlockItemIds.LILY_OF_THE_GLADE);
-		builder(FBlockTags.OTHER_FLOWERS)
+				.add(FBlockItemIds.LILY_OF_THE_GLADE)
+
+				.add(FBlockItemIds.WHITE_ALLIUM);
+		builder(FBlockTags.NON_POT_FLOWERS)
 				.add(FBlockItemIds.WHITE_CACTUS_FLOWER)
 				.add(FBlockItemIds.YELLOW_CACTUS_FLOWER);
 
@@ -55,17 +57,28 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.addTag(FBlockTags.POT_FLOWERS);
 
 		builder(BlockTags.ENDERMAN_HOLDABLE)
-				.addTag(FBlockTags.OTHER_FLOWERS);
+				.addTag(FBlockTags.NON_POT_FLOWERS);
 		builder(BlockTags.WALL_POST_OVERRIDE)
-				.addTag(FBlockTags.OTHER_FLOWERS);
+				.addTag(FBlockTags.NON_POT_FLOWERS);
 
 		builder(BlockTags.BEE_ATTRACTIVE)
 				.addTag(FBlockTags.POT_FLOWERS)
-				.addTag(FBlockTags.OTHER_FLOWERS);
+				.addTag(FBlockTags.NON_POT_FLOWERS);
 		builder(BlockTags.FLOWERS)
 				.addTag(FBlockTags.POT_FLOWERS)
-				.addTag(FBlockTags.OTHER_FLOWERS);
+				.addTag(FBlockTags.NON_POT_FLOWERS);
 
+		// ORANGE
+		builder(BlockTags.SAPLINGS)
+				.add(FBlockItemIds.ORANGE_SAPLING);
+		builder(BlockTags.FLOWER_POTS)
+				.add(FBlockIds.POTTED_ORANGE_SAPLING);
+		builder(BlockTags.LEAVES)
+				.add(FBlockItemIds.ORANGE_LEAVES);
+		builder(BlockTags.FLOWERS)
+				.add(FBlockItemIds.ORANGE_LEAVES);
+		builder(BlockTags.MINEABLE_WITH_HOE)
+				.add(FBlockItemIds.ORANGE_LEAVES);
 
 		// LOGS
 		builder(FBlockTags.JACARANDA_LOGS)

@@ -13,45 +13,46 @@ public class FItemIds {
 	// MOLLY
 	public static final ResourceKey<Item> MOOBLOOM_SPAWN_EGG = create("moobloom_spawn_egg");
 	public static final ResourceKey<Item> MUSIC_DISC_RYM = create("music_disc_rym");
+	public static final ResourceKey<Item> BUTTERFLY_POTTERY_SHERD = create("butterfly_pottery_sherd");
 
 	// FOOD
-	public static final ResourceKey<Item> PINEAPPLE = create("pineapple");
-	public static final ResourceKey<Item> CHERRY = create("cherry");
-	public static final ResourceKey<Item> BANANA = create("banana");
-	public static final ResourceKey<Item> ORANGE = create("orange");
+	public static final ResourceKey<Item> BERRY_JUICE_BOTTLE = create("berry_juice_bottle");
+	public static final ResourceKey<Item> JAM = create("jam");
+	public static final ResourceKey<Item> JAM_BLEND = create("jam_blend");
+
 	public static final ResourceKey<Item> PEAR = create("pear");
-	public static final ResourceKey<Item> CHOCOLATE_DIPPED_PEAR = create("chocolate_dipped_pear");
 	public static final ResourceKey<Item> GOLDEN_PEAR = create("golden_pear");
 	public static final ResourceKey<Item> ENCHANTED_GOLDEN_PEAR = create("enchanted_golden_pear");
-
-	public static final ResourceKey<Item> POPPY_SEEDS = create("poppy_seeds");
+	public static final ResourceKey<Item> CHERRY = create("cherry");
+	public static final ResourceKey<Item> ORANGE = create("orange");
+	public static final ResourceKey<Item> BANANA = create("banana");
 	public static final ResourceKey<Item> SAFFRON = create("saffron");
-
-	public static final ResourceKey<Item> CHOCOLATE_BOTTLE = create("chocolate_bottle");
-	public static final ResourceKey<Item> MILK_BOTTLE = create("milk_bottle");
-	public static final ResourceKey<Item> BERRY_JUICE_BOTTLE = create("berry_juice_bottle");
-	public static final ResourceKey<Item> MILKSHAKE_BOTTLE = create("milkshake_bottle");
 	public static final ResourceKey<Item> SAFFRON_MILK_BOTTLE = create("saffron_milk_bottle");
+	public static final ResourceKey<Item> POPPY_SEEDS = create("poppy_seeds");
+	public static final ResourceKey<Item> PINEAPPLE = create("pineapple");
+
+	public static final ResourceKey<Item> MILK_BOTTLE = create("milk_bottle");
+	public static final ResourceKey<Item> MILKSHAKE_BOTTLE = create("milkshake_bottle");
+	public static final ResourceKey<Item> ICE_CREAM = create("ice_cream");
 
 	public static final ResourceKey<Item> COCOA_BUTTER = create("cocoa_butter");
 	public static final ResourceKey<Item> CHOCOLATE = create("chocolate");
 	public static final ResourceKey<Item> CHOCOLATE_BAR = create("chocolate_bar");
-
-	public static final ResourceKey<Item> FRUIT_SALAD = create("fruit_salad");
-	public static final ResourceKey<Item> ICE_CREAM = create("ice_cream");
+	public static final ResourceKey<Item> CHOCOLATE_DIPPED_PEAR = create("chocolate_dipped_pear");
+	public static final ResourceKey<Item> CHOCOLATE_BOTTLE = create("chocolate_bottle");
 	public static final ResourceKey<Item> CHOCOLATE_ICE_CREAM = create("chocolate_ice_cream");
 
+	public static final ResourceKey<Item> FRUIT_SALAD = create("fruit_salad");
+	public static final ResourceKey<Item> PANCAKE = create("pancake");
+	public static final ResourceKey<Item> SWEDISH_PANCAKE = create("swedish_pancake");
+
 	// JACARANDA
-	public static final ResourceKey<Item> JACARANDA_BOAT = create(
-			"jacaranda_boat");
-	public static final ResourceKey<Item> JACARANDA_CHEST_BOAT = create(
-			"jacaranda_chest_boat");
+	public static final ResourceKey<Item> JACARANDA_BOAT = create("jacaranda_boat");
+	public static final ResourceKey<Item> JACARANDA_CHEST_BOAT = create("jacaranda_chest_boat");
 
 	// PEAR
-	public static final ResourceKey<Item> PEAR_BOAT = create(
-			"pear_boat");
-	public static final ResourceKey<Item> PEAR_CHEST_BOAT = create(
-			"pear_chest_boat");
+	public static final ResourceKey<Item> PEAR_BOAT = create("pear_boat");
+	public static final ResourceKey<Item> PEAR_CHEST_BOAT = create("pear_chest_boat");
 
 	// TRANSIUM
 	public static final ResourceKey<Item> TRANSIUM = create(

@@ -1,6 +1,8 @@
 package se.frejaware.Blocks;
 
 import net.minecraft.core.Registry;
+import net.minecraft.core.particles.ColorParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
@@ -26,18 +28,6 @@ public class FBlocks {
 	// ----------------------
 
 	// MOLLY
-	public static final Block PINEAPPLE = register(
-			FBlockItemIds.PINEAPPLE_CROP,
-			FPineappleBlock::new,
-			BlockBehaviour.Properties.of()
-					.mapColor(state -> state.getValue(CropBlock.AGE) >= 2 ? MapColor.COLOR_YELLOW : MapColor.PLANT)
-					.noCollision()
-					.randomTicks()
-					.instabreak()
-					.sound(SoundType.CROP)
-					.pushReaction(PushReaction.POPPED)
-	);
-
 	public static final Block IRON_BELL = registerBlockItem(
 			FBlockItemIds.IRON_BELL,
 			FIronBellBlock::new,
@@ -48,29 +38,24 @@ public class FBlocks {
 					.sound(SoundType.ANVIL)
 					.pushReaction(PushReaction.POPPED)
 	);
+	public static final Block PEACH_SEASHELL = registerBlockItem(
+			FBlockItemIds.PEACH_SEASHELL,
+			FSeashellBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.CLAY)
+					.sound(SoundType.BASALT)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block PEARL_SEASHELL = registerBlockItem(
+			FBlockItemIds.PEARL_SEASHELL,
+			FSeashellBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.CLAY)
+					.sound(SoundType.BASALT)
+					.pushReaction(PushReaction.POPPED)
+	);
 
-	public static final Block WHITE_CACTUS_FLOWER = registerBlockItem(
-			FBlockItemIds.WHITE_CACTUS_FLOWER,
-			CactusFlowerBlock::new,
-			BlockBehaviour.Properties.of()
-					.mapColor(MapColor.QUARTZ)
-					.noCollision()
-					.instabreak()
-					.ignitedByLava()
-					.sound(SoundType.CACTUS_FLOWER)
-					.pushReaction(PushReaction.POPPED)
-	);
-	public static final Block YELLOW_CACTUS_FLOWER = registerBlockItem(
-			FBlockItemIds.YELLOW_CACTUS_FLOWER,
-			CactusFlowerBlock::new,
-			BlockBehaviour.Properties.of()
-					.mapColor(MapColor.COLOR_YELLOW)
-					.noCollision()
-					.instabreak()
-					.ignitedByLava()
-					.sound(SoundType.CACTUS_FLOWER)
-					.pushReaction(PushReaction.POPPED)
-	);
+	// BLOM
 	public static final Block WHITE_ORCHID = registerBlockItem(
 			FBlockItemIds.WHITE_ORCHID,
 			p -> new FlowerBlock(MobEffects.SATURATION, 0.35F, p),
@@ -103,23 +88,6 @@ public class FBlocks {
 			p -> new FlowerPotBlock(YELLOW_TULIP, p),
 			Blocks.flowerPotProperties()
 	);
-	public static final Block ROUND_BUSH = registerBlockItem(
-			FBlockItemIds.ROUND_BUSH,
-			BushBlock::new,
-			BlockBehaviour.Properties.of()
-					.mapColor(MapColor.PLANT)
-					.replaceable()
-					.noCollision()
-					.instabreak()
-					.sound(SoundType.GRASS)
-					.ignitedByLava()
-					.pushReaction(PushReaction.POPPED)
-	);
-	public static final Block POTTED_ROUND_BUSH = registerBlock(
-			FBlockIds.POTTED_ROUND_BUSH,
-			p -> new FlowerPotBlock(ROUND_BUSH, p),
-			Blocks.flowerPotProperties()
-	);
 	public static final Block WHITE_HIBISCUS = registerBlockItem(
 			FBlockItemIds.WHITE_HIBISCUS,
 			p -> new FlowerBlock(MobEffects.NAUSEA, 7.0F, p),
@@ -131,7 +99,6 @@ public class FBlocks {
 					.offsetType(BlockBehaviour.OffsetType.XZ)
 					.pushReaction(PushReaction.POPPED)
 	);
-
 	public static final Block POTTED_WHITE_HIBISCUS = registerBlock(
 			FBlockIds.POTTED_WHITE_HIBISCUS,
 			p -> new FlowerPotBlock(WHITE_HIBISCUS, p),
@@ -153,6 +120,7 @@ public class FBlocks {
 			p -> new FlowerPotBlock(YELLOW_HIBISCUS, p),
 			Blocks.flowerPotProperties()
 	);
+
 	public static final Block WHITE_CROCUS = registerBlockItem(
 			FBlockItemIds.WHITE_CROCUS,
 			p -> new FlowerBlock(MobEffects.REGENERATION, 7.0F, p),
@@ -218,7 +186,104 @@ public class FBlocks {
 			Blocks.flowerPotProperties()
 	);
 
+	public static final Block WHITE_CACTUS_FLOWER = registerBlockItem(
+			FBlockItemIds.WHITE_CACTUS_FLOWER,
+			CactusFlowerBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.QUARTZ)
+					.noCollision()
+					.instabreak()
+					.ignitedByLava()
+					.sound(SoundType.CACTUS_FLOWER)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block YELLOW_CACTUS_FLOWER = registerBlockItem(
+			FBlockItemIds.YELLOW_CACTUS_FLOWER,
+			CactusFlowerBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.COLOR_YELLOW)
+					.noCollision()
+					.instabreak()
+					.ignitedByLava()
+					.sound(SoundType.CACTUS_FLOWER)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block WHITE_ALLIUM = registerBlockItem(
+			FBlockItemIds.WHITE_ALLIUM,
+			p -> new FlowerBlock(MobEffects.FIRE_RESISTANCE, 3.0F, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.offsetType(BlockBehaviour.OffsetType.XZ)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_WHITE_ALLIUM = registerBlock(
+			FBlockIds.POTTED_WHITE_ALLIUM,
+			p -> new FlowerPotBlock(WHITE_ALLIUM, p),
+			Blocks.flowerPotProperties()
+	);
+
+	public static final Block WHITE_PETALS = registerBlockItem(
+			FBlockItemIds.WHITE_PETALS,
+			p -> new FlowerBedBlock(p, 3),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.sound(SoundType.PINK_PETALS)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block PURPLE_PETALS = registerBlockItem(
+			FBlockItemIds.PURPLE_PETALS,
+			p -> new FlowerBedBlock(p, 3),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.sound(SoundType.PINK_PETALS)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block LIGHT_BLUE_PETALS = registerBlockItem(
+			FBlockItemIds.LIGHT_BLUE_PETALS,
+			p -> new FlowerBedBlock(p, 3),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.sound(SoundType.PINK_PETALS)
+					.pushReaction(PushReaction.POPPED)
+	);
+
+	public static final Block ROUND_BUSH = registerBlockItem(
+			FBlockItemIds.ROUND_BUSH,
+			BushBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.replaceable()
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.ignitedByLava()
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_ROUND_BUSH = registerBlock(
+			FBlockIds.POTTED_ROUND_BUSH,
+			p -> new FlowerPotBlock(ROUND_BUSH, p),
+			Blocks.flowerPotProperties()
+	);
+
 	// FOOD
+	public static final Block PINEAPPLE = register(
+			FBlockItemIds.PINEAPPLE_CROP,
+			FPineappleBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(state -> state.getValue(CropBlock.AGE) >= 2 ? MapColor.COLOR_YELLOW : MapColor.PLANT)
+					.noCollision()
+					.randomTicks()
+					.instabreak()
+					.sound(SoundType.CROP)
+					.pushReaction(PushReaction.POPPED)
+	);
+
 	public static final Block BLUEBERRY_BUSH = registerBlock(
 			FBlockItemIds.BLUEBERRY_CROP.block(),
 			FBlueberryBushBlock::new,
@@ -255,6 +320,41 @@ public class FBlocks {
 					.noCollision()
 					.sound(SoundType.SWEET_BERRY_BUSH)
 					.pushReaction(PushReaction.POPPED));
+
+	// ORANGE
+	public static final Block ORANGE_LEAVES = registerBlockItem(
+			FBlockItemIds.ORANGE_LEAVES,
+			p -> new UntintedParticleLeavesBlock(0.01F,
+					ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, -9399763),
+					AmbientLeavesBlockSoundPlayer.noAmbientSound(), p
+			),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.COLOR_ORANGE)
+					.strength(0.2F)
+					.randomTicks()
+					.sound(SoundType.AZALEA_LEAVES)
+					.noOcclusion()
+					.isValidSpawn(Blocks::ocelotOrParrot)
+					.isSuffocating(Blocks::never)
+					.ignitedByLava()
+					.pushReaction(PushReaction.POPPED)
+					.isRedstoneConductor(Blocks::never)
+	);
+	public static final Block ORANGE_SAPLING = registerBlockItem(
+			FBlockItemIds.ORANGE_SAPLING,
+			FOrangeSaplingBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.instabreak()
+					.sound(SoundType.FLOWERING_AZALEA)
+					.noOcclusion()
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_ORANGE_SAPLING = registerBlock(
+			FBlockIds.POTTED_ORANGE_SAPLING,
+			p -> new FlowerPotBlock(ORANGE_SAPLING, p),
+			Blocks.flowerPotProperties()
+	);
 
 	// JACARANDA WOOD
 	public static final Block JACARANDA_LOG = registerBlockItem(
@@ -460,15 +560,6 @@ public class FBlocks {
 					.sound(SoundType.SHELF)
 					.ignitedByLava()
 					.strength(2.0F, 3.0F)
-	);
-	public static final Block PURPLE_PETALS = registerBlockItem(
-			FBlockItemIds.PURPLE_PETALS,
-			p -> new FlowerBedBlock(p, 3),
-			BlockBehaviour.Properties.of()
-					.mapColor(MapColor.PLANT)
-					.noCollision()
-					.sound(SoundType.PINK_PETALS)
-					.pushReaction(PushReaction.POPPED)
 	);
 
 	// PEAR WOOD
@@ -676,15 +767,6 @@ public class FBlocks {
 					.ignitedByLava()
 					.strength(2.0F, 3.0F)
 	);
-	public static final Block WHITE_PETALS = registerBlockItem(
-			FBlockItemIds.WHITE_PETALS,
-			p -> new FlowerBedBlock(p, 3),
-			BlockBehaviour.Properties.of()
-					.mapColor(MapColor.PLANT)
-					.noCollision()
-					.sound(SoundType.PINK_PETALS)
-					.pushReaction(PushReaction.POPPED)
-	);
 
 	// TRANSIUM
 	public static final Block TRANSIUM_BLOCK = registerBlockItem(
@@ -792,7 +874,6 @@ public class FBlocks {
 					.requiresCorrectToolForDrops()
 					.strength(0.8F)
 					.sound(SoundType.LADDER)
-					.forceSolidOff()
 					.noOcclusion()
 					.pushReaction(PushReaction.POPPED)
 	);

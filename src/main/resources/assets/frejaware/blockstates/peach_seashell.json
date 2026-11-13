@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "frejaware:block/peach_seashell" },
+    "facing=east":  { "model": "frejaware:block/peach_seashell", "y": 90 },
+    "facing=south": { "model": "frejaware:block/peach_seashell", "y": 180 },
+    "facing=west":  { "model": "frejaware:block/peach_seashell", "y": 270 }
+  }
+}

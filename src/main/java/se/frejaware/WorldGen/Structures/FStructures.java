@@ -12,6 +12,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
@@ -39,140 +40,52 @@ public class FStructures {
 	public static final ResourceKey<Structure> JACARANDA_STONE =
 			create("jacaranda_stone");
 
+	public static final ResourceKey<Structure> ORCHARD_POT =
+			create("orchard_pot");
+	public static final ResourceKey<Structure> ORCHARD_BIG_POT =
+			create("orchard_big_pot");
+	public static final ResourceKey<Structure> ORCHARD_FARM =
+			create("orchard_farm");
+
 	public static final ResourceKey<Structure> DESERT_PALM =
 			create("desert_palm");
 	public static final ResourceKey<Structure> DESERT_STONE =
 			create("desert_stone");
 
 	public static void bootstrap(BootstrapContext<Structure> context) {
-		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
-		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
-
 		// PEAR
-		context.register(PEAR_BERRY_FARM, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(FBiomes.PEAR_MEADOW)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.BEARD_THIN),
-				pools.getOrThrow(FPools.PEAR_BERRY_FARM),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(-2)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
-		context.register(PEAR_ARCH, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(FBiomes.PEAR_MEADOW)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.NONE),
-				pools.getOrThrow(FPools.PEAR_ARCH),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(-2)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
-		context.register(PEAR_STONE, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(FBiomes.PEAR_MEADOW)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.NONE),
-				pools.getOrThrow(FPools.PEAR_STONE),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(0)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
+		basicStructure(context, PEAR_BERRY_FARM, FPools.PEAR_BERRY_FARM,
+				FBiomes.PEAR_MEADOW, -2);
+		basicStructure(context, PEAR_ARCH, FPools.PEAR_ARCH,
+				FBiomes.PEAR_MEADOW, -2);
+		basicStructure(context, PEAR_STONE, FPools.PEAR_STONE,
+				FBiomes.PEAR_MEADOW, 0);
 
 		// JACARANDA
-		context.register(JACARANDA_WELL, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(FBiomes.JACARANDA_GLADE)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.NONE),
-				pools.getOrThrow(FPools.JACARANDA_WELL),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(-2)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
-		context.register(JACARANDA_POT, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(FBiomes.JACARANDA_GLADE)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.NONE),
-				pools.getOrThrow(FPools.JACARANDA_POT),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(1)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
-		context.register(JACARANDA_ARCH, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(FBiomes.JACARANDA_GLADE)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.NONE),
-				pools.getOrThrow(FPools.JACARANDA_ARCH),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(-2)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
-		context.register(JACARANDA_AMETHYST, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(FBiomes.JACARANDA_GLADE)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.NONE),
-				pools.getOrThrow(FPools.JACARANDA_AMETHYST),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(-1)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
-		context.register(JACARANDA_STONE, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(FBiomes.PEAR_MEADOW)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.BEARD_THIN),
-				pools.getOrThrow(FPools.JACARANDA_STONE),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(0)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
+		basicStructure(context, JACARANDA_WELL, FPools.JACARANDA_WELL,
+				FBiomes.JACARANDA_GLADE, -2);
+		basicStructure(context, JACARANDA_POT, FPools.JACARANDA_POT,
+				FBiomes.JACARANDA_GLADE, 1);
+		basicStructure(context, JACARANDA_ARCH, FPools.JACARANDA_ARCH,
+				FBiomes.JACARANDA_GLADE, -2);
+		basicStructure(context, JACARANDA_AMETHYST, FPools.JACARANDA_AMETHYST,
+				FBiomes.JACARANDA_GLADE, -1);
+		basicStructure(context, JACARANDA_STONE, FPools.JACARANDA_STONE,
+				FBiomes.JACARANDA_GLADE, 0);
+
+		// ORCHARD
+		basicStructure(context, ORCHARD_POT, FPools.ORCHARD_POT,
+				FBiomes.ORCHARD, 1);
+		basicStructure(context, ORCHARD_BIG_POT, FPools.ORCHARD_BIG_POT,
+				FBiomes.ORCHARD, 1);
+		basicStructure(context, ORCHARD_FARM, FPools.ORCHARD_FARM,
+				FBiomes.ORCHARD);
 
 		// VANILLA
-		context.register(DESERT_PALM, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(Biomes.DESERT)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.NONE),
-				pools.getOrThrow(FPools.DESERT_PALM),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(1)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 67));
-		context.register(DESERT_STONE, new FJigsawStructure(new JigsawStructure(
-				new Structure.StructureSettings(
-						HolderSet.direct(biomes.getOrThrow(Biomes.DESERT)),
-						Map.of(),
-						GenerationStep.Decoration.SURFACE_STRUCTURES,
-						TerrainAdjustment.BEARD_THIN),
-				pools.getOrThrow(FPools.DESERT_STONE),
-				1,
-				ConstantHeight.of(VerticalAnchor.absolute(1)),
-				false,
-				Heightmap.Types.WORLD_SURFACE_WG
-		), 64, 384));
+		basicStructure(context, DESERT_PALM, FPools.DESERT_PALM,
+				Biomes.DESERT, 1, 75);
+		basicStructure(context, DESERT_STONE, FPools.DESERT_STONE,
+				Biomes.DESERT, 2);
 	}
 
 	private static ResourceKey<Structure> create(final String name) {
@@ -180,5 +93,123 @@ public class FStructures {
 				Registries.STRUCTURE,
 				F.id(name)
 		);
+	}
+
+	private static void basicStructure(
+			BootstrapContext<Structure> context,
+			ResourceKey<Structure> key,
+			ResourceKey<StructureTemplatePool> pool,
+			ResourceKey<Biome> biome) {
+		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
+		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
+
+		context.register(key, new FJigsawStructure(new JigsawStructure(
+				new Structure.StructureSettings(
+						HolderSet.direct(biomes.getOrThrow(biome)),
+						Map.of(),
+						GenerationStep.Decoration.SURFACE_STRUCTURES,
+						TerrainAdjustment.BEARD_THIN),
+				pools.getOrThrow(pool),
+				1,
+				ConstantHeight.of(VerticalAnchor.absolute(0)),
+				false,
+				Heightmap.Types.WORLD_SURFACE_WG
+		), 64, 384));
+	}
+
+	private static void basicStructure(
+			BootstrapContext<Structure> context,
+			ResourceKey<Structure> key,
+			ResourceKey<StructureTemplatePool> pool,
+			ResourceKey<Biome> biome,
+			final int height) {
+		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
+		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
+
+		context.register(key, new FJigsawStructure(new JigsawStructure(
+				new Structure.StructureSettings(
+						HolderSet.direct(biomes.getOrThrow(biome)),
+						Map.of(),
+						GenerationStep.Decoration.SURFACE_STRUCTURES,
+						TerrainAdjustment.BEARD_THIN),
+				pools.getOrThrow(pool),
+				1,
+				ConstantHeight.of(VerticalAnchor.absolute(height)),
+				false,
+				Heightmap.Types.WORLD_SURFACE_WG
+		), 64, 384));
+	}
+
+	private static void basicStructure(
+			BootstrapContext<Structure> context,
+			ResourceKey<Structure> key,
+			ResourceKey<StructureTemplatePool> pool,
+			ResourceKey<Biome> biome,
+			final int height,
+			TerrainAdjustment terrainAdjustment) {
+		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
+		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
+
+		context.register(key, new FJigsawStructure(new JigsawStructure(
+				new Structure.StructureSettings(
+						HolderSet.direct(biomes.getOrThrow(biome)),
+						Map.of(),
+						GenerationStep.Decoration.SURFACE_STRUCTURES,
+						terrainAdjustment),
+				pools.getOrThrow(pool),
+				1,
+				ConstantHeight.of(VerticalAnchor.absolute(height)),
+				false,
+				Heightmap.Types.WORLD_SURFACE_WG
+		), 64, 384));
+	}
+
+	private static void basicStructure(
+			BootstrapContext<Structure> context,
+			ResourceKey<Structure> key,
+			ResourceKey<StructureTemplatePool> pool,
+			ResourceKey<Biome> biome,
+			final int height,
+			final int maxY) {
+		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
+		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
+
+		context.register(key, new FJigsawStructure(new JigsawStructure(
+				new Structure.StructureSettings(
+						HolderSet.direct(biomes.getOrThrow(biome)),
+						Map.of(),
+						GenerationStep.Decoration.SURFACE_STRUCTURES,
+						TerrainAdjustment.BEARD_THIN),
+				pools.getOrThrow(pool),
+				1,
+				ConstantHeight.of(VerticalAnchor.absolute(height)),
+				false,
+				Heightmap.Types.WORLD_SURFACE_WG
+		), 64, maxY));
+	}
+
+	private static void basicStructure(
+			BootstrapContext<Structure> context,
+			ResourceKey<Structure> key,
+			ResourceKey<StructureTemplatePool> pool,
+			ResourceKey<Biome> biome,
+			final int height,
+			final int maxY,
+			TerrainAdjustment terrainAdjustment) {
+		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
+		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
+
+		context.register(key, new FJigsawStructure(new JigsawStructure(
+				new Structure.StructureSettings(
+						HolderSet.direct(biomes.getOrThrow(biome)),
+						Map.of(),
+						GenerationStep.Decoration.SURFACE_STRUCTURES,
+						terrainAdjustment),
+				pools.getOrThrow(pool),
+				1,
+				ConstantHeight.of(VerticalAnchor.absolute(height)),
+				false,
+				Heightmap.Types.WORLD_SURFACE_WG
+		), 64, maxY));
 	}
 }

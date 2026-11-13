@@ -41,15 +41,7 @@ public class FModelProvider extends FabricModelProvider {
 
 			blockGen.registerSimpleFlatItemModel(FBlocks.IRON_BELL);
 
-			blockGen.createCrossBlockWithDefaultItem(
-					FBlocks.WHITE_CACTUS_FLOWER,
-					BlockModelGenerators.PlantType.NOT_TINTED
-			);
-			blockGen.createCrossBlockWithDefaultItem(
-					FBlocks.YELLOW_CACTUS_FLOWER,
-					BlockModelGenerators.PlantType.NOT_TINTED
-			);
-
+			// BLOM
 			blockGen.createPlantWithDefaultItem(
 					FBlocks.WHITE_ORCHID,
 					FBlocks.POTTED_WHITE_ORCHID,
@@ -58,11 +50,6 @@ public class FModelProvider extends FabricModelProvider {
 			blockGen.createPlantWithDefaultItem(
 					FBlocks.YELLOW_TULIP,
 					FBlocks.POTTED_YELLOW_TULIP,
-					BlockModelGenerators.PlantType.NOT_TINTED
-			);
-			blockGen.createPlantWithDefaultItem(
-					FBlocks.ROUND_BUSH,
-					FBlocks.POTTED_ROUND_BUSH,
 					BlockModelGenerators.PlantType.NOT_TINTED
 			);
 			blockGen.createPlantWithDefaultItem(
@@ -75,6 +62,7 @@ public class FModelProvider extends FabricModelProvider {
 					FBlocks.POTTED_YELLOW_HIBISCUS,
 					BlockModelGenerators.PlantType.NOT_TINTED
 			);
+
 			blockGen.createPlantWithDefaultItem(
 					FBlocks.WHITE_CROCUS,
 					FBlocks.POTTED_WHITE_CROCUS,
@@ -93,6 +81,30 @@ public class FModelProvider extends FabricModelProvider {
 			blockGen.createPlantWithDefaultItem(
 					FBlocks.LILY_OF_THE_GLADE,
 					FBlocks.POTTED_LILY_OF_THE_GLADE,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+
+			blockGen.createCrossBlockWithDefaultItem(
+					FBlocks.WHITE_CACTUS_FLOWER,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createCrossBlockWithDefaultItem(
+					FBlocks.YELLOW_CACTUS_FLOWER,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.WHITE_ALLIUM,
+					FBlocks.POTTED_WHITE_ALLIUM,
+					BlockModelGenerators.PlantType.NOT_TINTED
+			);
+
+			blockGen.createFlowerBed(FBlocks.LIGHT_BLUE_PETALS);
+			blockGen.createFlowerBed(FBlocks.WHITE_PETALS);
+			blockGen.createFlowerBed(FBlocks.PURPLE_PETALS);
+
+			blockGen.createPlantWithDefaultItem(
+					FBlocks.ROUND_BUSH,
+					FBlocks.POTTED_ROUND_BUSH,
 					BlockModelGenerators.PlantType.NOT_TINTED
 			);
 
@@ -154,6 +166,13 @@ public class FModelProvider extends FabricModelProvider {
 							)
 			);
 
+			// ORANGE
+			blockGen.createTrivialBlock(
+					FBlocks.ORANGE_LEAVES, TexturedModel.LEAVES
+			);
+			createOrangeSapling(blockGen, FBlocks.ORANGE_SAPLING);
+			createPottedOrangeSapling(blockGen, FBlocks.POTTED_ORANGE_SAPLING);
+
 			// JACARANDA
 			blockGen.woodProvider(FBlocks.JACARANDA_LOG).logUVLocked(FBlocks.JACARANDA_LOG).wood(FBlocks.JACARANDA_WOOD);
 			blockGen.woodProvider(FBlocks.STRIPPED_JACARANDA_LOG).logUVLocked(FBlocks.STRIPPED_JACARANDA_LOG).wood(FBlocks.STRIPPED_JACARANDA_WOOD);
@@ -175,7 +194,6 @@ public class FModelProvider extends FabricModelProvider {
 			blockGen.createDoor(FBlocks.JACARANDA_DOOR);
 			blockGen.createOrientableTrapdoor(FBlocks.JACARANDA_TRAPDOOR);
 			blockGen.createShelf(FBlocks.JACARANDA_SHELF, FBlocks.STRIPPED_JACARANDA_LOG);
-			blockGen.createFlowerBed(FBlocks.PURPLE_PETALS);
 			sign(
 					blockGen,
 					FBlocks.JACARANDA_SIGN,
@@ -210,7 +228,6 @@ public class FModelProvider extends FabricModelProvider {
 			blockGen.createDoor(FBlocks.PEAR_DOOR);
 			blockGen.createOrientableTrapdoor(FBlocks.PEAR_TRAPDOOR);
 			blockGen.createShelf(FBlocks.PEAR_SHELF, FBlocks.STRIPPED_PEAR_LOG);
-			blockGen.createFlowerBed(FBlocks.WHITE_PETALS);
 			sign(
 					blockGen,
 					FBlocks.PEAR_SIGN,
@@ -252,33 +269,40 @@ public class FModelProvider extends FabricModelProvider {
 			// MOLLY
 			itemGen.generateFlatItem(FItems.MOOBLOOM_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.MUSIC_DISC_RYM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.BUTTERFLY_POTTERY_SHERD, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FBlocks.PEACH_SEASHELL.asItem(), ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FBlocks.PEARL_SEASHELL.asItem(), ModelTemplates.FLAT_ITEM);
 
 			// FOOD
-			itemGen.generateFlatItem(FItems.PINEAPPLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.BERRY_JUICE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.JAM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.JAM_BLEND, ModelTemplates.FLAT_ITEM);
+
+			itemGen.generateFlatItem(FItems.PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.ENCHANTED_GOLDEN_PEAR, FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.CHERRY, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.BANANA, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.ORANGE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.PEAR, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.CHOCOLATE_DIPPED_PEAR, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.ENCHANTED_GOLDEN_PEAR, FItems.GOLDEN_PEAR, ModelTemplates.FLAT_ITEM);
-
 			itemGen.generateFlatItem(FItems.SAFFRON, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.POPPY_SEEDS, ModelTemplates.FLAT_ITEM);
-
-			itemGen.generateFlatItem(FItems.CHOCOLATE_BOTTLE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.BERRY_JUICE_BOTTLE, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.MILKSHAKE_BOTTLE, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.SAFFRON_MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.POPPY_SEEDS, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.PINEAPPLE, ModelTemplates.FLAT_ITEM);
+
+			itemGen.generateFlatItem(FItems.MILK_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.MILKSHAKE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.ICE_CREAM, ModelTemplates.FLAT_ITEM);
 
 			itemGen.generateFlatItem(FItems.COCOA_BUTTER, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.CHOCOLATE, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.CHOCOLATE_BAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHOCOLATE_DIPPED_PEAR, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHOCOLATE_BOTTLE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.CHOCOLATE_ICE_CREAM, ModelTemplates.FLAT_ITEM);
 
 			itemGen.generateFlatItem(FItems.FRUIT_SALAD, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.ICE_CREAM, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.CHOCOLATE_ICE_CREAM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.PANCAKE, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.SWEDISH_PANCAKE, ModelTemplates.FLAT_ITEM);
 
 			// JACARANDA
 			itemGen.generateFlatItem(FItems.JACARANDA_BOAT, ModelTemplates.FLAT_ITEM);
@@ -448,6 +472,27 @@ public class FModelProvider extends FabricModelProvider {
 		gen.blockStateOutput.accept(MultiVariantGenerator.dispatch(wallHanging, wall).with(BlockModelGenerators.ROTATION_HORIZONTAL_FACING_ALT));
 
 		gen.registerSimpleFlatItemModel(hanging.asItem());
+	}
+
+	public final void createOrangeSapling(
+			BlockModelGenerators gen, final Block block) {
+		MultiVariant model = plainVariant(
+				ModelTemplates.AZALEA.create(block, TextureMapping.cubeTop(block),
+						gen.modelOutput
+				)
+		);
+		gen.blockStateOutput.accept(createSimpleBlock(block, model));
+	}
+
+	public final void createPottedOrangeSapling(
+			BlockModelGenerators gen, final Block block) {
+		MultiVariant model = plainVariant(
+				ModelTemplates.POTTED_FLOWERING_AZALEA.create(
+						block, TextureMapping.pottedAzalea(block),
+						gen.modelOutput
+				)
+		);
+		gen.blockStateOutput.accept(createSimpleBlock(block, model));
 	}
 
 	@Override

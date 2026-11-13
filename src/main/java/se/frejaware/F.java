@@ -107,6 +107,14 @@ public class F implements ModInitializer {
 				FPlacedFeatures.DESERT_ROCKS
 		);
 
+		BiomeModifications.addFeature(
+				BiomeSelectors.includeByKey(
+						Biomes.BEACH
+				),
+				GenerationStep.Decoration.VEGETAL_DECORATION,
+				FPlacedFeatures.BEACH_SEASHELLS
+		);
+
 		LOGGER.info("Frejaware Initialized");
 	}
 

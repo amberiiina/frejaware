@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:wheat",
+    "frejaware:milk_bottle",
+    "minecraft:egg",
+    "frejaware:jam"
+  ],
+  "result": {
+    "id": "frejaware:swedish_pancake"
+  }
+}

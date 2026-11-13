@@ -8,6 +8,7 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
+import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import se.frejaware.F;
 
 import java.util.List;
@@ -30,6 +31,13 @@ public class FStructureSets {
 			create("jacaranda_amethyst");
 	public static final ResourceKey<StructureSet> JACARANDA_STONE =
 			create("jacaranda_stone");
+
+	public static final ResourceKey<StructureSet> ORCHARD_POT =
+			create("orchard_pot");
+	public static final ResourceKey<StructureSet> ORCHARD_BIG_POT =
+			create("orchard_big_pot");
+	public static final ResourceKey<StructureSet> ORCHARD_FARM =
+			create("orchard_farm");
 
 	public static final ResourceKey<StructureSet> DESERT_PALM =
 			create("desert_palm");
@@ -128,6 +136,41 @@ public class FStructureSets {
 						3,
 						RandomSpreadType.LINEAR,
 						453283
+				)
+		));
+
+		// ORCHARD
+		context.register(ORCHARD_POT, new StructureSet(
+				List.of(StructureSet.entry(structures.getOrThrow(
+						FStructures.ORCHARD_POT
+				))),
+				new RandomSpreadStructurePlacement(
+						9,
+						3,
+						RandomSpreadType.LINEAR,
+						234497
+				)
+		));
+		context.register(ORCHARD_BIG_POT, new StructureSet(
+				List.of(StructureSet.entry(structures.getOrThrow(
+						FStructures.ORCHARD_BIG_POT
+				))),
+				new RandomSpreadStructurePlacement(
+						9,
+						3,
+						RandomSpreadType.LINEAR,
+						342838
+				)
+		));
+		context.register(ORCHARD_FARM, new StructureSet(
+				List.of(StructureSet.entry(structures.getOrThrow(
+						FStructures.ORCHARD_FARM
+				))),
+				new RandomSpreadStructurePlacement(
+						18,
+						6,
+						RandomSpreadType.LINEAR,
+						523838
 				)
 		));
 

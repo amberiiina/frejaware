@@ -1,0 +1,45 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "obtain_bell": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bell"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_iron_bell": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:iron_bell"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.jingle_bells.description"
+    },
+    "icon": {
+      "id": "frejaware:iron_bell"
+    },
+    "title": {
+      "translate": "advancements.frejaware.jingle_bells.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_bell"
+    ],
+    [
+      "obtain_iron_bell"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

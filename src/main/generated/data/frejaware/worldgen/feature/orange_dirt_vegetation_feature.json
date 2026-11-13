@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "frejaware:orange_sapling",
+        "weight": 11
+      },
+      {
+        "data": "minecraft:moss_carpet",
+        "weight": 25
+      },
+      {
+        "data": "minecraft:short_grass",
+        "weight": 50
+      },
+      {
+        "data": "minecraft:dead_bush",
+        "weight": 10
+      },
+      {
+        "data": "minecraft:azure_bluet",
+        "weight": 10
+      },
+      {
+        "data": "minecraft:oak_log",
+        "weight": 10
+      }
+    ]
+  }
+}

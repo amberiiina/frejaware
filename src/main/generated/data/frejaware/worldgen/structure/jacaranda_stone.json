@@ -1,6 +1,6 @@
 {
   "type": "frejaware:jigsaw",
-  "biomes": "frejaware:pear_meadow",
+  "biomes": "frejaware:jacaranda_glade",
   "max_distance_from_center": 80,
   "max_surface_y": 384,
   "min_surface_y": 64,

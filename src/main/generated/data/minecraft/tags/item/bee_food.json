@@ -1,8 +1,5 @@
 {
   "values": [
-    "frejaware:white_orchid",
-    "frejaware:yellow_tulip",
-    "frejaware:white_cactus_flower",
-    "frejaware:yellow_cactus_flower"
+    "#frejaware:pot_flowers"
   ]
 }

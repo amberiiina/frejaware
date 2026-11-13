@@ -36,6 +36,13 @@ public class FPools {
 	public static final ResourceKey<StructureTemplatePool> JACARANDA_STONE =
 			create("jacaranda_stone");
 
+	public static final ResourceKey<StructureTemplatePool> ORCHARD_POT =
+			create("orchard_pot");
+	public static final ResourceKey<StructureTemplatePool> ORCHARD_BIG_POT =
+			create("orchard_big_pot");
+	public static final ResourceKey<StructureTemplatePool> ORCHARD_FARM =
+			create("orchard_farm");
+
 	public static final ResourceKey<StructureTemplatePool> DESERT_PALM =
 			create("desert_palm");
 	public static final ResourceKey<StructureTemplatePool> DESERT_STONE =
@@ -109,11 +116,45 @@ public class FPools {
 		));
 		context.register(JACARANDA_STONE, new StructureTemplatePool(
 				fallback,
-				List.of(Pair.of(StructurePoolElement.single(
-						"frejaware:jacaranda_stone_andesite", noProcessors
+				List.of(
+						Pair.of(StructurePoolElement.single(
+								"frejaware:jacaranda_stone_andesite", noProcessors
 						), 1),
 						Pair.of(StructurePoolElement.single(
 								"frejaware:jacaranda_stone_diorite", noProcessors
+						), 1)
+				),
+				StructureTemplatePool.Projection.RIGID
+		));
+
+		// ORCHARD
+		context.register(ORCHARD_POT, new StructureTemplatePool(
+				fallback,
+				List.of(
+						Pair.of(StructurePoolElement.single(
+								"frejaware:orchard_pot_orange", noProcessors
+						), 1),
+						Pair.of(StructurePoolElement.single(
+								"frejaware:orchard_pot_pear", noProcessors
+						), 1)
+				),
+				StructureTemplatePool.Projection.RIGID
+		));
+		context.register(ORCHARD_BIG_POT, new StructureTemplatePool(
+				fallback,
+				List.of(Pair.of(StructurePoolElement.single(
+						"frejaware:orchard_big_pot", noProcessors), 1
+				)),
+				StructureTemplatePool.Projection.RIGID
+		));
+		context.register(ORCHARD_FARM, new StructureTemplatePool(
+				fallback,
+				List.of(
+						Pair.of(StructurePoolElement.single(
+								"frejaware:orchard_farm", noProcessors
+						), 1),
+						Pair.of(StructurePoolElement.single(
+								"frejaware:orchard_farm_pineapple", noProcessors
 						), 1)
 				),
 				StructureTemplatePool.Projection.RIGID

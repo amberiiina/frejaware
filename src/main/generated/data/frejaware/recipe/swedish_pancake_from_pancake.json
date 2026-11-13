@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:pancake",
+    "frejaware:jam"
+  ],
+  "result": {
+    "id": "frejaware:swedish_pancake"
+  }
+}

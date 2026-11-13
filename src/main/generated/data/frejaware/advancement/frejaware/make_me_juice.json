@@ -1,0 +1,36 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "visit_orchard": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "frejaware:orchard"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.make_me_juice.description"
+    },
+    "icon": {
+      "id": "frejaware:orange_sapling"
+    },
+    "title": {
+      "translate": "advancements.frejaware.make_me_juice.title"
+    }
+  },
+  "requirements": [
+    [
+      "visit_orchard"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
