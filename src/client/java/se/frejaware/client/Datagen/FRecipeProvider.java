@@ -83,6 +83,27 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				flowerDye(FBlocks.LIGHT_BLUE_PETALS, Items.DYE.lightBlue());
 
 				// ----------------------
+				// VANILLA BLOCK VARIANTS
+				// ----------------------
+
+				stairBuilder(FBlocks.SNOW_STAIRS, Ingredient.of(Items.SNOW_BLOCK))
+						.unlockedBy(getHasName(Items.SNOW_BLOCK), has(Items.SNOW_BLOCK))
+						.save(output);
+				slab(RecipeCategory.BUILDING_BLOCKS, FBlocks.SNOW_SLAB, Items.SNOW_BLOCK);
+				stairBuilder(FBlocks.ICE_STAIRS, Ingredient.of(Items.ICE))
+						.unlockedBy(getHasName(Items.ICE), has(Items.ICE))
+						.save(output);
+				slab(RecipeCategory.BUILDING_BLOCKS, FBlocks.ICE_SLAB, Items.ICE);
+				stairBuilder(FBlocks.PACKED_ICE_STAIRS, Ingredient.of(Items.PACKED_ICE))
+						.unlockedBy(getHasName(Items.PACKED_ICE), has(Items.PACKED_ICE))
+						.save(output);
+				slab(RecipeCategory.BUILDING_BLOCKS, FBlocks.PACKED_ICE_SLAB, Items.PACKED_ICE);
+				stairBuilder(FBlocks.BLUE_ICE_STAIRS, Ingredient.of(Items.BLUE_ICE))
+						.unlockedBy(getHasName(Items.BLUE_ICE), has(Items.BLUE_ICE))
+						.save(output);
+				slab(RecipeCategory.BUILDING_BLOCKS, FBlocks.BLUE_ICE_SLAB, Items.BLUE_ICE);
+
+				// ----------------------
 				// FOOD
 				// ----------------------
 

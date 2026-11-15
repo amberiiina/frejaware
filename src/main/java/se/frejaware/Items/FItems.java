@@ -44,11 +44,17 @@ public class FItems {
 	public static final Item MOOBLOOM_SPAWN_EGG = registerSpawnEgg(
 			FItemIds.MOOBLOOM_SPAWN_EGG, FEntityTypes.MOOBLOOM
 	);
-	public static final ResourceKey<JukeboxSong> RYM =
-			ResourceKey.create(
-					Registries.JUKEBOX_SONG,
-					F.id("read_your_mind")
-			);
+	public static final ResourceKey<DecoratedPotPattern> BUTTERFLY_PATTERN = ResourceKey.create(Registries.DECORATED_POT_PATTERN,
+			F.id("butterfly"));
+	public static final Item BUTTERFLY_POTTERY_SHERD = registerItem(
+			FItemIds.BUTTERFLY_POTTERY_SHERD,
+			Item::new,
+			new Item.Properties()
+					.rarity(Rarity.UNCOMMON)
+					.potPattern(BUTTERFLY_PATTERN)
+	);
+	public static final ResourceKey<JukeboxSong> RYM = ResourceKey.create(Registries.JUKEBOX_SONG,
+			F.id("read_your_mind"));
 	public static final Item MUSIC_DISC_RYM = registerItem(
 			FItemIds.MUSIC_DISC_RYM,
 			Item::new,
@@ -57,17 +63,15 @@ public class FItems {
 					.rarity(Rarity.EPIC)
 					.jukeboxPlayable(RYM)
 	);
-	public static final ResourceKey<DecoratedPotPattern> BUTTERFLY_PATTERN =
-			ResourceKey.create(
-					Registries.DECORATED_POT_PATTERN,
-					F.id("butterfly")
-			);
-	public static final Item BUTTERFLY_POTTERY_SHERD = registerItem(
-			FItemIds.BUTTERFLY_POTTERY_SHERD,
+	public static final ResourceKey<JukeboxSong> GFF = ResourceKey.create(Registries.JUKEBOX_SONG,
+			F.id("great_fairy_fountain"));
+	public static final Item MUSIC_DISC_GFF = registerItem(
+			FItemIds.MUSIC_DISC_GFF,
 			Item::new,
 			new Item.Properties()
-					.rarity(Rarity.UNCOMMON)
-					.potPattern(BUTTERFLY_PATTERN)
+					.stacksTo(1)
+					.rarity(Rarity.RARE)
+					.jukeboxPlayable(GFF)
 	);
 
 	// BERRIES
@@ -771,9 +775,10 @@ public class FItems {
 
 	public static void init() {
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
-				.register(creativeTab ->
-						creativeTab.accept(MUSIC_DISC_RYM)
-				);
+				.register(creativeTab -> {
+					creativeTab.accept(MUSIC_DISC_RYM);
+					creativeTab.accept(MUSIC_DISC_GFF);
+				});
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.SPAWN_EGGS)
 				.register(creativeTab -> {
 					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_AMETHYST);

@@ -22,77 +22,54 @@ import se.frejaware.WorldGen.Biome.FBiomes;
 import java.util.Map;
 
 public class FStructures {
-	public static final ResourceKey<Structure> PEAR_BERRY_FARM =
-			create("pear_berry_farm");
-	public static final ResourceKey<Structure> PEAR_ARCH =
-			create("pear_arch");
-	public static final ResourceKey<Structure> PEAR_STONE =
-			create("pear_stone");
-
-	public static final ResourceKey<Structure> JACARANDA_WELL =
-			create("jacaranda_well");
-	public static final ResourceKey<Structure> JACARANDA_POT =
-			create("jacaranda_pot");
-	public static final ResourceKey<Structure> JACARANDA_ARCH =
-			create("jacaranda_arch");
-	public static final ResourceKey<Structure> JACARANDA_AMETHYST =
-			create("jacaranda_amethyst");
-	public static final ResourceKey<Structure> JACARANDA_STONE =
-			create("jacaranda_stone");
-
-	public static final ResourceKey<Structure> ORCHARD_POT =
-			create("orchard_pot");
-	public static final ResourceKey<Structure> ORCHARD_BIG_POT =
-			create("orchard_big_pot");
-	public static final ResourceKey<Structure> ORCHARD_FARM =
-			create("orchard_farm");
-
-	public static final ResourceKey<Structure> DESERT_PALM =
-			create("desert_palm");
-	public static final ResourceKey<Structure> DESERT_STONE =
-			create("desert_stone");
-
 	public static void bootstrap(BootstrapContext<Structure> context) {
+		// ----------------------
 		// PEAR
-		basicStructure(context, PEAR_BERRY_FARM, FPools.PEAR_BERRY_FARM,
-				FBiomes.PEAR_MEADOW, -2);
-		basicStructure(context, PEAR_ARCH, FPools.PEAR_ARCH,
-				FBiomes.PEAR_MEADOW, -2);
-		basicStructure(context, PEAR_STONE, FPools.PEAR_STONE,
-				FBiomes.PEAR_MEADOW, 0);
+		// ----------------------
 
+		basicStructure(context, FStructureKeys.PEAR_BERRY_FARM,
+				FStructureKeys.PEAR_BERRY_FARM_POOL, FBiomes.PEAR_MEADOW, -2);
+		basicStructure(context, FStructureKeys.PEAR_ARCH,
+				FStructureKeys.PEAR_ARCH_POOL, FBiomes.PEAR_MEADOW, -2);
+		basicStructure(context, FStructureKeys.PEAR_STONE,
+				FStructureKeys.PEAR_STONE_POOL, FBiomes.PEAR_MEADOW, 0);
+
+		// ----------------------
 		// JACARANDA
-		basicStructure(context, JACARANDA_WELL, FPools.JACARANDA_WELL,
-				FBiomes.JACARANDA_GLADE, -2);
-		basicStructure(context, JACARANDA_POT, FPools.JACARANDA_POT,
-				FBiomes.JACARANDA_GLADE, 1);
-		basicStructure(context, JACARANDA_ARCH, FPools.JACARANDA_ARCH,
-				FBiomes.JACARANDA_GLADE, -2);
-		basicStructure(context, JACARANDA_AMETHYST, FPools.JACARANDA_AMETHYST,
-				FBiomes.JACARANDA_GLADE, -1);
-		basicStructure(context, JACARANDA_STONE, FPools.JACARANDA_STONE,
-				FBiomes.JACARANDA_GLADE, 0);
+		// ----------------------
 
+		basicStructure(context, FStructureKeys.JACARANDA_WELL,
+				FStructureKeys.JACARANDA_WELL_POOL, FBiomes.JACARANDA_GLADE, -2);
+		basicStructure(context, FStructureKeys.JACARANDA_POT,
+				FStructureKeys.JACARANDA_POT_POOL, FBiomes.JACARANDA_GLADE, 1);
+		basicStructure(context, FStructureKeys.JACARANDA_ARCH,
+				FStructureKeys.JACARANDA_ARCH_POOL, FBiomes.JACARANDA_GLADE, -2);
+		basicStructure(context, FStructureKeys.JACARANDA_AMETHYST,
+				FStructureKeys.JACARANDA_AMETHYST_POOL, FBiomes.JACARANDA_GLADE, -1);
+		basicStructure(context, FStructureKeys.JACARANDA_STONE,
+				FStructureKeys.JACARANDA_STONE_POOL, FBiomes.JACARANDA_GLADE, 0);
+
+		// ----------------------
 		// ORCHARD
-		basicStructure(context, ORCHARD_POT, FPools.ORCHARD_POT,
-				FBiomes.ORCHARD, 1);
-		basicStructure(context, ORCHARD_BIG_POT, FPools.ORCHARD_BIG_POT,
-				FBiomes.ORCHARD, 1);
-		basicStructure(context, ORCHARD_FARM, FPools.ORCHARD_FARM,
-				FBiomes.ORCHARD);
+		// ----------------------
 
-		// VANILLA
-		basicStructure(context, DESERT_PALM, FPools.DESERT_PALM,
-				Biomes.DESERT, 1, 75);
-		basicStructure(context, DESERT_STONE, FPools.DESERT_STONE,
-				Biomes.DESERT, 2);
-	}
+		basicStructure(context, FStructureKeys.ORCHARD_POT,
+				FStructureKeys.ORCHARD_POT_POOL, FBiomes.ORCHARD, 1);
+		basicStructure(context, FStructureKeys.ORCHARD_BIG_POT,
+				FStructureKeys.ORCHARD_BIG_POT_POOL, FBiomes.ORCHARD, 1);
+		basicStructure(context, FStructureKeys.ORCHARD_FARM,
+				FStructureKeys.ORCHARD_FARM_POOL, FBiomes.ORCHARD);
 
-	private static ResourceKey<Structure> create(final String name) {
-		return ResourceKey.create(
-				Registries.STRUCTURE,
-				F.id(name)
-		);
+		// ----------------------
+		// DESERT
+		// ----------------------
+
+		basicStructure(context, FStructureKeys.DESERT_PALM,
+				FStructureKeys.DESERT_PALM_POOL, Biomes.DESERT, 2, 75);
+		basicStructure(context, FStructureKeys.DESERT_STONE,
+				FStructureKeys.DESERT_STONE_POOL, Biomes.DESERT, 2);
+		basicStructure(context, FStructureKeys.DESERT_MUD_PYRAMID,
+				FStructureKeys.DESERT_MUD_PYRAMID_POOL, Biomes.DESERT, -8);
 	}
 
 	private static void basicStructure(

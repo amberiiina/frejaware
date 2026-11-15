@@ -58,6 +58,16 @@ public class FCreativeTabs {
 						output.accept(FBlocks.PEACH_SEASHELL);
 						output.accept(FBlocks.PEARL_SEASHELL);
 
+						// VANILLA BLOCK VARIANTS
+						output.accept(FBlocks.SNOW_STAIRS);
+						output.accept(FBlocks.SNOW_SLAB);
+						output.accept(FBlocks.ICE_STAIRS);
+						output.accept(FBlocks.ICE_SLAB);
+						output.accept(FBlocks.PACKED_ICE_STAIRS);
+						output.accept(FBlocks.PACKED_ICE_SLAB);
+						output.accept(FBlocks.BLUE_ICE_STAIRS);
+						output.accept(FBlocks.BLUE_ICE_SLAB);
+
 						// METAL BLOCKS
 						output.accept(FBlocks.TRANSIUM_BLOCK);
 

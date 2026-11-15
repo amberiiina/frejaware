@@ -48,6 +48,7 @@ public class FLanguageProvider extends FabricLanguageProvider {
 	private static final Map<String, String> ITEM_OVERRIDES = Map.ofEntries(
 			// MOLLY
 			Map.entry("music_disc_rym", "Music Disc"),
+			Map.entry("music_disc_gff", "Music Disc"),
 
 			// FOOD
 			Map.entry("chocolate_bottle", "Bottle of Chocolate"),

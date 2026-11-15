@@ -10,7 +10,7 @@
   "start_height": {
     "absolute": 2
   },
-  "start_pool": "frejaware:desert_stone",
+  "start_pool": "frejaware:desert_stone_pool",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "use_expansion_hack": false

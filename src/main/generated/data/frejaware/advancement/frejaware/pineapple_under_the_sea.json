@@ -1,5 +1,5 @@
 {
-  "parent": "frejaware:frejaware/root",
+  "parent": "frejaware:frejaware/make_me_juice",
   "criteria": {
     "obtain_pineapple": {
       "conditions": {

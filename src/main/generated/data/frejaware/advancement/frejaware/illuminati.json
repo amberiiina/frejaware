@@ -1,0 +1,36 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "find_mud_pyramid": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "structures": "frejaware:desert_mud_pyramid"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.illuminati.description"
+    },
+    "icon": {
+      "id": "frejaware:butterfly_pottery_sherd"
+    },
+    "title": {
+      "translate": "advancements.frejaware.illuminati.title"
+    }
+  },
+  "requirements": [
+    [
+      "find_mud_pyramid"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

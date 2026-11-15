@@ -17,6 +17,16 @@ public class FBlockItemIds {
 	public static final BlockItemId PEACH_SEASHELL = create("peach_seashell");
 	public static final BlockItemId PEARL_SEASHELL = create("pearl_seashell");
 
+	// VANILLA BLOCK VARIANTS
+	public static final BlockItemId SNOW_STAIRS = create("snow_stairs");
+	public static final BlockItemId SNOW_SLAB = create("snow_slab");
+	public static final BlockItemId ICE_STAIRS = create("ice_stairs");
+	public static final BlockItemId ICE_SLAB = create("ice_slab");
+	public static final BlockItemId PACKED_ICE_STAIRS = create("packed_ice_stairs");
+	public static final BlockItemId PACKED_ICE_SLAB = create("packed_ice_slab");
+	public static final BlockItemId BLUE_ICE_STAIRS = create("blue_ice_stairs");
+	public static final BlockItemId BLUE_ICE_SLAB = create("blue_ice_slab");
+
 	// BLOM
 	public static final BlockItemId WHITE_ORCHID = create("white_orchid");
 	public static final BlockItemId YELLOW_TULIP = create("yellow_tulip");

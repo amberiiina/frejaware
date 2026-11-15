@@ -10,7 +10,7 @@
   "start_height": {
     "absolute": 0
   },
-  "start_pool": "frejaware:pear_stone",
+  "start_pool": "frejaware:pear_stone_pool",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "use_expansion_hack": false

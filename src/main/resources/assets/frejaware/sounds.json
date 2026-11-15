@@ -5,5 +5,12 @@
       "stream": true,
       "volume": 0.7
     }]
+  },
+  "music_disc.great_fairy_fountain": {
+    "sounds": [{
+      "name": "frejaware:records/great_fairy_fountain",
+      "stream": true,
+      "volume": 0.7
+    }]
   }
 }

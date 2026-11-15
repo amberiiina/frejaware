@@ -8,9 +8,9 @@
   "size": 1,
   "spawn_overrides": {},
   "start_height": {
-    "absolute": 1
+    "absolute": 2
   },
-  "start_pool": "frejaware:desert_palm",
+  "start_pool": "frejaware:desert_palm_pool",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "use_expansion_hack": false

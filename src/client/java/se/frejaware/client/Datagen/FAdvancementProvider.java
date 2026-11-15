@@ -25,6 +25,7 @@ import se.frejaware.Blocks.FBlocks;
 import se.frejaware.F;
 import se.frejaware.Items.FItems;
 import se.frejaware.WorldGen.Biome.FBiomes;
+import se.frejaware.WorldGen.Structures.FStructureKeys;
 import se.frejaware.WorldGen.Structures.FStructures;
 
 import java.util.Optional;
@@ -238,6 +239,52 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 					)
 					.save(consumer, F.id("frejaware/jingle_bells"));
 
+			AdvancementHolder illuminati = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FItems.BUTTERFLY_POTTERY_SHERD,
+							Component.translatable(
+									"advancements.frejaware.illuminati.title"
+							),
+							Component.translatable(
+									"advancements.frejaware.illuminati.description"
+							),
+							AdvancementType.TASK,
+							true,
+							true,
+							false
+					)
+					.requirements(AdvancementRequirements.Strategy.AND)
+					.addCriterion(
+							"find_mud_pyramid",
+							PlayerTrigger.TriggerInstance.located(
+									LocationPredicate.Builder.inStructure(structureRegistry.getOrThrow(
+											FStructureKeys.DESERT_MUD_PYRAMID
+									))
+							)
+					)
+					.save(consumer, F.id("frejaware/illuminati"));
+
+			AdvancementHolder doItToMusic = Advancement.Builder.advancement()
+					.parent(root)
+					.display(FItems.BUTTERFLY_POTTERY_SHERD,
+							Component.translatable(
+									"advancements.frejaware.do_it_to_music.title"
+							),
+							Component.translatable(
+									"advancements.frejaware.do_it_to_music.description"
+							),
+							AdvancementType.TASK,
+							true, true, false)
+					.requirements(AdvancementRequirements.Strategy.AND)
+					.addCriterion("obtain_music_disc_rym",
+							InventoryChangeTrigger.TriggerInstance.hasItems(
+									FItems.MUSIC_DISC_RYM))
+					.addCriterion("obtain_music_disc_gff",
+							InventoryChangeTrigger.TriggerInstance.hasItems(
+									FItems.MUSIC_DISC_GFF))
+					.save(consumer, F.id("frejaware/do_it_to_music"));
+
 			// ------------------
 			// ORCHARD
 			// ------------------
@@ -266,9 +313,8 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							)
 					)
 					.save(consumer, F.id("frejaware/make_me_juice"));
-
 			AdvancementHolder underTheSea = Advancement.Builder.advancement()
-					.parent(root)
+					.parent(makeMeJuice)
 					.display(
 							FItems.PINEAPPLE.asItem(),
 							Component.translatable(
@@ -338,7 +384,7 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							"find_jacaranda_well",
 							PlayerTrigger.TriggerInstance.located(
 									LocationPredicate.Builder.inStructure(structureRegistry.getOrThrow(
-											FStructures.JACARANDA_WELL
+											FStructureKeys.JACARANDA_WELL
 									))
 							)
 					)

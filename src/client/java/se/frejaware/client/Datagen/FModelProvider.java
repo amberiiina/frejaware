@@ -35,11 +35,17 @@ public class FModelProvider extends FabricModelProvider {
 	public void generateBlockStateModels(BlockModelGenerators blockGen) {
 		try {
 			// MOLLY
-			blockGen.createCropBlock(
-					FBlocks.PINEAPPLE, BlockStateProperties.AGE_7, 0, 0, 0, 0, 1, 1, 1, 2
-			);
-
 			blockGen.registerSimpleFlatItemModel(FBlocks.IRON_BELL);
+
+			// VANILLA BLOCK VARIANTS
+			createVanillaStairs(blockGen, FBlocks.SNOW_STAIRS, Blocks.SNOW);
+			createVanillaSlab(blockGen, FBlocks.SNOW_SLAB, Blocks.SNOW);
+			createVanillaStairs(blockGen, FBlocks.ICE_STAIRS, Blocks.ICE);
+			createVanillaSlab(blockGen, FBlocks.ICE_SLAB, Blocks.ICE);
+			createVanillaStairs(blockGen, FBlocks.PACKED_ICE_STAIRS, Blocks.PACKED_ICE);
+			createVanillaSlab(blockGen, FBlocks.PACKED_ICE_SLAB, Blocks.PACKED_ICE);
+			createVanillaStairs(blockGen, FBlocks.BLUE_ICE_STAIRS, Blocks.BLUE_ICE);
+			createVanillaSlab(blockGen, FBlocks.BLUE_ICE_SLAB, Blocks.BLUE_ICE);
 
 			// BLOM
 			blockGen.createPlantWithDefaultItem(
@@ -109,6 +115,9 @@ public class FModelProvider extends FabricModelProvider {
 			);
 
 			// FOOD
+			blockGen.createCropBlock(
+					FBlocks.PINEAPPLE, BlockStateProperties.AGE_7, 0, 0, 0, 0, 1, 1, 1, 2
+			);
 			blockGen.registerSimpleFlatItemModel(FItems.BLUEBERRIES);
 			blockGen.blockStateOutput.accept(
 					MultiVariantGenerator.dispatch(FBlocks.BLUEBERRY_BUSH)
@@ -268,10 +277,11 @@ public class FModelProvider extends FabricModelProvider {
 		try {
 			// MOLLY
 			itemGen.generateFlatItem(FItems.MOOBLOOM_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
-			itemGen.generateFlatItem(FItems.MUSIC_DISC_RYM, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.BUTTERFLY_POTTERY_SHERD, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FBlocks.PEACH_SEASHELL.asItem(), ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FBlocks.PEARL_SEASHELL.asItem(), ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.MUSIC_DISC_RYM, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.MUSIC_DISC_GFF, ModelTemplates.FLAT_ITEM);
 
 			// FOOD
 			itemGen.generateFlatItem(FItems.BERRY_JUICE_BOTTLE, ModelTemplates.FLAT_ITEM);
@@ -493,6 +503,54 @@ public class FModelProvider extends FabricModelProvider {
 				)
 		);
 		gen.blockStateOutput.accept(createSimpleBlock(block, model));
+	}
+
+	private void createVanillaStairs(BlockModelGenerators generator, Block stairsBlock, Block vanillaTextureBlock) {
+		TextureMapping textures = TextureMapping.cube(vanillaTextureBlock);
+
+		MultiVariant straight = BlockModelGenerators.plainVariant(
+				ModelTemplates.STAIRS_STRAIGHT.create(stairsBlock, textures, generator.modelOutput)
+		);
+		MultiVariant inner = BlockModelGenerators.plainVariant(
+				ModelTemplates.STAIRS_INNER.create(stairsBlock, textures, generator.modelOutput)
+		);
+		MultiVariant outer = BlockModelGenerators.plainVariant(
+				ModelTemplates.STAIRS_OUTER.create(stairsBlock, textures, generator.modelOutput)
+		);
+
+		// Uses your copied createStairs helper from BlockModelGenerators
+		generator.blockStateOutput.accept(
+				createStairs(stairsBlock, inner, straight, outer)
+		);
+
+		generator.registerSimpleItemModel(
+				stairsBlock,
+				ModelLocationUtils.getModelLocation(stairsBlock)
+		);
+	}
+
+	private void createVanillaSlab(BlockModelGenerators generator, Block slabBlock, Block vanillaBaseBlock) {
+		TextureMapping textures = TextureMapping.cube(vanillaBaseBlock);
+
+		MultiVariant bottom = BlockModelGenerators.plainVariant(
+				ModelTemplates.SLAB_BOTTOM.create(slabBlock, textures, generator.modelOutput)
+		);
+		MultiVariant top = BlockModelGenerators.plainVariant(
+				ModelTemplates.SLAB_TOP.create(slabBlock, textures, generator.modelOutput)
+		);
+		// Reuse vanilla's full block model when two slabs are stacked
+		MultiVariant fullDouble = BlockModelGenerators.plainVariant(
+				ModelLocationUtils.getModelLocation(vanillaBaseBlock)
+		);
+
+		generator.blockStateOutput.accept(
+				BlockModelGenerators.createSlab(slabBlock, bottom, top, fullDouble)
+		);
+
+		generator.registerSimpleItemModel(
+				slabBlock,
+				ModelLocationUtils.getModelLocation(slabBlock)
+		);
 	}
 
 	@Override

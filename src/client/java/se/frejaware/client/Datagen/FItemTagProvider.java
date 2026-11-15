@@ -29,8 +29,19 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(FItemIds.BUTTERFLY_POTTERY_SHERD);
 
 		builder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
-				.add(FItemIds.MUSIC_DISC_RYM);
+				.add(FItemIds.MUSIC_DISC_RYM)
+				.add(FItemIds.MUSIC_DISC_GFF);
 
+		// VANILLA BLOCK VARIANTS
+		builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING)
+				.add(FBlockItemIds.SNOW_STAIRS)
+				.add(FBlockItemIds.PACKED_ICE_STAIRS)
+				.add(FBlockItemIds.BLUE_ICE_SLAB)
+				.add(FBlockItemIds.SNOW_SLAB)
+				.add(FBlockItemIds.PACKED_ICE_SLAB)
+				.add(FBlockItemIds.BLUE_ICE_SLAB);
+
+		// FOOD
 		builder(ItemTags.CHICKEN_FOOD)
 				.add(FBlockItemIds.PINEAPPLE_CROP);
 		builder(ItemTags.PARROT_FOOD)

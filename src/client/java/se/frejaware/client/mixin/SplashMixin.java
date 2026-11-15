@@ -60,6 +60,9 @@ public abstract class SplashMixin {
 		splash(list, "I have autism");
 		splash(list, "Eat a dick <3");
 		splash(list, "If you’re reading this you're gay");
+		splash(list, "UwU");
+		splash(list, "Also try our bodies!");
+		splash(list, "Show me that cock");
 
 		splash(list, "Also try Ark!");
 		splash(list, "Also try Dressmaker!");

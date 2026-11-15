@@ -12,8 +12,9 @@ public class FItemIds {
 
 	// MOLLY
 	public static final ResourceKey<Item> MOOBLOOM_SPAWN_EGG = create("moobloom_spawn_egg");
-	public static final ResourceKey<Item> MUSIC_DISC_RYM = create("music_disc_rym");
 	public static final ResourceKey<Item> BUTTERFLY_POTTERY_SHERD = create("butterfly_pottery_sherd");
+	public static final ResourceKey<Item> MUSIC_DISC_RYM = create("music_disc_rym");
+	public static final ResourceKey<Item> MUSIC_DISC_GFF = create("music_disc_gff");
 
 	// FOOD
 	public static final ResourceKey<Item> BERRY_JUICE_BOTTLE = create("berry_juice_bottle");

@@ -5,10 +5,12 @@ import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.references.BlockItemId;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer;
@@ -53,6 +55,44 @@ public class FBlocks {
 					.mapColor(MapColor.CLAY)
 					.sound(SoundType.BASALT)
 					.pushReaction(PushReaction.POPPED)
+	);
+
+	// VANILLA BLOCK VARIANTS
+	public static final Block SNOW_STAIRS = registerStair(
+			FBlockItemIds.SNOW_STAIRS,
+			Blocks.SNOW_BLOCK
+	);
+	public static final Block SNOW_SLAB = registerSlab(
+			FBlockItemIds.SNOW_SLAB,
+			Blocks.SNOW_BLOCK
+	);
+	public static final Block ICE_STAIRS = registerBlockItem(
+			FBlockItemIds.ICE_STAIRS,
+			p -> new FIceStairBlock(Blocks.ICE.defaultBlockState(), p),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.ICE)
+	);
+	public static final Block ICE_SLAB = registerBlockItem(
+			FBlockItemIds.ICE_SLAB,
+			FIceSlabBlock::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.ICE)
+	);
+	public static final Block PACKED_ICE_STAIRS = registerStair(
+			FBlockItemIds.PACKED_ICE_STAIRS,
+			Blocks.PACKED_ICE
+	);
+	public static final Block PACKED_ICE_SLAB = registerSlab(
+			FBlockItemIds.PACKED_ICE_SLAB,
+			Blocks.PACKED_ICE
+	);
+	public static final Block BLUE_ICE_STAIRS = registerBlockItem(
+			FBlockItemIds.BLUE_ICE_STAIRS,
+			p -> new FHalfTransparentBlockStairBlock(Blocks.BLUE_ICE.defaultBlockState(), p),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_ICE)
+	);
+	public static final Block BLUE_ICE_SLAB = registerBlockItem(
+			FBlockItemIds.BLUE_ICE_SLAB,
+			FHalfTransparentBlockSlabBlock::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_ICE)
 	);
 
 	// BLOM

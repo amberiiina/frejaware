@@ -1,0 +1,45 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "obtain_music_disc_gff": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:music_disc_gff"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_music_disc_rym": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:music_disc_rym"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.do_it_to_music.description"
+    },
+    "icon": {
+      "id": "frejaware:butterfly_pottery_sherd"
+    },
+    "title": {
+      "translate": "advancements.frejaware.do_it_to_music.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_music_disc_rym"
+    ],
+    [
+      "obtain_music_disc_gff"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

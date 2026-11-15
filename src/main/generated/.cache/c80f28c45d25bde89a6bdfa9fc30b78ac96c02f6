@@ -23,7 +23,7 @@ e37109f58ceeda3c60d45455f0fe4f75a09bbebf data/minecraft/tags/item/chest_armor.js
 0aa2cd91d4b8a2f1e62cfaed7c2d23b54c55944c data/minecraft/tags/item/chest_boats.json
 7d8e7a3ad968e3d7ab2cfe72a28fd45bec1f665a data/minecraft/tags/item/chicken_food.json
 d004767a0f058e57024fcc700d7c7c78e00dcc3e data/minecraft/tags/item/cluster_max_harvestables.json
-520f47e9106b2a8aad3e42f8418685a2042add46 data/minecraft/tags/item/creeper_drop_music_discs.json
+2ee242f86b67166432a6776df555d4d65bf58733 data/minecraft/tags/item/creeper_drop_music_discs.json
 02af8f8cd38bd069ad06c94c2053954495487844 data/minecraft/tags/item/decorated_pot_ingredients.json
 02af8f8cd38bd069ad06c94c2053954495487844 data/minecraft/tags/item/decorated_pot_sherds.json
 6862bd19011779ce9da14c7b17e5ace01e9dfab8 data/minecraft/tags/item/enchantable/durability.json
@@ -48,6 +48,7 @@ d004767a0f058e57024fcc700d7c7c78e00dcc3e data/minecraft/tags/item/pickaxes.json
 4f757743f1f501df0046dda9785287c87d37bd2a data/minecraft/tags/item/slabs.json
 3662e948e702ad7bda2f86e681164a9ca161a151 data/minecraft/tags/item/spears.json
 5f78356ce653271c1656aa0a277cb914f7954504 data/minecraft/tags/item/stairs.json
+435e8e33415945798a2354e0c956762ab73a55af data/minecraft/tags/item/sulfur_cube_archetype/fast_sliding.json
 8214419f580339ec544ac86c948d6bc3c54dd558 data/minecraft/tags/item/swords.json
 773bfb716ac908355d0fea5ecac055041c113ebf data/minecraft/tags/item/trim_materials.json
 edbf458736b704d04b8240eea370e10c4f3671dd data/minecraft/tags/item/trimmable_armor.json

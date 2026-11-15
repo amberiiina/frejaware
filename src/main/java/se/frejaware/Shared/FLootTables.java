@@ -11,13 +11,11 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 import se.frejaware.Items.FItems;
 
 public class FLootTables {
-	private static final ResourceKey<LootTable> END_CITY_CHEST = BuiltInLootTables.END_CITY_TREASURE;
-
 	public static void init() {
 		LootTableEvents.MODIFY.register((
 				key, builder,
 				lootTableSource, provider) -> {
-			if (key.equals(END_CITY_CHEST)) {
+			if (key.equals(BuiltInLootTables.END_CITY_TREASURE)) {
 				LootPool.Builder upgradePool = LootPool.lootPool()
 						.setRolls(ContextIntProviders.exactly(1))
 						.add(EmptyLootItem.emptyItem().setWeight(9))
@@ -30,9 +28,21 @@ public class FLootTables {
 						.add(LootItem.lootTableItem(
 								FItems.ROSE_QUARTZ_SHARD
 						).setWeight(1));
-
 				builder.pool(upgradePool.build());
 				builder.pool(shardPool.build());
+			} else if (key.equals(BuiltInLootTables.ANCIENT_CITY) ||
+					key.equals(BuiltInLootTables.SIMPLE_DUNGEON) ||
+					key.equals(BuiltInLootTables.WOODLAND_MANSION)) {
+				LootPool.Builder discPool = LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(EmptyLootItem.emptyItem().setWeight(8))
+						.add(LootItem.lootTableItem(
+								FItems.MUSIC_DISC_RYM
+						).setWeight(1))
+						.add(LootItem.lootTableItem(
+								FItems.MUSIC_DISC_GFF
+						).setWeight(1));
+				builder.pool(discPool.build());
 			}
 		});
 	}
