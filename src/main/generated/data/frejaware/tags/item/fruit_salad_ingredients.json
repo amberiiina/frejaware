@@ -2,9 +2,10 @@
   "values": [
     "minecraft:apple",
     "minecraft:melon_slice",
+    "frejaware:pear",
     "frejaware:cherry",
-    "frejaware:banana",
     "frejaware:orange",
-    "frejaware:pear"
+    "frejaware:banana",
+    "frejaware:pineapple"
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "parent": "frejaware:frejaware/make_me_juice",
+  "criteria": {
+    "find_greenhouse": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "structures": "frejaware:orchard_greenhouse"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.lower_your_rocks.description"
+    },
+    "icon": {
+      "id": "minecraft:glass"
+    },
+    "title": {
+      "translate": "advancements.frejaware.lower_your_rocks.title"
+    }
+  },
+  "requirements": [
+    [
+      "find_greenhouse"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -8,7 +8,7 @@
   "size": 1,
   "spawn_overrides": {},
   "start_height": {
-    "absolute": -2
+    "absolute": 0
   },
   "start_pool": "frejaware:pear_arch_pool",
   "step": "surface_structures",

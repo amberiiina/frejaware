@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:brown_succulent"
+  ],
+  "result": {
+    "id": "minecraft:brown_dye"
+  }
+}

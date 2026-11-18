@@ -84,6 +84,10 @@ public class FFood {
 			.nutrition(5)
 			.saturationModifier(0.4F)
 			.build();
+	public static final FoodProperties MARMALADE = new FoodProperties.Builder()
+			.nutrition(3)
+			.saturationModifier(0.1F)
+			.build();
 
 	// MILK
 	public static final FoodProperties MILK_BOTTLE = new FoodProperties.Builder()
@@ -92,7 +96,7 @@ public class FFood {
 			.alwaysEdible()
 			.build();
 	public static final FoodProperties MILKSHAKE_BOTTLE = new FoodProperties.Builder()
-			.nutrition(4)
+			.nutrition(7)
 			.saturationModifier(0.4F)
 			.alwaysEdible()
 			.build();
@@ -135,11 +139,33 @@ public class FFood {
 			.build();
 	public static final FoodProperties PANCAKE = new FoodProperties.Builder()
 			.nutrition(6)
-			.saturationModifier(0.4F)
+			.saturationModifier(0.6F)
 			.build();
 	public static final FoodProperties SWEDISH_PANCAKE = new FoodProperties.Builder()
 			.nutrition(8)
+			.saturationModifier(0.8F)
+			.build();
+	public static final FoodProperties TOAST = new FoodProperties.Builder()
+			.nutrition(6)
 			.saturationModifier(0.6F)
+			.build();
+	public static final FoodProperties MARMALADE_TOAST = new FoodProperties.Builder()
+			.nutrition(8)
+			.saturationModifier(0.7F)
+			.build();
+	public static final FoodProperties JAM_TOAST = new FoodProperties.Builder()
+			.nutrition(7)
+			.saturationModifier(0.7F)
+			.build();
+	public static final FoodProperties HAM_SANDWICH = new FoodProperties.Builder()
+			.nutrition(12)
+			.saturationModifier(0.8F)
+			.build();
+
+	// MEAT
+	public static final FoodProperties SMOKED_HAM = new FoodProperties.Builder()
+			.nutrition(9)
+			.saturationModifier(0.8F)
 			.build();
 
 	// ----------------------
@@ -159,7 +185,6 @@ public class FFood {
 			.build();
 	public static final Consumable JAM_CONSUMABLE = defaultDrink()
 			.build();
-
 
 	// FRUITS
 	public static final Consumable GOLDEN_PEAR_CONSUMABLE = defaultFood()
@@ -187,6 +212,8 @@ public class FFood {
 					new MobEffectInstance(MobEffects.LEVITATION, 80, 0),
 					new MobEffectInstance(MobEffects.POISON, 200, 0)
 			)))
+			.build();
+	public static final Consumable MARMALADE_CONSUMABLE = defaultDrink()
 			.build();
 
 	// MILK

@@ -10,13 +10,10 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.crafting.CookingBookCategory;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.*;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.world.item.crafting.ShieldDecorationRecipe;
 import net.minecraft.world.level.ItemLike;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.Items.FItems;
@@ -78,9 +75,50 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				flowerDye(FBlocks.YELLOW_CACTUS_FLOWER, Items.DYE.yellow());
 				flowerDye(FBlocks.WHITE_ALLIUM, Items.DYE.white());
 
+				flowerDye(FBlocks.BLUE_SUCCULENT, Items.DYE.blue());
+				flowerDye(FBlocks.RED_SUCCULENT, Items.DYE.red());
+				flowerDye(FBlocks.GREEN_SUCCULENT, Items.DYE.green());
+				flowerDye(FBlocks.TEAL_SUCCULENT, Items.DYE.cyan());
+				flowerDye(FBlocks.PURPLE_SUCCULENT, Items.DYE.purple());
+				flowerDye(FBlocks.BROWN_SUCCULENT, Items.DYE.brown());
+				flowerDye(FBlocks.YELLOW_SUCCULENT, Items.DYE.yellow());
+
 				flowerDye(FBlocks.WHITE_PETALS, Items.DYE.white());
 				flowerDye(FBlocks.PURPLE_PETALS, Items.DYE.purple());
 				flowerDye(FBlocks.LIGHT_BLUE_PETALS, Items.DYE.lightBlue());
+
+				flowerDye(FBlocks.DRY_CACTUS, Items.DYE.green());
+
+				// ----------------------
+				// ENTITIES
+				// ----------------------
+
+				// 2x glaze powder
+				shapeless(RecipeCategory.MISC, FItems.GLAZE_POWDER, 2)
+						.requires(FItems.GLAZE_ROD)
+						.unlockedBy(getHasName(FItems.GLAZE_ROD), has(FItems.GLAZE_ROD))
+						.save(output);
+				// 4x glaze shards
+				shapeless(RecipeCategory.MISC, FItems.GLAZE_SHARD, 4)
+						.requires(FItems.GLAZE_POWDER)
+						.unlockedBy(getHasName(FItems.GLAZE_ROD), has(FItems.GLAZE_ROD))
+						.save(output);
+				// 1x glacier eye
+				shapeless(RecipeCategory.MISC, FItems.GLACIER_EYE)
+						.requires(FItems.GLACIER_PEARL)
+						.requires(FItems.GLAZE_POWDER)
+						.unlockedBy(getHasName(FItems.GLACIER_PEARL), has(FItems.GLACIER_PEARL))
+						.save(output);
+				// 1x frostbow
+				shaped(RecipeCategory.TOOLS, FItems.FROSTBOW)
+						.pattern(" RS")
+						.pattern("RES")
+						.pattern(" RS")
+						.define('R', FItems.GLAZE_ROD)
+						.define('S', FItems.FROSTBITE_STRING)
+						.define('E', FItems.GLACIER_EYE)
+						.unlockedBy(getHasName(FItems.FROSTBITE_STRING), has(FItems.FROSTBITE_STRING))
+						.save(output);
 
 				// ----------------------
 				// VANILLA BLOCK VARIANTS
@@ -166,6 +204,15 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				shapeless(RecipeCategory.MISC, FItems.PINEAPPLE_SEEDS)
 						.requires(FItems.PINEAPPLE)
 						.unlockedBy(getHasName(FItems.PINEAPPLE), has(FItems.PINEAPPLE))
+						.save(output);
+				// 1x marmalade
+				foodSmelting(FItems.MARMALADE, FItems.MARMALADE_BLEND);
+				// 1x marmalade blend
+				shapeless(RecipeCategory.FOOD, FItems.MARMALADE_BLEND)
+						.requires(Items.GLASS_BOTTLE)
+						.requires(FItems.ORANGE)
+						.requires(Items.SUGAR)
+						.unlockedBy(getHasName(FItems.ORANGE), has(FItems.ORANGE))
 						.save(output);
 
 				// 8x milk bottle
@@ -254,6 +301,71 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.requires(FItems.JAM)
 						.unlockedBy(getHasName(Items.EGG), has(Items.EGG))
 						.save(output, "swedish_pancake_from_pancake");
+				// 1x toast
+				foodSmelting(FItems.TOAST, Items.BREAD);
+				// 1x marmalade toast
+				shapeless(RecipeCategory.FOOD, FItems.MARMALADE_TOAST)
+						.requires(FItems.TOAST)
+						.requires(FItems.MARMALADE)
+						.unlockedBy(getHasName(FItems.ORANGE), has(FItems.ORANGE))
+						.save(output);
+				// 1x jam toast
+				shapeless(RecipeCategory.FOOD, FItems.JAM_TOAST)
+						.requires(FItems.TOAST)
+						.requires(FItems.JAM)
+						.unlockedBy("has_berry", has(ConventionalItemTags.BERRY_FOODS))
+						.save(output);
+				// 1x ham sandwich
+				shaped(RecipeCategory.FOOD, FItems.HAM_SANDWICH)
+						.pattern("T")
+						.pattern("H")
+						.pattern("T")
+						.define('T', FItems.TOAST)
+						.define('H', FItems.SMOKED_HAM)
+						.unlockedBy(getHasName(Items.PORKCHOP), has(Items.PORKCHOP))
+						.save(output);
+
+				// 1x smoked ham
+				SimpleCookingRecipeBuilder.smoking(Ingredient.of(Items.COOKED_PORKCHOP), RecipeCategory.FOOD, FItems.SMOKED_HAM, 0.35F, 200)
+						.unlockedBy(getHasName(Items.PORKCHOP), has(Items.PORKCHOP))
+						.save(output);
+
+				// ----------------------
+				// BLUE SPRUCE
+				// ----------------------
+
+				woodFromLogs(FBlocks.BLUE_SPRUCE_WOOD, FBlocks.BLUE_SPRUCE_LOG);
+				woodFromLogs(FBlocks.STRIPPED_BLUE_SPRUCE_WOOD, FBlocks.STRIPPED_BLUE_SPRUCE_LOG);
+				woodenBoat(FItems.BLUE_SPRUCE_BOAT, FBlocks.BLUE_SPRUCE_PLANKS);
+				chestBoat(FItems.BLUE_SPRUCE_CHEST_BOAT, FItems.BLUE_SPRUCE_BOAT);
+				buttonBuilder(FBlocks.BLUE_SPRUCE_BUTTON, Ingredient.of(FBlocks.BLUE_SPRUCE_PLANKS))
+						.unlockedBy(getHasName(FBlocks.BLUE_SPRUCE_PLANKS), has(FBlocks.BLUE_SPRUCE_PLANKS))
+						.save(output);
+				doorBuilder(FBlocks.BLUE_SPRUCE_DOOR, Ingredient.of(FBlocks.BLUE_SPRUCE_PLANKS))
+						.unlockedBy(getHasName(FBlocks.BLUE_SPRUCE_PLANKS), has(FBlocks.BLUE_SPRUCE_PLANKS))
+						.save(output);
+				fenceBuilder(FBlocks.BLUE_SPRUCE_FENCE, Ingredient.of(FBlocks.BLUE_SPRUCE_PLANKS))
+						.unlockedBy(getHasName(FBlocks.BLUE_SPRUCE_PLANKS), has(FBlocks.BLUE_SPRUCE_PLANKS))
+						.save(output);
+				fenceGateBuilder(FBlocks.BLUE_SPRUCE_FENCE_GATE, Ingredient.of(FBlocks.BLUE_SPRUCE_PLANKS))
+						.unlockedBy(getHasName(FBlocks.BLUE_SPRUCE_PLANKS), has(FBlocks.BLUE_SPRUCE_PLANKS))
+						.save(output);
+				signBuilder(FBlocks.BLUE_SPRUCE_SIGN, Ingredient.of(FBlocks.BLUE_SPRUCE_PLANKS))
+						.unlockedBy(getHasName(FBlocks.BLUE_SPRUCE_PLANKS), has(FBlocks.BLUE_SPRUCE_PLANKS))
+						.save(output);
+				hangingSignBuilder(FBlocks.BLUE_SPRUCE_HANGING_SIGN, Ingredient.of(FBlocks.STRIPPED_BLUE_SPRUCE_LOG))
+						.unlockedBy(getHasName(FBlocks.BLUE_SPRUCE_PLANKS), has(FBlocks.STRIPPED_BLUE_SPRUCE_LOG))
+						.save(output);
+				shelf(FBlocks.BLUE_SPRUCE_SHELF, FBlocks.STRIPPED_BLUE_SPRUCE_LOG);
+				planksFromLog(FBlocks.BLUE_SPRUCE_PLANKS, FItemTags.BLUE_SPRUCE_LOGS, 4);
+				pressurePlate(FBlocks.BLUE_SPRUCE_PRESSURE_PLATE, FBlocks.BLUE_SPRUCE_PLANKS);
+				slab(RecipeCategory.BUILDING_BLOCKS, FBlocks.BLUE_SPRUCE_SLAB, FBlocks.BLUE_SPRUCE_PLANKS);
+				stairBuilder(FBlocks.BLUE_SPRUCE_STAIRS, Ingredient.of(FBlocks.BLUE_SPRUCE_PLANKS))
+						.unlockedBy(getHasName(FBlocks.BLUE_SPRUCE_PLANKS), has(FBlocks.BLUE_SPRUCE_PLANKS))
+						.save(output);
+				trapdoorBuilder(FBlocks.BLUE_SPRUCE_TRAPDOOR,  Ingredient.of(FBlocks.BLUE_SPRUCE_PLANKS))
+						.unlockedBy(getHasName(FBlocks.BLUE_SPRUCE_PLANKS), has(FBlocks.BLUE_SPRUCE_PLANKS))
+						.save(output);
 
 				// ----------------------
 				// JACARANDA

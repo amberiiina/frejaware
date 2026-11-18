@@ -55,12 +55,8 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 			AdvancementHolder root = Advancement.Builder.advancement()
 					.rootDisplay(
 							FItems.PEAR,
-							Component.translatable(
-									"advancements.frejaware.root.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.root.description"
-							),
+							Component.translatable("advancements.frejaware.root.title"),
+							Component.translatable("advancements.frejaware.root.description"),
 							F.id("gui/advancements/background/frejaware"),
 							AdvancementType.TASK,
 							true,
@@ -68,22 +64,9 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							false
 					)
 					.requirements(AdvancementRequirements.Strategy.OR)
-					.addCriterion(
-							"visit_pear_meadow_root",
-							PlayerTrigger.TriggerInstance.located(
-									LocationPredicate.Builder.inBiome(
-											biomeRegistry.getOrThrow(FBiomes.PEAR_MEADOW)
-									)
-							)
-					)
-					.addCriterion(
-							"visit_jacaranda_glade_root",
-							PlayerTrigger.TriggerInstance.located(
-									LocationPredicate.Builder.inBiome(
-											biomeRegistry.getOrThrow(FBiomes.JACARANDA_GLADE)
-									)
-							)
-					)
+					.addCriterion("visit_pear_meadow_root", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(FBiomes.PEAR_MEADOW))))
+					.addCriterion("visit_jacaranda_glade_root", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(FBiomes.JACARANDA_GLADE))))
+					.addCriterion("visit_orchard_root", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(FBiomes.ORCHARD))))
 					.save(consumer, F.id("frejaware/root"));
 
 			AdvancementHolder fourTwenty = Advancement.Builder.advancement()
@@ -101,44 +84,20 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							true,
 							false
 					)
-					.addCriterion(
-							"eat_poppy_seeds",
-							ConsumeItemTrigger.TriggerInstance.usedItem(
-									itemRegistry, FItems.POPPY_SEEDS
-							)
-					)
+					.addCriterion("eat_poppy_seeds", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistry, FItems.POPPY_SEEDS))
 					.save(consumer, F.id("frejaware/four_twenty"));
 			AdvancementHolder druglord = Advancement.Builder.advancement()
 					.parent(fourTwenty)
 					.display(
 							Items.POPPY,
-							Component.translatable(
-									"advancements.frejaware.druglord.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.druglord.description"
-							),
-							AdvancementType.TASK,
-							true,
-							true,
-							false
+							Component.translatable("advancements.frejaware.druglord.title"),
+							Component.translatable("advancements.frejaware.druglord.description"),
+							AdvancementType.TASK, true, true, false
 					)
 					.addCriterion(
-							"eat_10_poppy_seeds",
-							CriteriaTriggers.TICK.createCriterion(
-									new PlayerTrigger.TriggerInstance(Optional.of(EntityPredicate.wrap(
-											EntityPredicate.Builder.entity()
-													.player(PlayerPredicate.Builder.player()
-															.addStat(Stats.ITEM_USED,
-																	FItems.POPPY_SEEDS.builtInRegistryHolder(),
-																	MinMaxBounds.Ints.atLeast(
-																			10
-																	)
-															)
-															.build()
-													)
-									)))
-							)
+							"eat_10_poppy_seeds", CriteriaTriggers.TICK.createCriterion(new PlayerTrigger.TriggerInstance(Optional.of(
+									EntityPredicate.wrap(EntityPredicate.Builder.entity().player(PlayerPredicate.Builder.player()
+											.addStat(Stats.ITEM_USED, FItems.POPPY_SEEDS.builtInRegistryHolder(), MinMaxBounds.Ints.atLeast(10)).build())))))
 					)
 					.save(consumer, F.id("frejaware/druglord"));
 
@@ -146,144 +105,99 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 					.parent(root)
 					.display(
 							FBlocks.WHITE_ORCHID.asItem(),
-							Component.translatable(
-									"advancements.frejaware.florist.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.florist.description"
-							),
-							AdvancementType.CHALLENGE,
-							true,
-							true,
-							false
+							Component.translatable("advancements.frejaware.florist.title"),
+							Component.translatable("advancements.frejaware.florist.description"),
+							AdvancementType.CHALLENGE, true, true, false
 					)
 					.rewards(AdvancementRewards.Builder.experience(100))
 					.requirements(AdvancementRequirements.Strategy.AND)
-					.addCriterion(
-							"collect_white_orchid",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.WHITE_ORCHID
-							)
-					)
-					.addCriterion(
-							"collect_yellow_tulip",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.YELLOW_TULIP
-							)
-					)
-					.addCriterion(
-							"collect_white_hibiscus",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.WHITE_HIBISCUS
-							)
-					)
-					.addCriterion(
-							"collect_yellow_hibiscus",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.YELLOW_HIBISCUS
-							)
-					)
-					.addCriterion(
-							"collect_white_crocus",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.WHITE_CROCUS
-							)
-					)
-					.addCriterion(
-							"collect_lilac_crocus",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.LILAC_CROCUS
-							)
-					)
-					.addCriterion(
-							"collect_purple_crocus",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.PURPLE_CROCUS
-							)
-					)
-					.addCriterion(
-							"collect_lily_of_the_glade",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.LILY_OF_THE_GLADE
-							)
-					)
+					.addCriterion("collect_white_orchid", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.WHITE_ORCHID))
+					.addCriterion("collect_yellow_tulip", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.YELLOW_TULIP))
+					.addCriterion("collect_white_hibiscus", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.WHITE_HIBISCUS))
+					.addCriterion("collect_yellow_hibiscus", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.YELLOW_HIBISCUS))
+					.addCriterion("collect_white_crocus", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.WHITE_CROCUS))
+					.addCriterion("collect_lilac_crocus", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.LILAC_CROCUS))
+					.addCriterion("collect_purple_crocus", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.PURPLE_CROCUS))
+					.addCriterion("collect_lily_of_the_glade", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.LILY_OF_THE_GLADE))
 					.save(consumer, F.id("frejaware/florist"));
 
 			AdvancementHolder jingle_bells = Advancement.Builder.advancement()
 					.parent(root)
 					.display(
 							FBlocks.IRON_BELL.asItem(),
-							Component.translatable(
-									"advancements.frejaware.jingle_bells.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.jingle_bells.description"
-							),
-							AdvancementType.TASK,
-							true,
-							true,
-							false
+							Component.translatable("advancements.frejaware.jingle_bells.title"),
+							Component.translatable("advancements.frejaware.jingle_bells.description"),
+							AdvancementType.TASK, true, true, false
 					)
 					.requirements(AdvancementRequirements.Strategy.AND)
-					.addCriterion(
-							"obtain_bell",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									Items.BELL
-							)
-					)
-					.addCriterion(
-							"obtain_iron_bell",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FBlocks.IRON_BELL
-							)
-					)
+					.addCriterion("obtain_bell", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BELL))
+					.addCriterion("obtain_iron_bell", InventoryChangeTrigger.TriggerInstance.hasItems(FBlocks.IRON_BELL))
 					.save(consumer, F.id("frejaware/jingle_bells"));
 
 			AdvancementHolder illuminati = Advancement.Builder.advancement()
 					.parent(root)
 					.display(
 							FItems.BUTTERFLY_POTTERY_SHERD,
-							Component.translatable(
-									"advancements.frejaware.illuminati.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.illuminati.description"
-							),
+							Component.translatable("advancements.frejaware.illuminati.title"),
+							Component.translatable("advancements.frejaware.illuminati.description"),
+							AdvancementType.TASK, true, true, false
+					)
+					.requirements(AdvancementRequirements.Strategy.AND)
+					.addCriterion("find_mud_pyramid", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structureRegistry.getOrThrow(FStructureKeys.DESERT_MUD_PYRAMID))))
+					.save(consumer, F.id("frejaware/illuminati"));
+
+			AdvancementHolder doItToMusic = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FItems.MUSIC_DISC_RYM,
+							Component.translatable("advancements.frejaware.do_it_to_music.title"),
+							Component.translatable("advancements.frejaware.do_it_to_music.description"),
+							AdvancementType.CHALLENGE, true, true, false)
+					.rewards(AdvancementRewards.Builder.experience(100))
+					.requirements(AdvancementRequirements.Strategy.AND)
+					.addCriterion("obtain_music_disc_rym", InventoryChangeTrigger.TriggerInstance.hasItems(FItems.MUSIC_DISC_RYM))
+					.addCriterion("obtain_music_disc_gff", InventoryChangeTrigger.TriggerInstance.hasItems(FItems.MUSIC_DISC_GFF))
+					.save(consumer, F.id("frejaware/do_it_to_music"));
+
+			AdvancementHolder idiotSandwich = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FItems.HAM_SANDWICH,
+							Component.translatable("advancements.frejaware.idiot_sandwich.title"),
+							Component.translatable("advancements.frejaware.idiot_sandwich.description"),
+							AdvancementType.TASK, true, true, false)
+					.addCriterion("eat_ham_sandwich", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistry, FItems.HAM_SANDWICH))
+					.save(consumer, F.id("frejaware/idiot_sandwich"));
+
+			AdvancementHolder transiumArmor = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FItems.TRANSIUM_CHESTPLATE,
+							Component.translatable("advancements.frejaware.transium_armor.title"),
+							Component.translatable("advancements.frejaware.transium_armor.description"),
+							AdvancementType.CHALLENGE, true, true, false
+					)
+					.rewards(AdvancementRewards.Builder.experience(100))
+					.addCriterion("transium_armor", InventoryChangeTrigger.TriggerInstance.hasItems(FItems.TRANSIUM_HELMET, FItems.TRANSIUM_CHESTPLATE, FItems.TRANSIUM_LEGGINGS, FItems.TRANSIUM_BOOTS))
+					.save(consumer, F.id("transium_armor"));
+
+			// ------------------
+			// ARCTIC
+			// ------------------
+
+			AdvancementHolder arctic = Advancement.Builder.advancement()
+					.parent(root)
+					.display(
+							FBlocks.BLUE_SPRUCE_SAPLING.asItem(),
+							Component.translatable("advancements.frejaware.arctic.title"),
+							Component.translatable("advancements.frejaware.arctic.description"),
 							AdvancementType.TASK,
 							true,
 							true,
 							false
 					)
-					.requirements(AdvancementRequirements.Strategy.AND)
-					.addCriterion(
-							"find_mud_pyramid",
-							PlayerTrigger.TriggerInstance.located(
-									LocationPredicate.Builder.inStructure(structureRegistry.getOrThrow(
-											FStructureKeys.DESERT_MUD_PYRAMID
-									))
-							)
-					)
-					.save(consumer, F.id("frejaware/illuminati"));
-
-			AdvancementHolder doItToMusic = Advancement.Builder.advancement()
-					.parent(root)
-					.display(FItems.BUTTERFLY_POTTERY_SHERD,
-							Component.translatable(
-									"advancements.frejaware.do_it_to_music.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.do_it_to_music.description"
-							),
-							AdvancementType.TASK,
-							true, true, false)
-					.requirements(AdvancementRequirements.Strategy.AND)
-					.addCriterion("obtain_music_disc_rym",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FItems.MUSIC_DISC_RYM))
-					.addCriterion("obtain_music_disc_gff",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FItems.MUSIC_DISC_GFF))
-					.save(consumer, F.id("frejaware/do_it_to_music"));
+					.addCriterion("visit_arctic", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(FBiomes.ARCTIC))))
+					.save(consumer, F.id("frejaware/arctic"));
 
 			// ------------------
 			// ORCHARD
@@ -293,48 +207,37 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 					.parent(root)
 					.display(
 							FBlocks.ORANGE_SAPLING.asItem(),
-							Component.translatable(
-									"advancements.frejaware.make_me_juice.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.make_me_juice.description"
-							),
+							Component.translatable("advancements.frejaware.make_me_juice.title"),
+							Component.translatable("advancements.frejaware.make_me_juice.description"),
 							AdvancementType.TASK,
 							true,
 							true,
 							false
 					)
-					.addCriterion(
-							"visit_orchard",
-							PlayerTrigger.TriggerInstance.located(
-									LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(
-											FBiomes.ORCHARD
-									))
-							)
-					)
+					.addCriterion("visit_orchard", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(FBiomes.ORCHARD))))
 					.save(consumer, F.id("frejaware/make_me_juice"));
+
 			AdvancementHolder underTheSea = Advancement.Builder.advancement()
 					.parent(makeMeJuice)
 					.display(
 							FItems.PINEAPPLE.asItem(),
-							Component.translatable(
-									"advancements.frejaware.pineapple_under_the_sea.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.pineapple_under_the_sea.description"
-							),
-							AdvancementType.TASK,
-							true,
-							true,
-							false
+							Component.translatable("advancements.frejaware.pineapple_under_the_sea.title"),
+							Component.translatable("advancements.frejaware.pineapple_under_the_sea.description"),
+							AdvancementType.TASK, true, true, false
 					)
-					.addCriterion(
-							"obtain_pineapple",
-							InventoryChangeTrigger.TriggerInstance.hasItems(
-									FItems.PINEAPPLE
-							)
-					)
+					.addCriterion("obtain_pineapple", InventoryChangeTrigger.TriggerInstance.hasItems(FItems.PINEAPPLE))
 					.save(consumer, F.id("frejaware/pineapple_under_the_sea"));
+
+			AdvancementHolder lowerYourRocks = Advancement.Builder.advancement()
+					.parent(makeMeJuice)
+					.display(
+							Items.GLASS.asItem(),
+							Component.translatable("advancements.frejaware.lower_your_rocks.title"),
+							Component.translatable("advancements.frejaware.lower_your_rocks.description"),
+							AdvancementType.TASK, true, true, false
+					)
+					.addCriterion("find_greenhouse", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structureRegistry.getOrThrow(FStructureKeys.ORCHARD_GREENHOUSE))))
+					.save(consumer, F.id("frejaware/lower_your_rocks"));
 
 			// ------------------
 			// JACARANDA
@@ -344,50 +247,22 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 					.parent(root)
 					.display(
 							FBlocks.JACARANDA_SAPLING.asItem(),
-							Component.translatable(
-									"advancements.frejaware.jack_that_randa.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.jack_that_randa.description"
-							),
-							AdvancementType.TASK,
-							true,
-							true,
-							false
+							Component.translatable("advancements.frejaware.jack_that_randa.title"),
+							Component.translatable("advancements.frejaware.jack_that_randa.description"),
+							AdvancementType.TASK, true, true, false
 					)
-					.addCriterion(
-							"visit_jacaranda_glade",
-							PlayerTrigger.TriggerInstance.located(
-									LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(
-											FBiomes.JACARANDA_GLADE
-									))
-							)
-					)
+					.addCriterion("visit_jacaranda_glade", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeRegistry.getOrThrow(FBiomes.JACARANDA_GLADE))))
 					.save(consumer, F.id("frejaware/jack_that_randa"));
 
 			AdvancementHolder wellWellWell = Advancement.Builder.advancement()
 					.parent(jackThatRanda)
 					.display(
 							FBlocks.JACARANDA_LOG.asItem(),
-							Component.translatable(
-									"advancements.frejaware.well_well_well.title"
-							),
-							Component.translatable(
-									"advancements.frejaware.well_well_well.description"
-							),
-							AdvancementType.TASK,
-							true,
-							true,
-							false
+							Component.translatable("advancements.frejaware.well_well_well.title"),
+							Component.translatable("advancements.frejaware.well_well_well.description"),
+							AdvancementType.TASK, true, true, false
 					)
-					.addCriterion(
-							"find_jacaranda_well",
-							PlayerTrigger.TriggerInstance.located(
-									LocationPredicate.Builder.inStructure(structureRegistry.getOrThrow(
-											FStructureKeys.JACARANDA_WELL
-									))
-							)
-					)
+					.addCriterion("find_jacaranda_well", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structureRegistry.getOrThrow(FStructureKeys.JACARANDA_WELL))))
 					.save(consumer, F.id("frejaware/well_well_well"));
 
 			// ------------------
@@ -756,6 +631,7 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 							true,
 							false
 					)
+					.rewards(AdvancementRewards.Builder.experience(100))
 					.addCriterion(
 							"rose_quartz_armor",
 							InventoryChangeTrigger.TriggerInstance.hasItems(
@@ -764,9 +640,6 @@ public class FAdvancementProvider extends FabricAdvancementProvider {
 									FItems.ROSE_QUARTZ_LEGGINGS,
 									FItems.ROSE_QUARTZ_BOOTS
 							)
-					)
-					.rewards(
-							AdvancementRewards.Builder.experience(200)
 					)
 					.save(consumer, F.id("rose_quartz_armor"));
 		} catch (Exception e) {

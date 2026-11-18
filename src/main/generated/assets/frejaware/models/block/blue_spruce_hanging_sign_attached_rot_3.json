@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_attached_hanging_sign_rot_3",
+  "textures": {
+    "all": "frejaware:block/blue_spruce_hanging_sign",
+    "particle": "frejaware:block/stripped_blue_spruce_log"
+  }
+}

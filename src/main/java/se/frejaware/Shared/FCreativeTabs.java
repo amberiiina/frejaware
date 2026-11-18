@@ -42,6 +42,16 @@ public class FCreativeTabs {
 					Registries.CREATIVE_MODE_TAB,
 					F.id("wood")
 			);
+	public static final ResourceKey<CreativeModeTab> MUSIC_TAB_KEY =
+			ResourceKey.create(
+					Registries.CREATIVE_MODE_TAB,
+					F.id("music")
+			);
+	public static final ResourceKey<CreativeModeTab> ENTITIES_TAB_KEY =
+			ResourceKey.create(
+					Registries.CREATIVE_MODE_TAB,
+					F.id("entities")
+			);
 
 	// ----------------------
 	// FREJAWARE
@@ -57,6 +67,7 @@ public class FCreativeTabs {
 						output.accept(FItems.BUTTERFLY_POTTERY_SHERD);
 						output.accept(FBlocks.PEACH_SEASHELL);
 						output.accept(FBlocks.PEARL_SEASHELL);
+						output.accept(FBlocks.ORCHID_SEASHELL);
 
 						// VANILLA BLOCK VARIANTS
 						output.accept(FBlocks.SNOW_STAIRS);
@@ -179,6 +190,8 @@ public class FCreativeTabs {
 						output.accept(FItems.POPPY_SEEDS);
 						output.accept(FItems.PINEAPPLE);
 						output.accept(FItems.PINEAPPLE_SEEDS);
+						output.accept(FItems.MARMALADE);
+						output.accept(FItems.MARMALADE_BLEND);
 
 						// MILK
 						output.accept(FItems.MILK_BOTTLE);
@@ -197,6 +210,13 @@ public class FCreativeTabs {
 						output.accept(FItems.FRUIT_SALAD);
 						output.accept(FItems.PANCAKE);
 						output.accept(FItems.SWEDISH_PANCAKE);
+						output.accept(FItems.TOAST);
+						output.accept(FItems.MARMALADE_TOAST);
+						output.accept(FItems.JAM_TOAST);
+						output.accept(FItems.HAM_SANDWICH);
+
+						// MEAT
+						output.accept(FItems.SMOKED_HAM);
 					})
 					.build();
 
@@ -226,6 +246,14 @@ public class FCreativeTabs {
 						output.accept(FBlocks.YELLOW_CACTUS_FLOWER);
 						output.accept(FBlocks.WHITE_ALLIUM);
 
+						output.accept(FBlocks.BLUE_SUCCULENT);
+						output.accept(FBlocks.RED_SUCCULENT);
+						output.accept(FBlocks.GREEN_SUCCULENT);
+						output.accept(FBlocks.TEAL_SUCCULENT);
+						output.accept(FBlocks.PURPLE_SUCCULENT);
+						output.accept(FBlocks.BROWN_SUCCULENT);
+						output.accept(FBlocks.YELLOW_SUCCULENT);
+
 						// PETALS
 						output.accept(FBlocks.WHITE_PETALS);
 						output.accept(FBlocks.PURPLE_PETALS);
@@ -233,6 +261,7 @@ public class FCreativeTabs {
 
 						// NON FLOWER PLANTS
 						output.accept(FBlocks.ROUND_BUSH);
+						output.accept(FBlocks.DRY_CACTUS);
 					})
 					.build();
 
@@ -298,6 +327,72 @@ public class FCreativeTabs {
 						// ORANGE
 						output.accept(FBlocks.ORANGE_LEAVES);
 						output.accept(FBlocks.ORANGE_SAPLING);
+
+						// BLUE SPRUCE
+						output.accept(FBlocks.BLUE_SPRUCE_LOG);
+						output.accept(FBlocks.STRIPPED_BLUE_SPRUCE_LOG);
+						output.accept(FBlocks.BLUE_SPRUCE_WOOD);
+						output.accept(FBlocks.STRIPPED_BLUE_SPRUCE_WOOD);
+
+						output.accept(FBlocks.BLUE_SPRUCE_LEAVES);
+						output.accept(FBlocks.BLUE_SPRUCE_SAPLING);
+
+						output.accept(FBlocks.BLUE_SPRUCE_PLANKS);
+						output.accept(FBlocks.BLUE_SPRUCE_STAIRS);
+						output.accept(FBlocks.BLUE_SPRUCE_SLAB);
+						output.accept(FBlocks.BLUE_SPRUCE_FENCE);
+						output.accept(FBlocks.BLUE_SPRUCE_FENCE_GATE);
+						output.accept(FBlocks.BLUE_SPRUCE_DOOR);
+						output.accept(FBlocks.BLUE_SPRUCE_TRAPDOOR);
+						output.accept(FBlocks.BLUE_SPRUCE_BUTTON);
+						output.accept(FBlocks.BLUE_SPRUCE_PRESSURE_PLATE);
+						output.accept(FBlocks.BLUE_SPRUCE_SHELF);
+
+						output.accept(FItems.BLUE_SPRUCE_SIGN);
+						output.accept(FItems.BLUE_SPRUCE_HANGING_SIGN);
+						output.accept(FItems.BLUE_SPRUCE_BOAT);
+						output.accept(FItems.BLUE_SPRUCE_CHEST_BOAT);
+					})
+					.build();
+
+	// ----------------------
+	// MUSIC
+	// ----------------------
+
+	public static final CreativeModeTab MUSIC_TAB =
+			FabricCreativeModeTab.builder()
+					.icon(() -> new ItemStack(FItems.MUSIC_DISC_RYM))
+					.title(Component.translatable("creativetab.music"))
+					.displayItems((params, output) -> {
+						output.accept(FItems.MUSIC_DISC_RYM);
+						output.accept(FItems.MUSIC_DISC_GFF);
+					})
+					.build();
+
+	// ----------------------
+	// ENTITIES
+	// ----------------------
+
+	public static final CreativeModeTab ENTITIES_TAB =
+			FabricCreativeModeTab.builder()
+					.icon(() -> new ItemStack(FItems.MOOBLOOM_SPAWN_EGG))
+					.title(Component.translatable("creativetab.entities"))
+					.displayItems((params, output) -> {
+						output.accept(FItems.MOOBLOOM_SPAWN_EGG);
+
+						output.accept(FItems.GLAZE_SPAWN_EGG);
+						output.accept(FItems.GLAZE_ROD);
+						output.accept(FItems.GLAZE_POWDER);
+						output.accept(FItems.GLAZE_SHARD);
+
+						output.accept(FItems.GLACIERMAN_SPAWN_EGG);
+						output.accept(FItems.GLACIER_PEARL);
+						output.accept(FItems.GLACIER_EYE);
+
+						output.accept(FItems.FROSTBITE_CRAWLER_SPAWN_EGG);
+						output.accept(FItems.FROSTBITE_STRING);
+						output.accept(FItems.FROSTBITE_EYE);
+						output.accept(FItems.FROSTBOW);
 					})
 					.build();
 
@@ -306,30 +401,12 @@ public class FCreativeTabs {
 	// ----------------------
 
 	public static void init() {
-		Registry.register(
-				BuiltInRegistries.CREATIVE_MODE_TAB,
-				FREJAWARE_TAB_KEY,
-				FREJAWARE_TAB
-		);
-		Registry.register(
-				BuiltInRegistries.CREATIVE_MODE_TAB,
-				EQUIPMENT_TAB_KEY,
-				EQUIPMENT_TAB
-		);
-		Registry.register(
-				BuiltInRegistries.CREATIVE_MODE_TAB,
-				FOOD_TAB_KEY,
-				FOOD_TAB
-		);
-		Registry.register(
-				BuiltInRegistries.CREATIVE_MODE_TAB,
-				FLOWERS_TAB_KEY,
-				FLOWERS_TAB
-		);
-		Registry.register(
-				BuiltInRegistries.CREATIVE_MODE_TAB,
-				WOOD_TAB_KEY,
-				WOOD_TAB
-		);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FREJAWARE_TAB_KEY, FREJAWARE_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, EQUIPMENT_TAB_KEY, EQUIPMENT_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FOOD_TAB_KEY, FOOD_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FLOWERS_TAB_KEY, FLOWERS_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, WOOD_TAB_KEY, WOOD_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MUSIC_TAB_KEY, MUSIC_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ENTITIES_TAB_KEY, ENTITIES_TAB);
 	}
 }

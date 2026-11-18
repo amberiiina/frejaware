@@ -39,6 +39,7 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 			dropSelf(FBlocks.IRON_BELL);
 			dropSelf(FBlocks.PEACH_SEASHELL);
 			dropSelf(FBlocks.PEARL_SEASHELL);
+			dropSelf(FBlocks.ORCHID_SEASHELL);
 
 			// BLOM
 			dropSelf(FBlocks.WHITE_ORCHID);
@@ -55,33 +56,50 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 			dropSelf(FBlocks.YELLOW_CACTUS_FLOWER);
 			dropSelf(FBlocks.WHITE_ALLIUM);
 
-			add(FBlocks.WHITE_PETALS,
-					createSegmentedBlockDrops(FBlocks.WHITE_PETALS)
-			);
-			add(FBlocks.PURPLE_PETALS,
-					createSegmentedBlockDrops(FBlocks.PURPLE_PETALS)
-			);
-			add(FBlocks.LIGHT_BLUE_PETALS,
-					createSegmentedBlockDrops(FBlocks.LIGHT_BLUE_PETALS)
-			);
+			dropSelf(FBlocks.RED_SUCCULENT);
+			dropSelf(FBlocks.BLUE_SUCCULENT);
+			dropSelf(FBlocks.GREEN_SUCCULENT);
+			dropSelf(FBlocks.TEAL_SUCCULENT);
+			dropSelf(FBlocks.PURPLE_SUCCULENT);
+			dropSelf(FBlocks.BROWN_SUCCULENT);
+			dropSelf(FBlocks.YELLOW_SUCCULENT);
+
+			add(FBlocks.WHITE_PETALS, createSegmentedBlockDrops(FBlocks.WHITE_PETALS));
+			add(FBlocks.PURPLE_PETALS, createSegmentedBlockDrops(FBlocks.PURPLE_PETALS));
+			add(FBlocks.LIGHT_BLUE_PETALS, createSegmentedBlockDrops(FBlocks.LIGHT_BLUE_PETALS));
 
 			dropSelf(FBlocks.ROUND_BUSH);
+			dropSelf(FBlocks.DRY_CACTUS);
 
 			// FOOD
-			add(Blocks.CHERRY_LEAVES, block -> createCherryLeavesDrops(
-					block, Blocks.CHERRY_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES
-			));
-			LootItemCondition.Builder isPineappleMaxAge = MatchBlock.blockMatches(
-					blocks,
-					FBlocks.PINEAPPLE,
-					StatePropertiesPredicate.Builder.properties()
-							.hasProperty(CropBlock.AGE, 7)
-			);
-			add(FBlocks.PINEAPPLE, createCropDrops(
-					FBlocks.PINEAPPLE,
-					FItems.PINEAPPLE, FItems.PINEAPPLE_SEEDS,
-					isPineappleMaxAge
-			));
+			add(Blocks.CHERRY_LEAVES, block -> createCherryLeavesDrops(block, Blocks.CHERRY_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
+			LootItemCondition.Builder isPineappleMaxAge = MatchBlock.blockMatches(blocks, FBlocks.PINEAPPLE, StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7));
+			add(FBlocks.PINEAPPLE, createCropDrops(FBlocks.PINEAPPLE, FItems.PINEAPPLE, FItems.PINEAPPLE_SEEDS, isPineappleMaxAge));
+
+			// BLUE SPRUCE
+			dropSelf(FBlocks.BLUE_SPRUCE_LOG);
+			dropSelf(FBlocks.STRIPPED_BLUE_SPRUCE_LOG);
+			dropSelf(FBlocks.BLUE_SPRUCE_WOOD);
+			dropSelf(FBlocks.STRIPPED_BLUE_SPRUCE_WOOD);
+
+			add(FBlocks.BLUE_SPRUCE_LEAVES, block -> createLeavesDrops(block, FBlocks.BLUE_SPRUCE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
+			dropSelf(FBlocks.BLUE_SPRUCE_SAPLING);
+			dropPottedContents(FBlocks.POTTED_BLUE_SPRUCE_SAPLING);
+
+			dropSelf(FBlocks.BLUE_SPRUCE_PLANKS);
+			dropSelf(FBlocks.BLUE_SPRUCE_STAIRS);
+			add(FBlocks.BLUE_SPRUCE_SLAB, this::createSlabItemTable);
+			dropSelf(FBlocks.BLUE_SPRUCE_FENCE);
+			dropSelf(FBlocks.BLUE_SPRUCE_FENCE_GATE);
+			add(FBlocks.BLUE_SPRUCE_DOOR, this::createDoorTable);
+			dropSelf(FBlocks.BLUE_SPRUCE_TRAPDOOR);
+			dropSelf(FBlocks.BLUE_SPRUCE_BUTTON);
+			dropSelf(FBlocks.BLUE_SPRUCE_PRESSURE_PLATE);
+			dropSelf(FBlocks.BLUE_SPRUCE_SIGN);
+			dropOther(FBlocks.BLUE_SPRUCE_WALL_SIGN, FBlocks.BLUE_SPRUCE_SIGN);
+			dropSelf(FBlocks.BLUE_SPRUCE_HANGING_SIGN);
+			dropOther(FBlocks.BLUE_SPRUCE_WALL_HANGING_SIGN, FBlocks.BLUE_SPRUCE_HANGING_SIGN);
+			dropSelf(FBlocks.BLUE_SPRUCE_SHELF);
 
 			// ORANGE
 			add(FBlocks.ORANGE_LEAVES, block -> createOrangeLeavesDrops(

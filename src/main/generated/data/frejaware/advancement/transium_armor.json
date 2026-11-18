@@ -1,0 +1,45 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "transium_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:transium_helmet"
+          },
+          {
+            "items": "frejaware:transium_chestplate"
+          },
+          {
+            "items": "frejaware:transium_leggings"
+          },
+          {
+            "items": "frejaware:transium_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.transium_armor.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "frejaware:transium_chestplate"
+    },
+    "title": {
+      "translate": "advancements.frejaware.transium_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "transium_armor"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

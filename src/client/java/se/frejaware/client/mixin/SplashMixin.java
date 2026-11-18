@@ -27,8 +27,8 @@ public abstract class SplashMixin {
 
 		List<Component> list = new ArrayList<>();
 
-		splash(list, "Trans rights! ️");
-		splash(list, "You are a brat <3 ️");
+		splash(list, "Trans rights!");
+		splash(list, "You are a brat <3");
 		splash(list, "Not vanilla - Minecraft and Bed");
 		splash(list, "FUCK TRUMP");
 		splash(list, "Alexian <333");

@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:jacaranda_arch",
+        "location": "frejaware:jacaranda/arch",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

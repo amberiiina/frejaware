@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_green_succulent": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:green_succulent"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:green_dye_from_green_succulent"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_green_succulent"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:green_dye_from_green_succulent"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_red_succulent": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:red_succulent"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:red_dye_from_red_succulent"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_red_succulent"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:red_dye_from_red_succulent"
+    ]
+  }
+}

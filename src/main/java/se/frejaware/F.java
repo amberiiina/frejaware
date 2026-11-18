@@ -14,7 +14,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.frejaware.Blocks.FBlockEntityTypes;
-import se.frejaware.Blocks.FParticles;
+import se.frejaware.Shared.FParticles;
 import se.frejaware.Blocks.Custom.FSkullBlockEntityTypes;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.Entities.FEntityTypes;
@@ -47,6 +47,12 @@ public class F implements ModInitializer {
 		// BLOCK ENTITIES
 		BlockEntityTypes.BELL.addValidBlock(FBlocks.IRON_BELL);
 
+		BlockEntityTypes.SHELF.addValidBlock(FBlocks.BLUE_SPRUCE_SHELF);
+		BlockEntityTypes.SIGN.addValidBlock(FBlocks.BLUE_SPRUCE_SIGN);
+		BlockEntityTypes.SIGN.addValidBlock(FBlocks.BLUE_SPRUCE_WALL_SIGN);
+		BlockEntityTypes.HANGING_SIGN.addValidBlock(FBlocks.BLUE_SPRUCE_HANGING_SIGN);
+		BlockEntityTypes.HANGING_SIGN.addValidBlock(FBlocks.BLUE_SPRUCE_WALL_HANGING_SIGN);
+
 		BlockEntityTypes.SHELF.addValidBlock(FBlocks.JACARANDA_SHELF);
 		BlockEntityTypes.SIGN.addValidBlock(FBlocks.JACARANDA_SIGN);
 		BlockEntityTypes.SIGN.addValidBlock(FBlocks.JACARANDA_WALL_SIGN);
@@ -60,60 +66,28 @@ public class F implements ModInitializer {
 		BlockEntityTypes.HANGING_SIGN.addValidBlock(FBlocks.PEAR_WALL_HANGING_SIGN);
 
 		// PARTICLES
-		Registry.register(
-				BuiltInRegistries.PARTICLE_TYPE,
-				id("pear_leaves"),
-				FParticles.PEAR_LEAVES
-		);
-		Registry.register(
-				BuiltInRegistries.PARTICLE_TYPE,
-				id("jacaranda_leaves"),
-				FParticles.JACARANDA_LEAVES
-		);
+		Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("pear_leaves"), FParticles.PEAR_LEAVES);
+		Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("jacaranda_leaves"), FParticles.JACARANDA_LEAVES);
+		Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("snowflake"), FParticles.SNOWFLAKE);
+		Registry.register(BuiltInRegistries.PARTICLE_TYPE, id("glacierman"), FParticles.GLACIERMAN);
 
 		// WORLD GEN
 		FFeatureTypes.register();
-		BiomeModifications.addFeature(
-				BiomeSelectors.includeByKey(
-						Biomes.SMALL_END_ISLANDS,
-						Biomes.END_MIDLANDS,
-						Biomes.END_HIGHLANDS,
-						Biomes.END_BARRENS
-				),
-				GenerationStep.Decoration.UNDERGROUND_ORES,
-				FPlacedFeatures.ROSE_QUARTZ_ORE_VEIN
-		);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.SMALL_END_ISLANDS, Biomes.END_MIDLANDS, Biomes.END_HIGHLANDS, Biomes.END_BARRENS),
+				GenerationStep.Decoration.UNDERGROUND_ORES, FPlacedFeatures.ROSE_QUARTZ_ORE_VEIN);
 
-		BiomeModifications.addFeature(
-				BiomeSelectors.includeByKey(
-						Biomes.CHERRY_GROVE
-				),
-				GenerationStep.Decoration.VEGETAL_DECORATION,
-				FPlacedFeatures.PEAR_TREE_CHERRY
-		);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.CHERRY_GROVE),
+				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.PEAR_TREE_CHERRY);
 
-		BiomeModifications.addFeature(
-				BiomeSelectors.includeByKey(
-						Biomes.DESERT
-				),
-				GenerationStep.Decoration.VEGETAL_DECORATION,
-				FPlacedFeatures.DESERT_CACTUS_FLOWERS
-		);
-		BiomeModifications.addFeature(
-				BiomeSelectors.includeByKey(
-						Biomes.DESERT
-				),
-				GenerationStep.Decoration.VEGETAL_DECORATION,
-				FPlacedFeatures.DESERT_ROCKS
-		);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT),
+				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_CACTUS_FLOWERS);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT),
+				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_ROCKS);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT),
+				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_SUCCULENTS);
 
-		BiomeModifications.addFeature(
-				BiomeSelectors.includeByKey(
-						Biomes.BEACH
-				),
-				GenerationStep.Decoration.VEGETAL_DECORATION,
-				FPlacedFeatures.BEACH_SEASHELLS
-		);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.BEACH),
+				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.BEACH_SEASHELLS);
 
 		LOGGER.info("Frejaware Initialized");
 	}

@@ -134,7 +134,11 @@
     ],
     [
       "minecraft:monster_room",
-      "minecraft:monster_room_deep",
+      "minecraft:monster_room_deep"
+    ],
+    [],
+    [],
+    [
       "minecraft:ore_dirt",
       "minecraft:ore_gravel",
       "minecraft:ore_granite_upper",
@@ -165,9 +169,6 @@
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
-    [],
-    [],
-    [],
     [],
     [
       "minecraft:spring_water"

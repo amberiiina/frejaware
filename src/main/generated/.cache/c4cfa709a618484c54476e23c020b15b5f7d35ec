@@ -1,0 +1,6 @@
+// 26.3	-999999999-01-01T00:00:00	Frejaware/FEntityTypeTagProvider
+766b03ef067ad8204191dec800bb065ea3e41d71 data/minecraft/tags/entity_type/arthropod.json
+8ce2dd5b4077af23832206ad96c4f0081edb8b17 data/minecraft/tags/entity_type/fall_damage_immune.json
+8ce2dd5b4077af23832206ad96c4f0081edb8b17 data/minecraft/tags/entity_type/freeze_immune_entity_types.json
+766b03ef067ad8204191dec800bb065ea3e41d71 data/minecraft/tags/entity_type/no_anger_from_wind_charge.json
+8ce2dd5b4077af23832206ad96c4f0081edb8b17 data/minecraft/tags/entity_type/powder_snow_walkable_mobs.json

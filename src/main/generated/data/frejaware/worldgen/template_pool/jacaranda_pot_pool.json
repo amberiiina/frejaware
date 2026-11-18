@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:jacaranda_pot_copper",
+        "location": "frejaware:jacaranda/pot_copper",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },
@@ -12,7 +12,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:jacaranda_pot_stone",
+        "location": "frejaware:jacaranda/pot_stone",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

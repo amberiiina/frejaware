@@ -1,4 +1,7 @@
 // 26.3	-999999999-01-01T00:00:00	Frejaware/FEntityLootTableProvider
+4811bab8d9bbb205ffa3850822db369779930b4b data/frejaware/loot_table/entities/frostbite_crawler.json
+1864d584e18c5994511bb7042abbbc15fa1e8e82 data/frejaware/loot_table/entities/glacierman.json
+f1971723c6cb931ab467f12892f8d464e434c73c data/frejaware/loot_table/entities/glaze.json
 6cde1cd06418ca17350a1a8722f7aac060ddbf4f data/frejaware/loot_table/entities/golem_amethyst.json
 f00139a71f7b4e43edcc851889f4976c03811373 data/frejaware/loot_table/entities/golem_coal.json
 48bb17a638228d0eca488b49f3e918dc28d19c96 data/frejaware/loot_table/entities/golem_diamond.json

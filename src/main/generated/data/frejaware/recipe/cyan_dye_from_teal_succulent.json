@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:teal_succulent"
+  ],
+  "result": {
+    "id": "minecraft:cyan_dye"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "values": [
-    "#frejaware:pot_flowers",
+    "#frejaware:potted_flowers",
+    "frejaware:potted_blue_spruce_sapling",
     "frejaware:potted_orange_sapling",
     "frejaware:potted_jacaranda_sapling",
     "frejaware:potted_pear_sapling"

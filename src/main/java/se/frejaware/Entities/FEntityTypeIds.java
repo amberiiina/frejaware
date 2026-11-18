@@ -12,6 +12,15 @@ public class FEntityTypeIds {
 
 	// MOLLY
 	public static final ResourceKey<EntityType<?>> MOOBLOOM = create("moobloom");
+	public static final ResourceKey<EntityType<?>> GLAZE = create("glaze");
+	public static final ResourceKey<EntityType<?>> GLAZEBALL = create("glazeball");
+	public static final ResourceKey<EntityType<?>> GLAZE_SHARD = create("glaze_shard");
+	public static final ResourceKey<EntityType<?>> GLACIERMAN = create("glacierman");
+	public static final ResourceKey<EntityType<?>> FROSTBITE_CRAWLER = create("frostbite_crawler");
+
+	// PEAR
+	public static ResourceKey<EntityType<?>> BLUE_SPRUCE_BOAT = create("blue_spruce_boat");
+	public static ResourceKey<EntityType<?>> BLUE_SPRUCE_CHEST_BOAT = create("blue_spruce_chest_boat");
 
 	// PEAR
 	public static ResourceKey<EntityType<?>> JACARANDA_BOAT = create("jacaranda_boat");

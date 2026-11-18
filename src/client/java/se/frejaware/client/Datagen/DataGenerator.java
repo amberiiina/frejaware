@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
+import se.frejaware.Blocks.FBlockStateProviders;
 import se.frejaware.Blocks.FPaintings;
 import se.frejaware.WorldGen.Biome.FBiomeBootstrap;
 import se.frejaware.WorldGen.FFeatures;
@@ -24,6 +25,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 			pack.addProvider(FBlockTagProvider::new);
 			pack.addProvider(FDynamicRegistryProvider::new);
 			pack.addProvider(FEntityLootTableProvider::new);
+			pack.addProvider(FEntityTypeTagProvider::new);
 			pack.addProvider(FItemTagProvider::new);
 			pack.addProvider(FLanguageProvider::new);
 			pack.addProvider(FModelProvider::new);
@@ -46,5 +48,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.TEMPLATE_POOL, FPools::bootstrap);
 
 		registryBuilder.add(Registries.PAINTING_VARIANT, FPaintings::bootstrap);
+
+		registryBuilder.add(Registries.BLOCK_STATE_PROVIDER, FBlockStateProviders::bootstrap);
 	}
 }

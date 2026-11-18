@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "H": "frejaware:smoked_ham",
+    "T": "frejaware:toast"
+  },
+  "pattern": [
+    "T",
+    "H",
+    "T"
+  ],
+  "result": {
+    "id": "frejaware:ham_sandwich"
+  }
+}

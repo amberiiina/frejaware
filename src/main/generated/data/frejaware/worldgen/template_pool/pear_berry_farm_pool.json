@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:pear_berry_farm",
+        "location": "frejaware:pear/berry_farm",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

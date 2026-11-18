@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_uv_locked_y",
+  "textures": {
+    "end": "frejaware:block/blue_spruce_log_top",
+    "side": "frejaware:block/blue_spruce_log"
+  }
+}

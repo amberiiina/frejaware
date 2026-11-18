@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "frejaware:glacier_eye",
+    "R": "frejaware:glaze_rod",
+    "S": "frejaware:frostbite_string"
+  },
+  "pattern": [
+    " RS",
+    "RES",
+    " RS"
+  ],
+  "result": {
+    "id": "frejaware:frostbow"
+  }
+}

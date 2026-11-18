@@ -26,6 +26,8 @@ public class FDynamicRegistryProvider extends FabricDynamicRegistryProvider {
 			entries.addAll(registries.lookupOrThrow(Registries.TEMPLATE_POOL));
 
 			entries.addAll(registries.lookupOrThrow(Registries.PAINTING_VARIANT));
+
+			entries.addAll(registries.lookupOrThrow(Registries.BLOCK_STATE_PROVIDER));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

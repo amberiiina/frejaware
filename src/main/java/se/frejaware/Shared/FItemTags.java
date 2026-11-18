@@ -24,7 +24,13 @@ public class FItemTags {
 			F.id("crocuses")
 	);
 
-	// PEAR
+	// BLUE SPRUCE
+	public static final TagKey<Item> BLUE_SPRUCE_LOGS = TagKey.create(
+			BuiltInRegistries.ITEM.key(),
+			F.id("blue_spruce_logs")
+	);
+
+	// JACARANDA
 	public static final TagKey<Item> JACARANDA_LOGS = TagKey.create(
 			BuiltInRegistries.ITEM.key(),
 			F.id("jacaranda_logs")

@@ -3,7 +3,16 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:orchard_big_pot",
+        "location": "frejaware:orchard/big_pot_orange",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "frejaware:orchard/big_pot_pear",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

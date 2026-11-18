@@ -26,8 +26,9 @@
     "description": {
       "translate": "advancements.frejaware.do_it_to_music.description"
     },
+    "frame": "challenge",
     "icon": {
-      "id": "frejaware:butterfly_pottery_sherd"
+      "id": "frejaware:music_disc_rym"
     },
     "title": {
       "translate": "advancements.frejaware.do_it_to_music.title"
@@ -41,5 +42,8 @@
       "obtain_music_disc_gff"
     ]
   ],
+  "rewards": {
+    "experience": 100
+  },
   "sends_telemetry_event": true
 }

@@ -7,13 +7,27 @@ import se.frejaware.F;
 
 public class FBlockTags {
 	// MOLLY
-	public static final TagKey<Block> POT_FLOWERS = TagKey.create(
+	public static final TagKey<Block> POTTED_FLOWERS = TagKey.create(
 			Registries.BLOCK,
-			F.id("pot_flowers")
+			F.id("potted_flowers")
+	);
+	public static final TagKey<Block> SMALL_FLOWERS = TagKey.create(
+			Registries.BLOCK,
+			F.id("small_flowers")
 	);
 	public static final TagKey<Block> NON_POT_FLOWERS = TagKey.create(
 			Registries.BLOCK,
 			F.id("non_pot_flowers")
+	);
+
+	// BLUE SPRUCE
+	public static final TagKey<Block> BLUE_SPRUCE_LOGS = TagKey.create(
+			Registries.BLOCK,
+			F.id("blue_spruce_logs")
+	);
+	public static final TagKey<Block> SUPPORTS_BLUE_SPRUCE = TagKey.create(
+			Registries.BLOCK,
+			F.id("supports_blue_spruce")
 	);
 
 	// JACARANDA

@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:pear_stone_sulfur",
+        "location": "frejaware:pear/stone_sulfur",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "frejaware:item/frostbow_pulling_2"
+  }
+}

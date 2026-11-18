@@ -64,6 +64,37 @@
           }
         },
         "weight": 1
+      },
+      {
+        "data": "frejaware:orchid_seashell",
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:orchid_seashell",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:orchid_seashell",
+          "properties": {
+            "facing": "south"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "frejaware:orchid_seashell",
+          "properties": {
+            "facing": "west"
+          }
+        },
+        "weight": 1
       }
     ]
   }

@@ -1,0 +1,7 @@
+{
+	"parent": "frejaware:block/seashell",
+	"textures": {
+		"texture": "frejaware:block/orchid_seashell",
+		"particle": "frejaware:block/orchid_seashell"
+	}
+}

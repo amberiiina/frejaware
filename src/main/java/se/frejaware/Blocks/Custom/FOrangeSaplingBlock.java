@@ -18,6 +18,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import se.frejaware.Blocks.FTrees;
+import se.frejaware.Shared.FBlockTags;
 
 public class FOrangeSaplingBlock extends VegetationBlock implements BonemealableBlock {
 	private static final VoxelShape SHAPE = Shapes.or(
@@ -35,10 +36,7 @@ public class FOrangeSaplingBlock extends VegetationBlock implements Bonemealable
 		return SHAPE;
 	}
 
-	protected boolean mayPlaceOn(
-			final BlockState state,
-			final BlockGetter level,
-			final BlockPos pos) {
+	protected boolean mayPlaceOn(final BlockState state, final BlockGetter level, final BlockPos pos) {
 		return state.is(BlockTags.SUPPORTS_VEGETATION);
 	}
 

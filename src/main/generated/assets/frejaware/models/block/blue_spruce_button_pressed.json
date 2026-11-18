@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "frejaware:block/blue_spruce_planks"
+  }
+}

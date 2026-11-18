@@ -21,6 +21,11 @@ public class FBiomes {
 					Registries.BIOME,
 					F.id("orchard")
 			);
+	public static final ResourceKey<Biome> ARCTIC =
+			ResourceKey.create(
+					Registries.BIOME,
+					F.id("arctic")
+			);
 
 	private FBiomes() {}
 }

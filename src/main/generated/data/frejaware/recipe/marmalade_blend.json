@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "frejaware:orange",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "frejaware:marmalade_blend"
+  }
+}

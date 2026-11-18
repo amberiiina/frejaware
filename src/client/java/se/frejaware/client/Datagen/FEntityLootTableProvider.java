@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricEntityLootSubProvider;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.storage.loot.functions.EnchantedCountIncreaseFu
 import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
@@ -22,6 +24,8 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 import net.minecraft.world.level.storage.loot.providers.number.ints.UniformGenerator;
 import se.frejaware.Entities.FEntityTypes;
 import se.frejaware.F;
+import se.frejaware.Items.FItems;
+
 import java.util.concurrent.CompletableFuture;
 
 public class FEntityLootTableProvider extends FabricEntityLootSubProvider {
@@ -36,28 +40,40 @@ public class FEntityLootTableProvider extends FabricEntityLootSubProvider {
 		add(FEntityTypes.MOOBLOOM, LootTable.lootTable()
 				.withPool(LootPool.lootPool()
 						.setRolls(ContextIntProviders.exactly(1))
-						.add(LootItem.lootTableItem(Items.LEATHER)
-								.apply(SetItemCountFunction.setCount(
-										ContextIntProviders.between(0, 2)
-								))
-						).apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments,
-								ContextFloatProviders.between(0.0F, 1.0F)
-						))
+						.add(LootItem.lootTableItem(Items.LEATHER).apply(SetItemCountFunction.setCount(ContextIntProviders.between(0, 2))))
+						.apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments, ContextFloatProviders.between(0.0F, 1.0F)))
 				)
 				.withPool(LootPool.lootPool()
 						.setRolls(ContextIntProviders.exactly(1))
-						.add(LootItem.lootTableItem(Items.BEEF)
-								.apply(SetItemCountFunction.setCount(
-										ContextIntProviders.between(1, 3)
-								))
-						)
-						.apply(SmeltItemFunction.smelted()
-								.when(shouldSmeltLoot())
-						)
+						.add(LootItem.lootTableItem(Items.BEEF).apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3))))
+						.apply(SmeltItemFunction.smelted().when(shouldSmeltLoot()))
 				)
-				.apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments,
-						ContextFloatProviders.between(0.0F, 1.0F)
-				))
+				.apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments, ContextFloatProviders.between(0.0F, 1.0F)))
+		);
+		add(FEntityTypes.GLAZE, LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(LootItem.lootTableItem(FItems.GLAZE_ROD).apply(SetItemCountFunction.setCount(ContextIntProviders.between(0, 1))).apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments, ContextFloatProviders.between(0.0F, 1.0F))))
+						.when(LootItemKilledByPlayerCondition.killedByPlayer())
+				)
+		);
+		add(FEntityTypes.GLACIERMAN, LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(LootItem.lootTableItem(FItems.GLACIER_PEARL).apply(SetItemCountFunction.setCount(ContextIntProviders.between(0, 1))).apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments, ContextFloatProviders.between(0.0F, 1.0F))))
+				)
+		);
+
+		add(FEntityTypes.FROSTBITE_CRAWLER, LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(LootItem.lootTableItem(FItems.FROSTBITE_STRING).apply(SetItemCountFunction.setCount(ContextIntProviders.between(0, 2))).apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments, ContextFloatProviders.between(0.0F, 1.0F))))
+				)
+				.withPool(LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(LootItem.lootTableItem(FItems.FROSTBITE_EYE).apply(SetItemCountFunction.setCount(ContextIntProviders.between(-1, 1))).apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments, ContextFloatProviders.between(0.0F, 1.0F))))
+						.when(LootItemKilledByPlayerCondition.killedByPlayer())
+				)
 		);
 
 		add(FEntityTypes.GOLEM_AMETHYST, golemLoot(Items.AMETHYST_SHARD));
@@ -70,24 +86,16 @@ public class FEntityLootTableProvider extends FabricEntityLootSubProvider {
 		add(FEntityTypes.GOLEM_REDSTONE, golemLoot(Items.REDSTONE));
 	}
 
-	private static Holder<ContextIntProvider> value(int v) {
-		return Holder.direct(new ConstantValue(v));
-	}
-
-	private static Holder<ContextIntProvider> between(int min, int max) {
-		return Holder.direct(new UniformGenerator(value(min), value(max)));
-	}
-
 	private static LootTable.Builder golemLoot(ItemLike material) {
 		return LootTable.lootTable()
 				.withPool(LootPool.lootPool()
-						.setRolls(value(1))
+						.setRolls(ContextIntProviders.exactly(1))
 						.add(LootItem.lootTableItem(Items.POPPY)
-								.apply(SetItemCountFunction.setCount(between(0, 2)))))
+								.apply(SetItemCountFunction.setCount(ContextIntProviders.between(0, 2)))))
 				.withPool(LootPool.lootPool()
-						.setRolls(value(1))
+						.setRolls(ContextIntProviders.exactly(1))
 						.add(LootItem.lootTableItem(material)
-								.apply(SetItemCountFunction.setCount(between(3, 5)))))
+								.apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 5)))))
 				.setRandomSequence(F.id("entities/golem_coal"))
 		;
 	}

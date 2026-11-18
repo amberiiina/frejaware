@@ -1,0 +1,30 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "eat_ham_sandwich": {
+      "conditions": {
+        "item": {
+          "items": "frejaware:ham_sandwich"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.idiot_sandwich.description"
+    },
+    "icon": {
+      "id": "frejaware:ham_sandwich"
+    },
+    "title": {
+      "translate": "advancements.frejaware.idiot_sandwich.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_ham_sandwich"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

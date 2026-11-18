@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:desert_stone_granite",
+        "location": "frejaware:desert/stone_granite",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },
@@ -12,7 +12,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:desert_stone_red_sandstone",
+        "location": "frejaware:desert/stone_red_sandstone",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

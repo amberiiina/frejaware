@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 234721,
+    "separation": 5,
+    "spacing": 15
+  },
+  "structures": [
+    {
+      "structure": "frejaware:beach_sandcastle",
+      "weight": 1
+    }
+  ]
+}

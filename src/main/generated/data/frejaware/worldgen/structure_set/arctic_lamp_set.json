@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 437242,
+    "separation": 3,
+    "spacing": 9
+  },
+  "structures": [
+    {
+      "structure": "frejaware:arctic_lamp",
+      "weight": 1
+    }
+  ]
+}

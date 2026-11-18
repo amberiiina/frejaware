@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.references.ItemIds;
 import net.minecraft.tags.BlockItemTags;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import se.frejaware.Blocks.FBlockItemIds;
 import se.frejaware.Items.FItemIds;
@@ -31,15 +32,6 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 		builder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
 				.add(FItemIds.MUSIC_DISC_RYM)
 				.add(FItemIds.MUSIC_DISC_GFF);
-
-		// VANILLA BLOCK VARIANTS
-		builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING)
-				.add(FBlockItemIds.SNOW_STAIRS)
-				.add(FBlockItemIds.PACKED_ICE_STAIRS)
-				.add(FBlockItemIds.BLUE_ICE_SLAB)
-				.add(FBlockItemIds.SNOW_SLAB)
-				.add(FBlockItemIds.PACKED_ICE_SLAB)
-				.add(FBlockItemIds.BLUE_ICE_SLAB);
 
 		// FOOD
 		builder(ItemTags.CHICKEN_FOOD)
@@ -82,38 +74,56 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
 		// FOOD
 		builder(ConventionalItemTags.FOODS)
-				.add(FItemIds.CHERRY)
-				.add(FItemIds.BANANA)
-				.add(FItemIds.ORANGE)
-				.add(FItemIds.PEAR)
-				.add(FItemIds.GOLDEN_PEAR)
-				.add(FItemIds.SAFFRON)
-				.add(FItemIds.ENCHANTED_GOLDEN_PEAR)
-				.add(FItemIds.CHOCOLATE_BOTTLE)
-				.add(FItemIds.MILK_BOTTLE)
-				.add(FItemIds.BERRY_JUICE_BOTTLE)
-				.add(FItemIds.MILKSHAKE_BOTTLE)
-				.add(FItemIds.SAFFRON_MILK_BOTTLE)
-				.add(FItemIds.COCOA_BUTTER)
-				.add(FItemIds.CHOCOLATE)
-				.add(FItemIds.CHOCOLATE_BAR)
 				.add(FBlockItemIds.BLUEBERRY_CROP)
 				.add(FBlockItemIds.BLACKBERRY_CROP)
 				.add(FBlockItemIds.PINKBERRY_CROP)
 				.add(FBlockItemIds.BLOWBERRY_CROP)
-				.add(FItemIds.FRUIT_SALAD)
-				.add(FItemIds.ICE_CREAM)
-				.add(FItemIds.CHOCOLATE_ICE_CREAM)
+				.add(FItemIds.BERRY_JUICE_BOTTLE)
 				.add(FItemIds.JAM)
 				.add(FItemIds.JAM_BLEND)
+
+				.add(FItemIds.PEAR)
+				.add(FItemIds.GOLDEN_PEAR)
+				.add(FItemIds.ENCHANTED_GOLDEN_PEAR)
+				.add(FItemIds.CHERRY)
+				.add(FItemIds.ORANGE)
+				.add(FItemIds.BANANA)
+				.add(FItemIds.SAFFRON)
+				.add(FItemIds.SAFFRON_MILK_BOTTLE)
+				.add(FItemIds.PINEAPPLE)
+				.add(FItemIds.MARMALADE)
+
+				.add(FItemIds.MILK_BOTTLE)
+				.add(FItemIds.MILKSHAKE_BOTTLE)
+				.add(FItemIds.ICE_CREAM)
+
+				.add(FItemIds.COCOA_BUTTER)
+				.add(FItemIds.CHOCOLATE)
+				.add(FItemIds.CHOCOLATE_BAR)
+				.add(FItemIds.CHOCOLATE_DIPPED_PEAR)
+				.add(FItemIds.CHOCOLATE_BOTTLE)
+				.add(FItemIds.CHOCOLATE_ICE_CREAM)
+
+				.add(FItemIds.FRUIT_SALAD)
 				.add(FItemIds.PANCAKE)
-				.add(FItemIds.SWEDISH_PANCAKE);
+				.add(FItemIds.SWEDISH_PANCAKE)
+				.add(FItemIds.TOAST)
+				.add(FItemIds.MARMALADE_TOAST)
+				.add(FItemIds.JAM_TOAST)
+				.add(FItemIds.HAM_SANDWICH)
+
+				.add(FItemIds.SMOKED_HAM);
 
 		builder(ConventionalItemTags.BERRY_FOODS)
 				.add(FBlockItemIds.BLUEBERRY_CROP)
 				.add(FBlockItemIds.BLACKBERRY_CROP)
 				.add(FBlockItemIds.PINKBERRY_CROP)
 				.add(FBlockItemIds.BLOWBERRY_CROP);
+		builder(ConventionalItemTags.BREAD_FOODS)
+				.add(FItemIds.TOAST)
+				.add(FItemIds.MARMALADE_TOAST)
+				.add(FItemIds.JAM_TOAST)
+				.add(FItemIds.HAM_SANDWICH);
 		builder(ConventionalItemTags.CANDY_FOODS)
 				.add(FItemIds.MILKSHAKE_BOTTLE)
 				.add(FItemIds.COCOA_BUTTER)
@@ -121,13 +131,17 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(FItemIds.CHOCOLATE_BAR)
 				.add(FItemIds.ICE_CREAM)
 				.add(FItemIds.CHOCOLATE_ICE_CREAM);
+		builder(ConventionalItemTags.COOKED_MEAT_FOODS)
+				.add(FItemIds.SMOKED_HAM)
+				.add(FItemIds.HAM_SANDWICH);
 		builder(ConventionalItemTags.FRUIT_FOODS)
-				.add(FItemIds.CHERRY)
-				.add(FItemIds.BANANA)
-				.add(FItemIds.ORANGE)
 				.add(FItemIds.PEAR)
 				.add(FItemIds.GOLDEN_PEAR)
 				.add(FItemIds.ENCHANTED_GOLDEN_PEAR)
+				.add(FItemIds.CHERRY)
+				.add(FItemIds.ORANGE)
+				.add(FItemIds.BANANA)
+				.add(FItemIds.PINEAPPLE)
 				.add(FItemIds.FRUIT_SALAD);
 		builder(ConventionalItemTags.GOLDEN_FOODS)
 				.add(FItemIds.GOLDEN_PEAR)
@@ -137,23 +151,68 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 		builder(FItemTags.FRUIT_SALAD_INGREDIENTS)
 				.add(ItemIds.APPLE)
 				.add(ItemIds.MELON_SLICE)
+				.add(FItemIds.PEAR)
 				.add(FItemIds.CHERRY)
-				.add(FItemIds.BANANA)
 				.add(FItemIds.ORANGE)
-				.add(FItemIds.PEAR);
+				.add(FItemIds.BANANA)
+				.add(FItemIds.PINEAPPLE);
 
+		builder(ItemTags.CAMEL_FOOD)
+				.add(FBlockItemIds.DRY_CACTUS);
 		builder(ItemTags.HORSE_FOOD)
-				.add(FItemIds.BANANA)
-				.add(FItemIds.ORANGE)
 				.add(FItemIds.PEAR)
 				.add(FItemIds.GOLDEN_PEAR)
-				.add(FItemIds.ENCHANTED_GOLDEN_PEAR);
+				.add(FItemIds.ENCHANTED_GOLDEN_PEAR)
+				.add(FItemIds.ORANGE)
+				.add(FItemIds.BANANA);
 		builder(ItemTags.HORSE_TEMPT_ITEMS)
 				.add(FItemIds.GOLDEN_PEAR)
 				.add(FItemIds.ENCHANTED_GOLDEN_PEAR);
 		builder(ItemTags.PIGLIN_LOVED)
 				.add(FItemIds.GOLDEN_PEAR)
 				.add(FItemIds.ENCHANTED_GOLDEN_PEAR);
+
+		// BLUE SPRUCE
+		builder(ItemTags.LOGS)
+				.add(FBlockItemIds.BLUE_SPRUCE_LOG)
+				.add(FBlockItemIds.STRIPPED_BLUE_SPRUCE_LOG)
+				.add(FBlockItemIds.BLUE_SPRUCE_WOOD)
+				.add(FBlockItemIds.STRIPPED_BLUE_SPRUCE_WOOD);
+		builder(FItemTags.BLUE_SPRUCE_LOGS)
+				.add(FBlockItemIds.BLUE_SPRUCE_LOG)
+				.add(FBlockItemIds.STRIPPED_BLUE_SPRUCE_LOG)
+				.add(FBlockItemIds.BLUE_SPRUCE_WOOD)
+				.add(FBlockItemIds.STRIPPED_BLUE_SPRUCE_WOOD);
+		builder(ItemTags.PLANKS)
+				.add(FBlockItemIds.BLUE_SPRUCE_PLANKS);
+		builder(ItemTags.LEAVES)
+				.add(FBlockItemIds.BLUE_SPRUCE_LEAVES);
+		builder(ItemTags.SAPLINGS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SAPLING);
+		builder(BlockItemTags.STAIRS)
+				.add(FBlockItemIds.BLUE_SPRUCE_STAIRS);
+		builder(BlockItemTags.SLABS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SLAB);
+		builder(BlockItemTags.FENCES)
+				.add(FBlockItemIds.BLUE_SPRUCE_FENCE);
+		builder(ItemTags.FENCE_GATES)
+				.add(FBlockItemIds.BLUE_SPRUCE_FENCE_GATE);
+		builder(ItemTags.WOODEN_DOORS)
+				.add(FBlockItemIds.BLUE_SPRUCE_DOOR);
+		builder(ItemTags.WOODEN_TRAPDOORS)
+				.add(FBlockItemIds.BLUE_SPRUCE_TRAPDOOR);
+		builder(ItemTags.WOODEN_BUTTONS)
+				.add(FBlockItemIds.BLUE_SPRUCE_BUTTON);
+		builder(ItemTags.WOODEN_PRESSURE_PLATES)
+				.add(FBlockItemIds.BLUE_SPRUCE_PRESSURE_PLATE);
+		builder(ItemTags.SIGNS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SIGN);
+		builder(ItemTags.HANGING_SIGNS)
+				.add(FBlockItemIds.BLUE_SPRUCE_HANGING_SIGN);
+		builder(ItemTags.BOATS)
+				.add(FItemIds.BLUE_SPRUCE_BOAT);
+		builder(ItemTags.CHEST_BOATS)
+				.add(FItemIds.BLUE_SPRUCE_CHEST_BOAT);
 
 		// ORANGE
 		builder(ItemTags.LEAVES)

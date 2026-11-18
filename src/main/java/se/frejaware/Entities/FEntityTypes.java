@@ -7,35 +7,19 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Enderman;
+import net.minecraft.world.entity.monster.spider.Spider;
+import net.minecraft.world.entity.projectile.hurtingprojectile.SmallFireball;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.Snowball;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.entity.vehicle.boat.ChestBoat;
 import net.minecraft.world.item.Item;
-import se.frejaware.Entities.Custom.FGolem;
-import se.frejaware.Entities.Custom.FMoobloom;
+import se.frejaware.Entities.Custom.*;
 import se.frejaware.Items.FItems;
 
 import java.util.function.Supplier;
 
 public class FEntityTypes {
-	public enum GolemStats {
-		COAL(70.0, 0.23, 11.0),
-		GOLD(80.0, 0.28, 13.0),
-		REDSTONE(90.0, 0.30, 14.0),
-		LAPIS(95.0, 0.25, 14.0),
-		AMETHYST(105.0, 0.26, 16.0),
-		EMERALD(120.0, 0.26, 17.0),
-		DIAMOND(150.0, 0.26, 20.0),
-		NETHERITE(200.0, 0.23, 25.0);
-
-		public final double health, speed, damage;
-
-		GolemStats(double health, double speed, double damage) {
-			this.health = health;
-			this.speed = speed;
-			this.damage = damage;
-		}
-	}
-
 	// ----------------------
 	// ENTITY TYPES
 	// ----------------------
@@ -49,6 +33,69 @@ public class FEntityTypes {
 					.passengerAttachments(1.36875F)
 					.clientTrackingRange(10),
 			FMoobloom.createAttributes()
+	);
+	public static final EntityType<FGlaze> GLAZE = register(
+			FEntityTypeIds.GLAZE,
+			EntityType.Builder.of(FGlaze::new, MobCategory.MONSTER)
+					.sized(0.9F, 1.4F)
+					.eyeHeight(1.3F)
+					.passengerAttachments(1.36875F)
+					.clientTrackingRange(10),
+			FGlaze.createAttributes()
+	);
+	public static final EntityType<FGlazeball> GLAZEBALL = register(
+			FEntityTypeIds.GLAZEBALL,
+			EntityType.Builder.<FGlazeball>of(FGlazeball::new, MobCategory.MISC)
+				.noLootTable()
+				.sized(0.3125F, 0.3125F)
+				.clientTrackingRange(4)
+				.updateInterval(10)
+	);
+	public static final EntityType<FGlazeShard> GLAZE_SHARD = register(
+			FEntityTypeIds.GLAZE_SHARD,
+			EntityType.Builder.<FGlazeShard>of(FGlazeShard::new, MobCategory.MISC)
+					.noLootTable()
+					.sized(0.25F, 0.25F)
+					.clientTrackingRange(4)
+					.updateInterval(10)
+	);
+	public static final EntityType<FGlacierman> GLACIERMAN = register(
+			FEntityTypeIds.GLACIERMAN,
+			EntityType.Builder.of(FGlacierman::new, MobCategory.MONSTER)
+					.sized(0.6F, 2.9F)
+					.eyeHeight(2.55F)
+					.passengerAttachments(2.80625F)
+					.clientTrackingRange(8)
+					.notInPeaceful(),
+			FGlacierman.createAttributes()
+	);
+	public static final EntityType<FFrostbiteCrawler> FROSTBITE_CRAWLER = register(
+			FEntityTypeIds.FROSTBITE_CRAWLER,
+			EntityType.Builder.of(FFrostbiteCrawler::new, MobCategory.MONSTER)
+					.sized(1.4F, 0.9F)
+					.eyeHeight(0.65F)
+					.passengerAttachments(0.765F)
+					.clientTrackingRange(8)
+					.notInPeaceful(),
+			FFrostbiteCrawler.createAttributes()
+	);
+
+	// BLUE SPRUCE
+	public static final EntityType<Boat> BLUE_SPRUCE_BOAT = register(
+			FEntityTypeIds.BLUE_SPRUCE_BOAT,
+			EntityType.Builder.of(boatFactory(() -> FItems.BLUE_SPRUCE_BOAT), MobCategory.MISC)
+					.noLootTable()
+					.sized(1.375F, 0.5625F)
+					.eyeHeight(0.5625F)
+					.clientTrackingRange(10)
+	);
+	public static final EntityType<ChestBoat> BLUE_SPRUCE_CHEST_BOAT = register(
+			FEntityTypeIds.BLUE_SPRUCE_CHEST_BOAT,
+			EntityType.Builder.of(chestBoatFactory(() -> FItems.BLUE_SPRUCE_CHEST_BOAT), MobCategory.MISC)
+					.noLootTable()
+					.sized(1.375F, 0.5625F)
+					.eyeHeight(0.5625F)
+					.clientTrackingRange(10)
 	);
 
 	// JACARANDA
@@ -149,16 +196,11 @@ public class FEntityTypes {
 	// FUNCTIONS
 	// ----------------------
 
-	private static <T extends Entity> EntityType<T> register(
-			ResourceKey<EntityType<?>> key,
-			EntityType.Builder<T> builder) {
+	private static <T extends Entity> EntityType<T> register(ResourceKey<EntityType<?>> key, EntityType.Builder<T> builder) {
 		return Registry.register(BuiltInRegistries.ENTITY_TYPE, key, builder.build(key));
 	}
 
-	private static <T extends LivingEntity> EntityType<T> register(
-			ResourceKey<EntityType<?>> key,
-			EntityType.Builder<T> builder,
-			AttributeSupplier.Builder attributes) {
+	private static <T extends LivingEntity> EntityType<T> register(ResourceKey<EntityType<?>> key, EntityType.Builder<T> builder, AttributeSupplier.Builder attributes) {
 		EntityType<T> type = register(key, builder);
 		FabricDefaultAttributeRegistry.register(type, attributes);
 		return type;
@@ -172,6 +214,24 @@ public class FEntityTypes {
 		return (entityType, level) -> new ChestBoat(entityType, level, dropItem);
 	}
 
-	public static void init() {
+	public enum GolemStats {
+		COAL(70.0, 0.23, 11.0),
+		GOLD(80.0, 0.28, 13.0),
+		REDSTONE(90.0, 0.30, 14.0),
+		LAPIS(95.0, 0.25, 14.0),
+		AMETHYST(105.0, 0.26, 16.0),
+		EMERALD(120.0, 0.26, 17.0),
+		DIAMOND(150.0, 0.26, 20.0),
+		NETHERITE(200.0, 0.23, 25.0);
+
+		public final double health, speed, damage;
+
+		GolemStats(double health, double speed, double damage) {
+			this.health = health;
+			this.speed = speed;
+			this.damage = damage;
+		}
 	}
+
+	public static void init() {}
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_sign_rot_0",
+  "textures": {
+    "all": "frejaware:block/blue_spruce_sign",
+    "particle": "frejaware:block/blue_spruce_planks"
+  }
+}

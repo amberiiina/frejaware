@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 543284,
+    "separation": 5,
+    "spacing": 15
+  },
+  "structures": [
+    {
+      "structure": "frejaware:desert_arch",
+      "weight": 1
+    }
+  ]
+}

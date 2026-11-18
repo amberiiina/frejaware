@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "frejaware:block/orchid_seashell" },
+    "facing=east":  { "model": "frejaware:block/orchid_seashell", "y": 90 },
+    "facing=south": { "model": "frejaware:block/orchid_seashell", "y": 180 },
+    "facing=west":  { "model": "frejaware:block/orchid_seashell", "y": 270 }
+  }
+}

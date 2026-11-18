@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_left",
+  "textures": {
+    "all": "frejaware:block/blue_spruce_shelf",
+    "particle": "frejaware:block/stripped_blue_spruce_log"
+  }
+}

@@ -2,13 +2,13 @@
   "type": "frejaware:jigsaw",
   "biomes": "minecraft:desert",
   "max_distance_from_center": 80,
-  "max_surface_y": 75,
+  "max_surface_y": 384,
   "min_surface_y": 64,
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "size": 1,
   "spawn_overrides": {},
   "start_height": {
-    "absolute": 2
+    "absolute": 0
   },
   "start_pool": "frejaware:desert_palm_pool",
   "step": "surface_structures",

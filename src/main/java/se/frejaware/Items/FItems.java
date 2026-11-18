@@ -21,7 +21,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BannerPatternLayers;
 import net.minecraft.world.level.block.entity.DecoratedPotPattern;
-import net.minecraft.world.level.block.entity.DecoratedPotPatterns;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import se.frejaware.Blocks.FBlockItemIds;
 import se.frejaware.Blocks.FBlocks;
@@ -41,258 +40,225 @@ public class FItems {
 	// ----------------------
 
 	// MOLLY
-	public static final Item MOOBLOOM_SPAWN_EGG = registerSpawnEgg(
-			FItemIds.MOOBLOOM_SPAWN_EGG, FEntityTypes.MOOBLOOM
-	);
-	public static final ResourceKey<DecoratedPotPattern> BUTTERFLY_PATTERN = ResourceKey.create(Registries.DECORATED_POT_PATTERN,
-			F.id("butterfly"));
-	public static final Item BUTTERFLY_POTTERY_SHERD = registerItem(
-			FItemIds.BUTTERFLY_POTTERY_SHERD,
-			Item::new,
-			new Item.Properties()
-					.rarity(Rarity.UNCOMMON)
-					.potPattern(BUTTERFLY_PATTERN)
-	);
-	public static final ResourceKey<JukeboxSong> RYM = ResourceKey.create(Registries.JUKEBOX_SONG,
-			F.id("read_your_mind"));
-	public static final Item MUSIC_DISC_RYM = registerItem(
-			FItemIds.MUSIC_DISC_RYM,
-			Item::new,
-			new Item.Properties()
-					.stacksTo(1)
-					.rarity(Rarity.EPIC)
-					.jukeboxPlayable(RYM)
-	);
-	public static final ResourceKey<JukeboxSong> GFF = ResourceKey.create(Registries.JUKEBOX_SONG,
-			F.id("great_fairy_fountain"));
-	public static final Item MUSIC_DISC_GFF = registerItem(
-			FItemIds.MUSIC_DISC_GFF,
-			Item::new,
-			new Item.Properties()
-					.stacksTo(1)
-					.rarity(Rarity.RARE)
-					.jukeboxPlayable(GFF)
-	);
+	public static final ResourceKey<DecoratedPotPattern> BUTTERFLY_PATTERN = ResourceKey.create(Registries.DECORATED_POT_PATTERN, F.id("butterfly"));
+	public static final Item BUTTERFLY_POTTERY_SHERD = registerItem(FItemIds.BUTTERFLY_POTTERY_SHERD, Item::new, new Item.Properties()
+			.rarity(Rarity.UNCOMMON).potPattern(BUTTERFLY_PATTERN));
+
+	// ENTITIES
+	public static final Item MOOBLOOM_SPAWN_EGG = registerSpawnEgg(FItemIds.MOOBLOOM_SPAWN_EGG, FEntityTypes.MOOBLOOM);
+
+	public static final Item GLAZE_SPAWN_EGG = registerSpawnEgg(FItemIds.GLAZE_SPAWN_EGG, FEntityTypes.GLAZE);
+	public static final Item GLAZE_ROD = registerItem(FItemIds.GLAZE_ROD, Item::new, new Item.Properties());
+	public static final Item GLAZE_POWDER = registerItem(FItemIds.GLAZE_POWDER, Item::new, new Item.Properties());
+	public static final Item GLAZE_SHARD = registerItem(FItemIds.GLAZE_SHARD, FGlazeShardItem::new, new Item.Properties()
+			.stacksTo(16));
+
+	public static final Item GLACIERMAN_SPAWN_EGG = registerSpawnEgg(FItemIds.GLACIERMAN_SPAWN_EGG, FEntityTypes.GLACIERMAN);
+	public static final Item GLACIER_PEARL = registerItem(FItemIds.GLACIER_PEARL, Item::new, new Item.Properties()
+			.stacksTo(16));
+	public static final Item GLACIER_EYE = registerItem(FItemIds.GLACIER_EYE, Item::new, new Item.Properties());
+
+	public static final Item FROSTBITE_CRAWLER_SPAWN_EGG = registerSpawnEgg(FItemIds.FROSTBITE_CRAWLER_SPAWN_EGG, FEntityTypes.FROSTBITE_CRAWLER);
+	public static final Item FROSTBITE_STRING = registerItem(FItemIds.FROSTBITE_STRING, Item::new, new Item.Properties());
+	public static final Item FROSTBITE_EYE = registerItem(FItemIds.FROSTBITE_EYE, Item::new, new Item.Properties());
+	public static final Item FROSTBOW = registerItem(FItemIds.FROSTBOW, BowItem::new, new Item.Properties()
+			.durability(1152)
+			.enchantable(1));
+
+	// MUSIC
+	public static final ResourceKey<JukeboxSong> RYM = ResourceKey.create(Registries.JUKEBOX_SONG, F.id("read_your_mind"));
+	public static final Item MUSIC_DISC_RYM = registerItem(FItemIds.MUSIC_DISC_RYM, Item::new, new Item.Properties()
+			.stacksTo(1).rarity(Rarity.EPIC).jukeboxPlayable(RYM));
+	public static final ResourceKey<JukeboxSong> GFF = ResourceKey.create(Registries.JUKEBOX_SONG, F.id("great_fairy_fountain"));
+	public static final Item MUSIC_DISC_GFF = registerItem(FItemIds.MUSIC_DISC_GFF, Item::new, new Item.Properties()
+			.stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(GFF));
 
 	// BERRIES
 	public static final Item BLUEBERRIES = registerItem(
-			FBlockItemIds.BLUEBERRY_CROP,
-			createBlockItemWithCustomItemName(FBlocks.BLUEBERRY_BUSH),
-			new Item.Properties()
+			FBlockItemIds.BLUEBERRY_CROP, createBlockItemWithCustomItemName(FBlocks.BLUEBERRY_BUSH), new Item.Properties()
 					.food(FFood.BLUEBERRIES)
-					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW));
 	public static final Item BLACKBERRIES = registerItem(
-			FBlockItemIds.BLACKBERRY_CROP,
-			createBlockItemWithCustomItemName(FBlocks.BLACKBERRY_BUSH),
-			new Item.Properties()
+			FBlockItemIds.BLACKBERRY_CROP, createBlockItemWithCustomItemName(FBlocks.BLACKBERRY_BUSH), new Item.Properties()
 					.food(FFood.BLACKBERRIES)
-					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW));
 	public static final Item PINKBERRIES = registerItem(
-			FBlockItemIds.PINKBERRY_CROP,
-			createBlockItemWithCustomItemName(FBlocks.PINKBERRY_BUSH),
-			new Item.Properties()
+			FBlockItemIds.PINKBERRY_CROP, createBlockItemWithCustomItemName(FBlocks.PINKBERRY_BUSH), new Item.Properties()
 					.food(FFood.PINKBERRIES)
-					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW));
 	public static final Item BLOWBERRIES = registerItem(
-			FBlockItemIds.BLOWBERRY_CROP,
-			createBlockItemWithCustomItemName(FBlocks.BLOWBERRY_BUSH),
-			new Item.Properties()
+			FBlockItemIds.BLOWBERRY_CROP, createBlockItemWithCustomItemName(FBlocks.BLOWBERRY_BUSH), new Item.Properties()
 					.food(FFood.BLOWBERRIES, FFood.BLOWBERRIES_CONSUMABLE)
-					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW));
 	public static final Item BERRY_JUICE_BOTTLE = registerItem(
-			FItemIds.BERRY_JUICE_BOTTLE,
-			Item::new,
-			new Item.Properties()
+			FItemIds.BERRY_JUICE_BOTTLE, Item::new, new Item.Properties()
 					.food(FFood.BERRY_JUICE_BOTTLE, FFood.BERRY_JUICE_BOTTLE_CONSUMABLE)
 					.craftRemainder(Items.GLASS_BOTTLE)
-					.usingConvertsTo(Items.GLASS_BOTTLE)
-	);
+					.usingConvertsTo(Items.GLASS_BOTTLE));
 	public static final Item JAM = registerItem(
-			FItemIds.JAM,
-			Item::new,
-			new Item.Properties()
+			FItemIds.JAM, Item::new, new Item.Properties()
 					.food(FFood.JAM, FFood.JAM_CONSUMABLE)
 					.craftRemainder(Items.GLASS_BOTTLE)
-					.usingConvertsTo(Items.GLASS_BOTTLE)
-	);
+					.usingConvertsTo(Items.GLASS_BOTTLE));
 	public static final Item JAM_BLEND = registerItem(
-			FItemIds.JAM_BLEND,
-			Item::new,
-			new Item.Properties()
-	);
+			FItemIds.JAM_BLEND, Item::new, new Item.Properties());
 
 	// FRUITS
 	public static final Item PEAR = registerItem(
-			FItemIds.PEAR,
-			Item::new,
-			new Item.Properties()
+			FItemIds.PEAR, Item::new, new Item.Properties()
 					.food(FFood.PEAR)
-					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM));
 	public static final Item GOLDEN_PEAR = registerItem(
-			FItemIds.GOLDEN_PEAR,
-			Item::new,
-			new Item.Properties()
+			FItemIds.GOLDEN_PEAR, Item::new, new Item.Properties()
 					.food(FFood.GOLDEN_PEAR, FFood.GOLDEN_PEAR_CONSUMABLE)
-					.rarity(Rarity.UNCOMMON)
-	);
+					.rarity(Rarity.UNCOMMON));
 	public static final Item ENCHANTED_GOLDEN_PEAR = registerItem(
-			FItemIds.ENCHANTED_GOLDEN_PEAR,
-			Item::new,
-			new Item.Properties()
+			FItemIds.ENCHANTED_GOLDEN_PEAR, Item::new, new Item.Properties()
 					.food(FFood.ENCHANTED_GOLDEN_PEAR, FFood.ENCHANTED_GOLDEN_PEAR_CONSUMABLE)
 					.rarity(Rarity.RARE)
-					.component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
-	);
+					.component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
 	public static final Item CHERRY = registerItem(
-			FItemIds.CHERRY,
-			Item::new,
-			new Item.Properties()
+			FItemIds.CHERRY, Item::new, new Item.Properties()
 					.food(FFood.CHERRY)
-					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM));
 	public static final Item ORANGE = registerItem(
-			FItemIds.ORANGE,
-			Item::new,
-			new Item.Properties()
+			FItemIds.ORANGE, Item::new, new Item.Properties()
 					.food(FFood.ORANGE)
-					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM));
 	public static final Item BANANA = registerItem(
-			FItemIds.BANANA,
-			Item::new,
-			new Item.Properties()
+			FItemIds.BANANA, Item::new, new Item.Properties()
 					.food(FFood.BANANA)
-					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM));
 	public static final Item SAFFRON = registerItem(
-			FItemIds.SAFFRON,
-			Item::new,
-			new Item.Properties()
-					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
-	);
+			FItemIds.SAFFRON, Item::new, new Item.Properties()
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW));
 	public static final Item SAFFRON_MILK_BOTTLE = registerItem(
-			FItemIds.SAFFRON_MILK_BOTTLE,
-			Item::new,
-			new Item.Properties()
+			FItemIds.SAFFRON_MILK_BOTTLE, Item::new, new Item.Properties()
 					.food(FFood.SAFFRON_MILK_BOTTLE, FFood.SAFFRON_MILK_BOTTLE_CONSUMABLE)
 					.craftRemainder(Items.GLASS_BOTTLE)
-					.usingConvertsTo(Items.GLASS_BOTTLE)
-	);
+					.usingConvertsTo(Items.GLASS_BOTTLE));
 	public static final Item POPPY_SEEDS = registerItem(
-			FItemIds.POPPY_SEEDS,
-			createBlockItemWithCustomItemName(Blocks.POPPY),
-			new Item.Properties()
+			FItemIds.POPPY_SEEDS, createBlockItemWithCustomItemName(Blocks.POPPY), new Item.Properties()
 					.food(FFood.POPPY_SEEDS, FFood.POPPY_SEEDS_CONSUMABLE)
-					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW));
 	public static final Item PINEAPPLE = registerItem(
-			FItemIds.PINEAPPLE,
-			Item::new,
-			new Item.Properties()
+			FItemIds.PINEAPPLE, Item::new, new Item.Properties()
 					.food(FFood.PINEAPPLE)
-					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)
-	);
+					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM));
 	public static final Item PINEAPPLE_SEEDS = registerItem(
-			FBlockItemIds.PINEAPPLE_CROP,
-			createBlockItemWithCustomItemName(FBlocks.PINEAPPLE),
-			new Item.Properties()
-					.compostable(ContextIntProviders.COMPOSTABLE_LOW)
-	);
+			FBlockItemIds.PINEAPPLE_CROP, createBlockItemWithCustomItemName(FBlocks.PINEAPPLE), new Item.Properties()
+					.compostable(ContextIntProviders.COMPOSTABLE_LOW));
+	public static final Item MARMALADE = registerItem(
+			FItemIds.MARMALADE, Item::new, new Item.Properties()
+					.food(FFood.MARMALADE, FFood.MARMALADE_CONSUMABLE)
+					.craftRemainder(Items.GLASS_BOTTLE)
+					.usingConvertsTo(Items.GLASS_BOTTLE));
+	public static final Item MARMALADE_BLEND = registerItem(
+			FItemIds.MARMALADE_BLEND, Item::new, new Item.Properties());
 
 	// MILK
 	public static final Item MILK_BOTTLE = registerItem(
-			FItemIds.MILK_BOTTLE,
-			Item::new,
-			new Item.Properties()
+			FItemIds.MILK_BOTTLE, Item::new, new Item.Properties()
 					.food(FFood.MILK_BOTTLE, FFood.MILK_BOTTLE_CONSUMABLE)
 					.craftRemainder(Items.GLASS_BOTTLE)
-					.usingConvertsTo(Items.GLASS_BOTTLE)
-	);
+					.usingConvertsTo(Items.GLASS_BOTTLE));
 	public static final Item MILKSHAKE_BOTTLE = registerItem(
-			FItemIds.MILKSHAKE_BOTTLE,
-			Item::new,
-			new Item.Properties()
+			FItemIds.MILKSHAKE_BOTTLE, Item::new, new Item.Properties()
 					.food(FFood.MILKSHAKE_BOTTLE, FFood.MILKSHAKE_BOTTLE_CONSUMABLE)
 					.craftRemainder(Items.GLASS_BOTTLE)
-					.usingConvertsTo(Items.GLASS_BOTTLE)
-	);
+					.usingConvertsTo(Items.GLASS_BOTTLE));
 	public static final Item ICE_CREAM = registerItem(
-			FItemIds.ICE_CREAM,
-			Item::new,
-			new Item.Properties()
+			FItemIds.ICE_CREAM, Item::new, new Item.Properties()
 					.food(FFood.ICE_CREAM)
 					.craftRemainder(Items.BOWL)
-					.usingConvertsTo(Items.BOWL)
-	);
+					.usingConvertsTo(Items.BOWL));
 
 	// CHOCOLATE
 	public static final Item COCOA_BUTTER = registerItem(
-			FItemIds.COCOA_BUTTER,
-			Item::new,
-			new Item.Properties()
-					.food(FFood.COCOA_BUTTER, FFood.COCOA_BUTTER_CONSUMABLE)
-	);
+			FItemIds.COCOA_BUTTER, Item::new, new Item.Properties()
+					.food(FFood.COCOA_BUTTER, FFood.COCOA_BUTTER_CONSUMABLE));
 	public static final Item CHOCOLATE = registerItem(
-			FItemIds.CHOCOLATE,
-			Item::new,
-			new Item.Properties()
-					.food(FFood.CHOCOLATE, FFood.CHOCOLATE_CONSUMABLE)
-	);
+			FItemIds.CHOCOLATE, Item::new, new Item.Properties()
+					.food(FFood.CHOCOLATE, FFood.CHOCOLATE_CONSUMABLE));
 	public static final Item CHOCOLATE_BAR = registerItem(
-			FItemIds.CHOCOLATE_BAR,
-			Item::new,
-			new Item.Properties()
-					.food(FFood.CHOCOLATE_BAR, FFood.CHOCOLATE_BAR_CONSUMABLE)
-	);
+			FItemIds.CHOCOLATE_BAR, Item::new, new Item.Properties()
+					.food(FFood.CHOCOLATE_BAR, FFood.CHOCOLATE_BAR_CONSUMABLE));
 	public static final Item CHOCOLATE_DIPPED_PEAR = registerItem(
-			FItemIds.CHOCOLATE_DIPPED_PEAR,
-			Item::new,
-			new Item.Properties()
-					.food(FFood.CHOCOLATE_DIPPED_PEAR)
-	);
+			FItemIds.CHOCOLATE_DIPPED_PEAR, Item::new, new Item.Properties()
+					.food(FFood.CHOCOLATE_DIPPED_PEAR));
 	public static final Item CHOCOLATE_BOTTLE = registerItem(
-			FItemIds.CHOCOLATE_BOTTLE,
-			Item::new,
-			new Item.Properties()
+			FItemIds.CHOCOLATE_BOTTLE, Item::new, new Item.Properties()
 					.food(FFood.CHOCOLATE_BOTTLE, FFood.CHOCOLATE_BOTTLE_CONSUMABLE)
 					.craftRemainder(Items.GLASS_BOTTLE)
-					.usingConvertsTo(Items.GLASS_BOTTLE)
-	);
+					.usingConvertsTo(Items.GLASS_BOTTLE));
 	public static final Item CHOCOLATE_ICE_CREAM = registerItem(
-			FItemIds.CHOCOLATE_ICE_CREAM,
-			Item::new,
-			new Item.Properties()
+			FItemIds.CHOCOLATE_ICE_CREAM, Item::new, new Item.Properties()
 					.food(FFood.CHOCOLATE_ICE_CREAM)
 					.craftRemainder(Items.BOWL)
-					.usingConvertsTo(Items.BOWL)
-	);
+					.usingConvertsTo(Items.BOWL));
 
 	// FINISHED FOOD
 	public static final Item FRUIT_SALAD = registerItem(
-			FItemIds.FRUIT_SALAD,
-			Item::new,
-			new Item.Properties()
+			FItemIds.FRUIT_SALAD, Item::new, new Item.Properties()
 					.food(FFood.FRUIT_SALAD, FFood.FRUIT_SALAD_CONSUMABLE)
 					.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM_HIGH)
 					.craftRemainder(Items.BOWL)
-					.usingConvertsTo(Items.BOWL)
-	);
+					.usingConvertsTo(Items.BOWL));
 	public static final Item PANCAKE = registerItem(
-			FItemIds.PANCAKE,
-			Item::new,
-			new Item.Properties()
-					.food(FFood.PANCAKE)
-	);
+			FItemIds.PANCAKE, Item::new, new Item.Properties()
+					.food(FFood.PANCAKE));
 	public static final Item SWEDISH_PANCAKE = registerItem(
-			FItemIds.SWEDISH_PANCAKE,
-			Item::new,
+			FItemIds.SWEDISH_PANCAKE, Item::new, new Item.Properties()
+					.food(FFood.SWEDISH_PANCAKE));
+	public static final Item TOAST = registerItem(
+			FItemIds.TOAST, Item::new, new Item.Properties()
+					.food(FFood.TOAST));
+	public static final Item MARMALADE_TOAST = registerItem(
+			FItemIds.MARMALADE_TOAST, Item::new, new Item.Properties()
+					.food(FFood.MARMALADE_TOAST));
+	public static final Item JAM_TOAST = registerItem(
+			FItemIds.JAM_TOAST, Item::new, new Item.Properties()
+					.food(FFood.JAM_TOAST));
+	public static final Item HAM_SANDWICH = registerItem(
+			FItemIds.HAM_SANDWICH, Item::new, new Item.Properties()
+					.food(FFood.HAM_SANDWICH));
+
+	// MEAT
+	public static final Item SMOKED_HAM = registerItem(
+			FItemIds.SMOKED_HAM, Item::new, new Item.Properties()
+					.food(FFood.SMOKED_HAM));
+
+	// BLUE SPRUCE
+	public static final Item BLUE_SPRUCE_SIGN = registerBlock(
+			FBlockItemIds.BLUE_SPRUCE_SIGN,
+			FBlocks.BLUE_SPRUCE_SIGN,
+			(b, p) -> new StandingAndWallBlockItem(b, FBlocks.BLUE_SPRUCE_WALL_SIGN, Direction.DOWN, p),			new Item.Properties()
+					.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE)
+					.stacksTo(16)
+					.signText()
+	);
+	public static final Item BLUE_SPRUCE_HANGING_SIGN = registerBlock(
+			FBlockItemIds.BLUE_SPRUCE_HANGING_SIGN,
+			FBlocks.BLUE_SPRUCE_HANGING_SIGN,
+			(b, p) -> new HangingSignItem(b, FBlocks.BLUE_SPRUCE_WALL_HANGING_SIGN, p),
 			new Item.Properties()
-					.food(FFood.SWEDISH_PANCAKE)
+					.cookingFuel(ContextIntProviders.COOKING_TIME_HANGING_SIGNS)
+					.stacksTo(16)
+					.signText()
+	);
+	public static final Item BLUE_SPRUCE_BOAT = registerItem(
+			FItemIds.BLUE_SPRUCE_BOAT,
+			p -> new BoatItem(FEntityTypes.BLUE_SPRUCE_BOAT, p),
+			new Item.Properties()
+					.cookingFuel(ContextIntProviders.COOKING_TIME_BOATS)
+					.stacksTo(1)
+	);
+	public static final Item BLUE_SPRUCE_CHEST_BOAT = registerItem(
+			FItemIds.BLUE_SPRUCE_CHEST_BOAT,
+			p -> new BoatItem(FEntityTypes.BLUE_SPRUCE_CHEST_BOAT, p),
+			new Item.Properties()
+					.cookingFuel(ContextIntProviders.COOKING_TIME_BOATS)
+					.stacksTo(1)
 	);
 
 	// JACARANDA
@@ -774,11 +740,6 @@ public class FItems {
 	}
 
 	public static void init() {
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
-				.register(creativeTab -> {
-					creativeTab.accept(MUSIC_DISC_RYM);
-					creativeTab.accept(MUSIC_DISC_GFF);
-				});
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.SPAWN_EGGS)
 				.register(creativeTab -> {
 					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_AMETHYST);
@@ -789,8 +750,6 @@ public class FItems {
 					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_LAPIS);
 					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_NETHERITE);
 					creativeTab.accept(FItems.GOLEM_SPAWN_EGG_REDSTONE);
-
-					creativeTab.accept(MOOBLOOM_SPAWN_EGG);
 				});
 	}
 }

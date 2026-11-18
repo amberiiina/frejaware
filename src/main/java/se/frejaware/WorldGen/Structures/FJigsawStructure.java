@@ -21,10 +21,7 @@ public class FJigsawStructure extends Structure {
 	private final int minSurfaceY;
 	private final int maxSurfaceY;
 
-	public FJigsawStructure(
-			JigsawStructure jigsaw,
-			int minSurfaceY,
-			int maxSurfaceY) {
+	public FJigsawStructure(JigsawStructure jigsaw, int minSurfaceY, int maxSurfaceY) {
 		super(new StructureSettings(
 				jigsaw.biomes(),
 				jigsaw.spawnOverrides(),
@@ -40,10 +37,8 @@ public class FJigsawStructure extends Structure {
 	public Optional<GenerationStub> findGenerationPoint(GenerationContext ctx) {
 		int x = ctx.chunkPos().getMiddleBlockX();
 		int z = ctx.chunkPos().getMiddleBlockZ();
-		int surface = ctx.chunkGenerator().getFirstOccupiedHeight(
-				x, z, Heightmap.Types.WORLD_SURFACE_WG, ctx.heightAccessor(), ctx.randomState());
-		int floor = ctx.chunkGenerator().getFirstOccupiedHeight(
-				x, z, Heightmap.Types.OCEAN_FLOOR_WG, ctx.heightAccessor(), ctx.randomState());
+		int surface = ctx.chunkGenerator().getFirstOccupiedHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, ctx.heightAccessor(), ctx.randomState());
+		int floor = ctx.chunkGenerator().getFirstOccupiedHeight(x, z, Heightmap.Types.OCEAN_FLOOR_WG, ctx.heightAccessor(), ctx.randomState());
 
 		if (surface > floor) return Optional.empty();
 		if (surface < minSurfaceY) return Optional.empty();

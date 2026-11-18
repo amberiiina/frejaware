@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:jacaranda_amethyst",
+        "location": "frejaware:jacaranda/amethyst",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

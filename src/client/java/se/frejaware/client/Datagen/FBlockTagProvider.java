@@ -3,6 +3,7 @@ package se.frejaware.client.Datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.BlockTags;
 import se.frejaware.Blocks.FBlockIds;
@@ -32,8 +33,44 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.add(FBlockItemIds.IRON_BELL);
 		builder(BlockTags.MINEABLE_WITH_PICKAXE)
 				.add(FBlockItemIds.IRON_BELL);
+		builder(BlockTags.REPLACEABLE_BY_TREES)
+				.add(BlockItemIds.SNOW);
 
-		builder(FBlockTags.POT_FLOWERS)
+		builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
+				.add(FBlockItemIds.DRY_CACTUS);
+		builder(BlockTags.DANGEROUS_FOR_TELEPORTATION)
+				.add(FBlockItemIds.DRY_CACTUS);
+		builder(BlockTags.ENDERMAN_HOLDABLE)
+				.add(FBlockItemIds.DRY_CACTUS);
+		builder(BlockTags.HAPPY_GHAST_AVOIDS)
+				.add(FBlockItemIds.DRY_CACTUS);
+		builder(BlockTags.SUPPORT_OVERRIDE_CACTUS_FLOWER)
+				.add(FBlockItemIds.DRY_CACTUS);
+
+		// BLOM
+		builder(FBlockTags.POTTED_FLOWERS)
+				.add(FBlockIds.POTTED_WHITE_ORCHID)
+				.add(FBlockIds.POTTED_YELLOW_TULIP)
+				.add(FBlockIds.POTTED_WHITE_HIBISCUS)
+				.add(FBlockIds.POTTED_YELLOW_HIBISCUS)
+
+				.add(FBlockIds.POTTED_WHITE_CROCUS)
+				.add(FBlockIds.POTTED_LILAC_CROCUS)
+				.add(FBlockIds.POTTED_PURPLE_CROCUS)
+				.add(FBlockIds.POTTED_LILY_OF_THE_GLADE)
+
+				.add(FBlockIds.POTTED_WHITE_ALLIUM)
+				.add(FBlockIds.POTTED_BLUE_SUCCULENT)
+				.add(FBlockIds.POTTED_RED_SUCCULENT)
+				.add(FBlockIds.POTTED_GREEN_SUCCULENT)
+				.add(FBlockIds.POTTED_TEAL_SUCCULENT)
+				.add(FBlockIds.POTTED_PURPLE_SUCCULENT)
+				.add(FBlockIds.POTTED_BROWN_SUCCULENT)
+				.add(FBlockIds.POTTED_YELLOW_SUCCULENT)
+
+				.add(FBlockIds.POTTED_ROUND_BUSH)
+				.add(FBlockIds.POTTED_DRY_CACTUS);
+		builder(FBlockTags.SMALL_FLOWERS)
 				.add(FBlockItemIds.WHITE_ORCHID)
 				.add(FBlockItemIds.YELLOW_TULIP)
 				.add(FBlockItemIds.WHITE_HIBISCUS)
@@ -50,11 +87,11 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.add(FBlockItemIds.YELLOW_CACTUS_FLOWER);
 
 		builder(BlockTags.SMALL_FLOWERS)
-				.addTag(FBlockTags.POT_FLOWERS);
+				.addTag(FBlockTags.SMALL_FLOWERS);
 		builder(BlockTags.FLOWER_POTS)
-				.addTag(FBlockTags.POT_FLOWERS);
+				.addTag(FBlockTags.POTTED_FLOWERS);
 		builder(BlockTags.WASHED_AWAY_BY_FLUIDS)
-				.addTag(FBlockTags.POT_FLOWERS);
+				.addTag(FBlockTags.SMALL_FLOWERS);
 
 		builder(BlockTags.ENDERMAN_HOLDABLE)
 				.addTag(FBlockTags.NON_POT_FLOWERS);
@@ -62,10 +99,10 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.addTag(FBlockTags.NON_POT_FLOWERS);
 
 		builder(BlockTags.BEE_ATTRACTIVE)
-				.addTag(FBlockTags.POT_FLOWERS)
+				.addTag(FBlockTags.SMALL_FLOWERS)
 				.addTag(FBlockTags.NON_POT_FLOWERS);
 		builder(BlockTags.FLOWERS)
-				.addTag(FBlockTags.POT_FLOWERS)
+				.addTag(FBlockTags.SMALL_FLOWERS)
 				.addTag(FBlockTags.NON_POT_FLOWERS);
 
 		// VANILLA BLOCK VARIANTS
@@ -152,6 +189,95 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.add(FBlockItemIds.SNOW_STAIRS)
 				.add(FBlockItemIds.SNOW_SLAB);
 
+		// BLUE SPRUCE
+		builder(FBlockTags.SUPPORTS_BLUE_SPRUCE)
+				.add(BlockItemIds.SNOW_BLOCK)
+				.add(BlockItemIds.ICE)
+				.add(BlockItemIds.PACKED_ICE)
+				.add(BlockItemIds.BLUE_ICE);
+		builder(FBlockTags.BLUE_SPRUCE_LOGS)
+				.add(FBlockItemIds.BLUE_SPRUCE_LOG)
+				.add(FBlockItemIds.STRIPPED_BLUE_SPRUCE_LOG)
+				.add(FBlockItemIds.BLUE_SPRUCE_WOOD)
+				.add(FBlockItemIds.STRIPPED_BLUE_SPRUCE_WOOD);
+		builder(BlockItemTags.LOGS_THAT_BURN)
+				.addTag(FBlockTags.BLUE_SPRUCE_LOGS);
+		builder(BlockTags.OVERWORLD_NATURAL_LOGS)
+				.add(FBlockItemIds.BLUE_SPRUCE_LOG);
+		builder(BlockTags.LEAVES)
+				.add(FBlockItemIds.BLUE_SPRUCE_LEAVES);
+		builder(BlockTags.FLOWERS)
+				.add(FBlockItemIds.BLUE_SPRUCE_LEAVES);
+		builder(BlockTags.MINEABLE_WITH_HOE)
+				.add(FBlockItemIds.BLUE_SPRUCE_LEAVES);
+		builder(BlockTags.SAPLINGS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SAPLING);
+		builder(BlockTags.FLOWER_POTS)
+				.add(FBlockIds.POTTED_BLUE_SPRUCE_SAPLING);
+		builder(BlockTags.PLANKS)
+				.add(FBlockItemIds.BLUE_SPRUCE_PLANKS);
+		builder(BlockTags.STAIRS)
+				.add(FBlockItemIds.BLUE_SPRUCE_STAIRS);
+		builder(BlockTags.WOODEN_STAIRS)
+				.add(FBlockItemIds.BLUE_SPRUCE_STAIRS);
+		builder(BlockTags.SLABS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SLAB);
+		builder(BlockTags.WOODEN_SLABS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SLAB);
+		builder(BlockTags.FENCES)
+				.add(FBlockItemIds.BLUE_SPRUCE_FENCE);
+		builder(BlockTags.WOODEN_FENCES)
+				.add(FBlockItemIds.BLUE_SPRUCE_FENCE);
+		builder(BlockTags.FENCE_GATES)
+				.add(FBlockItemIds.BLUE_SPRUCE_FENCE_GATE);
+		builder(BlockTags.DOORS)
+				.add(FBlockItemIds.BLUE_SPRUCE_DOOR);
+		builder(BlockTags.WOODEN_DOORS)
+				.add(FBlockItemIds.BLUE_SPRUCE_DOOR);
+		builder(BlockTags.TRAPDOORS)
+				.add(FBlockItemIds.BLUE_SPRUCE_TRAPDOOR);
+		builder(BlockTags.WOODEN_TRAPDOORS)
+				.add(FBlockItemIds.BLUE_SPRUCE_TRAPDOOR);
+		builder(BlockTags.BUTTONS)
+				.add(FBlockItemIds.BLUE_SPRUCE_BUTTON);
+		builder(BlockTags.WOODEN_BUTTONS)
+				.add(FBlockItemIds.BLUE_SPRUCE_BUTTON);
+		builder(BlockTags.WOODEN_PRESSURE_PLATES)
+				.add(FBlockItemIds.BLUE_SPRUCE_PRESSURE_PLATE);
+		builder(BlockTags.ALL_SIGNS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SIGN)
+				.add(FBlockIds.BLUE_SPRUCE_WALL_SIGN);
+		builder(BlockTags.STANDING_SIGNS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SIGN);
+		builder(BlockTags.WALL_SIGNS)
+				.add(FBlockIds.BLUE_SPRUCE_WALL_SIGN);
+		builder(BlockTags.ALL_HANGING_SIGNS)
+				.add(FBlockItemIds.BLUE_SPRUCE_HANGING_SIGN)
+				.add(FBlockIds.BLUE_SPRUCE_WALL_HANGING_SIGN);
+		builder(BlockTags.CEILING_HANGING_SIGNS)
+				.add(FBlockItemIds.BLUE_SPRUCE_HANGING_SIGN);
+		builder(BlockTags.WALL_HANGING_SIGNS)
+				.add(FBlockIds.BLUE_SPRUCE_WALL_HANGING_SIGN);
+		builder(BlockTags.MINEABLE_WITH_AXE)
+				.add(FBlockItemIds.BLUE_SPRUCE_LOG)
+				.add(FBlockItemIds.STRIPPED_BLUE_SPRUCE_LOG)
+				.add(FBlockItemIds.BLUE_SPRUCE_WOOD)
+				.add(FBlockItemIds.STRIPPED_BLUE_SPRUCE_WOOD)
+				.add(FBlockItemIds.BLUE_SPRUCE_PLANKS)
+				.add(FBlockItemIds.BLUE_SPRUCE_STAIRS)
+				.add(FBlockItemIds.BLUE_SPRUCE_SLAB)
+				.add(FBlockItemIds.BLUE_SPRUCE_FENCE)
+				.add(FBlockItemIds.BLUE_SPRUCE_FENCE_GATE)
+				.add(FBlockItemIds.BLUE_SPRUCE_DOOR)
+				.add(FBlockItemIds.BLUE_SPRUCE_TRAPDOOR)
+				.add(FBlockItemIds.BLUE_SPRUCE_BUTTON)
+				.add(FBlockItemIds.BLUE_SPRUCE_PRESSURE_PLATE)
+				.add(FBlockItemIds.BLUE_SPRUCE_SIGN)
+				.add(FBlockIds.BLUE_SPRUCE_WALL_SIGN)
+				.add(FBlockItemIds.BLUE_SPRUCE_HANGING_SIGN)
+				.add(FBlockIds.BLUE_SPRUCE_WALL_HANGING_SIGN)
+				.add(FBlockItemIds.BLUE_SPRUCE_SHELF);
+
 		// ORANGE
 		builder(BlockTags.SAPLINGS)
 				.add(FBlockItemIds.ORANGE_SAPLING);
@@ -164,113 +290,70 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 		builder(BlockTags.MINEABLE_WITH_HOE)
 				.add(FBlockItemIds.ORANGE_LEAVES);
 
-		// LOGS
+		// JACARANDA
 		builder(FBlockTags.JACARANDA_LOGS)
 				.add(FBlockItemIds.JACARANDA_LOG)
 				.add(FBlockItemIds.STRIPPED_JACARANDA_LOG)
 				.add(FBlockItemIds.JACARANDA_WOOD)
 				.add(FBlockItemIds.STRIPPED_JACARANDA_WOOD);
-
 		builder(BlockItemTags.LOGS_THAT_BURN)
 				.addTag(FBlockTags.JACARANDA_LOGS);
-
 		builder(BlockTags.OVERWORLD_NATURAL_LOGS)
 				.add(FBlockItemIds.JACARANDA_LOG);
-
-		// LEAVES
 		builder(BlockTags.LEAVES)
 				.add(FBlockItemIds.JACARANDA_LEAVES);
-
 		builder(BlockTags.FLOWERS)
 				.add(FBlockItemIds.JACARANDA_LEAVES);
-
 		builder(BlockTags.MINEABLE_WITH_HOE)
 				.add(FBlockItemIds.JACARANDA_LEAVES);
-
-		// SAPLINGS
 		builder(BlockTags.SAPLINGS)
 				.add(FBlockItemIds.JACARANDA_SAPLING);
-
 		builder(BlockTags.FLOWER_POTS)
 				.add(FBlockIds.POTTED_JACARANDA_SAPLING);
-
-		// PLANKS
 		builder(BlockTags.PLANKS)
 				.add(FBlockItemIds.JACARANDA_PLANKS);
-
-		// STAIRS
 		builder(BlockTags.STAIRS)
 				.add(FBlockItemIds.JACARANDA_STAIRS);
-
 		builder(BlockTags.WOODEN_STAIRS)
 				.add(FBlockItemIds.JACARANDA_STAIRS);
-
-		// SLABS
 		builder(BlockTags.SLABS)
 				.add(FBlockItemIds.JACARANDA_SLAB);
-
 		builder(BlockTags.WOODEN_SLABS)
 				.add(FBlockItemIds.JACARANDA_SLAB);
-
-		// FENCES
 		builder(BlockTags.FENCES)
 				.add(FBlockItemIds.JACARANDA_FENCE);
-
 		builder(BlockTags.WOODEN_FENCES)
 				.add(FBlockItemIds.JACARANDA_FENCE);
-
-		// FENCE GATES
 		builder(BlockTags.FENCE_GATES)
 				.add(FBlockItemIds.JACARANDA_FENCE_GATE);
-
-		// DOORS
 		builder(BlockTags.DOORS)
 				.add(FBlockItemIds.JACARANDA_DOOR);
-
 		builder(BlockTags.WOODEN_DOORS)
 				.add(FBlockItemIds.JACARANDA_DOOR);
-
-		// TRAPDOORS
 		builder(BlockTags.TRAPDOORS)
 				.add(FBlockItemIds.JACARANDA_TRAPDOOR);
-
 		builder(BlockTags.WOODEN_TRAPDOORS)
 				.add(FBlockItemIds.JACARANDA_TRAPDOOR);
-
-		// BUTTONS
 		builder(BlockTags.BUTTONS)
 				.add(FBlockItemIds.JACARANDA_BUTTON);
-
 		builder(BlockTags.WOODEN_BUTTONS)
 				.add(FBlockItemIds.JACARANDA_BUTTON);
-
-		// PRESSURE PLATES
 		builder(BlockTags.WOODEN_PRESSURE_PLATES)
 				.add(FBlockItemIds.JACARANDA_PRESSURE_PLATE);
-
-		// SIGNS
 		builder(BlockTags.ALL_SIGNS)
 				.add(FBlockItemIds.JACARANDA_SIGN)
 				.add(FBlockIds.JACARANDA_WALL_SIGN);
-
 		builder(BlockTags.STANDING_SIGNS)
 				.add(FBlockItemIds.JACARANDA_SIGN);
-
 		builder(BlockTags.WALL_SIGNS)
 				.add(FBlockIds.JACARANDA_WALL_SIGN);
-
-		// HANGING SIGNS
 		builder(BlockTags.ALL_HANGING_SIGNS)
 				.add(FBlockItemIds.JACARANDA_HANGING_SIGN)
 				.add(FBlockIds.JACARANDA_WALL_HANGING_SIGN);
-
 		builder(BlockTags.CEILING_HANGING_SIGNS)
 				.add(FBlockItemIds.JACARANDA_HANGING_SIGN);
-
 		builder(BlockTags.WALL_HANGING_SIGNS)
 				.add(FBlockIds.JACARANDA_WALL_HANGING_SIGN);
-
-		// MINEABLE
 		builder(BlockTags.MINEABLE_WITH_AXE)
 				.add(FBlockItemIds.JACARANDA_LOG)
 				.add(FBlockItemIds.STRIPPED_JACARANDA_LOG)

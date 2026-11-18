@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:orchard_farm",
+        "location": "frejaware:orchard/farm",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },
@@ -12,7 +12,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:orchard_farm_pineapple",
+        "location": "frejaware:orchard/farm_pineapple",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blue_succulent": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:blue_succulent"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:blue_dye_from_blue_succulent"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blue_succulent"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:blue_dye_from_blue_succulent"
+    ]
+  }
+}

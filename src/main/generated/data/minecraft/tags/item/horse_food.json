@@ -1,9 +1,9 @@
 {
   "values": [
-    "frejaware:banana",
-    "frejaware:orange",
     "frejaware:pear",
     "frejaware:golden_pear",
-    "frejaware:enchanted_golden_pear"
+    "frejaware:enchanted_golden_pear",
+    "frejaware:orange",
+    "frejaware:banana"
   ]
 }

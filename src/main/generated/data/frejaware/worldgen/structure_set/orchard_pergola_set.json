@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 231935,
+    "separation": 5,
+    "spacing": 15
+  },
+  "structures": [
+    {
+      "structure": "frejaware:orchard_pergola",
+      "weight": 1
+    }
+  ]
+}

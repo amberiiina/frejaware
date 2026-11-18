@@ -4,11 +4,14 @@
   "creativetab.food": "Food",
   "creativetab.flowers": "Flowers",
   "creativetab.wood": "Wood",
+  "creativetab.music": "Music",
+  "creativetab.entities": "Entities",
 
 
   "biome.frejaware.pear_meadow": "Pear Meadow",
-  "biome.jacaranda_glade": "Jacaranda Glade",
-  "biome.orchard": "Orchard",
+  "biome.frejaware.jacaranda_glade": "Jacaranda Glade",
+  "biome.frejaware.orchard": "Orchard",
+  "biome.frejaware.arctic": "Arctic",
 
 
   "painting.frejaware.plant.title": "Plant",
@@ -19,18 +22,29 @@
   "painting.frejaware.ribbon.author": "Molly",
 
 
-  "item.frejaware.pineapple_seeds": "Pineapple Seeds",
-  "item.frejaware.poppy_seeds": "Poppy Seeds",
   "item.frejaware.blackberry_crop": "Blackberries",
   "item.frejaware.blowberry_crop": "Blowberries",
   "item.frejaware.blueberry_crop": "Blueberries",
   "item.frejaware.pinkberry_crop": "Pinkberries",
+  "item.frejaware.poppy_seeds": "Poppy Seeds",
+  "item.frejaware.pineapple_seeds": "Pineapple Seeds",
 
 
   "entity.frejaware.moobloom": "Moobloom",
+  "entity.frejaware.glaze": "Glaze",
+  "entity.frejaware.glazeball": "Glazeball",
+  "death.attack.frejaware.glazeball": "%1$s got glazed to death by %2$s",
+  "entity.frejaware.glaze_shard": "Glaze Shard",
+  "death.attack.frejaware.glaze_shard": "%1$s was glazed by %2$s",
+  "entity.frejaware.glacierman": "Ötzi",
+  "entity.frejaware.frostbite_crawler": "Frostbite Crawler",
 
   "entity.frejaware.pear_boat": "Pear Boat",
   "entity.frejaware.pear_chest_boat": "Pear Chest Boat",
+  "entity.frejaware.jacaranda_boat": "Jacaranda Boat",
+  "entity.frejaware.jacaranda_chest_boat": "Jacaranda Chest Boat",
+  "entity.frejaware.blue_spruce_boat": "Blue Spruce Boat",
+  "entity.frejaware.blue_spruce_chest_boat": "Blue Spruce Chest Boat",
 
   "entity.frejaware.golem_amethyst": "Amethyst Golem",
   "entity.frejaware.golem_coal": "Coal Golem",
@@ -57,10 +71,20 @@
   "advancements.frejaware.jingle_bells.description": "Jingle all the way (obtain every bell)",
 
   "advancements.frejaware.illuminati.title": "Illuminati Confirmed",
-  "advancements.frejaware.illuminati.description": "Find a mud pyramid",
+  "advancements.frejaware.illuminati.description": "Find a Mud Pyramid",
 
   "advancements.frejaware.do_it_to_music.title": "Do it to Music",
   "advancements.frejaware.do_it_to_music.description": "Collect every music disc added by Frejaware",
+
+  "advancements.frejaware.idiot_sandwich.title": "Idiot Sandwich",
+  "advancements.frejaware.idiot_sandwich.description": "Eat a ham sandwich",
+
+  "advancements.frejaware.transium_armor.title": "Trans Rights!",
+  "advancements.frejaware.transium_armor.description": "Get a full set of Transium armor",
+
+
+  "advancements.frejaware.arctic.title": "Watch out for the Grinch!",
+  "advancements.frejaware.arctic.description": "Visit the Arctic",
 
 
   "advancements.frejaware.make_me_juice.title": "Make Me Juice!",
@@ -68,6 +92,9 @@
 
   "advancements.frejaware.pineapple_under_the_sea.title": "Who lives in a pineapple under the sea?",
   "advancements.frejaware.pineapple_under_the_sea.description": "Obtain a pineapple",
+
+  "advancements.frejaware.lower_your_rocks.title": "Lower Your Rocks",
+  "advancements.frejaware.lower_your_rocks.description": "Find a Greenhouse",
 
 
   "advancements.frejaware.jack_that_randa.title": "Jack That Randa!",
@@ -103,6 +130,7 @@
   "advancements.frejaware.obtain_rose_quartz_ore.description": "Obtain Rose Quartz Ore",
   "advancements.frejaware.rose_quartz_armor.title": "Cover Me in Pink",
   "advancements.frejaware.rose_quartz_armor.description": "Get a full suit of Rose Quartz armor",
+
 
   "item.frejaware.smithing_template.rose_quartz_upgrade.additions_slot_description": "Add Rose Quartz",
   "item.frejaware.smithing_template.rose_quartz_upgrade.applies_to": "Netherite Equipment",

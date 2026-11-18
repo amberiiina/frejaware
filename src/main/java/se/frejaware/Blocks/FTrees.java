@@ -77,4 +77,32 @@ public class FTrees {
 			WeightedList.of(),
 			FFeatures.ORANGE_TREE
 	);
+
+	// BLUE SPRUCE
+	public static final TreeGrower BLUE_SPRUCE_GROWER = new TreeGrower(
+			"frejaware:blue_spruce",
+			WeightedList.of(FFeatures.BLUE_SPRUCE_TREE),
+			WeightedList.of(FFeatures.MEGA_BLUE_SPRUCE_TREE),
+			WeightedList.of(),
+			FFeatures.BLUE_SPRUCE_TREE
+	);
+	public static final BlockSetType BLUE_SPRUCE_SET = new BlockSetType(
+			"blue_spruce",
+			true,
+			true,
+			true,
+			BlockSetType.PressurePlateSensitivity.EVERYTHING,
+			SoundType.CHERRY_WOOD,
+			SoundEvents.CHERRY_WOOD_DOOR_CLOSE,
+			SoundEvents.CHERRY_WOOD_DOOR_OPEN,
+			SoundEvents.CHERRY_WOOD_TRAPDOOR_CLOSE,
+			SoundEvents.CHERRY_WOOD_TRAPDOOR_OPEN,
+			SoundEvents.CHERRY_WOOD_PRESSURE_PLATE_CLICK_OFF,
+			SoundEvents.CHERRY_WOOD_PRESSURE_PLATE_CLICK_ON,
+			SoundEvents.CHERRY_WOOD_BUTTON_CLICK_OFF,
+			SoundEvents.CHERRY_WOOD_BUTTON_CLICK_ON
+	);
+	public static final WoodType BLUE_SPRUCE_WOOD = WoodTypeBuilder
+			.copyOf(WoodType.CHERRY)
+			.build(F.id("blue_spruce"), BLUE_SPRUCE_SET);
 }

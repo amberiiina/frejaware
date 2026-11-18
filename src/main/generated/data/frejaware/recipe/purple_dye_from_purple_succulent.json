@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:purple_succulent"
+  ],
+  "result": {
+    "id": "minecraft:purple_dye"
+  }
+}

@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "frejaware:jacaranda_well",
+        "location": "frejaware:jacaranda/well",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },
