@@ -14,7 +14,6 @@
     "AllayLivingEntityRenderStateMixin",
     "AllayRendererMixin",
 
-    "ParrotVariantMixin",
     "ParrotRendererMixin"
   ],
   "injectors": {

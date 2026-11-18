@@ -49,6 +49,7 @@ public class FLanguageProvider extends FabricLanguageProvider {
 			// MOLLY
 			Map.entry("music_disc_rym", "Music Disc"),
 			Map.entry("music_disc_gff", "Music Disc"),
+			Map.entry("glacierman_spawn_egg", "Ötzi Spawn Egg"),
 
 			// FOOD
 			Map.entry("chocolate_bottle", "Bottle of Chocolate"),

@@ -52,6 +52,10 @@ public class FStructureKeys {
 	// ORCHARD
 	// ----------------------
 
+	public static final ResourceKey<Structure> ORCHARD_ARCH = structure("orchard_arch");
+	public static final ResourceKey<StructureSet> ORCHARD_ARCH_SET = set("orchard_arch_set");
+	public static final ResourceKey<StructureTemplatePool> ORCHARD_ARCH_POOL = pool("orchard_arch_pool");
+
 	public static final ResourceKey<Structure> ORCHARD_BIG_POT = structure("orchard_big_pot");
 	public static final ResourceKey<StructureSet> ORCHARD_BIG_POT_SET = set("orchard_big_pot_set");
 	public static final ResourceKey<StructureTemplatePool> ORCHARD_BIG_POT_POOL = pool("orchard_big_pot_pool");
@@ -59,6 +63,10 @@ public class FStructureKeys {
 	public static final ResourceKey<Structure> ORCHARD_FARM = structure("orchard_farm");
 	public static final ResourceKey<StructureSet> ORCHARD_FARM_SET = set("orchard_farm_set");
 	public static final ResourceKey<StructureTemplatePool> ORCHARD_FARM_POOL = pool("orchard_farm_pool");
+
+	public static final ResourceKey<Structure> ORCHARD_GARDEN_SHED = structure("orchard_garden_shed");
+	public static final ResourceKey<StructureSet> ORCHARD_GARDEN_SHED_SET = set("orchard_garden_shed_set");
+	public static final ResourceKey<StructureTemplatePool> ORCHARD_GARDEN_SHED_POOL = pool("orchard_garden_shed_pool");
 
 	public static final ResourceKey<Structure> ORCHARD_GREENHOUSE = structure("orchard_greenhouse");
 	public static final ResourceKey<StructureSet> ORCHARD_GREENHOUSE_SET = set("orchard_greenhouse_set");
@@ -83,6 +91,10 @@ public class FStructureKeys {
 	public static final ResourceKey<Structure> ARCTIC_LAMP = structure("arctic_lamp");
 	public static final ResourceKey<StructureSet> ARCTIC_LAMP_SET = set("arctic_lamp_set");
 	public static final ResourceKey<StructureTemplatePool> ARCTIC_LAMP_POOL = pool("arctic_lamp_pool");
+
+	public static final ResourceKey<Structure> ARCTIC_SNOWMAN = structure("arctic_snowman");
+	public static final ResourceKey<StructureSet> ARCTIC_SNOWMAN_SET = set("arctic_snowman_set");
+	public static final ResourceKey<StructureTemplatePool> ARCTIC_SNOWMAN_POOL = pool("arctic_snowman_pool");
 
 	public static final ResourceKey<Structure> ARCTIC_WELL = structure("arctic_well");
 	public static final ResourceKey<StructureSet> ARCTIC_WELL_SET = set("arctic_well_set");

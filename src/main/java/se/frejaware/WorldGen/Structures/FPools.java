@@ -62,6 +62,11 @@ public class FPools {
 		// ORCHARD
 		// ----------------------
 
+		context.register(FStructureKeys.ORCHARD_ARCH_POOL, new StructureTemplatePool(fallback, List.of(
+				Pair.of(StructurePoolElement.single("frejaware:orchard/arch", noProcessors), 1),
+				Pair.of(StructurePoolElement.single("frejaware:orchard/arch_lantern", noProcessors), 1),
+				Pair.of(StructurePoolElement.single("frejaware:orchard/arch_lantern_low", noProcessors), 1)
+		), StructureTemplatePool.Projection.RIGID));
 		context.register(FStructureKeys.ORCHARD_BIG_POT_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:orchard/big_pot_orange", noProcessors), 1),
 				Pair.of(StructurePoolElement.single("frejaware:orchard/big_pot_pear", noProcessors), 1)
@@ -69,6 +74,9 @@ public class FPools {
 		context.register(FStructureKeys.ORCHARD_FARM_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:orchard/farm", noProcessors), 1),
 				Pair.of(StructurePoolElement.single("frejaware:orchard/farm_pineapple", noProcessors), 1)
+		), StructureTemplatePool.Projection.RIGID));
+		context.register(FStructureKeys.ORCHARD_GARDEN_SHED_POOL, new StructureTemplatePool(fallback, List.of(
+				Pair.of(StructurePoolElement.single("frejaware:orchard/garden_shed/top", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
 		context.register(FStructureKeys.ORCHARD_GREENHOUSE_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:orchard/greenhouse", noProcessors), 1),
@@ -96,6 +104,9 @@ public class FPools {
 				Pair.of(StructurePoolElement.single("frejaware:arctic/lamp_snow_candle", noProcessors), 1),
 				Pair.of(StructurePoolElement.single("frejaware:arctic/lamp_snow_lantern", noProcessors), 1),
 				Pair.of(StructurePoolElement.single("frejaware:arctic/lamp_snow_soul_lantern", noProcessors), 1)
+		), StructureTemplatePool.Projection.RIGID));
+		context.register(FStructureKeys.ARCTIC_SNOWMAN_POOL, new StructureTemplatePool(fallback, List.of(
+				Pair.of(StructurePoolElement.single("frejaware:arctic/snowman", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
 		context.register(FStructureKeys.ARCTIC_WELL_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:arctic/well", noProcessors), 1)

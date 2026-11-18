@@ -16,8 +16,7 @@ import se.frejaware.client.Model.FModelLayers;
 import java.util.Map;
 
 public class FMoobloomRenderer extends AgeableMobRenderer<FMoobloom, FMoobloomRenderState, CowModel> {
-	public static final BlockDisplayContext BLOCK_DISPLAY_CONTEXT =
-			BlockDisplayContext.create();
+	public static final BlockDisplayContext BLOCK_DISPLAY_CONTEXT = BlockDisplayContext.create();
 
 	private static final Map<FMoobloom.Variant, FMoobloomRenderer.MoobloomTexture> TEXTURES =
 			Util.make(Maps.newHashMap(), (map) -> {
@@ -64,18 +63,14 @@ public class FMoobloomRenderer extends AgeableMobRenderer<FMoobloom, FMoobloomRe
 	}
 
 	public Identifier getTextureLocation(final FMoobloomRenderState state) {
-		return state.isBaby ? TEXTURES.get(state.variant)
-				.baby : TEXTURES.get(state.variant).adult;
+		return state.isBaby ? TEXTURES.get(state.variant).baby : TEXTURES.get(state.variant).adult;
 	}
 
 	public FMoobloomRenderState createRenderState() {
 		return new FMoobloomRenderState();
 	}
 
-	public void extractRenderState(
-			final FMoobloom entity,
-			final FMoobloomRenderState state,
-			final float partialTicks) {
+	public void extractRenderState(final FMoobloom entity, final FMoobloomRenderState state, final float partialTicks) {
 		super.extractRenderState(entity, state, partialTicks);
 		state.variant = entity.getVariant();
 		this.blockModelResolver.update(

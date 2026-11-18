@@ -48,8 +48,10 @@ public class FStructures {
 		// ----------------------
 
 		// generates perfectly
+		thinBeard(context, FStructureKeys.ORCHARD_ARCH, FStructureKeys.ORCHARD_ARCH_POOL, FBiomes.ORCHARD);
 		thinBeard(context, FStructureKeys.ORCHARD_BIG_POT, FStructureKeys.ORCHARD_BIG_POT_POOL, FBiomes.ORCHARD);
 		thinBeard(context, FStructureKeys.ORCHARD_FARM, FStructureKeys.ORCHARD_FARM_POOL, FBiomes.ORCHARD);
+		thinBeardJigsaw(context, FStructureKeys.ORCHARD_GARDEN_SHED, FStructureKeys.ORCHARD_GARDEN_SHED_POOL, FBiomes.ORCHARD, 2);
 		thinBeard(context, FStructureKeys.ORCHARD_GREENHOUSE, FStructureKeys.ORCHARD_GREENHOUSE_POOL, FBiomes.ORCHARD);
 		thinBeard(context, FStructureKeys.ORCHARD_PERGOLA, FStructureKeys.ORCHARD_PERGOLA_POOL, FBiomes.ORCHARD);
 		thinBeard(context, FStructureKeys.ORCHARD_POT, FStructureKeys.ORCHARD_POT_POOL, FBiomes.ORCHARD);
@@ -61,6 +63,7 @@ public class FStructures {
 		// generates perfectly
 		thinBeard(context, FStructureKeys.ARCTIC_FLOWER_FARM, FStructureKeys.ARCTIC_FLOWER_FARM_POOL, FBiomes.ARCTIC);
 		thinBeard(context, FStructureKeys.ARCTIC_LAMP, FStructureKeys.ARCTIC_LAMP_POOL, FBiomes.ARCTIC);
+		thinBeard(context, FStructureKeys.ARCTIC_SNOWMAN, FStructureKeys.ARCTIC_SNOWMAN_POOL, FBiomes.ARCTIC);
 		noBeard(context, FStructureKeys.ARCTIC_WELL, FStructureKeys.ARCTIC_WELL_POOL, FBiomes.ARCTIC, -2);
 
 		// ----------------------

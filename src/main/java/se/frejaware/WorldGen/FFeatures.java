@@ -8,6 +8,7 @@ import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.WeightedList;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -45,6 +47,7 @@ import se.frejaware.Blocks.FBlockStateProviders;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.F;
 import se.frejaware.WorldGen.Custom.FRoseQuartzOreFeature;
+import se.frejaware.WorldGen.Custom.FTemplateMushroomFeature;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +77,8 @@ public class FFeatures {
 	public static final ResourceKey<Feature> DESERT_ROCKS = create("desert_rocks_feature");
 	public static final ResourceKey<Feature> DESERT_SUCCULENTS = create("desert_succulents_feature");
 	public static final ResourceKey<Feature> BEACH_SEASHELLS = create("beach_seashells");
+	public static final ResourceKey<Feature> MUSHROOM_HUGE_BROWN = create("mushroom_huge_brown");
+	public static final ResourceKey<Feature> MUSHROOM_HUGE_RED = create("mushroom_huge_red");
 
 	public static void configure(BootstrapContext<Feature> context) {
 		HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
@@ -215,6 +220,13 @@ public class FFeatures {
 						.add(FBlocks.ORCHID_SEASHELL.defaultBlockState().setValue(FSeashellBlock.FACING, Direction.SOUTH), 1)
 						.add(FBlocks.ORCHID_SEASHELL.defaultBlockState().setValue(FSeashellBlock.FACING, Direction.WEST), 1)
 						.build())));
+
+//		context.register(MUSHROOM_HUGE_BROWN, new FTemplateMushroomFeature(
+//				List.of(F.id("mushroom/brown1"), F.id("mushroom/brown2"), F.id("mushroom/brown3"), F.id("mushroom/brown4")),
+//				BlockPredicate.matchesTag(BlockTags.HUGE_BROWN_MUSHROOM_CAN_PLACE_ON)));
+//		context.register(MUSHROOM_HUGE_RED, new FTemplateMushroomFeature(
+//				List.of(F.id("mushroom/red1"), F.id("mushroom/red2"), F.id("mushroom/red3"), F.id("mushroom/red4")),
+//				BlockPredicate.matchesTag(BlockTags.HUGE_RED_MUSHROOM_CAN_PLACE_ON)));
 	}
 
 	private static ResourceKey<Feature> create(final String name) {

@@ -1,4 +1,4 @@
-package se.frejaware.client.Model.Parrot;
+package se.frejaware.Entities;
 
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.animal.parrot.Parrot;

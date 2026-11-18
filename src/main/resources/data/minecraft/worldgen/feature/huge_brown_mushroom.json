@@ -1,0 +1,13 @@
+{
+  "type": "frejaware:template_mushroom",
+  "can_place_on": {
+    "type": "minecraft:matching_block_tag",
+    "tag": "minecraft:huge_brown_mushroom_can_place_on"
+  },
+  "templates": [
+    "frejaware:mushroom/brown1",
+    "frejaware:mushroom/brown2",
+    "frejaware:mushroom/brown3",
+    "frejaware:mushroom/brown4"
+  ]
+}

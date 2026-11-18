@@ -1,4 +1,4 @@
-package se.frejaware.client.mixin;
+package se.frejaware.mixin;
 
 import net.minecraft.world.entity.animal.parrot.Parrot;
 import org.objectweb.asm.Opcodes;
@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import se.frejaware.client.Model.Parrot.ParrotVariants;
+import se.frejaware.Entities.ParrotVariants;
 
 @Mixin(Parrot.Variant.class)
 public abstract class ParrotVariantMixin {

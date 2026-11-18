@@ -53,8 +53,10 @@ public class FStructureSets {
 		// ORCHARD
 		// ----------------------
 
+		register(context, FStructureKeys.ORCHARD_ARCH_SET, FStructureKeys.ORCHARD_ARCH, medium(FStructureKeys.ORCHARD_ARCH_SET));
 		register(context, FStructureKeys.ORCHARD_BIG_POT_SET, FStructureKeys.ORCHARD_BIG_POT, decor(FStructureKeys.ORCHARD_BIG_POT_SET));
 		register(context, FStructureKeys.ORCHARD_FARM_SET, FStructureKeys.ORCHARD_FARM, large(FStructureKeys.ORCHARD_FARM_SET));
+		register(context, FStructureKeys.ORCHARD_GARDEN_SHED_SET, FStructureKeys.ORCHARD_GARDEN_SHED, large(FStructureKeys.ORCHARD_GARDEN_SHED_SET));
 		register(context, FStructureKeys.ORCHARD_GREENHOUSE_SET, FStructureKeys.ORCHARD_GREENHOUSE, landmark(FStructureKeys.ORCHARD_GREENHOUSE_SET));
 		register(context, FStructureKeys.ORCHARD_PERGOLA_SET, FStructureKeys.ORCHARD_PERGOLA, medium(FStructureKeys.ORCHARD_PERGOLA_SET));
 		register(context, FStructureKeys.ORCHARD_POT_SET, FStructureKeys.ORCHARD_POT, decor(FStructureKeys.ORCHARD_POT_SET));
@@ -65,6 +67,7 @@ public class FStructureSets {
 
 		register(context, FStructureKeys.ARCTIC_FLOWER_FARM_SET, FStructureKeys.ARCTIC_FLOWER_FARM, large(FStructureKeys.ARCTIC_FLOWER_FARM_SET));
 		register(context, FStructureKeys.ARCTIC_LAMP_SET, FStructureKeys.ARCTIC_LAMP, decor(FStructureKeys.ARCTIC_LAMP_SET));
+		register(context, FStructureKeys.ARCTIC_SNOWMAN_SET, FStructureKeys.ARCTIC_SNOWMAN, landmark(FStructureKeys.ARCTIC_SNOWMAN_SET));
 		register(context, FStructureKeys.ARCTIC_WELL_SET, FStructureKeys.ARCTIC_WELL, landmark(FStructureKeys.ARCTIC_WELL_SET));
 
 		// ----------------------

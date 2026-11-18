@@ -4,7 +4,9 @@
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
 		"BlockEntityTypeAccessor",
-		"CarvedPumpkinBlockMixin"
+		"CarvedPumpkinBlockMixin",
+
+		"ParrotVariantMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

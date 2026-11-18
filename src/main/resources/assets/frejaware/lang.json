@@ -33,7 +33,7 @@
   "entity.frejaware.moobloom": "Moobloom",
   "entity.frejaware.glaze": "Glaze",
   "entity.frejaware.glazeball": "Glazeball",
-  "death.attack.frejaware.glazeball": "%1$s got glazed to death by %2$s",
+  "death.attack.frejaware.glazeball": "%1$s was covered in glaze by %2$s",
   "entity.frejaware.glaze_shard": "Glaze Shard",
   "death.attack.frejaware.glaze_shard": "%1$s was glazed by %2$s",
   "entity.frejaware.glacierman": "Ötzi",
