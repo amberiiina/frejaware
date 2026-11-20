@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pink_carnation": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:pink_carnation"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:pink_dye_from_pink_carnation"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pink_carnation"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:pink_dye_from_pink_carnation"
+    ]
+  }
+}

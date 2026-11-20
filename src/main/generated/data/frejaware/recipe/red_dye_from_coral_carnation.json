@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:coral_carnation"
+  ],
+  "result": {
+    "id": "minecraft:red_dye"
+  }
+}

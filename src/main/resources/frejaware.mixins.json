@@ -6,7 +6,9 @@
 		"BlockEntityTypeAccessor",
 		"CarvedPumpkinBlockMixin",
 
-		"ParrotVariantMixin"
+		"ParrotVariantMixin",
+
+		"WanderingTraderSpawnerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

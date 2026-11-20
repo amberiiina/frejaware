@@ -1,6 +1,26 @@
 {
   "parent": "frejaware:frejaware/root",
   "criteria": {
+    "collect_coral_carnation": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:coral_carnation"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_frostbloom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:frostbloom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "collect_lilac_crocus": {
       "conditions": {
         "items": [
@@ -21,11 +41,61 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "collect_pink_carnation": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:pink_carnation"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "collect_purple_crocus": {
       "conditions": {
         "items": [
           {
             "items": "frejaware:purple_crocus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_snowbell": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:snowbell"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_violet_carnation": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:violet_carnation"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_white_allium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:white_allium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_white_carnation": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:white_carnation"
           }
         ]
       },
@@ -56,6 +126,16 @@
         "items": [
           {
             "items": "frejaware:white_orchid"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "collect_yellow_carnation": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:yellow_carnation"
           }
         ]
       },
@@ -118,6 +198,30 @@
     ],
     [
       "collect_lily_of_the_glade"
+    ],
+    [
+      "collect_frostbloom"
+    ],
+    [
+      "collect_snowbell"
+    ],
+    [
+      "collect_white_allium"
+    ],
+    [
+      "collect_pink_carnation"
+    ],
+    [
+      "collect_white_carnation"
+    ],
+    [
+      "collect_coral_carnation"
+    ],
+    [
+      "collect_violet_carnation"
+    ],
+    [
+      "collect_yellow_carnation"
     ]
   ],
   "rewards": {

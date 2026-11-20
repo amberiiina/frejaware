@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_snowbell": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frejaware:snowbell"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "frejaware:white_dye_from_snowbell"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_snowbell"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "frejaware:white_dye_from_snowbell"
+    ]
+  }
+}

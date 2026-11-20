@@ -361,12 +361,12 @@ public class FBiomeBootstrap {
 								.add(new MobSpawnSettings.SpawnerData(EntityTypes.SNOW_GOLEM, UniformInt.of(1, 2)), 2)
 								.build())
 						.addAllSpawns(MobCategory.MONSTER, WeightedList.<MobSpawnSettings.SpawnerData>builder()
-								.add(new MobSpawnSettings.SpawnerData(FEntityTypes.FROSTBITE_CRAWLER, ConstantInt.of(2)), 100)
+								.add(new MobSpawnSettings.SpawnerData(FEntityTypes.FROSTBITE_CRAWLER, ConstantInt.of(2)), 15)
 								//.add(new MobSpawnSettings.SpawnerData(EntityTypes.ZOMBIE, ConstantInt.of(2)), 95) // replace with frostbite (snow zombie) once 26.4 is out
 								//.add(new MobSpawnSettings.SpawnerData(EntityTypes.ZOMBIE_VILLAGER, ConstantInt.of(1)), 5)
-								.add(new MobSpawnSettings.SpawnerData(EntityTypes.STRAY, ConstantInt.of(2)), 100)
-								.add(new MobSpawnSettings.SpawnerData(EntityTypes.SLIME, ConstantInt.of(2)), 100) // replace with ice slime
-								.add(new MobSpawnSettings.SpawnerData(FEntityTypes.GLAZE, UniformInt.of(1, 2)), 5)
+								.add(new MobSpawnSettings.SpawnerData(EntityTypes.STRAY, ConstantInt.of(2)), 20)
+								//.add(new MobSpawnSettings.SpawnerData(EntityTypes.SLIME, ConstantInt.of(2)), 100) // replace with ice slime
+								.add(new MobSpawnSettings.SpawnerData(FEntityTypes.GLAZE, UniformInt.of(1, 2)), 10)
 								.add(new MobSpawnSettings.SpawnerData(FEntityTypes.GLACIERMAN, ConstantInt.of(1)), 5)
 								.build())
 						.addAllSpawns(MobCategory.WATER_CREATURE, WeightedList.<MobSpawnSettings.SpawnerData>builder()

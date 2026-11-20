@@ -72,25 +72,25 @@
   },
   "requirements": [
     [
-      "eat_cherry"
+      "eat_pear"
     ],
     [
-      "eat_banana"
+      "eat_cherry"
     ],
     [
       "eat_orange"
     ],
     [
-      "eat_pear"
+      "eat_banana"
+    ],
+    [
+      "eat_pineapple"
     ],
     [
       "eat_apple"
     ],
     [
       "eat_melon"
-    ],
-    [
-      "eat_pineapple"
     ]
   ],
   "rewards": {

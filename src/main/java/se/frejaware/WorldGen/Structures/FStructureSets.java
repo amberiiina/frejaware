@@ -36,6 +36,7 @@ public class FStructureSets {
 		// ----------------------
 
 		register(context, FStructureKeys.PEAR_ARCH_SET, FStructureKeys.PEAR_ARCH, medium(FStructureKeys.PEAR_ARCH_SET));
+		register(context, FStructureKeys.PEAR_BENCH_SET, FStructureKeys.PEAR_BENCH, small(FStructureKeys.PEAR_BENCH_SET));
 		register(context, FStructureKeys.PEAR_BERRY_FARM_SET, FStructureKeys.PEAR_BERRY_FARM, large(FStructureKeys.PEAR_BERRY_FARM_SET));
 		register(context, FStructureKeys.PEAR_STONE_SET, FStructureKeys.PEAR_STONE, decor(FStructureKeys.PEAR_STONE_SET));
 
@@ -67,6 +68,7 @@ public class FStructureSets {
 
 		register(context, FStructureKeys.ARCTIC_FLOWER_FARM_SET, FStructureKeys.ARCTIC_FLOWER_FARM, large(FStructureKeys.ARCTIC_FLOWER_FARM_SET));
 		register(context, FStructureKeys.ARCTIC_LAMP_SET, FStructureKeys.ARCTIC_LAMP, decor(FStructureKeys.ARCTIC_LAMP_SET));
+		register(context, FStructureKeys.ARCTIC_SNOWCASTLE_SET, FStructureKeys.ARCTIC_SNOWCASTLE, landmark(FStructureKeys.ARCTIC_SNOWCASTLE_SET));
 		register(context, FStructureKeys.ARCTIC_SNOWMAN_SET, FStructureKeys.ARCTIC_SNOWMAN, landmark(FStructureKeys.ARCTIC_SNOWMAN_SET));
 		register(context, FStructureKeys.ARCTIC_WELL_SET, FStructureKeys.ARCTIC_WELL, landmark(FStructureKeys.ARCTIC_WELL_SET));
 
@@ -78,8 +80,10 @@ public class FStructureSets {
 		register(context, FStructureKeys.DESERT_DEAD_TREE_SET, FStructureKeys.DESERT_DEAD_TREE, small(FStructureKeys.DESERT_DEAD_TREE_SET));
 		register(context, FStructureKeys.DESERT_DRY_POND_SET, FStructureKeys.DESERT_DRY_POND, large(FStructureKeys.DESERT_DRY_POND_SET));
 		register(context, FStructureKeys.DESERT_FOSSIL_SET, FStructureKeys.DESERT_FOSSIL, large(FStructureKeys.DESERT_FOSSIL_SET));
+		register(context, FStructureKeys.DESERT_LAMP_SET, FStructureKeys.DESERT_LAMP, decor(FStructureKeys.DESERT_LAMP_SET));
 		register(context, FStructureKeys.DESERT_MUD_PYRAMID_SET, FStructureKeys.DESERT_MUD_PYRAMID, landmark(FStructureKeys.DESERT_MUD_PYRAMID_SET));
 		register(context, FStructureKeys.DESERT_PALM_SET, FStructureKeys.DESERT_PALM, medium(FStructureKeys.DESERT_PALM_SET));
+		register(context, FStructureKeys.DESERT_SANDCASTLE_SET, FStructureKeys.DESERT_SANDCASTLE, large(FStructureKeys.DESERT_SANDCASTLE_SET));
 		register(context, FStructureKeys.DESERT_SHRINE_SET, FStructureKeys.DESERT_SHRINE, large(FStructureKeys.DESERT_SHRINE_SET));
 		register(context, FStructureKeys.DESERT_STONE_SET, FStructureKeys.DESERT_STONE, decor(FStructureKeys.DESERT_STONE_SET));
 

@@ -1,6 +1,10 @@
 {
   "values": [
     "frejaware:dry_cactus",
-    "#frejaware:non_pot_flowers"
+    "#frejaware:non_pot_flowers",
+    "frejaware:coarse_sand",
+    "frejaware:yellow_sand",
+    "frejaware:gray_sand",
+    "frejaware:pink_sand"
   ]
 }

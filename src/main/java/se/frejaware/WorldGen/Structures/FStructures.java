@@ -29,6 +29,7 @@ public class FStructures {
 
 		// generates perfectly, although i did see a stone spawn on a thinbeard island so maybe raise minY by 1?
 		thinBeard(context, FStructureKeys.PEAR_ARCH, FStructureKeys.PEAR_ARCH_POOL, FBiomes.PEAR_MEADOW);
+		thinBeard(context, FStructureKeys.PEAR_BENCH, FStructureKeys.PEAR_BENCH_POOL, FBiomes.PEAR_MEADOW);
 		thinBeard(context, FStructureKeys.PEAR_BERRY_FARM, FStructureKeys.PEAR_BERRY_FARM_POOL, FBiomes.PEAR_MEADOW);
 		thinBeard(context, FStructureKeys.PEAR_STONE, FStructureKeys.PEAR_STONE_POOL, FBiomes.PEAR_MEADOW);
 
@@ -63,6 +64,7 @@ public class FStructures {
 		// generates perfectly
 		thinBeard(context, FStructureKeys.ARCTIC_FLOWER_FARM, FStructureKeys.ARCTIC_FLOWER_FARM_POOL, FBiomes.ARCTIC);
 		thinBeard(context, FStructureKeys.ARCTIC_LAMP, FStructureKeys.ARCTIC_LAMP_POOL, FBiomes.ARCTIC);
+		thinBeard(context, FStructureKeys.ARCTIC_SNOWCASTLE, FStructureKeys.ARCTIC_SNOWCASTLE_POOL, FBiomes.ARCTIC);
 		thinBeard(context, FStructureKeys.ARCTIC_SNOWMAN, FStructureKeys.ARCTIC_SNOWMAN_POOL, FBiomes.ARCTIC);
 		noBeard(context, FStructureKeys.ARCTIC_WELL, FStructureKeys.ARCTIC_WELL_POOL, FBiomes.ARCTIC, -2);
 
@@ -75,8 +77,10 @@ public class FStructures {
 		thinBeard(context, FStructureKeys.DESERT_DEAD_TREE, FStructureKeys.DESERT_DEAD_TREE_POOL, Biomes.DESERT);
 		thinBeardJigsaw(context, FStructureKeys.DESERT_DRY_POND, FStructureKeys.DESERT_DRY_POND_POOL, Biomes.DESERT, 2);
 		thinBeard(context, FStructureKeys.DESERT_FOSSIL, FStructureKeys.DESERT_FOSSIL_POOL, Biomes.DESERT);
+		thinBeard(context, FStructureKeys.DESERT_LAMP, FStructureKeys.DESERT_LAMP_POOL, Biomes.DESERT);
 		thinBeardJigsaw(context, FStructureKeys.DESERT_MUD_PYRAMID, FStructureKeys.DESERT_MUD_PYRAMID_POOL, Biomes.DESERT, 2);
 		thinBeard(context, FStructureKeys.DESERT_PALM, FStructureKeys.DESERT_PALM_POOL, Biomes.DESERT);
+		thinBeard(context, FStructureKeys.DESERT_SANDCASTLE, FStructureKeys.DESERT_SANDCASTLE_POOL, Biomes.DESERT);
 		thinBeard(context, FStructureKeys.DESERT_SHRINE, FStructureKeys.DESERT_SHRINE_POOL, Biomes.DESERT);
 		thinBeard(context, FStructureKeys.DESERT_STONE, FStructureKeys.DESERT_STONE_POOL, Biomes.DESERT);
 
@@ -87,8 +91,7 @@ public class FStructures {
 		thinBeard(context, FStructureKeys.BEACH_SANDCASTLE, FStructureKeys.BEACH_SANDCASTLE_POOL, Biomes.BEACH);
 	}
 
-	private static void noBeard(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome) {
+	private static void noBeard(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
@@ -98,8 +101,7 @@ public class FStructures {
 		), 64, 384));
 	}
 
-	private static void noBeard(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int height) {
+	private static void noBeard(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int height) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
@@ -109,8 +111,7 @@ public class FStructures {
 		), 64, 384));
 	}
 
-	private static void noBeard(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int height, int minY) {
+	private static void noBeard(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int height, int minY) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
@@ -120,8 +121,7 @@ public class FStructures {
 		), minY, 384));
 	}
 
-	private static void thinBeard(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome) {
+	private static void thinBeard(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
@@ -131,8 +131,7 @@ public class FStructures {
 		), 64, 384));
 	}
 
-	private static void thinBeard(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int height) {
+	private static void thinBeard(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int height) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
@@ -142,8 +141,7 @@ public class FStructures {
 		), 64, 384));
 	}
 
-	private static void thinBeard(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int height, int minY) {
+	private static void thinBeard(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int height, int minY) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
@@ -153,8 +151,7 @@ public class FStructures {
 		), minY, 384));
 	}
 
-	private static void thinBeardJigsaw(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int depth) {
+	private static void thinBeardJigsaw(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int depth) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
@@ -164,8 +161,7 @@ public class FStructures {
 		), 64, 384));
 	}
 
-	private static void thinBeardJigsaw(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int depth, int height) {
+	private static void thinBeardJigsaw(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int depth, int height) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
@@ -175,8 +171,7 @@ public class FStructures {
 		), 64, 384));
 	}
 
-	private static void thinBeardJigsaw(
-			BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int depth, int height, int minY) {
+	private static void thinBeardJigsaw(BootstrapContext<Structure> context, ResourceKey<Structure> key, ResourceKey<StructureTemplatePool> pool, ResourceKey<Biome> biome, int depth, int height, int minY) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 

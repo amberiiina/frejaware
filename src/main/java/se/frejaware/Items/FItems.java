@@ -17,6 +17,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.item.equipment.*;
+import net.minecraft.world.item.equipment.trim.TrimMaterials;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BannerPatternLayers;
@@ -43,6 +44,7 @@ public class FItems {
 	public static final ResourceKey<DecoratedPotPattern> BUTTERFLY_PATTERN = ResourceKey.create(Registries.DECORATED_POT_PATTERN, F.id("butterfly"));
 	public static final Item BUTTERFLY_POTTERY_SHERD = registerItem(FItemIds.BUTTERFLY_POTTERY_SHERD, Item::new, new Item.Properties()
 			.rarity(Rarity.UNCOMMON).potPattern(BUTTERFLY_PATTERN));
+	public static final Item PINK_BONE_MEAL = registerItem(FItemIds.PINK_BONE_MEAL, FPinkBoneMealItem::new, new Item.Properties());
 
 	// ENTITIES
 	public static final Item MOOBLOOM_SPAWN_EGG = registerSpawnEgg(FItemIds.MOOBLOOM_SPAWN_EGG, FEntityTypes.MOOBLOOM);
@@ -64,6 +66,10 @@ public class FItems {
 	public static final Item FROSTBOW = registerItem(FItemIds.FROSTBOW, BowItem::new, new Item.Properties()
 			.durability(1152)
 			.enchantable(1));
+
+	// ARCTIC
+	public static final Item AQUAMARINE_SHARD = registerItem(FItemIds.AQUAMARINE_SHARD, Item::new, new Item.Properties()
+			.trimMaterial(FTrimMaterials.AQUAMARINE));
 
 	// MUSIC
 	public static final ResourceKey<JukeboxSong> RYM = ResourceKey.create(Registries.JUKEBOX_SONG, F.id("read_your_mind"));
@@ -357,7 +363,7 @@ public class FItems {
 			FMaterials.TRANSIUM_TOOL_MATERIAL,
 			new Item.Properties().rarity(Rarity.EPIC)
 	);
-	public static final Item TRANSIUM_HOE = registerHoe(
+	public static final Item TRANSIUM_HOE = registerTransiumHoe(
 			FItemIds.TRANSIUM_HOE,
 			FMaterials.TRANSIUM_TOOL_MATERIAL,
 			new Item.Properties().rarity(Rarity.EPIC)
@@ -573,6 +579,18 @@ public class FItems {
 				itemKey, Item::new, settings.hoe(
 						toolMaterial,
 						-3.0F,
+						0.0F
+				)
+		);
+	}
+	public static Item registerTransiumHoe(
+			ResourceKey<Item> itemKey,
+			ToolMaterial toolMaterial,
+			Item.Properties settings) {
+		return registerItem(
+				itemKey, Item::new, settings.hoe(
+						toolMaterial,
+						0.0F,
 						0.0F
 				)
 		);

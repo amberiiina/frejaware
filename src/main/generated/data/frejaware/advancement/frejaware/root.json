@@ -1,5 +1,19 @@
 {
   "criteria": {
+    "visit_arctic_root": {
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "frejaware:arctic"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    },
     "visit_jacaranda_glade_root": {
       "conditions": {
         "player": {
@@ -59,7 +73,8 @@
     [
       "visit_pear_meadow_root",
       "visit_jacaranda_glade_root",
-      "visit_orchard_root"
+      "visit_orchard_root",
+      "visit_arctic_root"
     ]
   ],
   "sends_telemetry_event": true

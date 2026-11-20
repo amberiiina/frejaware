@@ -1,0 +1,46 @@
+{
+  "anvil_cost": 8,
+  "description": {
+    "translate": "enchantment.frejaware.ice_skater"
+  },
+  "effects": {
+    "minecraft:location_changed": [
+      {
+        "effect": {
+          "type": "minecraft:attribute",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.35,
+            "per_level_above_first": 0.25
+          },
+          "attribute": "minecraft:movement_speed",
+          "id": "frejaware:enchantment.ice_skater",
+          "operation": "add_multiplied_base"
+        },
+        "requirements": {
+          "type": "minecraft:location_check",
+          "offsetY": -1,
+          "predicate": {
+            "block": {
+              "blocks": "#minecraft:ice"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 1
+}

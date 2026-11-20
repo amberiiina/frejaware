@@ -29,6 +29,9 @@ public class FPools {
 		context.register(FStructureKeys.PEAR_ARCH_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:pear/arch", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
+		context.register(FStructureKeys.PEAR_BENCH_POOL, new StructureTemplatePool(fallback, List.of(
+				Pair.of(StructurePoolElement.single("frejaware:pear/bench", noProcessors), 1)
+		), StructureTemplatePool.Projection.RIGID));
 		context.register(FStructureKeys.PEAR_BERRY_FARM_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:pear/berry_farm", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
@@ -105,6 +108,9 @@ public class FPools {
 				Pair.of(StructurePoolElement.single("frejaware:arctic/lamp_snow_lantern", noProcessors), 1),
 				Pair.of(StructurePoolElement.single("frejaware:arctic/lamp_snow_soul_lantern", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
+		context.register(FStructureKeys.ARCTIC_SNOWCASTLE_POOL, new StructureTemplatePool(fallback, List.of(
+				Pair.of(StructurePoolElement.single("frejaware:arctic/snowcastle", noProcessors), 1)
+		), StructureTemplatePool.Projection.RIGID));
 		context.register(FStructureKeys.ARCTIC_SNOWMAN_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:arctic/snowman", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
@@ -128,11 +134,18 @@ public class FPools {
 		context.register(FStructureKeys.DESERT_FOSSIL_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:desert/fossil", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
+		context.register(FStructureKeys.DESERT_LAMP_POOL, new StructureTemplatePool(fallback, List.of(
+				Pair.of(StructurePoolElement.single("frejaware:desert/lamp", noProcessors), 1),
+				Pair.of(StructurePoolElement.single("frejaware:desert/lamp_red", noProcessors), 1)
+		), StructureTemplatePool.Projection.RIGID));
 		context.register(FStructureKeys.DESERT_MUD_PYRAMID_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:desert/mud_pyramid/top", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
 		context.register(FStructureKeys.DESERT_PALM_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:desert/palm", noProcessors), 1)
+		), StructureTemplatePool.Projection.RIGID));
+		context.register(FStructureKeys.DESERT_SANDCASTLE_POOL, new StructureTemplatePool(fallback, List.of(
+				Pair.of(StructurePoolElement.single("frejaware:desert/sandcastle", noProcessors), 1)
 		), StructureTemplatePool.Projection.RIGID));
 		context.register(FStructureKeys.DESERT_SHRINE_POOL, new StructureTemplatePool(fallback, List.of(
 				Pair.of(StructurePoolElement.single("frejaware:desert/shrine", noProcessors), 1)

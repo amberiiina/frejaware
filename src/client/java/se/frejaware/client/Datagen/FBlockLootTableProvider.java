@@ -2,10 +2,11 @@ package se.frejaware.client.Datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.advancements.predicates.ItemPredicate;
 import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -13,12 +14,12 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
-import net.minecraft.world.level.storage.loot.entries.UniformContainerBase;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.Items.FItems;
@@ -26,9 +27,7 @@ import se.frejaware.Items.FItems;
 import java.util.concurrent.CompletableFuture;
 
 public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
-	protected FBlockLootTableProvider(
-			FabricPackOutput packOutput,
-			CompletableFuture<HolderLookup.Provider> registryLookup) {
+	protected FBlockLootTableProvider(FabricPackOutput packOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
 		super(packOutput, registryLookup);
 	}
 
@@ -41,6 +40,33 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 			dropSelf(FBlocks.PEARL_SEASHELL);
 			dropSelf(FBlocks.ORCHID_SEASHELL);
 
+			// VANILLA BLOCK VARIANTS
+			dropSelf(FBlocks.SNOW_STAIRS);
+			add(FBlocks.SNOW_SLAB, this::createSlabItemTable);
+			dropSelf(FBlocks.ICE_STAIRS);
+			add(FBlocks.ICE_SLAB, this::createSlabItemTable);
+			dropSelf(FBlocks.PACKED_ICE_STAIRS);
+			add(FBlocks.PACKED_ICE_SLAB, this::createSlabItemTable);
+			dropSelf(FBlocks.BLUE_ICE_STAIRS);
+			add(FBlocks.BLUE_ICE_SLAB, this::createSlabItemTable);
+			dropSelf(FBlocks.COARSE_SAND);
+			dropSelf(FBlocks.YELLOW_SAND);
+			dropSelf(FBlocks.GRAY_SAND);
+			dropSelf(FBlocks.PINK_SAND);
+
+			// ARCTIC
+			dropSelf(FBlocks.AQUAMARINE_BLOCK);
+			add(FBlocks.BUDDING_AQUAMARINE, noDrop());
+			add(FBlocks.AQUAMARINE_CLUSTER, block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(FItems.AQUAMARINE_SHARD)
+					.apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(4)))
+					.apply(ApplyBonusCount.addOreBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE)))
+					.when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(items, ItemTags.CLUSTER_MAX_HARVESTABLES)))
+					.otherwise(applyExplosionDecay(block, LootItem.lootTableItem(FItems.AQUAMARINE_SHARD).apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(2)))))
+			));
+			dropWhenSilkTouch(FBlocks.LARGE_AQUAMARINE_BUD);
+			dropWhenSilkTouch(FBlocks.MEDIUM_AQUAMARINE_BUD);
+			dropWhenSilkTouch(FBlocks.SMALL_AQUAMARINE_BUD);
+
 			// BLOM
 			dropSelf(FBlocks.WHITE_ORCHID);
 			dropSelf(FBlocks.YELLOW_TULIP);
@@ -52,9 +78,17 @@ public class FBlockLootTableProvider extends FabricBlockLootSubProvider {
 			dropSelf(FBlocks.PURPLE_CROCUS);
 			dropSelf(FBlocks.LILY_OF_THE_GLADE);
 
+			dropSelf(FBlocks.FROSTBLOOM);
+			dropSelf(FBlocks.SNOWBELL);
+
 			dropSelf(FBlocks.WHITE_CACTUS_FLOWER);
 			dropSelf(FBlocks.YELLOW_CACTUS_FLOWER);
 			dropSelf(FBlocks.WHITE_ALLIUM);
+			dropSelf(FBlocks.PINK_CARNATION);
+			dropSelf(FBlocks.WHITE_CARNATION);
+			dropSelf(FBlocks.CORAL_CARNATION);
+			dropSelf(FBlocks.VIOLET_CARNATION);
+			dropSelf(FBlocks.YELLOW_CARNATION);
 
 			dropSelf(FBlocks.RED_SUCCULENT);
 			dropSelf(FBlocks.BLUE_SUCCULENT);

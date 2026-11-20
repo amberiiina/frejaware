@@ -5,8 +5,10 @@ import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.references.BlockItemId;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
@@ -94,16 +96,67 @@ public class FBlocks {
 			FBlockItemIds.PACKED_ICE_SLAB,
 			Blocks.PACKED_ICE
 	);
-	public static final Block BLUE_ICE_STAIRS = registerBlockItem(
-			FBlockItemIds.BLUE_ICE_STAIRS,
-			p -> new FHalfTransparentBlockStairBlock(Blocks.BLUE_ICE.defaultBlockState(), p),
-			BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_ICE)
-	);
-	public static final Block BLUE_ICE_SLAB = registerBlockItem(
-			FBlockItemIds.BLUE_ICE_SLAB,
-			FHalfTransparentBlockSlabBlock::new,
-			BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_ICE)
-	);
+	public static final Block BLUE_ICE_STAIRS = registerBlockItem(FBlockItemIds.BLUE_ICE_STAIRS, p -> new FHalfTransparentBlockStairBlock(Blocks.BLUE_ICE.defaultBlockState(), p),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_ICE));
+	public static final Block BLUE_ICE_SLAB = registerBlockItem(FBlockItemIds.BLUE_ICE_SLAB, FHalfTransparentBlockSlabBlock::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_ICE));
+
+	public static final Block COARSE_SAND = registerBlockItem(FBlockItemIds.COARSE_SAND, p -> new SandBlock(new ColorRGBA(14406560), p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.SAND)
+					.instrument(NoteBlockInstrument.SNARE)
+					.strength(0.5F)
+					.sound(SoundType.SAND));
+	public static final Block YELLOW_SAND = registerBlockItem(FBlockItemIds.YELLOW_SAND, p -> new SandBlock(new ColorRGBA(13746559), p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.SAND)
+					.instrument(NoteBlockInstrument.SNARE)
+					.strength(0.5F)
+					.sound(SoundType.SAND));
+	public static final Block GRAY_SAND = registerBlockItem(FBlockItemIds.GRAY_SAND, p -> new SandBlock(new ColorRGBA(11842214), p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.SAND)
+					.instrument(NoteBlockInstrument.SNARE)
+					.strength(0.5F)
+					.sound(SoundType.SAND));
+	public static final Block PINK_SAND = registerBlockItem(FBlockItemIds.PINK_SAND, p -> new SandBlock(new ColorRGBA(11704473), p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.SAND)
+					.instrument(NoteBlockInstrument.SNARE)
+					.strength(0.5F)
+					.sound(SoundType.SAND));
+
+	// ARCTIC
+	public static final Block AQUAMARINE_BLOCK = registerBlockItem(FBlockItemIds.AQUAMARINE_BLOCK, FAquamarineBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.COLOR_LIGHT_BLUE)
+					.strength(1.5F)
+					.sound(SoundType.AMETHYST)
+					.requiresCorrectToolForDrops());
+	public static final Block BUDDING_AQUAMARINE = registerBlockItem(FBlockItemIds.BUDDING_AQUAMARINE, FBuddingAquamarineBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.COLOR_LIGHT_BLUE).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.POPPED));
+	public static final Block AQUAMARINE_CLUSTER = registerBlockItem(FBlockItemIds.AQUAMARINE_CLUSTER, p -> new FAquamarineClusterBlock(7.0F, 10.0F, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.COLOR_LIGHT_BLUE)
+					.forceSolidOn()
+					.noOcclusion()
+					.sound(SoundType.AMETHYST_CLUSTER)
+					.strength(1.5F)
+					.lightLevel(state -> 5)
+					.pushReaction(PushReaction.POPPED));
+	public static final Block LARGE_AQUAMARINE_BUD = registerBlockItem(FBlockItemIds.LARGE_AQUAMARINE_BUD, p -> new FAquamarineClusterBlock(5.0F, 10.0F, p),
+			BlockBehaviour.Properties.ofFullCopy(AQUAMARINE_CLUSTER)
+					.sound(SoundType.LARGE_AMETHYST_BUD)
+					.lightLevel(state -> 4));
+	public static final Block MEDIUM_AQUAMARINE_BUD = registerBlockItem(FBlockItemIds.MEDIUM_AQUAMARINE_BUD, p -> new FAquamarineClusterBlock(4.0F, 10.0F, p),
+			BlockBehaviour.Properties.ofFullCopy(AQUAMARINE_CLUSTER)
+					.sound(SoundType.MEDIUM_AMETHYST_BUD)
+					.lightLevel(state -> 2));
+	public static final Block SMALL_AQUAMARINE_BUD = registerBlockItem(FBlockItemIds.SMALL_AQUAMARINE_BUD, p -> new FAquamarineClusterBlock(3.0F, 8.0F, p),
+			BlockBehaviour.Properties.ofFullCopy(AQUAMARINE_CLUSTER)
+					.sound(SoundType.SMALL_AMETHYST_BUD)
+					.lightLevel(state -> 1));
 
 	// BLOM
 	public static final Block WHITE_ORCHID = registerBlockItem(
@@ -236,6 +289,39 @@ public class FBlocks {
 			Blocks.flowerPotProperties()
 	);
 
+	public static final Block FROSTBLOOM = registerBlockItem(
+			FBlockItemIds.FROSTBLOOM,
+			p -> new FSnowFlowerBlock(MobEffects.FIRE_RESISTANCE, 11.0F, p), // replace with frost resistance later
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.offsetType(BlockBehaviour.OffsetType.XZ)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_FROSTBLOOM = registerBlock(
+			FBlockIds.POTTED_FROSTBLOOM,
+			p -> new FlowerPotBlock(FROSTBLOOM, p),
+			Blocks.flowerPotProperties()
+	);
+	public static final Block SNOWBELL = registerBlockItem(
+			FBlockItemIds.SNOWBELL,
+			p -> new FSnowFlowerBlock(MobEffects.POISON, 11.0F, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.offsetType(BlockBehaviour.OffsetType.XZ)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_SNOWBELL = registerBlock(
+			FBlockIds.POTTED_SNOWBELL,
+			p -> new FlowerPotBlock(SNOWBELL, p),
+			Blocks.flowerPotProperties()
+	);
+
 	public static final Block WHITE_CACTUS_FLOWER = registerBlockItem(
 			FBlockItemIds.WHITE_CACTUS_FLOWER,
 			CactusFlowerBlock::new,
@@ -272,6 +358,86 @@ public class FBlocks {
 	public static final Block POTTED_WHITE_ALLIUM = registerBlock(
 			FBlockIds.POTTED_WHITE_ALLIUM,
 			p -> new FlowerPotBlock(WHITE_ALLIUM, p),
+			Blocks.flowerPotProperties()
+	);
+	public static final Block PINK_CARNATION = registerBlockItem(
+			FBlockItemIds.PINK_CARNATION,
+			p -> new FlowerBlock(MobEffects.REGENERATION, 3.0F, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.offsetType(BlockBehaviour.OffsetType.XZ)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_PINK_CARNATION = registerBlock(
+			FBlockIds.POTTED_PINK_CARNATION,
+			p -> new FlowerPotBlock(PINK_CARNATION, p),
+			Blocks.flowerPotProperties()
+	);
+	public static final Block WHITE_CARNATION = registerBlockItem(
+			FBlockItemIds.WHITE_CARNATION,
+			p -> new FlowerBlock(MobEffects.REGENERATION, 3.0F, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.offsetType(BlockBehaviour.OffsetType.XZ)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_WHITE_CARNATION = registerBlock(
+			FBlockIds.POTTED_WHITE_CARNATION,
+			p -> new FlowerPotBlock(WHITE_CARNATION, p),
+			Blocks.flowerPotProperties()
+	);
+	public static final Block CORAL_CARNATION = registerBlockItem(
+			FBlockItemIds.CORAL_CARNATION,
+			p -> new FlowerBlock(MobEffects.REGENERATION, 3.0F, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.offsetType(BlockBehaviour.OffsetType.XZ)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_CORAL_CARNATION = registerBlock(
+			FBlockIds.POTTED_CORAL_CARNATION,
+			p -> new FlowerPotBlock(CORAL_CARNATION, p),
+			Blocks.flowerPotProperties()
+	);
+	public static final Block VIOLET_CARNATION = registerBlockItem(
+			FBlockItemIds.VIOLET_CARNATION,
+			p -> new FlowerBlock(MobEffects.REGENERATION, 3.0F, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.offsetType(BlockBehaviour.OffsetType.XZ)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_VIOLET_CARNATION = registerBlock(
+			FBlockIds.POTTED_VIOLET_CARNATION,
+			p -> new FlowerPotBlock(VIOLET_CARNATION, p),
+			Blocks.flowerPotProperties()
+	);
+	public static final Block YELLOW_CARNATION = registerBlockItem(
+			FBlockItemIds.YELLOW_CARNATION,
+			p -> new FlowerBlock(MobEffects.REGENERATION, 3.0F, p),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
+					.noCollision()
+					.instabreak()
+					.sound(SoundType.GRASS)
+					.offsetType(BlockBehaviour.OffsetType.XZ)
+					.pushReaction(PushReaction.POPPED)
+	);
+	public static final Block POTTED_YELLOW_CARNATION = registerBlock(
+			FBlockIds.POTTED_YELLOW_CARNATION,
+			p -> new FlowerPotBlock(YELLOW_CARNATION, p),
 			Blocks.flowerPotProperties()
 	);
 
@@ -423,9 +589,7 @@ public class FBlocks {
 					.pushReaction(PushReaction.POPPED)
 	);
 
-	public static final Block ROUND_BUSH = registerBlockItem(
-			FBlockItemIds.ROUND_BUSH,
-			BushBlock::new,
+	public static final Block ROUND_BUSH = registerBlockItem(FBlockItemIds.ROUND_BUSH, BushBlock::new,
 			BlockBehaviour.Properties.of()
 					.mapColor(MapColor.PLANT)
 					.replaceable()
@@ -434,11 +598,6 @@ public class FBlocks {
 					.sound(SoundType.GRASS)
 					.ignitedByLava()
 					.pushReaction(PushReaction.POPPED)
-	);
-	public static final Block POTTED_ROUND_BUSH = registerBlock(
-			FBlockIds.POTTED_ROUND_BUSH,
-			p -> new FlowerPotBlock(ROUND_BUSH, p),
-			Blocks.flowerPotProperties()
 	);
 	public static final Block DRY_CACTUS = registerBlockItem(
 			FBlockItemIds.DRY_CACTUS,

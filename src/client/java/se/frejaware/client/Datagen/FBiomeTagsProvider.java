@@ -5,15 +5,14 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import se.frejaware.WorldGen.Biome.FBiomes;
 
 import java.util.concurrent.CompletableFuture;
 
 public class FBiomeTagsProvider extends FabricTagsProvider<Biome> {
-	public FBiomeTagsProvider(
-			FabricPackOutput output,
-			CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+	public FBiomeTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
 		super(output, Registries.BIOME, registryLookupFuture);
 	}
 
@@ -34,6 +33,14 @@ public class FBiomeTagsProvider extends FabricTagsProvider<Biome> {
 		builder(ConventionalBiomeTags.IS_FLORAL)
 				.add(FBiomes.PEAR_MEADOW)
 				.add(FBiomes.JACARANDA_GLADE);
+		builder(BiomeTags.SPAWNS_COLD_VARIANT_FARM_ANIMALS)
+				.add(FBiomes.ARCTIC);
+		builder(BiomeTags.POLAR_BEARS_SPAWN_ON_ALTERNATE_BLOCKS)
+				.add(FBiomes.ARCTIC);
+		builder(BiomeTags.SPAWNS_SNOW_FOXES)
+				.add(FBiomes.ARCTIC);
+		builder(BiomeTags.SPAWNS_WHITE_RABBITS)
+				.add(FBiomes.ARCTIC);
 	}
 
 	@Override

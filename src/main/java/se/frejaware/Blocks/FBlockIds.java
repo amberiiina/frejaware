@@ -25,7 +25,15 @@ public class FBlockIds {
 	public static final ResourceKey<Block> POTTED_PURPLE_CROCUS = create("potted_purple_crocus");
 	public static final ResourceKey<Block> POTTED_LILY_OF_THE_GLADE = create("potted_lily_of_the_glade");
 
+	public static final ResourceKey<Block> POTTED_FROSTBLOOM = create("potted_frostbloom");
+	public static final ResourceKey<Block> POTTED_SNOWBELL = create("potted_snowbell");
+
 	public static final ResourceKey<Block> POTTED_WHITE_ALLIUM = create("potted_white_allium");
+	public static final ResourceKey<Block> POTTED_PINK_CARNATION = create("potted_pink_carnation");
+	public static final ResourceKey<Block> POTTED_WHITE_CARNATION = create("potted_white_carnation");
+	public static final ResourceKey<Block> POTTED_CORAL_CARNATION = create("potted_coral_carnation");
+	public static final ResourceKey<Block> POTTED_VIOLET_CARNATION = create("potted_violet_carnation");
+	public static final ResourceKey<Block> POTTED_YELLOW_CARNATION = create("potted_yellow_carnation");
 
 	public static final ResourceKey<Block> POTTED_BLUE_SUCCULENT = create("potted_blue_succulent");
 	public static final ResourceKey<Block> POTTED_RED_SUCCULENT = create("potted_red_succulent");
@@ -35,7 +43,6 @@ public class FBlockIds {
 	public static final ResourceKey<Block> POTTED_BROWN_SUCCULENT = create("potted_brown_succulent");
 	public static final ResourceKey<Block> POTTED_YELLOW_SUCCULENT = create("potted_yellow_succulent");
 
-	public static final ResourceKey<Block> POTTED_ROUND_BUSH = create("potted_round_bush");
 	public static final ResourceKey<Block> POTTED_DRY_CACTUS = create("potted_dry_cactus");
 
 	// BLUE_SPRUCE

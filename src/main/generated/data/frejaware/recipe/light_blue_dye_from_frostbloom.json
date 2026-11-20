@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:frostbloom"
+  ],
+  "result": {
+    "id": "minecraft:light_blue_dye"
+  }
+}

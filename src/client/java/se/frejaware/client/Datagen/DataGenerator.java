@@ -6,6 +6,8 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import se.frejaware.Blocks.FBlockStateProviders;
 import se.frejaware.Blocks.FPaintings;
+import se.frejaware.Items.FEnchantments;
+import se.frejaware.Items.FTrimMaterials;
 import se.frejaware.WorldGen.Biome.FBiomeBootstrap;
 import se.frejaware.WorldGen.FFeatures;
 import se.frejaware.WorldGen.FPlacedFeatures;
@@ -31,7 +33,6 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 			pack.addProvider(FModelProvider::new);
 			pack.addProvider(FPaintingTagsProvider::new);
 			pack.addProvider(FRecipeProvider::new);
-			pack.addProvider(FTrimMaterialProvider::new);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -39,6 +40,8 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
+		registryBuilder.add(Registries.TRIM_MATERIAL, FTrimMaterials::bootstrap);
+
 		registryBuilder.add(Registries.FEATURE, FFeatures::configure);
 		registryBuilder.add(Registries.PLACED_FEATURE, FPlacedFeatures::configure);
 		registryBuilder.add(Registries.BIOME, FBiomeBootstrap::bootstrap);
@@ -50,5 +53,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.PAINTING_VARIANT, FPaintings::bootstrap);
 
 		registryBuilder.add(Registries.BLOCK_STATE_PROVIDER, FBlockStateProviders::bootstrap);
+
+		registryBuilder.add(Registries.ENCHANTMENT, FEnchantments::bootstrap);
 	}
 }

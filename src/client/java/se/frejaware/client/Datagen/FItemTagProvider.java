@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.references.ItemIds;
 import net.minecraft.tags.BlockItemTags;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import se.frejaware.Blocks.FBlockItemIds;
 import se.frejaware.Items.FItemIds;
@@ -15,9 +14,7 @@ import se.frejaware.Shared.FItemTags;
 import java.util.concurrent.CompletableFuture;
 
 public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
-	public FItemTagProvider(
-			FabricPackOutput output,
-			CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+	public FItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
 		super(output, registryLookupFuture);
 	}
 
@@ -32,6 +29,21 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 		builder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
 				.add(FItemIds.MUSIC_DISC_RYM)
 				.add(FItemIds.MUSIC_DISC_GFF);
+
+		// VANILLA BLOCK VARIANTS
+		builder(ItemTags.SAND)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(ItemTags.SMELTS_TO_GLASS)
+				.add(FBlockItemIds.COARSE_SAND);
+
+		// ARCTIC
+		builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_BOUNCY)
+				.add(FBlockItemIds.AQUAMARINE_BLOCK);
+		builder(ItemTags.TRIM_MATERIALS)
+				.add(FItemIds.AQUAMARINE_SHARD);
 
 		// FOOD
 		builder(ItemTags.CHICKEN_FOOD)
@@ -55,7 +67,15 @@ public class FItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(FBlockItemIds.PURPLE_CROCUS)
 				.add(FBlockItemIds.LILY_OF_THE_GLADE)
 
-				.add(FBlockItemIds.WHITE_ALLIUM);
+				.add(FBlockItemIds.FROSTBLOOM)
+				.add(FBlockItemIds.SNOWBELL)
+
+				.add(FBlockItemIds.WHITE_ALLIUM)
+				.add(FBlockItemIds.PINK_CARNATION)
+				.add(FBlockItemIds.WHITE_CARNATION)
+				.add(FBlockItemIds.CORAL_CARNATION)
+				.add(FBlockItemIds.VIOLET_CARNATION)
+				.add(FBlockItemIds.YELLOW_CARNATION);
 		builder(FItemTags.NON_POT_FLOWERS)
 				.add(FBlockItemIds.WHITE_CACTUS_FLOWER)
 				.add(FBlockItemIds.YELLOW_CACTUS_FLOWER);

@@ -14,6 +14,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.frejaware.Blocks.FBlockEntityTypes;
+import se.frejaware.Entities.FMobEffects;
 import se.frejaware.Shared.FParticles;
 import se.frejaware.Blocks.Custom.FSkullBlockEntityTypes;
 import se.frejaware.Blocks.FBlocks;
@@ -23,6 +24,8 @@ import se.frejaware.Shared.FDataComponents;
 import se.frejaware.Shared.FLootTables;
 import se.frejaware.Items.FItems;
 import se.frejaware.Shared.FSounds;
+import se.frejaware.StatusBar.FAttachments;
+import se.frejaware.StatusBar.FColdLogic;
 import se.frejaware.WorldGen.FPlacedFeatures;
 import se.frejaware.WorldGen.Custom.FFeatureTypes;
 import se.frejaware.WorldGen.Structures.FStructureTypes;
@@ -43,6 +46,9 @@ public class F implements ModInitializer {
 		FBlockEntityTypes.init();
 		FDataComponents.init();
 		FSounds.init();
+		FAttachments.init();
+		FColdLogic.init();
+		FMobEffects.init();
 
 		// BLOCK ENTITIES
 		BlockEntityTypes.BELL.addValidBlock(FBlocks.IRON_BELL);
@@ -76,18 +82,17 @@ public class F implements ModInitializer {
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.SMALL_END_ISLANDS, Biomes.END_MIDLANDS, Biomes.END_HIGHLANDS, Biomes.END_BARRENS),
 				GenerationStep.Decoration.UNDERGROUND_ORES, FPlacedFeatures.ROSE_QUARTZ_ORE_VEIN);
 
-		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.CHERRY_GROVE),
-				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.PEAR_TREE_CHERRY);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.CHERRY_GROVE), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.PEAR_TREE_CHERRY);
 
-		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT),
-				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_CACTUS_FLOWERS);
-		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT),
-				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_ROCKS);
-		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT),
-				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_SUCCULENTS);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_CACTUS_FLOWERS);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_ROCKS);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_SUCCULENTS);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_COARSE_SAND_PATCH);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_YELLOW_SAND_PATCH);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_GRAY_SAND_PATCH);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DESERT), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.DESERT_PINK_SAND_PATCH);
 
-		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.BEACH),
-				GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.BEACH_SEASHELLS);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.BEACH), GenerationStep.Decoration.VEGETAL_DECORATION, FPlacedFeatures.BEACH_SEASHELLS);
 
 		LOGGER.info("Frejaware Initialized");
 	}

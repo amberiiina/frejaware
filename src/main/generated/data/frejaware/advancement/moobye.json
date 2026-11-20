@@ -1,0 +1,34 @@
+{
+  "parent": "frejaware:frejaware/root",
+  "criteria": {
+    "die_to_moobloom": {
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "frejaware:moobloom"
+          }
+        }
+      },
+      "trigger": "minecraft:entity_killed_player"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.moobye.description"
+    },
+    "icon": {
+      "id": "frejaware:moobloom_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.frejaware.moobye.title"
+    }
+  },
+  "requirements": [
+    [
+      "die_to_moobloom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

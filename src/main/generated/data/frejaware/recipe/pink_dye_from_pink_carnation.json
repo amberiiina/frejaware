@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "frejaware:pink_carnation"
+  ],
+  "result": {
+    "id": "minecraft:pink_dye"
+  }
+}

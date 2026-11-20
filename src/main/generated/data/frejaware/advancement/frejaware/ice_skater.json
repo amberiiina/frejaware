@@ -1,0 +1,48 @@
+{
+  "parent": "frejaware:frejaware/arctic",
+  "criteria": {
+    "obtain_boots_with_ice_skater_and_frost_walker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:foot_armor",
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "frejaware:ice_skater",
+                  "levels": {
+                    "min": 3
+                  }
+                },
+                {
+                  "enchantments": "minecraft:frost_walker",
+                  "levels": {
+                    "min": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.frejaware.ice_skater.description"
+    },
+    "icon": {
+      "id": "minecraft:ice"
+    },
+    "title": {
+      "translate": "advancements.frejaware.ice_skater.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_boots_with_ice_skater_and_frost_walker"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

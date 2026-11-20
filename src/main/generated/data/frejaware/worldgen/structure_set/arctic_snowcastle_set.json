@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 2112916180,
+    "separation": 18,
+    "spacing": 56
+  },
+  "structures": [
+    {
+      "structure": "frejaware:arctic_snowcastle",
+      "weight": 1
+    }
+  ]
+}

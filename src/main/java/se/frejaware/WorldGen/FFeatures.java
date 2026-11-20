@@ -8,7 +8,6 @@ import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.WeightedList;
@@ -33,6 +32,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaPineFoliage
 import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.*;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
@@ -47,7 +47,6 @@ import se.frejaware.Blocks.FBlockStateProviders;
 import se.frejaware.Blocks.FBlocks;
 import se.frejaware.F;
 import se.frejaware.WorldGen.Custom.FRoseQuartzOreFeature;
-import se.frejaware.WorldGen.Custom.FTemplateMushroomFeature;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,13 +71,16 @@ public class FFeatures {
 
 	public static final ResourceKey<Feature> BLUE_SPRUCE_TREE = create("blue_spruce_tree_feature");
 	public static final ResourceKey<Feature> MEGA_BLUE_SPRUCE_TREE = create("mega_blue_spruce_tree_feature");
+	public static final ResourceKey<Feature> ARCTIC_FLOWERS = create("arctic_flowers");
 
 	public static final ResourceKey<Feature> DESERT_CACTUS_FLOWERS = create("desert_cactus_flowers_feature");
 	public static final ResourceKey<Feature> DESERT_ROCKS = create("desert_rocks_feature");
 	public static final ResourceKey<Feature> DESERT_SUCCULENTS = create("desert_succulents_feature");
+	public static final ResourceKey<Feature> DESERT_COARSE_SAND_PATCH = create("desert_coarse_sand_patch_feature");
+	public static final ResourceKey<Feature> DESERT_YELLOW_SAND_PATCH = create("desert_yellow_sand_patch_feature");
+	public static final ResourceKey<Feature> DESERT_GRAY_SAND_PATCH = create("desert_gray_sand_patch_feature");
+	public static final ResourceKey<Feature> DESERT_PINK_SAND_PATCH = create("desert_pink_sand_patch_feature");
 	public static final ResourceKey<Feature> BEACH_SEASHELLS = create("beach_seashells");
-	public static final ResourceKey<Feature> MUSHROOM_HUGE_BROWN = create("mushroom_huge_brown");
-	public static final ResourceKey<Feature> MUSHROOM_HUGE_RED = create("mushroom_huge_red");
 
 	public static void configure(BootstrapContext<Feature> context) {
 		HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
@@ -117,7 +119,6 @@ public class FFeatures {
 		context.register(PEAR_MEADOW_BUSHES, new SimpleBlockFeature(new WeightedStateProvider(
 				WeightedList.<BlockState>builder()
 						.add(FBlocks.BLACKBERRY_BUSH.defaultBlockState(), 1)
-						.add(FBlocks.BLOWBERRY_BUSH.defaultBlockState(), 1)
 						.add(FBlocks.BLUEBERRY_BUSH.defaultBlockState(), 1)
 						.add(FBlocks.PINKBERRY_BUSH.defaultBlockState(), 1)
 						.add(FBlocks.ROUND_BUSH.defaultBlockState(), 1)
@@ -150,7 +151,6 @@ public class FFeatures {
 						Blocks.WHITE_TULIP.defaultBlockState(), 1,
 						Blocks.AZURE_BLUET.defaultBlockState(), 1,
 						Blocks.DANDELION.defaultBlockState(), 2,
-						FBlocks.BLOWBERRY_BUSH.defaultBlockState(), 1,
 						Blocks.SUNFLOWER.defaultBlockState(), 1))));
 		context.register(ORANGE_DIRT_VEGETATION, new SimpleBlockFeature(new WeightedStateProvider(
 				WeightedList.<BlockState>builder()
@@ -179,6 +179,11 @@ public class FFeatures {
 				blueSpruceTree(belowTrunkSnowProvider).build());
 		context.register(MEGA_BLUE_SPRUCE_TREE,
 				megaBlueSpruceTree(belowTrunkSnowProvider).decorators(List.of(snow)).build());
+		context.register(ARCTIC_FLOWERS, new SimpleBlockFeature(new NoiseProvider(2345L, NormalNoise.createParity(0, 1.0F), 0.020833334F,
+				weightedPatch(
+						FBlocks.FROSTBLOOM.defaultBlockState(), 4,
+						FBlocks.SNOWBELL.defaultBlockState(), 1,
+						FBlocks.BLOWBERRY_BUSH.defaultBlockState(), 1))));
 
 		// VANILLA
 		context.register(DESERT_CACTUS_FLOWERS, new SimpleBlockFeature(new NoiseProvider(2345L, NormalNoise.createParity(0, 1.0F), 0.020833334F,
@@ -204,6 +209,18 @@ public class FFeatures {
 						FBlocks.PURPLE_SUCCULENT.defaultBlockState(), 1,
 						FBlocks.BROWN_SUCCULENT.defaultBlockState(), 1,
 						FBlocks.YELLOW_SUCCULENT.defaultBlockState(), 1))));
+		context.register(DESERT_COARSE_SAND_PATCH, new DiskFeature(
+				Holder.direct(new SimpleStateProvider(FBlocks.COARSE_SAND.defaultBlockState())),
+				BlockPredicate.matchesBlocks(Blocks.SAND), UniformInt.of(2, 5), 1));
+		context.register(DESERT_YELLOW_SAND_PATCH, new DiskFeature(
+				Holder.direct(new SimpleStateProvider(FBlocks.YELLOW_SAND.defaultBlockState())),
+				BlockPredicate.matchesBlocks(Blocks.SAND), UniformInt.of(2, 5), 1));
+		context.register(DESERT_GRAY_SAND_PATCH, new DiskFeature(
+				Holder.direct(new SimpleStateProvider(FBlocks.GRAY_SAND.defaultBlockState())),
+				BlockPredicate.matchesBlocks(Blocks.SAND), UniformInt.of(2, 5), 1));
+		context.register(DESERT_PINK_SAND_PATCH, new DiskFeature(
+				Holder.direct(new SimpleStateProvider(FBlocks.PINK_SAND.defaultBlockState())),
+				BlockPredicate.matchesBlocks(Blocks.SAND), UniformInt.of(2, 5), 1));
 
 		context.register(BEACH_SEASHELLS, new SimpleBlockFeature(new WeightedStateProvider(
 				WeightedList.<BlockState>builder()
@@ -220,13 +237,6 @@ public class FFeatures {
 						.add(FBlocks.ORCHID_SEASHELL.defaultBlockState().setValue(FSeashellBlock.FACING, Direction.SOUTH), 1)
 						.add(FBlocks.ORCHID_SEASHELL.defaultBlockState().setValue(FSeashellBlock.FACING, Direction.WEST), 1)
 						.build())));
-
-//		context.register(MUSHROOM_HUGE_BROWN, new FTemplateMushroomFeature(
-//				List.of(F.id("mushroom/brown1"), F.id("mushroom/brown2"), F.id("mushroom/brown3"), F.id("mushroom/brown4")),
-//				BlockPredicate.matchesTag(BlockTags.HUGE_BROWN_MUSHROOM_CAN_PLACE_ON)));
-//		context.register(MUSHROOM_HUGE_RED, new FTemplateMushroomFeature(
-//				List.of(F.id("mushroom/red1"), F.id("mushroom/red2"), F.id("mushroom/red3"), F.id("mushroom/red4")),
-//				BlockPredicate.matchesTag(BlockTags.HUGE_RED_MUSHROOM_CAN_PLACE_ON)));
 	}
 
 	private static ResourceKey<Feature> create(final String name) {

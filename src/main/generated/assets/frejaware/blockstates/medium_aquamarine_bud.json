@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "frejaware:block/medium_aquamarine_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "frejaware:block/medium_aquamarine_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "frejaware:block/medium_aquamarine_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "frejaware:block/medium_aquamarine_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "frejaware:block/medium_aquamarine_bud"
+    },
+    "facing=west": {
+      "model": "frejaware:block/medium_aquamarine_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

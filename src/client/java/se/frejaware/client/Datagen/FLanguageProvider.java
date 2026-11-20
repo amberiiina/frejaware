@@ -20,9 +20,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public class FLanguageProvider extends FabricLanguageProvider {
-	public FLanguageProvider(
-			FabricPackOutput output,
-			CompletableFuture<HolderLookup.Provider> registryLookup) {
+	public FLanguageProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
 		super(output, "en_us", registryLookup);
 	}
 

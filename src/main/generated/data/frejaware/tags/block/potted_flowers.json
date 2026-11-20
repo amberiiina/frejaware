@@ -8,7 +8,14 @@
     "frejaware:potted_lilac_crocus",
     "frejaware:potted_purple_crocus",
     "frejaware:potted_lily_of_the_glade",
+    "frejaware:potted_frostbloom",
+    "frejaware:potted_snowbell",
     "frejaware:potted_white_allium",
+    "frejaware:potted_pink_carnation",
+    "frejaware:potted_white_carnation",
+    "frejaware:potted_coral_carnation",
+    "frejaware:potted_violet_carnation",
+    "frejaware:potted_yellow_carnation",
     "frejaware:potted_blue_succulent",
     "frejaware:potted_red_succulent",
     "frejaware:potted_green_succulent",
@@ -16,7 +23,6 @@
     "frejaware:potted_purple_succulent",
     "frejaware:potted_brown_succulent",
     "frejaware:potted_yellow_succulent",
-    "frejaware:potted_round_bush",
     "frejaware:potted_dry_cactus"
   ]
 }

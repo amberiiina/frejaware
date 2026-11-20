@@ -4,3 +4,7 @@ fafb4e3304c2215b4c3706ecf5581440259ba912 data/c/tags/worldgen/biome/is_overworld
 fafb4e3304c2215b4c3706ecf5581440259ba912 data/c/tags/worldgen/biome/is_temperate/overworld.json
 fafb4e3304c2215b4c3706ecf5581440259ba912 data/c/tags/worldgen/biome/is_tree/deciduous.json
 fafb4e3304c2215b4c3706ecf5581440259ba912 data/c/tags/worldgen/biome/primary_wood_type.json
+dd546c1869c94304c73bbbedfd4526b8b55f62ed data/minecraft/tags/worldgen/biome/polar_bears_spawn_on_alternate_blocks.json
+dd546c1869c94304c73bbbedfd4526b8b55f62ed data/minecraft/tags/worldgen/biome/spawns_cold_variant_farm_animals.json
+dd546c1869c94304c73bbbedfd4526b8b55f62ed data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
+dd546c1869c94304c73bbbedfd4526b8b55f62ed data/minecraft/tags/worldgen/biome/spawns_white_rabbits.json

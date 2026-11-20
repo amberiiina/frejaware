@@ -2,20 +2,17 @@ package se.frejaware.Entities.Custom;
 
 import com.mojang.serialization.Codec;
 import io.netty.buffer.ByteBuf;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.particles.SpellParticleOption;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.protocol.game.ClientboundLevelParticlesPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -25,55 +22,69 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.cow.AbstractCow;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SuspiciousEffectHolder;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
+import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 import se.frejaware.Blocks.FBlocks;
+import se.frejaware.Entities.FDamageTypes;
 import se.frejaware.Entities.FEntityTypes;
 import se.frejaware.Shared.FDataComponents;
 
-import java.util.Optional;
 import java.util.UUID;
 import java.util.function.IntFunction;
 
 public class FMoobloom extends AbstractCow implements Shearable {
 	private static final EntityDataAccessor<Integer> DATA_TYPE;
 	private static final EntityDimensions BABY_DIMENSIONS;
-	private @Nullable SuspiciousStewEffects stewEffects;
 	private @Nullable UUID lastLightningBoltUUID;
 
 	public static AttributeSupplier.Builder createAttributes() {
 		return Animal.createAnimalAttributes()
 				.add(Attributes.MAX_HEALTH, 10.0F)
-				.add(Attributes.MOVEMENT_SPEED, 0.2F);
+				.add(Attributes.MOVEMENT_SPEED, 0.2F)
+				.add(Attributes.ATTACK_DAMAGE, 3.0F);
+	}
+
+	@Override
+	protected void registerGoals() {
+		super.registerGoals();
+		//goalSelector.removeAllGoals(goal -> goal instanceof PanicGoal);
+		goalSelector.addGoal(1, new MeleeAttackGoal(this, 2.0, true));
 	}
 
 	public FMoobloom(final EntityType<? extends FMoobloom> type, final Level level) {
 		super(type, level);
 	}
 
+	@Override
+	public boolean doHurtTarget(ServerLevel level, Entity target) {
+		if (this.level() instanceof ServerLevel serverLevel) {
+			DamageSource source = FDamageTypes.moobloom(serverLevel, this);
+			return target.hurtServer(level, source, (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE));
+		}
+		return false;
+	}
+
 	public float getWalkTargetValue(final BlockPos pos, final LevelReader level) {
-		return level.getBlockState(pos.below())
-				.is(BlockTags.FLOWERS) ? 10.0F : level.getPathfindingCostFromLightLevels(pos);
+		return level.getBlockState(pos.below()).is(BlockTags.FLOWERS) ? 10.0F : level.getPathfindingCostFromLightLevels(pos);
 	}
 
 	public void thunderHit(final ServerLevel level, final LightningBolt lightningBolt) {
@@ -100,22 +111,15 @@ public class FMoobloom extends AbstractCow implements Shearable {
 
 	public InteractionResult mobInteract(final Player player, final InteractionHand hand) {
 		ItemStack itemStack = player.getItemInHand(hand);
-		// bone mealing drops the corresponding flower
 		if (itemStack.is(Items.BONE_MEAL)) {
 			Level level = level();
-			if (level instanceof ServerLevel serverLevel) {
-				serverLevel.playSound(
-						null, this,
-						SoundEvents.BONE_MEAL_USE, SoundSource.NEUTRAL,
-						1.0F, 1.0F
-				);
+			if (level instanceof ServerLevel serverLevel) { // drop flower when bone mealed
+				serverLevel.playSound(null, this, SoundEvents.BONE_MEAL_USE, SoundSource.NEUTRAL, 1.0F, 1.0F);
 				spawnAtLocation(serverLevel, getVariant().getFlowerStack(1));
 				itemStack.shrink(1);
 			}
 			return InteractionResult.SUCCESS;
-
-			// shearing turns moobloom into regular cow
-		} else if (itemStack.is(Items.SHEARS) && readyForShearing()) {
+		} else if (itemStack.is(Items.SHEARS) && readyForShearing()) { // turn into cow when sheared
 			Level level = level();
 			if (level instanceof ServerLevel serverLevel) {
 				shear(serverLevel, SoundSource.PLAYERS, itemStack);
@@ -123,29 +127,23 @@ public class FMoobloom extends AbstractCow implements Shearable {
 				itemStack.hurtAndBreak(1, player, hand.asEquipmentSlot());
 			}
 			return InteractionResult.SUCCESS;
-
-			// default
-		} else {
+		} else if (itemStack.is(ConventionalItemTags.FLOWERS)) { // aggro when fed flower
+			Level level = level();
+			if (level instanceof ServerLevel serverLevel && !player.isCreative() && !player.isSpectator()) {
+				serverLevel.sendParticles(ParticleTypes.ANGRY_VILLAGER, getX(), getEyeY(), getZ(), 5, 0.3, 0.3, 0.3, 0.0);
+				setTarget(player);
+				itemStack.shrink(1);
+			}
+			return InteractionResult.SUCCESS;
+		} else { // default
 			return super.mobInteract(player, hand);
 		}
 	}
 
-	public void shear(
-			final ServerLevel level,
-			final SoundSource soundSource,
-			final ItemStack tool) {
-		level.playSound(
-				null, this,
-				SoundEvents.MOOSHROOM_SHEAR, soundSource,
-				1.0F, 1.0F
-		);
-		this.convertTo(EntityTypes.COW, ConversionParams.single(
-				this, false, false
-		), (cow) -> {
-			level.sendParticles(ParticleTypes.EXPLOSION,
-					this.getX(), this.getY(0.5F), this.getZ(),
-					1, 0.0F, 0.0F, 0.0F, 0.0F
-			);
+	public void shear(final ServerLevel level, final SoundSource soundSource, final ItemStack tool) {
+		level.playSound(null, this, SoundEvents.MOOSHROOM_SHEAR, soundSource, 1.0F, 1.0F);
+		convertTo(EntityTypes.COW, ConversionParams.single(this, false, false), cow -> {
+			level.sendParticles(ParticleTypes.EXPLOSION, getX(), getY(0.5F), getZ(), 1, 0.0F, 0.0F, 0.0F, 0.0F);
 			spawnAtLocation(level, getVariant().getFlowerStack(3));
 		});
 	}
@@ -168,11 +166,7 @@ public class FMoobloom extends AbstractCow implements Shearable {
 	}
 
 	@Override
-	public @Nullable SpawnGroupData finalizeSpawn(
-			final ServerLevelAccessor level,
-			final DifficultyInstance difficulty,
-			final EntitySpawnReason reason,
-			@Nullable final SpawnGroupData groupData) {
+	public @Nullable SpawnGroupData finalizeSpawn(final ServerLevelAccessor level, final DifficultyInstance difficulty, final EntitySpawnReason reason, @Nullable final SpawnGroupData groupData) {
 		Variant[] all = Variant.values();
 		setVariant(all[random.nextInt(all.length)]);
 		return super.finalizeSpawn(level, difficulty, reason, groupData);
@@ -187,8 +181,7 @@ public class FMoobloom extends AbstractCow implements Shearable {
 	}
 
 	public <T> @Nullable T get(final DataComponentType<? extends T> type) {
-		return type == FDataComponents.MOOBLOOM_VARIANT ?
-				castComponentValue(type, getVariant()) : super.get(type);
+		return type == FDataComponents.MOOBLOOM_VARIANT ? castComponentValue(type, getVariant()) : super.get(type);
 	}
 
 	protected void applyImplicitComponents(final DataComponentGetter components) {
@@ -196,8 +189,7 @@ public class FMoobloom extends AbstractCow implements Shearable {
 		super.applyImplicitComponents(components);
 	}
 
-	protected <T> boolean applyImplicitComponent(
-			final DataComponentType<T> type, final T value) {
+	protected <T> boolean applyImplicitComponent(final DataComponentType<T> type, final T value) {
 		if (type == FDataComponents.MOOBLOOM_VARIANT) {
 			setVariant(castComponentValue(FDataComponents.MOOBLOOM_VARIANT, value));
 			return true;
@@ -210,13 +202,11 @@ public class FMoobloom extends AbstractCow implements Shearable {
 		return isBaby() ? BABY_DIMENSIONS : super.getDefaultDimensions(pose);
 	}
 
-	public @Nullable FMoobloom getBreedOffspring(
-			final ServerLevel level, final AgeableMob partner) {
+	public @Nullable FMoobloom getBreedOffspring(final ServerLevel level, final AgeableMob partner) {
 		FMoobloom baby = FEntityTypes.MOOBLOOM.create(level, EntitySpawnReason.BREEDING);
 		if (baby != null) {
 			baby.setVariant(getOffspringVariant((FMoobloom)partner));
 		}
-
 		return baby;
 	}
 
@@ -251,14 +241,9 @@ public class FMoobloom extends AbstractCow implements Shearable {
 		WHITE("white", 6, FBlocks.WHITE_ORCHID.defaultBlockState());
 
 		public static final Variant DEFAULT = YELLOW;
-		public static final Codec<Variant> CODEC =
-				StringRepresentable.fromEnum(Variant::values);
-		private static final IntFunction<Variant> BY_ID =
-				ByIdMap.continuous(Variant::id, values(),
-						ByIdMap.OutOfBoundsStrategy.CLAMP
-				);
-		public static final StreamCodec<ByteBuf, Variant> STREAM_CODEC =
-				ByteBufCodecs.idMapper(BY_ID, Variant::id);
+		public static final Codec<Variant> CODEC = StringRepresentable.fromEnum(Variant::values);
+		private static final IntFunction<Variant> BY_ID = ByIdMap.continuous(Variant::id, values(), ByIdMap.OutOfBoundsStrategy.CLAMP);
+		public static final StreamCodec<ByteBuf, Variant> STREAM_CODEC = ByteBufCodecs.idMapper(BY_ID, Variant::id);
 		private final String type;
 		private final int id;
 		private final BlockState blockState;

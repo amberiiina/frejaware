@@ -4,7 +4,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.block.Block;
 import se.frejaware.F;
 
 public class FBlockItemIds {
@@ -27,6 +26,18 @@ public class FBlockItemIds {
 	public static final BlockItemId PACKED_ICE_SLAB = create("packed_ice_slab");
 	public static final BlockItemId BLUE_ICE_STAIRS = create("blue_ice_stairs");
 	public static final BlockItemId BLUE_ICE_SLAB = create("blue_ice_slab");
+	public static final BlockItemId COARSE_SAND = create("coarse_sand");
+	public static final BlockItemId YELLOW_SAND = create("yellow_sand");
+	public static final BlockItemId GRAY_SAND = create("gray_sand");
+	public static final BlockItemId PINK_SAND = create("pink_sand");
+
+	// ARCTIC
+	public static final BlockItemId AQUAMARINE_BLOCK = create("aquamarine_block");
+	public static final BlockItemId BUDDING_AQUAMARINE = create("budding_aquamarine");
+	public static final BlockItemId AQUAMARINE_CLUSTER = create("aquamarine_cluster");
+	public static final BlockItemId LARGE_AQUAMARINE_BUD = create("large_aquamarine_bud");
+	public static final BlockItemId MEDIUM_AQUAMARINE_BUD = create("medium_aquamarine_bud");
+	public static final BlockItemId SMALL_AQUAMARINE_BUD = create("small_aquamarine_bud");
 
 	// BLOM
 	public static final BlockItemId WHITE_ORCHID = create("white_orchid");
@@ -39,9 +50,17 @@ public class FBlockItemIds {
 	public static final BlockItemId PURPLE_CROCUS = create("purple_crocus");
 	public static final BlockItemId LILY_OF_THE_GLADE = create("lily_of_the_glade");
 
+	public static final BlockItemId FROSTBLOOM = create("frostbloom");
+	public static final BlockItemId SNOWBELL = create("snowbell");
+
 	public static final BlockItemId WHITE_CACTUS_FLOWER = create("white_cactus_flower");
 	public static final BlockItemId YELLOW_CACTUS_FLOWER = create("yellow_cactus_flower");
 	public static final BlockItemId WHITE_ALLIUM = create("white_allium");
+	public static final BlockItemId PINK_CARNATION = create("pink_carnation");
+	public static final BlockItemId WHITE_CARNATION = create("white_carnation");
+	public static final BlockItemId CORAL_CARNATION = create("coral_carnation");
+	public static final BlockItemId VIOLET_CARNATION = create("violet_carnation");
+	public static final BlockItemId YELLOW_CARNATION = create("yellow_carnation");
 
 	public static final BlockItemId BLUE_SUCCULENT = create("blue_succulent");
 	public static final BlockItemId RED_SUCCULENT = create("red_succulent");

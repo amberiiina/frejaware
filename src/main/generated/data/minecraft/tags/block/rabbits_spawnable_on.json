@@ -1,6 +1,10 @@
 {
   "values": [
     "frejaware:snow_stairs",
-    "frejaware:snow_slab"
+    "frejaware:snow_slab",
+    "frejaware:coarse_sand",
+    "frejaware:yellow_sand",
+    "frejaware:gray_sand",
+    "frejaware:pink_sand"
   ]
 }

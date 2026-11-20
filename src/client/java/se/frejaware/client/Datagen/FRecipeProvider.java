@@ -3,6 +3,7 @@ package se.frejaware.client.Datagen;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBrewingProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
@@ -16,23 +17,21 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.world.level.ItemLike;
 import se.frejaware.Blocks.FBlocks;
+import se.frejaware.Entities.FMobEffects;
 import se.frejaware.Items.FItems;
 import se.frejaware.Shared.FItemTags;
 
 public class FRecipeProvider extends FabricRecipeProvider {
-	public FRecipeProvider(FabricPackOutput output,
-						   CompletableFuture<HolderLookup.Provider> registriesFuture) {
+	public FRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
 		super(output, registriesFuture);
 	}
 
 	@Override
-	protected RecipeProvider createRecipeProvider(
-			HolderLookup.Provider registries,
-			BootstrapContext<Recipe<?>> recipes,
-			BootstrapContext<Advancement> advancements) {
+	protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
 		return new RecipeProvider(recipes, advancements) {
 			@Override
 			public void buildRecipes() {
+				new FBrewingProvider(output).buildRecipes();
 				// ----------------------
 				// MOLLY
 				// ----------------------
@@ -59,6 +58,13 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.requires(FItemTags.POT_FLOWERS)
 						.unlockedBy(getHasName(Items.HEART_POTTERY_SHERD), has(Items.HEART_POTTERY_SHERD))
 						.save(output);
+				// 1x pink bone meal
+				shapeless(RecipeCategory.MISC, FItems.PINK_BONE_MEAL)
+						.requires(Items.BONE_MEAL)
+						.requires(Items.DYE.pink())
+						.requires(FBlocks.WHITE_ORCHID)
+						.unlockedBy(getHasName(Items.BONE_MEAL), has(Items.BONE_MEAL))
+						.save(output);
 
 				// flowers
 				flowerDye(FBlocks.WHITE_ORCHID, Items.DYE.white());
@@ -71,9 +77,17 @@ public class FRecipeProvider extends FabricRecipeProvider {
 				flowerDye(FBlocks.PURPLE_CROCUS, Items.DYE.purple());
 				flowerDye(FBlocks.LILY_OF_THE_GLADE, Items.DYE.purple());
 
+				flowerDye(FBlocks.FROSTBLOOM, Items.DYE.lightBlue());
+				flowerDye(FBlocks.SNOWBELL, Items.DYE.white());
+
 				flowerDye(FBlocks.WHITE_CACTUS_FLOWER, Items.DYE.white());
 				flowerDye(FBlocks.YELLOW_CACTUS_FLOWER, Items.DYE.yellow());
 				flowerDye(FBlocks.WHITE_ALLIUM, Items.DYE.white());
+				flowerDye(FBlocks.PINK_CARNATION, Items.DYE.pink());
+				flowerDye(FBlocks.WHITE_CARNATION, Items.DYE.white());
+				flowerDye(FBlocks.CORAL_CARNATION, Items.DYE.red());
+				flowerDye(FBlocks.VIOLET_CARNATION, Items.DYE.purple());
+				flowerDye(FBlocks.YELLOW_CARNATION, Items.DYE.yellow());
 
 				flowerDye(FBlocks.BLUE_SUCCULENT, Items.DYE.blue());
 				flowerDye(FBlocks.RED_SUCCULENT, Items.DYE.red());
@@ -140,6 +154,36 @@ public class FRecipeProvider extends FabricRecipeProvider {
 						.unlockedBy(getHasName(Items.BLUE_ICE), has(Items.BLUE_ICE))
 						.save(output);
 				slab(RecipeCategory.BUILDING_BLOCKS, FBlocks.BLUE_ICE_SLAB, Items.BLUE_ICE);
+
+				SimpleCookingRecipeBuilder.smelting(Ingredient.of(FBlocks.YELLOW_SAND), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS,
+						Items.STAINED_GLASS.yellow(), 0.35F, 200)
+						.unlockedBy(getHasName(FBlocks.YELLOW_SAND), has(FBlocks.YELLOW_SAND))
+						.save(output, "yellow_stained_glass_from_yellow_sand");
+				SimpleCookingRecipeBuilder.smelting(Ingredient.of(FBlocks.GRAY_SAND), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS,
+						Items.STAINED_GLASS.lightGray(), 0.35F, 200)
+						.unlockedBy(getHasName(FBlocks.GRAY_SAND), has(FBlocks.GRAY_SAND))
+						.save(output, "light_gray_stained_glass_from_light_gray_sand");
+				SimpleCookingRecipeBuilder.smelting(Ingredient.of(FBlocks.PINK_SAND), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS,
+						Items.STAINED_GLASS.pink(), 0.35F, 200)
+						.unlockedBy(getHasName(FBlocks.PINK_SAND), has(FBlocks.PINK_SAND))
+						.save(output, "pink_stained_glass_from_pink_sand");
+
+				// ----------------------
+				// ARCTIC
+				// ----------------------
+
+				// 1x aquamarine block
+				shaped(RecipeCategory.MISC, FBlocks.AQUAMARINE_BLOCK)
+						.pattern("##")
+						.pattern("##")
+						.define('#', FItems.AQUAMARINE_SHARD)
+						.unlockedBy(getHasName(FItems.AQUAMARINE_SHARD), has(FItems.AQUAMARINE_SHARD))
+						.save(output);
+				// 4x aquamarine shard
+				shapeless(RecipeCategory.MISC, FItems.AQUAMARINE_SHARD, 4)
+						.requires(FBlocks.AQUAMARINE_BLOCK)
+						.unlockedBy(getHasName(FBlocks.AQUAMARINE_BLOCK), has(FBlocks.AQUAMARINE_BLOCK))
+						.save(output);
 
 				// ----------------------
 				// FOOD

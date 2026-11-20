@@ -1,5 +1,5 @@
 {
-  "parent": "frejaware:frejaware/good_blowjob",
+  "parent": "frejaware:frejaware/root",
   "criteria": {
     "obtain_berry_juice": {
       "conditions": {
@@ -50,6 +50,16 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_sweetberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sweet_berries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -65,6 +75,9 @@
     }
   },
   "requirements": [
+    [
+      "obtain_sweetberry"
+    ],
     [
       "obtain_blueberry"
     ],

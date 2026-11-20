@@ -17,41 +17,27 @@ public class FCreativeTabs {
 	// TABS
 	// ----------------------
 
-	public static final ResourceKey<CreativeModeTab> FREJAWARE_TAB_KEY =
-			ResourceKey.create(
-					Registries.CREATIVE_MODE_TAB,
-					F.id("frejaware")
-			);
-	public static final ResourceKey<CreativeModeTab> EQUIPMENT_TAB_KEY =
-			ResourceKey.create(
-					Registries.CREATIVE_MODE_TAB,
-					F.id("equipment")
-			);
-	public static final ResourceKey<CreativeModeTab> FOOD_TAB_KEY =
-			ResourceKey.create(
-					Registries.CREATIVE_MODE_TAB,
-					F.id("food")
-			);
-	public static final ResourceKey<CreativeModeTab> FLOWERS_TAB_KEY =
-			ResourceKey.create(
-					Registries.CREATIVE_MODE_TAB,
-					F.id("flowers")
-			);
-	public static final ResourceKey<CreativeModeTab> WOOD_TAB_KEY =
-			ResourceKey.create(
-					Registries.CREATIVE_MODE_TAB,
-					F.id("wood")
-			);
-	public static final ResourceKey<CreativeModeTab> MUSIC_TAB_KEY =
-			ResourceKey.create(
-					Registries.CREATIVE_MODE_TAB,
-					F.id("music")
-			);
-	public static final ResourceKey<CreativeModeTab> ENTITIES_TAB_KEY =
-			ResourceKey.create(
-					Registries.CREATIVE_MODE_TAB,
-					F.id("entities")
-			);
+	public static final ResourceKey<CreativeModeTab> FREJAWARE_TAB_KEY = create("frejaware");
+	public static final ResourceKey<CreativeModeTab> EQUIPMENT_TAB_KEY = create("equipment");
+	public static final ResourceKey<CreativeModeTab> FOOD_TAB_KEY = create("food");
+	public static final ResourceKey<CreativeModeTab> FLOWERS_TAB_KEY = create("flowers");
+	public static final ResourceKey<CreativeModeTab> WOOD_TAB_KEY = create("wood");
+	public static final ResourceKey<CreativeModeTab> MUSIC_TAB_KEY = create("music");
+	public static final ResourceKey<CreativeModeTab> ENTITIES_TAB_KEY = create("entities");
+
+	public static void init() {
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FREJAWARE_TAB_KEY, FREJAWARE_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, EQUIPMENT_TAB_KEY, EQUIPMENT_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FOOD_TAB_KEY, FOOD_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FLOWERS_TAB_KEY, FLOWERS_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, WOOD_TAB_KEY, WOOD_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MUSIC_TAB_KEY, MUSIC_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ENTITIES_TAB_KEY, ENTITIES_TAB);
+	}
+
+	public static ResourceKey<CreativeModeTab> create(String name) {
+		return ResourceKey.create(Registries.CREATIVE_MODE_TAB, F.id(name));
+	}
 
 	// ----------------------
 	// FREJAWARE
@@ -78,6 +64,19 @@ public class FCreativeTabs {
 						output.accept(FBlocks.PACKED_ICE_SLAB);
 						output.accept(FBlocks.BLUE_ICE_STAIRS);
 						output.accept(FBlocks.BLUE_ICE_SLAB);
+						output.accept(FBlocks.COARSE_SAND);
+						output.accept(FBlocks.YELLOW_SAND);
+						output.accept(FBlocks.GRAY_SAND);
+						output.accept(FBlocks.PINK_SAND);
+
+						// ARCTIC
+						output.accept(FBlocks.AQUAMARINE_BLOCK);
+						output.accept(FBlocks.BUDDING_AQUAMARINE);
+						output.accept(FBlocks.AQUAMARINE_CLUSTER);
+						output.accept(FBlocks.LARGE_AQUAMARINE_BUD);
+						output.accept(FBlocks.MEDIUM_AQUAMARINE_BUD);
+						output.accept(FBlocks.SMALL_AQUAMARINE_BUD);
+						output.accept(FItems.AQUAMARINE_SHARD);
 
 						// METAL BLOCKS
 						output.accept(FBlocks.TRANSIUM_BLOCK);
@@ -229,6 +228,9 @@ public class FCreativeTabs {
 					.icon(() -> new ItemStack(FBlocks.WHITE_ORCHID))
 					.title(Component.translatable("creativetab.flowers"))
 					.displayItems((params, output) -> {
+						// PINK BONE MEAL
+						output.accept(FItems.PINK_BONE_MEAL);
+
 						// PEAR MEADOW
 						output.accept(FBlocks.WHITE_ORCHID);
 						output.accept(FBlocks.YELLOW_TULIP);
@@ -241,10 +243,19 @@ public class FCreativeTabs {
 						output.accept(FBlocks.PURPLE_CROCUS);
 						output.accept(FBlocks.LILY_OF_THE_GLADE);
 
+						// ARCTIC
+						output.accept(FBlocks.FROSTBLOOM);
+						output.accept(FBlocks.SNOWBELL);
+
 						// OTHER FLOWERS
 						output.accept(FBlocks.WHITE_CACTUS_FLOWER);
 						output.accept(FBlocks.YELLOW_CACTUS_FLOWER);
 						output.accept(FBlocks.WHITE_ALLIUM);
+						output.accept(FBlocks.PINK_CARNATION);
+						output.accept(FBlocks.WHITE_CARNATION);
+						output.accept(FBlocks.CORAL_CARNATION);
+						output.accept(FBlocks.VIOLET_CARNATION);
+						output.accept(FBlocks.YELLOW_CARNATION);
 
 						output.accept(FBlocks.BLUE_SUCCULENT);
 						output.accept(FBlocks.RED_SUCCULENT);
@@ -395,18 +406,4 @@ public class FCreativeTabs {
 						output.accept(FItems.FROSTBOW);
 					})
 					.build();
-
-	// ----------------------
-	// FUNCTIONS
-	// ----------------------
-
-	public static void init() {
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FREJAWARE_TAB_KEY, FREJAWARE_TAB);
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, EQUIPMENT_TAB_KEY, EQUIPMENT_TAB);
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FOOD_TAB_KEY, FOOD_TAB);
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FLOWERS_TAB_KEY, FLOWERS_TAB);
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, WOOD_TAB_KEY, WOOD_TAB);
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MUSIC_TAB_KEY, MUSIC_TAB);
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ENTITIES_TAB_KEY, ENTITIES_TAB);
-	}
 }

@@ -13,15 +13,37 @@ import se.frejaware.Shared.FBlockTags;
 import java.util.concurrent.CompletableFuture;
 
 public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
-	public FBlockTagProvider(
-			FabricPackOutput output,
-			CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+	public FBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
 		super(output, registryLookupFuture);
 	}
 
 	@Override
 	protected void addTags(HolderLookup.Provider registries) {
 		// MOLLY
+		builder(FBlockTags.PINK_BONE_MEAL)
+				.add(FBlockItemIds.WHITE_ORCHID)
+
+				.add(FBlockItemIds.WHITE_CROCUS)
+
+				.add(FBlockItemIds.WHITE_ALLIUM)
+				.add(FBlockItemIds.PINK_CARNATION)
+				.add(FBlockItemIds.WHITE_CARNATION)
+
+				.add(FBlockItemIds.WHITE_PETALS)
+
+				.add(FBlockItemIds.ROUND_BUSH)
+
+				.add(FBlockItemIds.PINKBERRY_CROP)
+
+				.add(BlockItemIds.PINK_PETALS)
+				.add(BlockItemIds.LILY_OF_THE_VALLEY)
+				.add(BlockItemIds.AZURE_BLUET)
+				.add(BlockItemIds.OXEYE_DAISY)
+				.add(BlockItemIds.SHORT_GRASS)
+				.add(BlockItemIds.FERN)
+				.add(BlockItemIds.BUSH)
+				.add(BlockItemIds.PINK_TULIP)
+				.add(BlockItemIds.WHITE_TULIP);
 		builder(BlockTags.CROPS)
 				.add(FBlockItemIds.PINEAPPLE_CROP);
 		builder(BlockTags.MAINTAINS_FARMLAND)
@@ -47,6 +69,29 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 		builder(BlockTags.SUPPORT_OVERRIDE_CACTUS_FLOWER)
 				.add(FBlockItemIds.DRY_CACTUS);
 
+		// ARCTIC
+		builder(FBlockTags.SUPPORTS_SNOW_VEGETATION)
+				.add(BlockItemIds.SNOW_BLOCK);
+		builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
+				.add(FBlockItemIds.AQUAMARINE_BLOCK)
+				.add(FBlockItemIds.BUDDING_AQUAMARINE)
+				.add(FBlockItemIds.AQUAMARINE_CLUSTER)
+				.add(FBlockItemIds.LARGE_AQUAMARINE_BUD)
+				.add(FBlockItemIds.MEDIUM_AQUAMARINE_BUD)
+				.add(FBlockItemIds.SMALL_AQUAMARINE_BUD);
+		builder(BlockTags.CRYSTAL_SOUND_BLOCKS)
+				.add(FBlockItemIds.AQUAMARINE_BLOCK)
+				.add(FBlockItemIds.BUDDING_AQUAMARINE);
+		builder(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
+				.add(FBlockItemIds.SMALL_AQUAMARINE_BUD);
+		builder(BlockTags.MINEABLE_WITH_PICKAXE)
+				.add(FBlockItemIds.AQUAMARINE_BLOCK)
+				.add(FBlockItemIds.BUDDING_AQUAMARINE)
+				.add(FBlockItemIds.AQUAMARINE_CLUSTER)
+				.add(FBlockItemIds.LARGE_AQUAMARINE_BUD)
+				.add(FBlockItemIds.MEDIUM_AQUAMARINE_BUD)
+				.add(FBlockItemIds.SMALL_AQUAMARINE_BUD);
+
 		// BLOM
 		builder(FBlockTags.POTTED_FLOWERS)
 				.add(FBlockIds.POTTED_WHITE_ORCHID)
@@ -59,7 +104,16 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.add(FBlockIds.POTTED_PURPLE_CROCUS)
 				.add(FBlockIds.POTTED_LILY_OF_THE_GLADE)
 
+				.add(FBlockIds.POTTED_FROSTBLOOM)
+				.add(FBlockIds.POTTED_SNOWBELL)
+
 				.add(FBlockIds.POTTED_WHITE_ALLIUM)
+				.add(FBlockIds.POTTED_PINK_CARNATION)
+				.add(FBlockIds.POTTED_WHITE_CARNATION)
+				.add(FBlockIds.POTTED_CORAL_CARNATION)
+				.add(FBlockIds.POTTED_VIOLET_CARNATION)
+				.add(FBlockIds.POTTED_YELLOW_CARNATION)
+
 				.add(FBlockIds.POTTED_BLUE_SUCCULENT)
 				.add(FBlockIds.POTTED_RED_SUCCULENT)
 				.add(FBlockIds.POTTED_GREEN_SUCCULENT)
@@ -68,7 +122,6 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.add(FBlockIds.POTTED_BROWN_SUCCULENT)
 				.add(FBlockIds.POTTED_YELLOW_SUCCULENT)
 
-				.add(FBlockIds.POTTED_ROUND_BUSH)
 				.add(FBlockIds.POTTED_DRY_CACTUS);
 		builder(FBlockTags.SMALL_FLOWERS)
 				.add(FBlockItemIds.WHITE_ORCHID)
@@ -81,7 +134,15 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 				.add(FBlockItemIds.PURPLE_CROCUS)
 				.add(FBlockItemIds.LILY_OF_THE_GLADE)
 
-				.add(FBlockItemIds.WHITE_ALLIUM);
+				.add(FBlockItemIds.FROSTBLOOM)
+				.add(FBlockItemIds.SNOWBELL)
+
+				.add(FBlockItemIds.WHITE_ALLIUM)
+				.add(FBlockItemIds.PINK_CARNATION)
+				.add(FBlockItemIds.WHITE_CARNATION)
+				.add(FBlockItemIds.CORAL_CARNATION)
+				.add(FBlockItemIds.VIOLET_CARNATION)
+				.add(FBlockItemIds.YELLOW_CARNATION);
 		builder(FBlockTags.NON_POT_FLOWERS)
 				.add(FBlockItemIds.WHITE_CACTUS_FLOWER)
 				.add(FBlockItemIds.YELLOW_CACTUS_FLOWER);
@@ -188,6 +249,61 @@ public class FBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 		builder(BlockTags.WOLVES_SPAWNABLE_ON)
 				.add(FBlockItemIds.SNOW_STAIRS)
 				.add(FBlockItemIds.SNOW_SLAB);
+		builder(BlockTags.TRIGGERS_AMBIENT_DESERT_SAND_BLOCK_SOUNDS)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.AZALEA_ROOT_REPLACEABLE)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.ENDERMAN_HOLDABLE)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.LUSH_GROUND_REPLACEABLE)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.MINEABLE_WITH_SHOVEL)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.RABBITS_SPAWNABLE_ON)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.SAND)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.SCULK_REPLACEABLE)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.TRIGGERS_AMBIENT_DESERT_DRY_VEGETATION_BLOCK_SOUNDS)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
+		builder(BlockTags.TRIGGERS_AMBIENT_DESERT_SAND_BLOCK_SOUNDS)
+				.add(FBlockItemIds.COARSE_SAND)
+				.add(FBlockItemIds.YELLOW_SAND)
+				.add(FBlockItemIds.GRAY_SAND)
+				.add(FBlockItemIds.PINK_SAND);
 
 		// BLUE SPRUCE
 		builder(FBlockTags.SUPPORTS_BLUE_SPRUCE)

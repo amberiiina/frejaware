@@ -48,10 +48,15 @@ public class FPlacedFeatures {
 
 	public static final ResourceKey<PlacedFeature> BLUE_SPRUCE_TREE = create("blue_spruce_tree_placed");
 	public static final ResourceKey<PlacedFeature> MEGA_BLUE_SPRUCE_TREE = create("mega_blue_spruce_tree_placed");
+	public static final ResourceKey<PlacedFeature> ARCTIC_FLOWERS = create("arctic_flowers_placed");
 
 	public static final ResourceKey<PlacedFeature> DESERT_CACTUS_FLOWERS = create("desert_cactus_flowers_placed");
 	public static final ResourceKey<PlacedFeature> DESERT_ROCKS = create("desert_rocks_placed");
 	public static final ResourceKey<PlacedFeature> DESERT_SUCCULENTS = create("desert_succulents_placed");
+	public static final ResourceKey<PlacedFeature> DESERT_COARSE_SAND_PATCH = create("desert_coarse_sand_patch_placed");
+	public static final ResourceKey<PlacedFeature> DESERT_YELLOW_SAND_PATCH = create("desert_yellow_sand_patch_placed");
+	public static final ResourceKey<PlacedFeature> DESERT_GRAY_SAND_PATCH = create("desert_gray_sand_patch_placed");
+	public static final ResourceKey<PlacedFeature> DESERT_PINK_SAND_PATCH = create("desert_pink_sand_patch_placed");
 	public static final ResourceKey<PlacedFeature> BEACH_SEASHELLS = create("beach_seashells_placed");
 
 	public static void configure(BootstrapContext<PlacedFeature> context) {
@@ -221,6 +226,15 @@ public class FPlacedFeatures {
 				BiomeFilter.biome(),
 				CountPlacement.of(2),
 				BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(FBlocks.BLUE_SPRUCE_SAPLING)));
+		List<PlacementModifier> arcticFlowersModifiers = List.of(
+				CountPlacement.of(3),
+				RarityFilter.onAverageOnceEvery(4),
+				InSquarePlacement.spread(),
+				PlacementUtils.HEIGHTMAP_NO_LEAVES,
+				CountPlacement.of(48),
+				BiomeFilter.biome(),
+				OffsetPlacement.ofTriangle(6, 2),
+				BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE));
 
 		// VANILLA
 		List<PlacementModifier> desertCactusFlowersModifiers = List.of(
@@ -253,6 +267,22 @@ public class FPlacedFeatures {
 				OffsetPlacement.ofTriangle(6, 2),
 				BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)
 		);
+		List<PlacementModifier> desertSandPatchModifiers = List.of(
+				CountPlacement.of(28),
+				RarityFilter.onAverageOnceEvery(6),
+				InSquarePlacement.spread(),
+				HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.absolute(256)),
+				EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.matchesTag(BlockTags.AIR), 12),
+				OffsetPlacement.of(0, 1, 0),
+				BiomeFilter.biome());
+		List<PlacementModifier> desertPinkSandPatchModifiers = List.of(
+				CountPlacement.of(28),
+				RarityFilter.onAverageOnceEvery(12),
+				InSquarePlacement.spread(),
+				HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.absolute(256)),
+				EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.matchesTag(BlockTags.AIR), 12),
+				OffsetPlacement.of(0, 1, 0),
+				BiomeFilter.biome());
 		List<PlacementModifier> beachSeashellsModifiers = List.of(
 				CountPlacement.of(3),
 				RarityFilter.onAverageOnceEvery(2),
@@ -294,11 +324,16 @@ public class FPlacedFeatures {
 		// ARCTIC
 		context.register(BLUE_SPRUCE_TREE, new PlacedFeature(features.getOrThrow(FFeatures.BLUE_SPRUCE_TREE), blueSpruceTreeModifiers));
 		context.register(MEGA_BLUE_SPRUCE_TREE, new PlacedFeature(features.getOrThrow(FFeatures.MEGA_BLUE_SPRUCE_TREE), megaBlueSpruceTreeModifiers));
+		context.register(ARCTIC_FLOWERS, new PlacedFeature(features.getOrThrow(FFeatures.ARCTIC_FLOWERS), arcticFlowersModifiers));
 
 		// VANILLA
 		context.register(DESERT_CACTUS_FLOWERS, new PlacedFeature(features.getOrThrow(FFeatures.DESERT_CACTUS_FLOWERS), desertCactusFlowersModifiers));
 		context.register(DESERT_ROCKS, new PlacedFeature(features.getOrThrow(FFeatures.DESERT_ROCKS), desertRocksModifiers));
 		context.register(DESERT_SUCCULENTS, new PlacedFeature(features.getOrThrow(FFeatures.DESERT_SUCCULENTS), desertSucculentsModifiers));
+		context.register(DESERT_COARSE_SAND_PATCH, new PlacedFeature(features.getOrThrow(FFeatures.DESERT_COARSE_SAND_PATCH), desertSandPatchModifiers));
+		context.register(DESERT_YELLOW_SAND_PATCH, new PlacedFeature(features.getOrThrow(FFeatures.DESERT_YELLOW_SAND_PATCH), desertSandPatchModifiers));
+		context.register(DESERT_GRAY_SAND_PATCH, new PlacedFeature(features.getOrThrow(FFeatures.DESERT_GRAY_SAND_PATCH), desertSandPatchModifiers));
+		context.register(DESERT_PINK_SAND_PATCH, new PlacedFeature(features.getOrThrow(FFeatures.DESERT_PINK_SAND_PATCH), desertPinkSandPatchModifiers));
 
 		context.register(BEACH_SEASHELLS, new PlacedFeature(features.getOrThrow(FFeatures.BEACH_SEASHELLS), beachSeashellsModifiers));
 	}

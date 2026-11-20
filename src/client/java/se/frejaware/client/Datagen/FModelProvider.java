@@ -34,8 +34,6 @@ public class FModelProvider extends FabricModelProvider {
 		try {
 			// MOLLY
 			blockGen.registerSimpleFlatItemModel(FBlocks.IRON_BELL);
-			blockGen.createNonTemplateModelBlock(FBlocks.DRY_CACTUS);
-			blockGen.createNonTemplateModelBlock(FBlocks.POTTED_DRY_CACTUS);
 
 			// VANILLA BLOCK VARIANTS
 			createVanillaStairs(blockGen, FBlocks.SNOW_STAIRS, Blocks.SNOW);
@@ -46,6 +44,18 @@ public class FModelProvider extends FabricModelProvider {
 			createVanillaSlab(blockGen, FBlocks.PACKED_ICE_SLAB, Blocks.PACKED_ICE);
 			createVanillaStairs(blockGen, FBlocks.BLUE_ICE_STAIRS, Blocks.BLUE_ICE);
 			createVanillaSlab(blockGen, FBlocks.BLUE_ICE_SLAB, Blocks.BLUE_ICE);
+			blockGen.createTrivialCube(FBlocks.COARSE_SAND);
+			blockGen.createTrivialCube(FBlocks.YELLOW_SAND);
+			blockGen.createTrivialCube(FBlocks.GRAY_SAND);
+			blockGen.createTrivialCube(FBlocks.PINK_SAND);
+
+			// ARCTIC
+			blockGen.createTrivialCube(FBlocks.AQUAMARINE_BLOCK);
+			blockGen.createTrivialCube(FBlocks.BUDDING_AQUAMARINE);
+			createAquamarineCluster(blockGen, FBlocks.AQUAMARINE_CLUSTER);
+			createAquamarineCluster(blockGen, FBlocks.LARGE_AQUAMARINE_BUD);
+			createAquamarineCluster(blockGen, FBlocks.MEDIUM_AQUAMARINE_BUD);
+			createAquamarineCluster(blockGen, FBlocks.SMALL_AQUAMARINE_BUD);
 
 			// BLOM
 			blockGen.createPlantWithDefaultItem(FBlocks.WHITE_ORCHID, FBlocks.POTTED_WHITE_ORCHID, BlockModelGenerators.PlantType.NOT_TINTED);
@@ -58,9 +68,17 @@ public class FModelProvider extends FabricModelProvider {
 			blockGen.createPlantWithDefaultItem(FBlocks.PURPLE_CROCUS, FBlocks.POTTED_PURPLE_CROCUS, BlockModelGenerators.PlantType.NOT_TINTED);
 			blockGen.createPlantWithDefaultItem(FBlocks.LILY_OF_THE_GLADE, FBlocks.POTTED_LILY_OF_THE_GLADE, BlockModelGenerators.PlantType.NOT_TINTED);
 
+			blockGen.createPlantWithDefaultItem(FBlocks.FROSTBLOOM, FBlocks.POTTED_FROSTBLOOM, BlockModelGenerators.PlantType.NOT_TINTED);
+			blockGen.createPlantWithDefaultItem(FBlocks.SNOWBELL, FBlocks.POTTED_SNOWBELL, BlockModelGenerators.PlantType.NOT_TINTED);
+
 			blockGen.createCrossBlockWithDefaultItem(FBlocks.WHITE_CACTUS_FLOWER, BlockModelGenerators.PlantType.NOT_TINTED);
 			blockGen.createCrossBlockWithDefaultItem(FBlocks.YELLOW_CACTUS_FLOWER, BlockModelGenerators.PlantType.NOT_TINTED);
 			blockGen.createPlantWithDefaultItem(FBlocks.WHITE_ALLIUM, FBlocks.POTTED_WHITE_ALLIUM, BlockModelGenerators.PlantType.NOT_TINTED);
+			blockGen.createPlantWithDefaultItem(FBlocks.PINK_CARNATION, FBlocks.POTTED_PINK_CARNATION, BlockModelGenerators.PlantType.NOT_TINTED);
+			blockGen.createPlantWithDefaultItem(FBlocks.WHITE_CARNATION, FBlocks.POTTED_WHITE_CARNATION, BlockModelGenerators.PlantType.NOT_TINTED);
+			blockGen.createPlantWithDefaultItem(FBlocks.CORAL_CARNATION, FBlocks.POTTED_CORAL_CARNATION, BlockModelGenerators.PlantType.NOT_TINTED);
+			blockGen.createPlantWithDefaultItem(FBlocks.VIOLET_CARNATION, FBlocks.POTTED_VIOLET_CARNATION, BlockModelGenerators.PlantType.NOT_TINTED);
+			blockGen.createPlantWithDefaultItem(FBlocks.YELLOW_CARNATION, FBlocks.POTTED_YELLOW_CARNATION, BlockModelGenerators.PlantType.NOT_TINTED);
 
 			blockGen.createPlantWithDefaultItem(FBlocks.BLUE_SUCCULENT, FBlocks.POTTED_BLUE_SUCCULENT, BlockModelGenerators.PlantType.NOT_TINTED);
 			blockGen.createPlantWithDefaultItem(FBlocks.RED_SUCCULENT, FBlocks.POTTED_RED_SUCCULENT, BlockModelGenerators.PlantType.NOT_TINTED);
@@ -74,7 +92,11 @@ public class FModelProvider extends FabricModelProvider {
 			blockGen.createFlowerBed(FBlocks.WHITE_PETALS);
 			blockGen.createFlowerBed(FBlocks.PURPLE_PETALS);
 
-			blockGen.createPlantWithDefaultItem(FBlocks.ROUND_BUSH, FBlocks.POTTED_ROUND_BUSH, BlockModelGenerators.PlantType.NOT_TINTED);
+			//blockGen.createPlantWithDefaultItem(FBlocks.ROUND_BUSH, FBlocks.POTTED_ROUND_BUSH, BlockModelGenerators.PlantType.NOT_TINTED);
+			blockGen.createCrossBlock(FBlocks.ROUND_BUSH, BlockModelGenerators.PlantType.TINTED);
+			blockGen.createItemWithGrassTint(FBlocks.ROUND_BUSH);
+			blockGen.createNonTemplateModelBlock(FBlocks.DRY_CACTUS);
+			blockGen.createNonTemplateModelBlock(FBlocks.POTTED_DRY_CACTUS);
 
 			// FOOD
 			blockGen.createCropBlock(FBlocks.PINEAPPLE, BlockStateProperties.AGE_7, 0, 0, 0, 0, 1, 1, 1, 2);
@@ -170,6 +192,7 @@ public class FModelProvider extends FabricModelProvider {
 		try {
 			// MOLLY
 			itemGen.generateFlatItem(FItems.BUTTERFLY_POTTERY_SHERD, ModelTemplates.FLAT_ITEM);
+			itemGen.generateFlatItem(FItems.PINK_BONE_MEAL, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FBlocks.PEACH_SEASHELL.asItem(), ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FBlocks.PEARL_SEASHELL.asItem(), ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FBlocks.ORCHID_SEASHELL.asItem(), ModelTemplates.FLAT_ITEM);
@@ -190,6 +213,9 @@ public class FModelProvider extends FabricModelProvider {
 			itemGen.generateFlatItem(FItems.FROSTBITE_STRING, ModelTemplates.FLAT_ITEM);
 			itemGen.generateFlatItem(FItems.FROSTBITE_EYE, ModelTemplates.FLAT_ITEM);
 			itemGen.generateBow(FItems.FROSTBOW);
+
+			// ARCTIC
+			itemGen.generateFlatItem(FItems.AQUAMARINE_SHARD, ModelTemplates.FLAT_ITEM);
 
 			// MUSIC
 			itemGen.generateFlatItem(FItems.MUSIC_DISC_RYM, ModelTemplates.FLAT_ITEM);
@@ -361,6 +387,11 @@ public class FModelProvider extends FabricModelProvider {
 
 		generator.blockStateOutput.accept(BlockModelGenerators.createSlab(slabBlock, bottom, top, fullDouble));
 		generator.registerSimpleItemModel(slabBlock, ModelLocationUtils.getModelLocation(slabBlock));
+	}
+
+	public final void createAquamarineCluster(BlockModelGenerators gen, final Block clusterBlock) {
+		MultiVariant model = plainVariant(ModelTemplates.CROSS.create(clusterBlock, TextureMapping.cross(clusterBlock), gen.modelOutput));
+		gen.blockStateOutput.accept(MultiVariantGenerator.dispatch(clusterBlock, model).with(ROTATIONS_COLUMN_WITH_FACING));
 	}
 
 	@Override

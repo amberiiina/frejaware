@@ -2,8 +2,18 @@
   "values": [
     "frejaware:iron_bell",
     "frejaware:dry_cactus",
+    "frejaware:aquamarine_block",
+    "frejaware:budding_aquamarine",
+    "frejaware:aquamarine_cluster",
+    "frejaware:large_aquamarine_bud",
+    "frejaware:medium_aquamarine_bud",
+    "frejaware:small_aquamarine_bud",
     "frejaware:snow_stairs",
     "frejaware:snow_slab",
+    "frejaware:coarse_sand",
+    "frejaware:yellow_sand",
+    "frejaware:gray_sand",
+    "frejaware:pink_sand",
     "frejaware:chiseled_rose_quartz_bricks"
   ]
 }

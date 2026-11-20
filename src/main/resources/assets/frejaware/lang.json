@@ -30,7 +30,16 @@
   "item.frejaware.pineapple_seeds": "Pineapple Seeds",
 
 
+  "enchantment.frejaware.ice_skater": "Ice Skater",
+  "effect.frejaware.frost_resistance": "Frost Resistance",
+  "item.minecraft.potion.effect.frost_resistance": "Potion of Frost Resistance",
+  "item.minecraft.splash_potion.effect.frost_resistance": "Splash Potion of Frost Resistance",
+  "item.minecraft.lingering_potion.effect.frost_resistance": "Lingering Potion of Frost Resistance",
+  "item.minecraft.tipped_arrow.effect.frost_resistance": "Arrow of Frost Resistance",
+
+
   "entity.frejaware.moobloom": "Moobloom",
+  "death.attack.frejaware.moobloom": "%1$s was rammed by %2$s",
   "entity.frejaware.glaze": "Glaze",
   "entity.frejaware.glazeball": "Glazeball",
   "death.attack.frejaware.glazeball": "%1$s was covered in glaze by %2$s",
@@ -82,9 +91,21 @@
   "advancements.frejaware.transium_armor.title": "Trans Rights!",
   "advancements.frejaware.transium_armor.description": "Get a full set of Transium armor",
 
+  "advancements.frejaware.moobye.title": "Moobye!",
+  "advancements.frejaware.moobye.description": "Get killed by a Moobloom, good job",
+
+  "advancements.frejaware.berry_good.title": "Berry Good!",
+  "advancements.frejaware.berry_good.description": "Obtain one of every berry and craft a bottle of Berry Juice",
+
 
   "advancements.frejaware.arctic.title": "Watch out for the Grinch!",
   "advancements.frejaware.arctic.description": "Visit the Arctic",
+
+  "advancements.frejaware.good_blowjob.title": "Good (Blow)job!",
+  "advancements.frejaware.good_blowjob.description": "Obtain a blowberry",
+
+  "advancements.frejaware.ice_skater.title": "Fast and Furious Ice Edition",
+  "advancements.frejaware.ice_skater.description": "Enchant your boots with Frost Walker 2 and Ice Skater 3",
 
 
   "advancements.frejaware.make_me_juice.title": "Make Me Juice!",
@@ -112,11 +133,6 @@
   "advancements.frejaware.milk_enthusiast.title": "Milk Enthusiast",
   "advancements.frejaware.milk_enthusiast.description": "Obtain every milk item",
 
-  "advancements.frejaware.good_blowjob.title": "Good (Blow)job!",
-  "advancements.frejaware.good_blowjob.description": "Obtain a blowberry",
-  "advancements.frejaware.berry_good.title": "Berry Good!",
-  "advancements.frejaware.berry_good.description": "Obtain one of every berry and craft a bottle of Berry Juice",
-
   "advancements.frejaware.chocolatier.title": "Chocolatier",
   "advancements.frejaware.chocolatier.description": "Obtain every chocolate item",
 
@@ -131,6 +147,8 @@
   "advancements.frejaware.rose_quartz_armor.title": "Cover Me in Pink",
   "advancements.frejaware.rose_quartz_armor.description": "Get a full suit of Rose Quartz armor",
 
+  "trim_material.frejaware.rose_quartz": "Rose Quartz",
+  "trim_material.frejaware.aquamarine": "Aquamarine",
 
   "item.frejaware.smithing_template.rose_quartz_upgrade.additions_slot_description": "Add Rose Quartz",
   "item.frejaware.smithing_template.rose_quartz_upgrade.applies_to": "Netherite Equipment",

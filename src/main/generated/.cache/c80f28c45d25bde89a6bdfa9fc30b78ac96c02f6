@@ -15,7 +15,7 @@ a64e8759a30b87d8aa2b946d4e24eeeafaccdac1 data/frejaware/tags/item/crocuses.json
 385af37bd05eb344636e3fafcdd2a3843507b6d7 data/frejaware/tags/item/jacaranda_logs.json
 dd67f220d54fe4635eb8806be3c567b33599a51e data/frejaware/tags/item/non_pot_flowers.json
 c9963254069fea0b260860a60b6d7cfdb1053753 data/frejaware/tags/item/pear_logs.json
-76a067291fd2c9fa168c06eebaf7bef6cc401515 data/frejaware/tags/item/pot_flowers.json
+037f18d0b24c8ceb3eaf31dc9f8b21b38561a6b2 data/frejaware/tags/item/pot_flowers.json
 773bfb716ac908355d0fea5ecac055041c113ebf data/frejaware/tags/item/repairs_rose_quartz.json
 ca8cc0bf36316a28c9fec2266bf03b0b7b942807 data/frejaware/tags/item/repairs_transium.json
 50b96f153de7564f307947d61c69067912123708 data/minecraft/tags/item/axes.json
@@ -46,14 +46,17 @@ d98a565a3b83171c857d3131ab6860fc2b0e9485 data/minecraft/tags/item/leaves.json
 d004767a0f058e57024fcc700d7c7c78e00dcc3e data/minecraft/tags/item/pickaxes.json
 96f288b518c95af847910a04e69ed101f2e6a0bb data/minecraft/tags/item/piglin_loved.json
 63de7f970acf17dad3cf26be832d137ca929eb91 data/minecraft/tags/item/planks.json
+24eb772da161c066e03197d385307e02f003ca79 data/minecraft/tags/item/sand.json
 5aada8f3de4a405b9f296abbc056fcbcc7dea57e data/minecraft/tags/item/saplings.json
 865665560cb2d512265e96c82334951545331ecd data/minecraft/tags/item/shovels.json
 e97d921b239a1d8e4e30fac441538f2621c6cce8 data/minecraft/tags/item/signs.json
 c549e9771390d5865d1bb8451dcf656e8898882f data/minecraft/tags/item/slabs.json
+f3ee965c12b71575874686e6fec1962bcb7e6ce7 data/minecraft/tags/item/smelts_to_glass.json
 3662e948e702ad7bda2f86e681164a9ca161a151 data/minecraft/tags/item/spears.json
 9f51f571c149a9c94e04d9dcf04e93c515bb4a32 data/minecraft/tags/item/stairs.json
+01064e0b1626b9876cb93690dfc7d826b917e12e data/minecraft/tags/item/sulfur_cube_archetype/slow_bouncy.json
 8214419f580339ec544ac86c948d6bc3c54dd558 data/minecraft/tags/item/swords.json
-773bfb716ac908355d0fea5ecac055041c113ebf data/minecraft/tags/item/trim_materials.json
+f7c68f016dd695f9e55876159ba079082653e183 data/minecraft/tags/item/trim_materials.json
 edbf458736b704d04b8240eea370e10c4f3671dd data/minecraft/tags/item/trimmable_armor.json
 446a036333b185af3e4d747f2c2e8005deb0752c data/minecraft/tags/item/villager_picks_up.json
 7d8e7a3ad968e3d7ab2cfe72a28fd45bec1f665a data/minecraft/tags/item/villager_plantable_seeds.json

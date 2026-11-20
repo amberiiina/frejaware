@@ -1,5 +1,5 @@
 {
-  "parent": "frejaware:frejaware/oh_my_meadows",
+  "parent": "frejaware:frejaware/arctic",
   "criteria": {
     "obtain_blowberries": {
       "conditions": {

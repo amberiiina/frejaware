@@ -2,17 +2,27 @@ package se.frejaware.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
+import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.particle.FallingLeavesParticle;
+import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.ARGB;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.SkullBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.frejaware.Blocks.FBlockEntityTypes;
+import se.frejaware.Blocks.FBlocks;
+import se.frejaware.client.Model.FColdBar;
 import se.frejaware.client.Model.FGlaciermanParticle;
 import se.frejaware.Shared.FParticles;
 import se.frejaware.Blocks.Custom.FSkullBlock;
@@ -28,12 +38,14 @@ import se.frejaware.client.Model.Golem.FGolemRenderer;
 import se.frejaware.client.Model.Moobloom.FMoobloomRenderer;
 import se.frejaware.client.mixin.SkullBlockRendererAccessor;
 
+import java.util.List;
 import java.util.Map;
 
 public class FClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		FModelLayers.init();
+		FColdBar.init();
 
 		// MOLLY
 		BlockEntityRenderers.register(FBlockEntityTypes.IRON_BELL, FIronBellRenderer::new);
@@ -83,6 +95,18 @@ public class FClient implements ClientModInitializer {
 		skins.put(FSkullBlock.Types.LAPIS, F.id("textures/entity/golem_head/golem_head_lapis.png"));
 		skins.put(FSkullBlock.Types.NETHERITE, F.id("textures/entity/golem_head/golem_head_netherite.png"));
 		skins.put(FSkullBlock.Types.REDSTONE, F.id("textures/entity/golem_head/golem_head_redstone.png"));
+
+		BlockColorRegistry.register(List.of(new BlockTintSource() {
+			@Override
+			public int color(BlockState state) {
+				return FoliageColor.FOLIAGE_DEFAULT;
+			}
+
+			@Override
+			public int colorInWorld(BlockState state, BlockAndTintGetter level, BlockPos pos) {
+				return ARGB.opaque(BiomeColors.getAverageFoliageColor(level, pos));
+			}
+		}), FBlocks.ROUND_BUSH);
 	}
 
 	private static void registerGolem(EntityType<FGolem> type, String material) {

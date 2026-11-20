@@ -12,11 +12,15 @@ import se.frejaware.F;
 public class FDamageTypes {
 	public static final ResourceKey<DamageType> GLAZEBALL = ResourceKey.create(Registries.DAMAGE_TYPE, F.id("glazeball"));
 	public static final ResourceKey<DamageType> GLAZE_SHARD = ResourceKey.create(Registries.DAMAGE_TYPE, F.id("glaze_shard"));
+	public static final ResourceKey<DamageType> MOOBLOOM = ResourceKey.create(Registries.DAMAGE_TYPE, F.id("moobloom"));
 
 	public static DamageSource glazeball(Level level, Entity projectile, @Nullable Entity owner) {
 		return new DamageSource(level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(GLAZEBALL), projectile, owner);
 	}
 	public static DamageSource glaze_shard(Level level, Entity projectile, @Nullable Entity owner) {
 		return new DamageSource(level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(GLAZE_SHARD), projectile, owner);
+	}
+	public static DamageSource moobloom(Level level, Entity moobloom) {
+		return new DamageSource(level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(MOOBLOOM), moobloom);
 	}
 }

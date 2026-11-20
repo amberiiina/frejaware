@@ -16,6 +16,10 @@ public class FStructureKeys {
 	public static final ResourceKey<StructureSet> PEAR_ARCH_SET = set("pear_arch_set");
 	public static final ResourceKey<StructureTemplatePool> PEAR_ARCH_POOL = pool("pear_arch_pool");
 
+	public static final ResourceKey<Structure> PEAR_BENCH = structure("pear_bench");
+	public static final ResourceKey<StructureSet> PEAR_BENCH_SET = set("pear_bench_set");
+	public static final ResourceKey<StructureTemplatePool> PEAR_BENCH_POOL = pool("pear_bench_pool");
+
 	public static final ResourceKey<Structure> PEAR_BERRY_FARM = structure("pear_berry_farm");
 	public static final ResourceKey<StructureSet> PEAR_BERRY_FARM_SET = set("pear_berry_farm_set");
 	public static final ResourceKey<StructureTemplatePool> PEAR_BERRY_FARM_POOL = pool("pear_berry_farm_pool");
@@ -92,6 +96,10 @@ public class FStructureKeys {
 	public static final ResourceKey<StructureSet> ARCTIC_LAMP_SET = set("arctic_lamp_set");
 	public static final ResourceKey<StructureTemplatePool> ARCTIC_LAMP_POOL = pool("arctic_lamp_pool");
 
+	public static final ResourceKey<Structure> ARCTIC_SNOWCASTLE = structure("arctic_snowcastle");
+	public static final ResourceKey<StructureSet> ARCTIC_SNOWCASTLE_SET = set("arctic_snowcastle_set");
+	public static final ResourceKey<StructureTemplatePool> ARCTIC_SNOWCASTLE_POOL = pool("arctic_snowcastle_pool");
+
 	public static final ResourceKey<Structure> ARCTIC_SNOWMAN = structure("arctic_snowman");
 	public static final ResourceKey<StructureSet> ARCTIC_SNOWMAN_SET = set("arctic_snowman_set");
 	public static final ResourceKey<StructureTemplatePool> ARCTIC_SNOWMAN_POOL = pool("arctic_snowman_pool");
@@ -120,6 +128,10 @@ public class FStructureKeys {
 	public static final ResourceKey<StructureSet> DESERT_FOSSIL_SET = set("desert_fossil_set");
 	public static final ResourceKey<StructureTemplatePool> DESERT_FOSSIL_POOL = pool("desert_fossil_pool");
 
+	public static final ResourceKey<Structure> DESERT_LAMP = structure("desert_lamp");
+	public static final ResourceKey<StructureSet> DESERT_LAMP_SET = set("desert_lamp_set");
+	public static final ResourceKey<StructureTemplatePool> DESERT_LAMP_POOL = pool("desert_lamp_pool");
+
 	public static final ResourceKey<Structure> DESERT_MUD_PYRAMID = structure("desert_mud_pyramid");
 	public static final ResourceKey<StructureSet> DESERT_MUD_PYRAMID_SET = set("desert_mud_pyramid_set");
 	public static final ResourceKey<StructureTemplatePool> DESERT_MUD_PYRAMID_POOL = pool("desert_mud_pyramid_pool");
@@ -127,6 +139,10 @@ public class FStructureKeys {
 	public static final ResourceKey<Structure> DESERT_PALM = structure("desert_palm");
 	public static final ResourceKey<StructureSet> DESERT_PALM_SET = set("desert_palm_set");
 	public static final ResourceKey<StructureTemplatePool> DESERT_PALM_POOL = pool("desert_palm_pool");
+
+	public static final ResourceKey<Structure> DESERT_SANDCASTLE = structure("desert_sandcastle");
+	public static final ResourceKey<StructureSet> DESERT_SANDCASTLE_SET = set("desert_sandcastle_set");
+	public static final ResourceKey<StructureTemplatePool> DESERT_SANDCASTLE_POOL = pool("desert_sandcastle_pool");
 
 	public static final ResourceKey<Structure> DESERT_SHRINE = structure("desert_shrine");
 	public static final ResourceKey<StructureSet> DESERT_SHRINE_SET = set("desert_shrine_set");

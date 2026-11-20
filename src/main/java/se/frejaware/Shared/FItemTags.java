@@ -7,50 +7,23 @@ import se.frejaware.F;
 
 public class FItemTags {
 	// FOOD
-	public static final TagKey<Item> FRUIT_SALAD_INGREDIENTS = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("fruit_salad_ingredients")
-	);
-	public static final TagKey<Item> POT_FLOWERS = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("pot_flowers")
-	);
-	public static final TagKey<Item> NON_POT_FLOWERS = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("non_pot_flowers")
-	);
-	public static final TagKey<Item> CROCUSES = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("crocuses")
-	);
+	public static final TagKey<Item> FRUIT_SALAD_INGREDIENTS = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("fruit_salad_ingredients"));
+	public static final TagKey<Item> POT_FLOWERS = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("pot_flowers"));
+	public static final TagKey<Item> NON_POT_FLOWERS = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("non_pot_flowers"));
+	public static final TagKey<Item> CROCUSES = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("crocuses"));
 
 	// BLUE SPRUCE
-	public static final TagKey<Item> BLUE_SPRUCE_LOGS = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("blue_spruce_logs")
-	);
+	public static final TagKey<Item> BLUE_SPRUCE_LOGS = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("blue_spruce_logs"));
 
 	// JACARANDA
-	public static final TagKey<Item> JACARANDA_LOGS = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("jacaranda_logs")
-	);
+	public static final TagKey<Item> JACARANDA_LOGS = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("jacaranda_logs"));
 
 	// PEAR
-	public static final TagKey<Item> PEAR_LOGS = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("pear_logs")
-	);
+	public static final TagKey<Item> PEAR_LOGS = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("pear_logs"));
 
 	// TRANSIUM
-	public static final TagKey<Item> REPAIRS_TRANSIUM = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("repairs_transium")
-	);
+	public static final TagKey<Item> REPAIRS_TRANSIUM = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("repairs_transium"));
 
 	// ROSE QUARTZ
-	public static final TagKey<Item> REPAIRS_ROSE_QUARTZ = TagKey.create(
-			BuiltInRegistries.ITEM.key(),
-			F.id("repairs_rose_quartz")
-	);
+	public static final TagKey<Item> REPAIRS_ROSE_QUARTZ = TagKey.create(BuiltInRegistries.ITEM.key(), F.id("repairs_rose_quartz"));
 }
